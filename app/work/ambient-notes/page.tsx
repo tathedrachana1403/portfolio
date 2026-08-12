@@ -182,7 +182,7 @@ export default function AmbientNotes() {
           <ChapterHeader
             number="01" label="Challenge"
             heading="Reducing the time and cognitive burden of clinical documentation."
-            sub="Clinicians spent hours capturing, remembering, and reconstructing patient encounters often completing documentation long after the visit ended."
+            sub="Clinicians spent hours capturing, remembering, and reconstructing patient encounters, often completing documentation long after the visit ended. This affected clinician efficiency, increased after-hours workload, and reduced attention during patient visits."
           />
           <div className="grid md:grid-cols-2 gap-6 mt-2">
             <p className="text-base text-slate-500 leading-relaxed">
@@ -209,7 +209,7 @@ export default function AmbientNotes() {
           <ChapterHeader
             number="02" label="Discover"
             heading="We investigated where documentation breaks across the clinical day."
-            sub="I interviewed clinicians across primary care and specialty practices, mapping how documentation happened before, during, between, and after patient visits."
+            sub="I led interviews with clinicians across primary care and specialty practices, mapping how documentation happened before, during, between, and after patient visits."
           />
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
@@ -235,7 +235,7 @@ export default function AmbientNotes() {
             <AmbientAffinityMap />
           </div>
 
-          <Label>Four recurring themes</Label>
+          <Label>These insights directly shaped the product principles and workflow decisions that followed.</Label>
           <div className="grid md:grid-cols-2 gap-4 mb-8">
             {[
               { title: "Context Loss",        body: "Interruptions made it harder to retain the thread of the encounter.", n: "01" },
@@ -304,12 +304,12 @@ export default function AmbientNotes() {
           </p>
         </Section>
 
-        {/* ── 04 DEFINE ── lavender */}
+        {/* ── 04 Define - Design Principles ── lavender */}
         <Section alt className="pt-14 pb-12">
           <ChapterHeader
             number="04" label="Define"
             heading="AI could reduce the work. Clinicians still had to own the outcome."
-            sub="AI could generate clinical content, but clinicians remained responsible for what entered the medical record. Three design principles followed."
+            sub="AI could generate clinical content, but clinicians remained responsible for what entered the medical record. This distinction became the foundation for three design principles."
           />
           <div className="grid md:grid-cols-3 gap-4">
             {[
@@ -384,13 +384,13 @@ export default function AmbientNotes() {
               </div>
             ))}
           </div>
-          <Callout label="The trade-off">
+          <Callout label="Trade-off: Efficiency vs. Accountability">
             <p className="text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.75)" }}>
               Product wanted fewer steps. I advocated for explicit verification because{" "}
               <strong className="text-white font-bold">speed without visible accountability could undermine trust.</strong>{" "}
               Post-launch,{" "}
               <strong className="text-white font-bold">84 to 90% of AI-generated sections were accepted with minimal edits</strong>,
-              validating the model.
+             indicating strong adoption of the verification-first workflow.
             </p>
           </Callout>
         </Section>
@@ -399,7 +399,7 @@ export default function AmbientNotes() {
         <Section alt className="pt-14 pb-12">
           <ChapterHeader
             number="06" label="Design"
-            heading="The workflow moved clinicians from remembering later to verifying now."
+            heading="The workflow shifted clinicians from reconstructing encounters later to verifying AI-generated documentation while the context was still fresh."
           />
 
           <Label>The four-step workflow</Label>
@@ -481,7 +481,7 @@ export default function AmbientNotes() {
           />
           <div className="grid md:grid-cols-3 gap-4 mb-7">
             {[
-              { n: "01", label: "Entry point", problem: "Ambient was easy to miss during a busy clinic session.", fix: "Moved it to the schedule as a visible visit-level action." },
+              { n: "01", label: "Entry point", problem: "Ambient was easy to miss during a busy clinic session.", fix: "Moved Ambient to the schedule as a visible, visit-level action so clinicians could access it at the moment documentation began." },
               { n: "02", label: "AI state",    problem: "A generic processing state created uncertainty about what was happening.", fix: "Added explicit recording, generating, sent, failed, and action-needed states." },
               { n: "03", label: "Transfer",    problem: "A global success message hid partial section failures.", fix: "Added section-level transfer status and dedicated recovery actions." },
             ].map(l => (

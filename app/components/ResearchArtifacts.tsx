@@ -98,7 +98,7 @@ export function ClinicalWorkflowMap() {
         ))}
       </div>
       <div className="mt-4 p-3 rounded-lg" style={{ background: "#f3eeff", border: "1px solid #e4d4f4" }}>
-        <p className="text-xs font-medium" style={{ color: "#240046" }}>Key insight: Documentation wasn't one problem, it broke differently at each moment. A single recording screen couldn't address all 5.</p>
+        <p className="text-xs font-medium" style={{ color: "#240046" }}>Key insight: Documentation wasn't one problem; it broke differently at each moment. A single recording screen couldn't address all five workflow breakdowns, so the solution needed to support the entire documentation journey.</p>
       </div>
     </ArtifactShell>
   );
@@ -262,7 +262,7 @@ export function AmbientProductOverview() {
       </div>
       <div className="grid grid-cols-3 gap-3">
         {[
-          { label: "Design rule", val: "AI assists, clinician owns", color: "purple" as ColorKey },
+          { label: "Design rule", val: "AI assists, clinician owns the outcome", color: "purple" as ColorKey },
           { label: "Trust mechanism", val: "Explicit approval at every hand-off", color: "blue" as ColorKey },
           { label: "Recovery", val: "Visible failure + clear next action", color: "green" as ColorKey },
         ].map(d => (
