@@ -53,20 +53,54 @@ export default function PracticeFiles() {
           </p>
 
           {/* Meta row */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12" style={{ borderTop: `1px solid ${BORDER}`, paddingTop: "2rem" }}>
-            {[
-              { label: "Role",     value: "Product Designer" },
-              { label: "Users",    value: "Customer Success · Operations · Client Offboarding" },
-              { label: "Platform", value: "Desktop web · Enterprise operations" },
-              { label: "Research", value: "6 users · Task walkthroughs · Support ticket data" },
-            ].map(m => (
-              <div key={m.label}>
-                <p className="text-xs font-bold tracking-[0.14em] uppercase mb-2 text-slate-400">{m.label}</p>
-                <p className="text-base font-medium leading-snug" style={{ color: DARK }}>{m.value}</p>
-              </div>
-            ))}
-          </div>
-
+{/* Meta row */}
+<div
+  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 pt-4 mb-12"
+  style={{ borderTop: `1px solid ${BORDER}` }}
+>
+  {[
+    {
+      label: "My role",
+      value:
+        "Product Designer - owned workflow design, information architecture, interaction design, and end-to-end file-management experience",
+    },
+    {
+      label: "Team",
+      value:
+        "Product Manager, Engineering, Operations/Domain Stakeholders, Design",
+    },
+    {
+      label: "Timeline",
+      value: "1.5 Months",
+    },
+    {
+      label: "Scope",
+      value:
+        "File discovery, search, filtering, bulk actions, progress states, notes, activity history, and operational workflows",
+    },
+    {
+      label: "Constraints",
+      value:
+        "High-volume file management, complex workflows, scalability, legacy processes, and operational efficiency",
+    },
+  ].map((m, i) => (
+    <div
+      key={m.label}
+      className="p-4"
+      style={{ borderLeft: i > 0 ? `1px solid ${BORDER}` : "none" }}
+    >
+      <p
+        className="text-xs font-black tracking-[0.14em] uppercase mb-1.5"
+        style={{ color: DARK }}
+      >
+        {m.label}
+      </p>
+      <p className="text-sm font-medium leading-relaxed text-slate-500">
+        {m.value}
+      </p>
+    </div>
+  ))}
+</div>
           {/* Impact strip */}
           <div className="rounded-2xl px-8 py-6" style={{ backgroundColor: DARK, boxShadow: DARK_SHADOW }}>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">

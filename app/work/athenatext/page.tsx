@@ -61,7 +61,7 @@ export default function AthenaText() {
             {[
               { label: "My role", value: "Product Designer - owned research synthesis, UX strategy, information architecture, experience design, and product direction" },
               { label: "Team", value: "Product Management, Engineering, Research, Customer/Business Stakeholders, Design" },
-              { label: "Timeline", value: "-" },
+              { label: "Timeline", value: "6 Months" },
               { label: "Scope", value: "Synthesizing 300+ customer signals, identifying opportunities, communication workflows, search, and roadmap direction" },
               { label: "Constraints", value: "Fragmented customer needs, competing priorities, legacy workflows, technical constraints, and limited resources" },
             ].map((m, i) => (
