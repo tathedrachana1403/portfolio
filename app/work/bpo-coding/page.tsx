@@ -110,36 +110,27 @@ export default function BPOCoding() {
             behind changes for QA review.
           </p>
 
-          {/* Meta row */}
+          {/* Project details */}
           <div
-            className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12"
-            style={{ borderTop: `1px solid ${BORDER}`, paddingTop: "2rem" }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 pt-4 mb-12"
+            style={{ borderTop: `1px solid ${BORDER}` }}
           >
             {[
-              { label: "Role", value: "Sole Product Designer" },
-              {
-                label: "Domain",
-                value: "Decision Support · Rules-driven Automation",
-              },
-              {
-                label: "Research",
-                value: "8 coders · 3 QA reviewers · interviews and shadowing",
-              },
-              {
-                label: "Platform",
-                value: "Desktop web · Medical coding workflow",
-              },
-            ].map((m) => (
-              <div key={m.label}>
-                <p className="text-xs font-bold tracking-[0.14em] uppercase mb-2 text-slate-400">
+              { label: "My role", value: "Lead Product Designer - owned UX strategy, decision-support workflow, interaction design, and AI/rules-driven experience" },
+              { label: "Team", value: "Product Manager, Engineering, Medical Coding/Domain Experts, Design" },
+              { label: "Timeline", value: "3 months" },
+              { label: "Scope", value: "In-context coding guidance, rules-driven recommendations, evidence visibility, review, and decision workflows" },
+              { label: "Constraints", value: "95% accuracy target, complex coding rules, high-volume workflows, human oversight, and system limitations" },
+            ].map((m, i) => (
+              <div
+                key={m.label}
+                className="p-4"
+                style={{ borderLeft: i > 0 ? `1px solid ${BORDER}` : "none" }}
+              >
+                <p className="text-xs font-black tracking-[0.14em] uppercase mb-1.5" style={{ color: DARK }}>
                   {m.label}
                 </p>
-                <p
-                  className="text-base font-medium leading-snug"
-                  style={{ color: DARK }}
-                >
-                  {m.value}
-                </p>
+                <p className="text-sm font-medium leading-relaxed text-slate-500">{m.value}</p>
               </div>
             ))}
           </div>

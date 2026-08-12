@@ -129,20 +129,29 @@ export default function AmbientNotes() {
               more presence during the encounter.
             </p>
 
-            {/* Meta row */}
-            <div className="flex flex-wrap gap-y-5" style={{ borderTop: `1px solid ${BORDER}`, paddingTop: "1.5rem" }}>
+            {/* Project details */}
+            <div
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 pt-4"
+              style={{ borderTop: `1px solid ${BORDER}` }}
+            >
               {[
-                { label: "My Role", value: "Lead Product Designer · 0→1" },
-                { label: "Scope",   value: "Research · Strategy · UX · Interaction design · Cross-functional alignment" },
-                { label: "Scale",   value: "1M+ encounters · 3K+ clinicians" },
+                { label: "My role", value: "Lead Product Designer - owned UX strategy, interaction design, AI verification patterns, workflows, and end-to-end experience" },
+                { label: "Team", value: "Product Manager, Engineering, Clinical/Domain Experts, Design" },
+                { label: "Timeline", value: "2 months" },
+                { label: "Scope", value: "AI-assisted clinical documentation, verification, approval, editing, attribution, transfer states, and failure recovery" },
+                { label: "Constraints", value: "Clinical accuracy, AI reliability, clinician time pressure, trust, safety, and integration with existing workflows" },
               ].map((m, i) => (
                 <div
                   key={m.label}
-                  className={`${i < 2 ? "pr-8 mr-8" : ""}`}
-                  style={i < 2 ? { borderRight: `1px solid ${BORDER}` } : {}}
+                  className="p-4"
+                  style={{
+                    borderLeft: i > 0 ? `1px solid ${BORDER}` : "none",
+                  }}
                 >
-                  <p className="text-sm font-bold tracking-[0.14em] uppercase mb-1.5 text-slate-400">{m.label}</p>
-                  <p className="text-sm font-medium leading-snug" style={{ color: DARK }}>{m.value}</p>
+                  <p className="text-xs font-black tracking-[0.14em] uppercase mb-1.5" style={{ color: DARK }}>
+                    {m.label}
+                  </p>
+                  <p className="text-sm font-medium leading-relaxed text-slate-500">{m.value}</p>
                 </div>
               ))}
             </div>
