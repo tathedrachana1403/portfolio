@@ -137,7 +137,7 @@ export default function PracticeFiles() {
           </div>
           <div className="space-y-0 mb-10" style={{ borderTop: `1px solid ${BORDER}` }}>
             {[
-              { area: "Tracking file activity", score: 4.8, desc: "No trace of what happened after an action — deletions, downloads, and handoffs left no record." },
+              { area: "Tracking file activity", score: 4.8, desc: "No trace of what happened after an actions like deletions, downloads, and handoffs left no record." },
               { area: "Finding files",          score: 4.6, desc: "No search or filters. Users scanned full lists every time." },
               { area: "Managing multiple files", score: 4.3, desc: "Every download and delete was one file at a time. Offboarding meant repeating the same action dozens of times." },
             ].map(r => (
@@ -159,7 +159,7 @@ export default function PracticeFiles() {
 
           <div className="rounded-2xl px-8 py-6" style={{ backgroundColor: DARK, boxShadow: DARK_SHADOW }}>
             <p className="text-base font-semibold text-white leading-relaxed">
-              File management was a top-5 contact driver for Customer Success — focus group friction scores matched real support ticket volume.
+              File management was a top-5 contact driver for Customer Success and focus group friction scores matched real support ticket volume.
             </p>
           </div>
         </div>
@@ -280,7 +280,7 @@ export default function PracticeFiles() {
               {/* log rows */}
               {[
                 { time: "Today, 2:14 pm",    actor: "srout1",          action: "Downloaded",         note: null },
-                { time: "Today, 11:05 am",   actor: "mmaratuechsemina",action: "Added note",          note: "Confirmed with client — use this version for compliance review." },
+                { time: "Today, 11:05 am",   actor: "mmaratuechsemina",action: "Added note",          note: "Confirmed with client to use this version for compliance review." },
                 { time: "Yesterday, 4:51 pm",actor: "lrajamani",       action: "Uploaded new version",note: null },
                 { time: "Jul 30, 9:20 am",   actor: "ajain52",         action: "Deleted older copy",  note: null },
               ].map((row, i, arr) => (

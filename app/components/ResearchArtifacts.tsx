@@ -71,12 +71,12 @@ export function ClinicalWorkflowMap() {
     { label: "Exam room", pain: "Split attention: patient + chart", n: "02" },
     { label: "Between visits", pain: "Memory fades, backlog grows", n: "03" },
     { label: "Workstation review", pain: "Rebuilds encounter from fragments", n: "04" },
-    { label: "After-hours catch-up", pain: "1–3 hrs of home charting nightly", n: "05" },
+    { label: "After-hours catch-up", pain: "1 to 3 hrs of home charting nightly", n: "05" },
   ];
   return (
     <ArtifactShell label="Clinical Workflow Map, 5 documentation moments" accent="purple">
       <p className="text-xs text-gray-400 mb-4">Research with 20 clinicians across primary care &amp; specialty, mapped where documentation broke down</p>
-      <div className="flex gap-0 items-start overflow-x-auto pb-2">
+      <div className="artifact-timeline flex gap-0 items-start overflow-x-auto pb-2">
         {moments.map((m, i) => (
           <div key={m.label} className="flex items-start min-w-0">
             <div className="flex flex-col items-center min-w-[130px]">

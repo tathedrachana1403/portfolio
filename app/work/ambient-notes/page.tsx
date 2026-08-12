@@ -125,7 +125,7 @@ export default function AmbientNotes() {
             </p>
             <p className="text-base text-slate-500 leading-relaxed mb-7">
               Ambient Notes captures patient visits and uses AI to generate the first draft
-              of clinical documentation — reducing manual charting and giving clinicians
+              of clinical documentation reducing manual charting and giving clinicians
               more presence during the encounter.
             </p>
 
@@ -155,7 +155,7 @@ export default function AmbientNotes() {
                 { v: "90%+",     l: "Same-day completion" },
                 { v: "3.6 min",  l: "Saved per encounter" },
                 { v: "36%",      l: "Less after-hours work" },
-                { v: "84–90%",   l: "AI sections accepted" },
+                { v: "84 to 90%",   l: "AI sections accepted" },
                 { v: "~60K hrs", l: "Clinician time returned" },
                 { v: "1M+",      l: "Patient encounters" },
               ].map((s) => (
@@ -173,7 +173,7 @@ export default function AmbientNotes() {
           <ChapterHeader
             number="01" label="Challenge"
             heading="Reducing the time and cognitive burden of clinical documentation."
-            sub="Clinicians spent hours capturing, remembering, and reconstructing patient encounters — often completing documentation long after the visit ended."
+            sub="Clinicians spent hours capturing, remembering, and reconstructing patient encounters often completing documentation long after the visit ended."
           />
           <div className="grid md:grid-cols-2 gap-6 mt-2">
             <p className="text-base text-slate-500 leading-relaxed">
@@ -270,7 +270,7 @@ export default function AmbientNotes() {
           <ChapterHeader
             number="03" label="Reframe"
             heading="The problem wasn't just writing. It was the work behind it."
-            sub="Documentation involved more than typing — it required remembering, reconstructing, organizing, and completing the encounter."
+            sub="Documentation more than typing required remembering, reconstructing, organizing, and completing the encounter."
           />
           <div className="grid md:grid-cols-2 gap-5 mb-7">
             <div
@@ -290,7 +290,7 @@ export default function AmbientNotes() {
           <p className="text-base text-slate-500 leading-relaxed">
             This reframed Ambient Notes from an{" "}
             <strong style={{ color: DARK }}>AI note generator</strong> into an{" "}
-            <strong style={{ color: DARK }}>AI-assisted documentation workflow</strong> — a
+            <strong style={{ color: DARK }}>AI-assisted documentation workflow</strong> a
             meaningful difference for how we designed accountability and control into every state.
           </p>
         </Section>
@@ -380,7 +380,7 @@ export default function AmbientNotes() {
               Product wanted fewer steps. I advocated for explicit verification because{" "}
               <strong className="text-white font-bold">speed without visible accountability could undermine trust.</strong>{" "}
               Post-launch,{" "}
-              <strong className="text-white font-bold">84–90% of AI-generated sections were accepted with minimal edits</strong>,
+              <strong className="text-white font-bold">84 to 90% of AI-generated sections were accepted with minimal edits</strong>,
               validating the model.
             </p>
           </Callout>
@@ -457,7 +457,7 @@ export default function AmbientNotes() {
               Key screens from the shipped product.
             </h2>
             <p className="text-lg text-slate-500 leading-relaxed">
-              Consent, control, status, review, transfer, and recovery — all visible in the product itself.
+              Consent, control, status, review, transfer, and recovery - all visible in the product itself.
             </p>
           </div>
           <ImageCarousel />
@@ -505,7 +505,7 @@ export default function AmbientNotes() {
             <p className="text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.75)" }}>
               <strong className="text-white font-bold">Real-time transfer status wasn't technically available.</strong>{" "}
               Rather than masking the limitation, we designed explicit status states and a{" "}
-              <strong className="text-white font-bold">Check status</strong> recovery path — so clinicians always
+              <strong className="text-white font-bold">Check status</strong> recovery path so clinicians always
               knew what happened to their documentation.
             </p>
           </Callout>
@@ -522,7 +522,7 @@ export default function AmbientNotes() {
               { v: "90%+",    l: "Same-day completion" },
               { v: "3.6 min", l: "Saved per encounter" },
               { v: "36%",     l: "Less after-hours documentation" },
-              { v: "84–90%",  l: "AI sections accepted with minimal edits" },
+              { v: "84 to 90%",  l: "AI sections accepted with minimal edits" },
               { v: "1M+",     l: "Patient encounters" },
               { v: "3K+",     l: "Clinicians onboarded" },
             ].map(s => (
@@ -555,7 +555,7 @@ export default function AmbientNotes() {
           <Label>Clinician feedback</Label>
           <div className="grid md:grid-cols-3 gap-4 mb-8">
             {[
-              { quote: "Ambient gives me time back every encounter. I don't have to work nights and weekends — this saves me 7–8 hours per week.", attr: "Clinician, VillageMD", context: "~315 encounters" },
+              { quote: "Ambient gives me time back every encounter. I don't have to work nights and weekends this saves me 7 to 8 hours per week.", attr: "Clinician, VillageMD", context: "~315 encounters" },
               { quote: "I've corrected a few, but I would say probably 85% of it is pertinent and correct.", attr: "Clinician, VIM Clinic", context: "~244 encounters" },
               { quote: "The speed of Ambient made it possible to complete the encounter, correct the transcript, and close the chart on the spot.", attr: "Clinician, CHS", context: "~195 encounters" },
             ].map(q => (
@@ -649,7 +649,7 @@ export default function AmbientNotes() {
             <p className="text-base text-slate-500 leading-relaxed">
               The next evolution is to extend Ambient from{" "}
               <strong style={{ color: DARK }}>documentation assistance to broader clinical workflow support</strong>{" "}
-              — while preserving the principles that made the experience trustworthy: control, transparency, and recovery.
+             while preserving the principles that made the experience trustworthy: control, transparency, and recovery.
             </p>
             <div
               className="rounded-2xl p-7"

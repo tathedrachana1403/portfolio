@@ -168,7 +168,7 @@ export default function AthenaText() {
                 {[
                   {
                     said: "Urgent conversations were getting buried in message volume.",
-                    stat: "3–5×", statLabel: "threads reopened during a single shift",
+                    stat: "3 to 5×", statLabel: "threads reopened during a single shift",
                     team: "Clinical",
                   },
                   {
@@ -264,7 +264,7 @@ export default function AthenaText() {
           <div className="max-w-4xl mx-auto px-8 py-16">
             <ChapterHeader number="05" label="Product Opportunity" heading="Make conversations easier to find, manage, and act on as volume grows." />
 
-            <div className="flex items-stretch mb-8">
+            <div className="responsive-process-row flex flex-col sm:flex-row items-stretch mb-8">
               {[
                 { label: "Find",        dark: false },
                 { label: "Prioritise",  dark: false },
@@ -292,7 +292,7 @@ export default function AthenaText() {
             </div>
 
             <p className="text-base text-slate-500 leading-relaxed max-w-2xl">
-              This became the design lens for evaluating opportunities — rather than treating each request as an isolated feature.
+              This became the design lens for evaluating opportunities rather than treating each request as an isolated feature.
             </p>
           </div>
         </div>
@@ -320,7 +320,7 @@ export default function AthenaText() {
               {
                 n: "04", job: "Respond", feature: "Suggested Replies",
                 img: "/images/atext/2.png",
-                title: "AI suggests — user reviews — user sends.",
+                title: "AI suggests - user reviews - user sends.",
                 body: "Reduced repetitive typing without auto-sending. In a healthcare context, no message is ever sent without explicit user review.",
                 metric: null, metricSub: null,
               },
@@ -402,7 +402,7 @@ export default function AthenaText() {
 
           <div className="mb-10 pl-6" style={{ borderLeft: `3px solid ${DARK}` }}>
             <p className="text-base font-semibold leading-relaxed" style={{ color: DARK }}>
-              I learned to treat customer feedback as evidence of patterns — not as a list of features to build.
+              I learned to treat customer feedback as evidence of patterns not as a list of features to build.
             </p>
           </div>
 

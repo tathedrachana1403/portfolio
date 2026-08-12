@@ -293,7 +293,7 @@ export default function BPOCoding() {
                     className="text-xs font-bold tracking-[0.12em] uppercase mb-3"
                     style={{ color: MUTED }}
                   >
-                    Medical Coder — during the decision
+                    Medical Coder - during the decision
                   </p>
                   <p className="text-lg font-bold text-white leading-snug">
                     Relevant guidance at the moment of coding, inside the chart.
@@ -310,7 +310,7 @@ export default function BPOCoding() {
                     className="text-xs font-bold tracking-[0.12em] uppercase mb-3"
                     style={{ color: MUTED }}
                   >
-                    QA Reviewer — after submission
+                    QA Reviewer - after submission
                   </p>
                   <p
                     className="text-lg font-bold leading-snug"
@@ -378,7 +378,7 @@ export default function BPOCoding() {
               className="text-base font-bold tracking-tight"
               style={{ color: DARK }}
             >
-              What we observed — one claim, three failure patterns
+              What we observed
             </h3>
           </div>
           <div
@@ -409,12 +409,12 @@ export default function BPOCoding() {
               {
                 n: "01",
                 label: "Review chart",
-                sub: "Coder opens the chart — starts with confidence",
+                sub: "Coder opens the chart and starts with confidence",
               },
               {
                 n: "02",
                 label: "Encounter ambiguity",
-                sub: "Hits an ambiguous code — needs a modifier lookup",
+                sub: "needs to lookup for the modifier lookup",
               },
             ].map((step) => (
               <div
@@ -576,7 +576,7 @@ export default function BPOCoding() {
               {
                 n: "05",
                 label: "Make decision",
-                sub: "Applies code from memory — recall error risk is highest here",
+                sub: "Applies code from memory - recall error risk is highest here",
                 pattern: {
                   num: "02",
                   title: "Memory overload",
@@ -591,11 +591,11 @@ export default function BPOCoding() {
               {
                 n: "06",
                 label: "QA review",
-                sub: "Claim submitted — but the reason behind the decision was never recorded",
+                sub: "Claim submitted - but the reason behind the decision was never recorded",
                 pattern: {
                   num: "03",
                   title: "QA blind spot",
-                  desc: "Rationale lost — reviewers reconstruct after the fact",
+                  desc: "Rationale lost - reviewers reconstruct after the fact",
                   tags: ["No reason recorded", "Manual reconstruction"],
                   headBg: SOFT,
                   headText: DARK,
@@ -833,7 +833,7 @@ export default function BPOCoding() {
             <ChapterHeader
               number="03"
               label="Reframe"
-              heading="Reduce the work around the decision — not the judgment within it."
+              heading="Reduce the work around the decision - not the judgment within it."
             />
 
             <div className="grid md:grid-cols-2 gap-5 mb-8">
@@ -868,7 +868,7 @@ export default function BPOCoding() {
             <p className="text-base text-slate-500 leading-relaxed mb-6">
               This established four experience requirements:
             </p>
-            <div className="flex items-stretch">
+            <div className="responsive-process-row flex flex-col sm:flex-row items-stretch">
               {[
                 {
                   n: "01",
@@ -1077,7 +1077,7 @@ export default function BPOCoding() {
                 desc: [
                   "Rules surface in context — no tab switching needed",
                   "Reviews recommendation against chart",
-                  "Accepts, modifies, or overrides — logs reason",
+                  "Accepts, modifies, or overrides - logs reason",
                   null,
                 ],
               },
@@ -1089,7 +1089,7 @@ export default function BPOCoding() {
                   null,
                   null,
                   null,
-                  "Receives decision + rationale together — no reconstruction",
+                  "Receives decision + rationale together - no reconstruction",
                 ],
               },
             ].map((row, ri) => (
@@ -1645,7 +1645,7 @@ export default function BPOCoding() {
 
             <div className="pl-6" style={{ borderLeft: `3px solid ${DARK}` }}>
               <p className="text-base font-bold mb-3" style={{ color: DARK }}>
-                Next opportunity — make guidance adaptive:
+                Next opportunity to make guidance adaptive:
               </p>
               <div className="space-y-1.5 mb-4">
                 {[

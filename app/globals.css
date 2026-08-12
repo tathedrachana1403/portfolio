@@ -16,9 +16,212 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  min-width: 320px;
+  overflow-x: clip;
 }
 
 html {
   scroll-behavior: smooth;
   font-size: 112%;
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+}
+
+/* Keep the case-study layouts comfortable between tablet and desktop. */
+@media (max-width: 1023px) {
+  .px-16 {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+}
+
+/* Mobile overrides for desktop-first case-study compositions. */
+@media (max-width: 767px) {
+  html {
+    font-size: 100%;
+  }
+
+  .px-6,
+  .px-7,
+  .px-8,
+  .px-16 {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+
+  .py-16 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+
+  .pt-20 {
+    padding-top: 3.5rem;
+  }
+
+  .pb-20 {
+    padding-bottom: 3.5rem;
+  }
+
+  .text-5xl,
+  .text-6xl,
+  .text-7xl,
+  .text-8xl {
+    font-size: 2.5rem !important;
+  }
+
+  main h2 {
+    font-size: clamp(1.75rem, 8vw, 2.25rem) !important;
+  }
+
+  main h1 {
+    overflow-wrap: anywhere;
+  }
+
+  main h1[style*="font-size: clamp"] {
+    font-size: clamp(2.5rem, 12vw, 3.2rem) !important;
+  }
+
+  .grid-cols-2,
+  .grid-cols-3,
+  .grid-cols-4,
+  .grid-cols-5,
+  .grid-cols-6 {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .grid-cols-2 > *,
+  .grid-cols-3 > *,
+  .grid-cols-4 > *,
+  .grid-cols-5 > *,
+  .grid-cols-6 > * {
+    min-width: 0;
+  }
+
+  .gap-8,
+  .gap-12 {
+    gap: 1.25rem !important;
+  }
+
+  .rounded-2xl.px-8,
+  .rounded-2xl .px-8 {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+
+  main,
+  main section,
+  main section > div,
+  main > div,
+  main * {
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+
+  main .inline-flex {
+    white-space: normal;
+  }
+
+  main .inline-flex > span:last-child {
+    overflow-wrap: anywhere;
+  }
+
+  main .grid > * {
+    border-left: 0 !important;
+    border-right: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  main .grid > *.p-7,
+  main .grid > *.p-6,
+  main .grid > *.p-5,
+  main .grid > *.p-4 {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+
+  .work-card-metrics {
+    border-left: 0 !important;
+    border-top: 1px solid #e2e8f0;
+  }
+
+  main .rounded-xl > .p-5 {
+    padding: 1rem !important;
+  }
+
+  .artifact-timeline {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 0.75rem !important;
+    overflow: visible !important;
+  }
+
+  .artifact-timeline > div,
+  .artifact-timeline > div > div:first-child {
+    width: 100%;
+    min-width: 0 !important;
+  }
+
+  .artifact-timeline > div > div:last-child:not(:first-child) {
+    display: none;
+  }
+
+  .responsive-process-row {
+    gap: 0.75rem;
+  }
+
+  .responsive-process-row > div,
+  .responsive-process-row > div > div {
+    width: 100% !important;
+    max-width: 100%;
+    border-left-width: 1.5px !important;
+    border-radius: 0.75rem !important;
+  }
+
+  .responsive-process-row > div > div[style*="clip-path"] {
+    display: none;
+  }
+
+  [class*="overflow-x-auto"] {
+    overscroll-behavior-inline: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  main .flex.justify-between {
+    flex-wrap: wrap;
+  }
+
+  main p,
+  main h1,
+  main h2,
+  main h3,
+  main span {
+    overflow-wrap: break-word;
+  }
+}
+
+@media (max-width: 420px) {
+  .grid-cols-2,
+  .grid-cols-3,
+  .grid-cols-4,
+  .grid-cols-5,
+  .grid-cols-6 {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  main .flex.items-center.gap-6,
+  main .flex.items-center.gap-8 {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }

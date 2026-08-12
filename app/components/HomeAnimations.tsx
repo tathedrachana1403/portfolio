@@ -242,7 +242,7 @@ export function WorkCard({ c, index }: { c: CaseData; index: number }) {
             transition={{ duration: 0.2 }}
           />
 
-          <div className="flex items-stretch pl-5">
+          <div className="flex flex-col sm:flex-row items-stretch pl-5">
 
             {/* Left: number + title + subtitle + description + tags */}
             <div className="flex-1 min-w-0 py-5 pr-6">
@@ -270,7 +270,7 @@ export function WorkCard({ c, index }: { c: CaseData; index: number }) {
 
             {/* Right: metrics + CTA — full height, tinted */}
             <div
-              className="shrink-0 w-48 flex flex-col justify-between py-5 px-5"
+              className="work-card-metrics shrink-0 w-full sm:w-48 flex flex-col justify-between py-5 px-5"
               style={{
                 borderLeft: `1px solid ${hovered ? c.border : "#e2e8f0"}`,
                 backgroundColor: hovered ? c.muted : "#f8fafc",

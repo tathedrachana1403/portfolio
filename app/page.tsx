@@ -193,8 +193,8 @@ export default function Home() {
           {/* Body */}
           <FadeUp delay={1.2}>
             <p className="text-xl leading-relaxed mb-10 max-w-lg" style={{ color: "#64748b" }}>
-              Senior Product Designer with 3+ years building{" "}
-              <strong style={{ color: "#1e293b" }}>enterprise workflows</strong> where decisions carry real weight — in AI, operations, and complex systems.
+              Senior Product Designer with 5 years of experience in building{" "}
+              <strong style={{ color: "#1e293b" }}>enterprise workflows</strong> where decisions carry real weight in AI, operations, and complex systems.
             </p>
           </FadeUp>
 
@@ -262,7 +262,7 @@ export default function Home() {
               <span style={{ fontFamily: "var(--font-instrument-serif)", fontWeight: 400, fontStyle: "italic", color: "#5b21b6" }}>Work that sticks.</span>
             </h2>
             <p className="text-base mb-10 max-w-xl" style={{ color: "#94a3b8" }}>
-              Four products across clinical AI, medical billing, communication, and document workflows — all shipped, all measured.
+        
             </p>
           </ScrollReveal>
 
@@ -343,7 +343,7 @@ export default function Home() {
                   lineHeight: 1.4,
                 }}
               >
-                "My strongest work is not just designing interfaces — it's improving the quality of decisions teams make around them."
+                "My strongest work is not just designing interfaces it's improving the quality of decisions teams make around them."
               </p>
             </div>
           </ScrollReveal>
@@ -357,7 +357,7 @@ export default function Home() {
                 <div className="p-7" style={{ borderRight: "1px solid #e2e8f0" }}>
                   <p className="text-sm font-bold tracking-[0.12em] uppercase mb-4" style={{ color: "#c4b5fd" }}>About</p>
                   <p className="text-base text-slate-600 leading-relaxed mb-3">
-                    3+ years designing <strong className="text-slate-800">enterprise workflows</strong> at athenahealth — where decisions carry real weight and the system has to be trustworthy before users will rely on it.
+                    5 years of designing <strong className="text-slate-800">enterprise workflows</strong> at athenahealth where decisions carry real weight and the system has to be trustworthy before users will rely on it.
                   </p>
                   <p className="text-base text-slate-500 leading-relaxed mb-6">
                     I work across AI, operations, and complex systems: turning ambiguous problems into clear workflows, scalable patterns, and products that hold up under pressure.
