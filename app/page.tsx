@@ -48,7 +48,7 @@ const cases: CaseData[] = [
     tags: ["Decision Support", "Rules-driven Automation"],
     metrics: ["40% fewer errors", "33.4% less rejections"],
     outcome: "40% fewer billing errors · 33.4% fewer claim rejections",
-    description: "Designed an in-context decision-support workflow for medical coders working under a 95% accuracy target. Guidance surfaces inside the chart; every changed decision is traceable for QA.",
+    description: "Led the design of an in-context decision-support workflow for medical coders working under a 95% accuracy target.",
     dark: "#1e40af",
     soft: "#eff6ff",
     border: "#bfdbfe",
@@ -59,7 +59,7 @@ const cases: CaseData[] = [
     number: "03",
     slug: "athenatext",
     title: "athenaText",
-    subtitle: "Turning 300+ customer signals into a communication roadmap",
+    subtitle: "Turning 300+ customer signals into a focused communication product strategy",
     role: "Lead Product Designer",
     tags: ["Enterprise Communication", "Product Strategy"],
     metrics: ["48% search adoption", "2.2→4.4 satisfaction", "$100K+ saved"],
@@ -103,7 +103,7 @@ const leadership = [
     tag: "AI Strategy",
     title: "AI Product Standards",
     body: "Defined the verification-first model for Ambient Notes — AI attribution, explicit approval gates, transfer-state visibility, and failure recovery.",
-    impact: "Became a reusable reference across subsequent AI initiatives.",
+    impact: "Documented the pattern and shared it with two product design teams building AI-assisted workflows.",
   },
   {
     tag: "Product Direction",
@@ -193,8 +193,8 @@ export default function Home() {
           {/* Body */}
           <FadeUp delay={1.2}>
             <p className="text-xl leading-relaxed mb-10 max-w-lg" style={{ color: "#64748b" }}>
-              Senior Product Designer with 5 years of experience in building{" "}
-              <strong style={{ color: "#1e293b" }}>enterprise workflows</strong> where decisions carry real weight in AI, operations, and complex systems.
+              Senior Product Designer with 5 years of experience designing AI,{" "}
+              <strong style={{ color: "#1e293b" }}>decision-support, and enterprise</strong> workflows where people need to make accurate, high-stakes decisions.
             </p>
           </FadeUp>
 
@@ -357,7 +357,7 @@ export default function Home() {
                 <div className="p-7" style={{ borderRight: "1px solid #e2e8f0" }}>
                   <p className="text-sm font-bold tracking-[0.12em] uppercase mb-4" style={{ color: "#c4b5fd" }}>About</p>
                   <p className="text-base text-slate-600 leading-relaxed mb-3">
-                    5 years of designing <strong className="text-slate-800">enterprise workflows</strong> at athenahealth where decisions carry real weight and the system has to be trustworthy before users will rely on it.
+                    5 years of designing <strong className="text-slate-800">enterprise products</strong> at athenahealth across AI-assisted workflows, clinical decision support, communication, and operational systems.
                   </p>
                   <p className="text-base text-slate-500 leading-relaxed mb-6">
                     I work across AI, operations, and complex systems: turning ambiguous problems into clear workflows, scalable patterns, and products that hold up under pressure.

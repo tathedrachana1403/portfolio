@@ -124,9 +124,7 @@ export default function AmbientNotes() {
               Reducing documentation friction so clinicians can focus on patient care.
             </p>
             <p className="text-base text-slate-500 leading-relaxed mb-7">
-              Ambient Notes captures patient visits and uses AI to generate the first draft
-              of clinical documentation reducing manual charting and giving clinicians
-              more presence during the encounter.
+              Ambient Notes uses AI to capture patient visits and generate a first draft of clinical documentation, reducing manual charting while keeping clinicians in control of what enters the medical record.
             </p>
 
             {/* Project details */}
