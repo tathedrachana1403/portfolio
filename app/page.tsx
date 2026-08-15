@@ -101,7 +101,7 @@ const leadership = [
   {
     tag: "AI Strategy",
     title: "AI Product Standards",
-    body: "Defined the verification-first model for Ambient Notes — AI attribution, explicit approval gates, transfer-state visibility, and failure recovery.",
+    body: "Defined the verification first model for Ambient Notes — AI attribution, explicit approval gates, transfer-state visibility, and failure recovery.",
     impact: "Documented the pattern and shared it with two product design teams building AI-assisted workflows.",
   },
   {
