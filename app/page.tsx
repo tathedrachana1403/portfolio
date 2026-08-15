@@ -30,7 +30,7 @@ const cases: CaseData[] = [
     subtitle: "Verification-first AI documentation for clinical care",
     role: "Lead Product Designer · 0→1",
     tags: ["Human-AI Interaction", "Enterprise Workflow"],
-    metrics: ["90%+ Same-day completion", 84→90% Accepted as-is, "36% less after-hours"],
+    metrics: ["9"90%+ Same-day completion", "84→90% Accepted as-is", "36% less after-hours"],
     outcome: "90%+ same-day completion · 84→90% Accepted as-is ·  36% less after-hours documentation",
     description: "Led the design of a clinical AI workflow that records visits, generates a first draft of documentation, and keeps clinicians in control before anything enters the medical record.",
     dark: "#3b0764",
