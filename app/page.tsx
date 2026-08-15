@@ -134,156 +134,125 @@ export default function Home() {
   className="relative w-full overflow-hidden"
   style={{
     background:
-      "linear-gradient(180deg, #faf5ff 0%, #f8f3ff 55%, #ffffff 100%)",
+      "linear-gradient(180deg, #faf5ff 0%, #f8f3ff 58%, #ffffff 100%)",
   }}
 >
-  {/* Soft ambient purple glow */}
-  <motion.div
-    className="absolute pointer-events-none"
-    style={{
-      width: "620px",
-      height: "620px",
-      top: "-300px",
-      right: "-120px",
-      borderRadius: "50%",
-      background:
-        "radial-gradient(circle, rgba(196,181,253,0.30) 0%, rgba(221,214,254,0.12) 40%, transparent 72%)",
-      filter: "blur(18px)",
-    }}
-    animate={{
-      x: [0, -25, 15, 0],
-      y: [0, 25, -10, 0],
-      scale: [1, 1.05, 0.98, 1],
-    }}
-    transition={{
-      duration: 18,
-      repeat: Infinity,
-      ease: "easeInOut",
-    }}
-  />
+  <FloatingOrbs />
 
-  {/* Secondary soft glow */}
-  <motion.div
-    className="absolute pointer-events-none"
-    style={{
-      width: "420px",
-      height: "420px",
-      bottom: "-260px",
-      left: "-160px",
-      borderRadius: "50%",
-      background:
-        "radial-gradient(circle, rgba(196,181,253,0.20) 0%, transparent 70%)",
-      filter: "blur(24px)",
-    }}
-    animate={{
-      x: [0, 30, -10, 0],
-      y: [0, -20, 10, 0],
-    }}
-    transition={{
-      duration: 20,
-      repeat: Infinity,
-      ease: "easeInOut",
-    }}
-  />
-
-  {/* Original-style dot grid */}
-  <motion.div
+  {/* Dot grid — fades to edges and bottom */}
+  <div
     className="absolute inset-0 pointer-events-none"
     style={{
       backgroundImage:
-        "radial-gradient(rgba(109,40,217,0.16) 1.4px, transparent 1.4px)",
+        "radial-gradient(rgba(109,40,217,0.16) 1.5px, transparent 1.5px)",
       backgroundSize: "28px 28px",
       maskImage:
-        "radial-gradient(ellipse 90% 80% at 50% 10%, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.25) 42%, transparent 76%)",
+        "radial-gradient(ellipse 90% 80% at 50% 10%, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.2) 40%, transparent 75%)",
       WebkitMaskImage:
-        "radial-gradient(ellipse 90% 80% at 50% 10%, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.25) 42%, transparent 76%)",
-    }}
-    animate={{
-      backgroundPosition: ["0px 0px", "28px 28px"],
-    }}
-    transition={{
-      duration: 16,
-      repeat: Infinity,
-      ease: "linear",
+        "radial-gradient(ellipse 90% 80% at 50% 10%, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.2) 40%, transparent 75%)",
     }}
   />
 
-  {/* Content */}
+  {/* Hero content */}
   <div className="relative max-w-4xl mx-auto px-8 pt-20 pb-20 md:pt-24 md:pb-24">
 
     {/* Name */}
     <FadeUp delay={0}>
-      <div className="mb-6">
+      <div className="mb-5">
         <span
           className="block italic leading-none"
           style={{
             fontFamily: "var(--font-instrument-serif)",
             fontWeight: 400,
-            fontSize: "clamp(1.6rem, 3.2vw, 2.3rem)",
+            fontSize: "clamp(1.6rem, 3.5vw, 2.4rem)",
             color: "#3b0764",
             letterSpacing: "0.01em",
           }}
         >
-          <CharReveal delay={0.05}>{"Rachana Tathed"}</CharReveal>
+          <CharReveal delay={0.05}>
+            {"Rachana Tathed"}
+          </CharReveal>
         </span>
       </div>
     </FadeUp>
 
-    {/* Headline */}
+    {/* Main headline */}
     <h1
-      className="font-black tracking-[-0.035em] leading-[0.98] mb-7"
+      className="font-black tracking-[-0.045em] leading-[0.96] mb-7"
       style={{
-        fontSize: "clamp(2.8rem, 7vw, 5.3rem)",
+        fontSize: "clamp(2.7rem, 6.5vw, 5rem)",
         color: "#0f172a",
       }}
     >
-      <WordReveal delay={0.35}>{"I design products that"}</WordReveal>
-      <br />
+      <span className="block">
+        <WordReveal delay={0.4}>{"I design"}</WordReveal>
+      </span>
 
-      <WordReveal delay={0.58}>{"simplify"}</WordReveal>{" "}
+      <span className="block">
+        <WordReveal delay={0.55}>{"products that"}</WordReveal>
+      </span>
 
-      <span style={{ color: "#3b0764" }}>
-        <WordReveal delay={0.72}>{"complex workflows."}</WordReveal>
+      <span className="block">
+        <WordReveal delay={0.7}>{"simplify complex"}</WordReveal>
+      </span>
+
+      <span
+        className="block"
+        style={{
+          color: "#3b0764",
+        }}
+      >
+        <WordReveal delay={0.85}>{"workflows"}</WordReveal>
       </span>
     </h1>
 
-    {/* Description */}
-    <FadeUp delay={0.95}>
+    {/* Body */}
+    <FadeUp delay={1.05}>
       <p
-        className="text-xl md:text-[1.4rem] leading-[1.5] mb-9 max-w-2xl"
+        className="text-xl md:text-[1.45rem] leading-[1.5] mb-9 max-w-2xl"
         style={{
           color: "#64748b",
-          letterSpacing: "-0.01em",
         }}
       >
-        I turn complexity into clear, useful experiences that help people
-        focus on what matters.
+        I turn complexity into clear,{" "}
+        <strong
+          style={{
+            color: "#1e293b",
+          }}
+        >
+          useful experiences
+        </strong>{" "}
+        that help people focus on what matters.
       </p>
     </FadeUp>
 
     {/* CTAs */}
-    <FadeUp delay={1.2}>
-      <div className="flex items-center gap-5">
+    <FadeUp delay={1.3}>
+      <div className="flex items-center gap-4">
         <MagneticButton
           href="#work"
           className="gap-3 px-8 py-4 text-sm font-bold rounded-full"
           style={{
             backgroundColor: "#3b0764",
-            color: "#ffffff",
+            color: "white",
             boxShadow:
-              "0 8px 28px rgba(59,7,100,0.18)",
+              "0 0 0 1px rgba(139,92,246,0.3), 0 8px 32px rgba(59,7,100,0.22)",
           }}
         >
           See the work
 
           <motion.span
-            animate={{ x: [0, 4, 0] }}
+            animate={{
+              x: [0, 5, 0],
+            }}
             transition={{
               repeat: Infinity,
-              duration: 1.6,
+              duration: 1.4,
               ease: "easeInOut",
             }}
-            style={{ display: "inline-block" }}
+            style={{
+              display: "inline-block",
+            }}
           >
             →
           </motion.span>
@@ -292,15 +261,17 @@ export default function Home() {
         <DrawUnderlineLink
           href="#about"
           className="text-sm font-semibold"
-          style={{ color: "#5b21b6" }}
+          style={{
+            color: "#5b21b6",
+          }}
         >
-          About
+          About me
         </DrawUnderlineLink>
       </div>
     </FadeUp>
+
   </div>
 </section>
-
         {/* ── MARQUEE ───────────────────────────────────────────────────────── */}
         <MarqueeBand />
 
