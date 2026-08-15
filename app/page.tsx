@@ -130,99 +130,176 @@ export default function Home() {
       <main className="pt-16">
 
         {/* ── HERO ──────────────────────────────────────────────────────────── */}
-        <section className="relative max-w-4xl mx-auto px-8 pt-20 pb-20 overflow-hidden">
-          <FloatingOrbs />
+<section
+  className="relative w-full overflow-hidden"
+  style={{
+    background:
+      "linear-gradient(180deg, #faf5ff 0%, #f8f3ff 55%, #ffffff 100%)",
+  }}
+>
+  {/* Soft ambient purple glow */}
+  <motion.div
+    className="absolute pointer-events-none"
+    style={{
+      width: "620px",
+      height: "620px",
+      top: "-300px",
+      right: "-120px",
+      borderRadius: "50%",
+      background:
+        "radial-gradient(circle, rgba(196,181,253,0.30) 0%, rgba(221,214,254,0.12) 40%, transparent 72%)",
+      filter: "blur(18px)",
+    }}
+    animate={{
+      x: [0, -25, 15, 0],
+      y: [0, 25, -10, 0],
+      scale: [1, 1.05, 0.98, 1],
+    }}
+    transition={{
+      duration: 18,
+      repeat: Infinity,
+      ease: "easeInOut",
+    }}
+  />
 
-          {/* Dot grid — fades to edges and bottom */}
-          <div
-            className="absolute inset-0 pointer-events-none -z-10"
-            style={{
-              backgroundImage: "radial-gradient(rgba(109,40,217,0.22) 1.5px, transparent 1.5px)",
-              backgroundSize: "28px 28px",
-              maskImage: "radial-gradient(ellipse 90% 80% at 50% 10%, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 40%, transparent 75%)",
-              WebkitMaskImage: "radial-gradient(ellipse 90% 80% at 50% 10%, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 40%, transparent 75%)",
+  {/* Secondary soft glow */}
+  <motion.div
+    className="absolute pointer-events-none"
+    style={{
+      width: "420px",
+      height: "420px",
+      bottom: "-260px",
+      left: "-160px",
+      borderRadius: "50%",
+      background:
+        "radial-gradient(circle, rgba(196,181,253,0.20) 0%, transparent 70%)",
+      filter: "blur(24px)",
+    }}
+    animate={{
+      x: [0, 30, -10, 0],
+      y: [0, -20, 10, 0],
+    }}
+    transition={{
+      duration: 20,
+      repeat: Infinity,
+      ease: "easeInOut",
+    }}
+  />
+
+  {/* Original-style dot grid */}
+  <motion.div
+    className="absolute inset-0 pointer-events-none"
+    style={{
+      backgroundImage:
+        "radial-gradient(rgba(109,40,217,0.16) 1.4px, transparent 1.4px)",
+      backgroundSize: "28px 28px",
+      maskImage:
+        "radial-gradient(ellipse 90% 80% at 50% 10%, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.25) 42%, transparent 76%)",
+      WebkitMaskImage:
+        "radial-gradient(ellipse 90% 80% at 50% 10%, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.25) 42%, transparent 76%)",
+    }}
+    animate={{
+      backgroundPosition: ["0px 0px", "28px 28px"],
+    }}
+    transition={{
+      duration: 16,
+      repeat: Infinity,
+      ease: "linear",
+    }}
+  />
+
+  {/* Content */}
+  <div className="relative max-w-4xl mx-auto px-8 pt-20 pb-20 md:pt-24 md:pb-24">
+
+    {/* Name */}
+    <FadeUp delay={0}>
+      <div className="mb-6">
+        <span
+          className="block italic leading-none"
+          style={{
+            fontFamily: "var(--font-instrument-serif)",
+            fontWeight: 400,
+            fontSize: "clamp(1.6rem, 3.2vw, 2.3rem)",
+            color: "#3b0764",
+            letterSpacing: "0.01em",
+          }}
+        >
+          <CharReveal delay={0.05}>{"Rachana Tathed"}</CharReveal>
+        </span>
+      </div>
+    </FadeUp>
+
+    {/* Headline */}
+    <h1
+      className="font-black tracking-[-0.035em] leading-[0.98] mb-7"
+      style={{
+        fontSize: "clamp(2.8rem, 7vw, 5.3rem)",
+        color: "#0f172a",
+      }}
+    >
+      <WordReveal delay={0.35}>{"I design products that"}</WordReveal>
+      <br />
+
+      <WordReveal delay={0.58}>{"simplify"}</WordReveal>{" "}
+
+      <span style={{ color: "#3b0764" }}>
+        <WordReveal delay={0.72}>{"complex workflows."}</WordReveal>
+      </span>
+    </h1>
+
+    {/* Description */}
+    <FadeUp delay={0.95}>
+      <p
+        className="text-xl md:text-[1.4rem] leading-[1.5] mb-9 max-w-2xl"
+        style={{
+          color: "#64748b",
+          letterSpacing: "-0.01em",
+        }}
+      >
+        I turn complexity into clear, useful experiences that help people
+        focus on what matters.
+      </p>
+    </FadeUp>
+
+    {/* CTAs */}
+    <FadeUp delay={1.2}>
+      <div className="flex items-center gap-5">
+        <MagneticButton
+          href="#work"
+          className="gap-3 px-8 py-4 text-sm font-bold rounded-full"
+          style={{
+            backgroundColor: "#3b0764",
+            color: "#ffffff",
+            boxShadow:
+              "0 8px 28px rgba(59,7,100,0.18)",
+          }}
+        >
+          See the work
+
+          <motion.span
+            animate={{ x: [0, 4, 0] }}
+            transition={{
+              repeat: Infinity,
+              duration: 1.6,
+              ease: "easeInOut",
             }}
-          />
+            style={{ display: "inline-block" }}
+          >
+            →
+          </motion.span>
+        </MagneticButton>
 
-          {/* Badge row */}
-          <FadeUp delay={0}>
-            <div className="flex items-center gap-3 mb-8">
-              <div className="inline-flex items-center gap-2.5 rounded-full px-4 py-1.5"
-                style={{ backgroundColor: "#faf5ff", border: "1.5px solid #d8b4fe" }}>
-                <motion.span
-                  className="w-1.5 h-1.5 rounded-full block shrink-0"
-                  style={{ backgroundColor: "#c4b5fd" }}
-                  animate={{ scale: [1, 1.7, 1], opacity: [1, 0.3, 1] }}
-                  transition={{ repeat: Infinity, duration: 2.4, ease: "easeInOut" }}
-                />
-                <span className="text-xs font-bold tracking-[0.14em] uppercase" style={{ color: "#3b0764" }}>Open to new roles</span>
-              </div>
-            </div>
-          </FadeUp>
-
-          {/* Name */}
-          <div className="mb-4">
-            <span
-              className="block italic leading-none"
-              style={{
-                fontFamily: "var(--font-instrument-serif)",
-                fontWeight: 400,
-                fontSize: "clamp(1.6rem, 3.5vw, 2.4rem)",
-                color: "#3b0764",
-                letterSpacing: "0.01em",
-              }}
-            >
-              <CharReveal delay={0.05}>{"Rachana Tathed"}</CharReveal>
-            </span>
-          </div>
-
-          {/* Main headline */}
-          <h1 className="font-black leading-[1.06] tracking-tight mb-8"
-            style={{ fontSize: "clamp(3.2rem, 8vw, 6rem)", color: "#0f172a" }}>
-            <WordReveal delay={0.4}>{"I design"}</WordReveal>{" "}
-            <WordReveal delay={0.55}>{"products that"}</WordReveal>{" "}
-            <WordReveal delay={0.7}>{"simplify"}</WordReveal>
-            <br />
-            <WordReveal delay={0.85}>{"complex"}</WordReveal>{" "}
-            <span style={{ color: "#3b0764" }}>
-              <WordReveal delay={1.0}>{"workflows"}</WordReveal>
-            </span>
-          </h1>
-
-          {/* Body */}
-          <FadeUp delay={1.2}>
-            <p className="text-xl leading-relaxed mb-10 max-w-lg" style={{ color: "#64748b" }}>
-              I turn complexity into clear,{" "}
-              <strong style={{ color: "#1e293b" }}>useful experiences that</strong> help people focus on what matters.
-            </p>
-          </FadeUp>
-
-
-          {/* CTAs */}
-          <FadeUp delay={1.5}>
-            <div className="flex items-center gap-4">
-              <MagneticButton
-                href="#work"
-                className="gap-3 px-8 py-4 text-sm font-bold rounded-full"
-                style={{ backgroundColor: "#3b0764", color: "white", boxShadow: "0 0 0 1px rgba(139,92,246,0.3), 0 8px 32px rgba(59,7,100,0.25)" }}
-              >
-                See the work
-                <motion.span
-                  animate={{ x: [0, 5, 0] }}
-                  transition={{ repeat: Infinity, duration: 1.4, ease: "easeInOut" }}
-                  style={{ display: "inline-block" }}
-                >→</motion.span>
-              </MagneticButton>
-              <DrawUnderlineLink
-                href="#about"
-                className="text-sm font-semibold"
-                style={{ color: "#5b21b6" }}
-              >
-                About me
-              </DrawUnderlineLink>
-            </div>
-          </FadeUp>
-        </section>
+        <DrawUnderlineLink
+          href="#about"
+          className="text-sm font-semibold"
+          style={{ color: "#5b21b6" }}
+        >
+          About
+        </DrawUnderlineLink>
+      </div>
+    </FadeUp>
+  </div>
+</section>
 
         {/* ── MARQUEE ───────────────────────────────────────────────────────── */}
         <MarqueeBand />
