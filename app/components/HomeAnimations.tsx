@@ -204,10 +204,8 @@ export type CaseData = {
   number: string;
   slug: string;
   title: string;
-  subtitle: string;
   role: string;
   tags: string[];
-  outcome: string;
   metrics: string[];
   description: string;
   dark: string;
@@ -255,7 +253,7 @@ export function WorkCard({ c, index }: { c: CaseData; index: number }) {
                   {c.title}
                 </h3>
               </div>
-              <p className="text-sm mb-2" style={{ color: "#94a3b8" }}>{c.subtitle}</p>
+            
               <p className="text-sm leading-relaxed mb-4" style={{ color: "#64748b" }}>{c.description}</p>
               <div className="flex flex-wrap gap-1.5">
                 {c.tags.slice(0, 2).map(t => (
