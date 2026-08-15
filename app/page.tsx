@@ -179,21 +179,21 @@ export default function Home() {
           {/* Main headline */}
           <h1 className="font-black leading-[1.06] tracking-tight mb-8"
             style={{ fontSize: "clamp(3.2rem, 8vw, 6rem)", color: "#0f172a" }}>
-            <WordReveal delay={0.4}>{"Designing"}</WordReveal>{" "}
-            <WordReveal delay={0.55}>{"products"}</WordReveal>{" "}
-            <WordReveal delay={0.7}>{"people"}</WordReveal>
+            <WordReveal delay={0.4}>{"I design"}</WordReveal>{" "}
+            <WordReveal delay={0.55}>{"products that"}</WordReveal>{" "}
+            <WordReveal delay={0.7}>{"simplify"}</WordReveal>
             <br />
-            <WordReveal delay={0.85}>{"trust"}</WordReveal>{" "}
+            <WordReveal delay={0.85}>{"complex"}</WordReveal>{" "}
             <span style={{ color: "#3b0764" }}>
-              <WordReveal delay={1.0}>{"to get it right."}</WordReveal>
+              <WordReveal delay={1.0}>{"workflows"}</WordReveal>
             </span>
           </h1>
 
           {/* Body */}
           <FadeUp delay={1.2}>
             <p className="text-xl leading-relaxed mb-10 max-w-lg" style={{ color: "#64748b" }}>
-              Senior Product Designer with 5 years of experience designing AI,{" "}
-              <strong style={{ color: "#1e293b" }}>decision-support, and enterprise</strong> workflows where people need to make accurate, high-stakes decisions.
+              I turn complexity into clear,{" "}
+              <strong style={{ color: "#1e293b" }}>useful experiences that</strong> help people focus on what matters.
             </p>
           </FadeUp>
 
