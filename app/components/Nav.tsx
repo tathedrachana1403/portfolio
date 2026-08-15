@@ -28,7 +28,7 @@ export default function Nav() {
             About
           </Link>
           <a
-            href="mailto:rachanaathed572@gmail.com"
+            href="mailto:tathedrachana14@gmail.com"
             className="text-sm text-gray-500 hover:text-gray-900 transition-colors"
           >
             Contact
@@ -89,7 +89,7 @@ export default function Nav() {
             About
           </Link>
           <a
-            href="mailto:rachanaathed572@gmail.com"
+            href="mailto:tathedrachana14@gmail.com"
             className="text-sm text-gray-700"
           >
             Contact

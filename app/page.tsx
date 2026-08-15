@@ -458,11 +458,11 @@ export default function Home() {
               </p>
               <div className="flex flex-wrap items-center gap-8 text-sm">
                 <DrawUnderlineLink
-                  href="mailto:rachanaathed@gmail.com"
+                  href="mailto:tathedrachana14@gmail.com"
                   className="text-sm font-medium transition-colors"
                   style={{ color: "#c4b5fd" }}
                 >
-                  rachanaathed@gmail.com
+                  tathedrachana14@gmail.com
                 </DrawUnderlineLink>
                 <DrawUnderlineLink
                   href="https://linkedin.com"
