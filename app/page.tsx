@@ -101,7 +101,7 @@ const leadership = [
   {
     tag: "AI Strategy",
     title: "AI Product Standards",
-    body: "Defined the verification first model for Ambient Notes — AI attribution, explicit approval gates, transfer-state visibility, and failure recovery.",
+    body: "Defined the verification first model for Ambient Notes AI attribution, explicit approval gates, transfer-state visibility, and failure recovery.",
     impact: "Documented the pattern and shared it with two product design teams building AI-assisted workflows.",
   },
   {
@@ -511,15 +511,15 @@ export default function Home() {
                 >
                   tathedrachana14@gmail.com
                 </DrawUnderlineLink>
-                <DrawUnderlineLink
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm font-medium transition-colors"
-                  style={{ color: "#c4b5fd" }}
-                >
-                  LinkedIn ↗
-                </DrawUnderlineLink>
+               <DrawUnderlineLink
+  href="https://www.linkedin.com/in/rachana-tathed-5355a317b/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="text-sm font-medium transition-colors"
+  style={{ color: "#c4b5fd" }}
+>
+  LinkedIn
+</DrawUnderlineLink>
               </div>
             </ScrollReveal>
           </div>
