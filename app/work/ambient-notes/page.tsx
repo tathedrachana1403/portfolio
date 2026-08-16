@@ -114,19 +114,29 @@ export default function AmbientNotes() {
           <Chip>Case Study 01 / 04 · Human-AI Interaction · Lead Designer</Chip>
 
           <div className="mt-8">
-            <h1
-              className="text-6xl md:text-8xl font-black leading-[0.95] tracking-tight mb-6"
-              style={{ color: DARK, textWrap: "balance" } as React.CSSProperties}
-            >
-              Ambient Notes
-            </h1>
-            <p className="text-xl text-slate-600 leading-relaxed mb-2">
-              Reducing documentation friction so clinicians can focus on patient care.
-            </p>
-            <p className="text-base text-slate-500 leading-relaxed mb-7">
-              Ambient Notes uses AI to capture patient visits and generate a first draft of clinical documentation, reducing manual charting while keeping clinicians in control of what enters the medical record.
-            </p>
+           <h1
+  className="text-6xl md:text-8xl font-black leading-[0.95] tracking-tight mb-6"
+  style={{ color: DARK, textWrap: "balance" } as React.CSSProperties}
+>
+  Ambient Notes
+</h1>
 
+<p className="text-xl text-slate-600 leading-relaxed mb-2">
+  Reducing documentation friction so clinicians can focus on patient care.
+</p>
+
+<p className="text-base text-slate-500 leading-relaxed mb-7">
+  Ambient Notes uses AI to capture patient visits and generate a first draft of clinical documentation, reducing manual charting while keeping clinicians in control of what enters the medical record.
+</p>
+
+{/* Project hero image */}
+<div className="w-full overflow-hidden rounded-2xl mb-12">
+  <img
+    src="/images/ambient/Hero.png"
+    alt="Ambient Notes"
+    className="w-full h-auto object-cover"
+  />
+</div>
             {/* Project details */}
             <div
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 pt-4"
