@@ -298,7 +298,8 @@ export default function Home() {
 </section>
 
         {/* ── LEADERSHIP ────────────────────────────────────────────────────── */}
-        <section className="py-16" style={{ backgroundColor: "#f8fafc", borderTop: "1px solid #e2e8f0", borderBottom: "1px solid #e2e8f0" }}>
+        {false && (
+  <section className="py-16" style={{ backgroundColor: "#f8fafc", borderTop: "1px solid #e2e8f0", borderBottom: "1px solid #e2e8f0" }}>
           <div className="max-w-4xl mx-auto px-8">
             <ScrollReveal>
   <p
@@ -352,6 +353,7 @@ export default function Home() {
             </div>
           </div>
         </section>
+)}
 
         {/* ── ABOUT ─────────────────────────────────────────────────────────── */}
         <section id="about" className="max-w-4xl mx-auto px-8 py-16">
