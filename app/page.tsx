@@ -90,14 +90,7 @@ const cases: CaseData[] = [
   },
 ];
 
-const stats = [
-  { value: "1M+",    label: "Patient encounters",         note: "Ambient Notes" },
-  { value: "209K+",  label: "Monthly active users",       note: "athenaText" },
-  { value: "40%",    label: "Fewer billing errors",       note: "BPO Coding" },
-  { value: "33.4%",  label: "Fewer claim rejections",     note: "BPO Coding" },
-  { value: "3.6m",   label: "Saved per encounter",        note: "Ambient Notes" },
-  { value: "$100K+", label: "Annual savings unlocked",    note: "athenaText" },
-];
+
 
 const leadership = [
   {
