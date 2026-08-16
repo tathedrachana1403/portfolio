@@ -17,7 +17,7 @@ export type CaseData = {
   border: string;
   muted: string;
   barColor: string;
-  image: string;
+  image?: string;
 };
 
 // ─── Scroll progress bar ──────────────────────────────────────────────────────
