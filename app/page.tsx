@@ -301,17 +301,28 @@ export default function Home() {
         <section className="py-16" style={{ backgroundColor: "#f8fafc", borderTop: "1px solid #e2e8f0", borderBottom: "1px solid #e2e8f0" }}>
           <div className="max-w-4xl mx-auto px-8">
             <ScrollReveal>
-              <p className="font-black mb-5" style={{ fontSize: "clamp(0.95rem, 1.5vw, 1.1rem)", color: "#5b21b6", letterSpacing: "0.06em", textTransform: "uppercase" }}>
-                Leadership
-              </p>
-              <h2 className="font-black leading-tight mb-3" style={{ fontSize: "clamp(2.5rem, 5vw, 3.8rem)", color: "#0f172a" }}>
-                Work that moved{" "}
-                <span style={{ fontFamily: "var(--font-instrument-serif)", fontWeight: 400, fontStyle: "italic", color: "#5b21b6" }}>beyond the brief.</span>
-              </h2>
-              <p className="text-base mb-10 max-w-xl leading-relaxed" style={{ color: "#64748b" }}>
-                Some work ships a feature. Some work changes how a team thinks. These are the latter.
-              </p>
-            </ScrollReveal>
+  <p
+    className="font-black mb-5"
+    style={{
+      fontSize: "clamp(0.95rem, 1.5vw, 1.1rem)",
+      color: "#5b21b6",
+      letterSpacing: "0.06em",
+      textTransform: "uppercase",
+    }}
+  >
+    Leadership
+  </p>
+
+  <h2
+    className="font-black leading-tight mb-10"
+    style={{
+      fontSize: "clamp(2.5rem, 5vw, 3.8rem)",
+      color: "#0f172a",
+    }}
+  >
+    Beyond the brief.
+  </h2>
+</ScrollReveal>
 
             <div className="grid grid-cols-1 md:grid-cols-3 items-stretch" style={{ borderTop: "2px solid #5b21b6", borderLeft: "1px solid #d8b4fe" }}>
               {leadership.map((item, i) => (
