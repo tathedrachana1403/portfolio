@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
+import ambientHero from "../images/ambient/Hero.png";
 import {
   FadeUp,
   WordReveal,
@@ -24,20 +25,21 @@ import { motion } from "framer-motion";
 // Per-project brand colors pulled from their actual pages
 const cases: CaseData[] = [
   {
-    number: "01",
-    slug: "ambient-notes",
-    title: "Ambient Notes",
-    role: "Lead Product Designer · 0→1",
-    tags: [],
-    metrics: [],
-    description:
-      "Led the design of an AI-assisted clinical documentation workflow that helped clinicians reduce documentation burden, with 90%+ of documentation completed the same day.",
-    dark: "#3b0764",
-    soft: "#faf5ff",
-    border: "#d8b4fe",
-    muted: "#ede9fe",
-    barColor: "#a855f7",
-  },
+  number: "01",
+  slug: "ambient-notes",
+  title: "Ambient Notes",
+  role: "Lead Product Designer · 0→1",
+  tags: [],
+  metrics: [],
+  image: "/images/ambient/Hero.png",
+  description:
+    "Led the design of an AI-assisted clinical documentation workflow that helped clinicians reduce documentation burden, with 90%+ of documentation completed the same day.",
+  dark: "#3b0764",
+  soft: "#faf5ff",
+  border: "#d8b4fe",
+  muted: "#ede9fe",
+  barColor: "#a855f7",
+},
 
   {
     number: "02",

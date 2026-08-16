@@ -4,6 +4,22 @@ import { motion, useInView, useScroll, useSpring, useMotionValue, useAnimation, 
 import { useRef, useEffect, useState, useCallback } from "react";
 import Link from "next/link";
 
+export type CaseData = {
+  number: string;
+  slug: string;
+  title: string;
+  role: string;
+  tags: string[];
+  metrics: string[];
+  description: string;
+  dark: string;
+  soft: string;
+  border: string;
+  muted: string;
+  barColor: string;
+  image: string;
+};
+
 // ─── Scroll progress bar ──────────────────────────────────────────────────────
 export function ScrollProgressBar() {
   const { scrollYProgress } = useScroll();
@@ -199,103 +215,112 @@ export function ScrollReveal({
   );
 }
 
-// ─── CaseData type ────────────────────────────────────────────────────────────
-export type CaseData = {
-  number: string;
-  slug: string;
-  title: string;
-  role: string;
-  tags: string[];
-  metrics: string[];
-  description: string;
-  dark: string;
-  soft: string;
-  border: string;
-  muted: string;
-  barColor: string;
-};
-
 // ─── WorkCard ─────────────────────────────────────────────────────────────────
-export function WorkCard({ c, index }: { c: CaseData; index: number }) {
+export function WorkCard({
+  c,
+  index,
+}: {
+  c: CaseData;
+  index: number;
+}) {
   const [hovered, setHovered] = useState(false);
 
   return (
     <ScrollReveal direction="up" delay={index * 0.07}>
       <Link href={`/work/${c.slug}`} className="block group">
         <motion.div
-          className="relative rounded-xl overflow-hidden my-2"
+          className="relative overflow-hidden rounded-xl my-2 cursor-pointer"
           style={{
             border: `1px solid ${hovered ? c.border : "#e2e8f0"}`,
             backgroundColor: hovered ? c.soft : "#ffffff",
-            transition: "background-color 0.2s, border-color 0.2s",
           }}
+          animate={{
+            y: hovered ? -3 : 0,
+            boxShadow: hovered
+              ? "0 10px 26px rgba(15, 23, 42, 0.08)"
+              : "0 2px 8px rgba(15, 23, 42, 0.03)",
+          }}
+          transition={{ duration: 0.2 }}
           onHoverStart={() => setHovered(true)}
           onHoverEnd={() => setHovered(false)}
         >
-          {/* Left accent bar */}
+
+          {/* Accent bar */}
           <motion.div
-            className="absolute left-0 top-0 bottom-0 w-[4px] rounded-l-xl"
+            className="absolute left-0 top-0 bottom-0 z-20 w-[4px]"
             style={{ backgroundColor: c.barColor }}
             animate={{ opacity: hovered ? 1 : 0.2 }}
             transition={{ duration: 0.2 }}
           />
 
-          <div className="flex flex-col sm:flex-row items-stretch pl-5">
-
-            {/* Left: number + title + subtitle + description + tags */}
-            <div className="flex-1 min-w-0 py-5 pr-6">
-              <div className="flex items-center gap-2.5 mb-2">
-                <span
-                  className="text-[10px] font-black tabular-nums shrink-0 px-2 py-0.5 rounded-full"
-                  style={{ backgroundColor: c.muted, color: c.barColor }}
-                >{c.number}</span>
-                <h3 className="font-black leading-snug" style={{ fontSize: "clamp(1rem, 2vw, 1.2rem)", color: "#0f172a" }}>
-                  {c.title}
-                </h3>
-              </div>
-            
-              <p className="text-sm leading-relaxed mb-4" style={{ color: "#64748b" }}>{c.description}</p>
-              <div className="flex flex-wrap gap-1.5">
-                {c.tags.slice(0, 2).map(t => (
-                  <span
-                    key={t}
-                    className="text-xs px-2.5 py-1 rounded-full font-medium"
-                    style={{ backgroundColor: "#f8fafc", color: "#475569", border: "1px solid #e2e8f0" }}
-                  >{t}</span>
-                ))}
-              </div>
-            </div>
-
-            {/* Right: metrics + CTA — full height, tinted */}
-            <div
-              className="work-card-metrics shrink-0 w-full sm:w-48 flex flex-col justify-between py-5 px-5"
-              style={{
-                borderLeft: `1px solid ${hovered ? c.border : "#e2e8f0"}`,
-                backgroundColor: hovered ? c.muted : "#f8fafc",
-                transition: "background-color 0.2s, border-color 0.2s",
+          {/* ─── PROJECT IMAGE ──────────────────────────────────────────── */}
+<div className="relative w-full aspect-[2/1] overflow-hidden">
+  <motion.img
+    src={c.image}
+    alt={c.title}
+    className="absolute inset-0 w-full h-full object-cover"
+    animate={{
+      scale: hovered ? 1.035 : 1,
+    }}
+    transition={{
+      duration: 0.35,
+      ease: "easeOut",
+    }}
+  />
+            <motion.div
+              className="absolute inset-0"
+              animate={{
+                backgroundColor: hovered
+                  ? "rgba(15, 23, 42, 0.08)"
+                  : "rgba(15, 23, 42, 0)",
               }}
+              transition={{ duration: 0.2 }}
+            />
+
+            {/* Arrow appears only on hover */}
+            <motion.div
+              className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white flex items-center justify-center shadow-sm"
+              animate={{
+                opacity: hovered ? 1 : 0,
+                scale: hovered ? 1 : 0.85,
+              }}
+              transition={{ duration: 0.2 }}
+              style={{ color: c.barColor }}
             >
-              <div className="space-y-2">
-                {c.metrics.map(m => (
-                  <motion.div
-                    key={m}
-                    className="text-xs font-bold tabular-nums leading-snug"
-                    animate={{ color: hovered ? c.barColor : "#64748b" }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    {m}
-                  </motion.div>
-                ))}
-              </div>
-              <motion.span
-                className="inline-flex items-center gap-1 text-xs font-bold mt-4"
-                animate={{ x: hovered ? 3 : 0, opacity: hovered ? 1 : 0.4 }}
-                transition={{ duration: 0.18 }}
+              →
+            </motion.div>
+          </div>
+
+          {/* ─── PROJECT TEXT ───────────────────────────────────────────── */}
+          <div className="px-6 py-5">
+
+            {/* Project number + name */}
+            <div className="flex items-center gap-3 mb-2">
+              <span
+                className="text-[10px] font-black tabular-nums"
                 style={{ color: c.barColor }}
               >
-                View case study →
-              </motion.span>
+                {c.number}
+              </span>
+
+              <h3
+                className="font-black leading-tight"
+                style={{
+                  fontSize: "clamp(1.2rem, 2.3vw, 1.5rem)",
+                  color: "#0f172a",
+                }}
+              >
+                {c.title}
+              </h3>
             </div>
+
+            {/* Larger description */}
+            <p
+              className="text-xl leading-relaxed max-w-4xl"
+              style={{ color: "#64748b" }}
+            >
+              {c.description}
+            </p>
 
           </div>
         </motion.div>
