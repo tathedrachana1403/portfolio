@@ -270,29 +270,7 @@ export default function Home() {
         {/* ── MARQUEE ───────────────────────────────────────────────────────── */}
         <MarqueeBand />
 
-        {/* ── STATS ─────────────────────────────────────────────────────────── */}
-        <section style={{ backgroundColor: "#0f0a1e" }}>
-          <div className="max-w-4xl mx-auto px-8 py-14">
-            <ScrollReveal>
-              <p className="font-black mb-5" style={{ fontSize: "clamp(0.95rem, 1.5vw, 1.1rem)", color: "#a78bfa", letterSpacing: "0.06em", textTransform: "uppercase" }}>
-                Impact
-              </p>
-              <h2 className="font-black leading-tight mb-3" style={{ fontSize: "clamp(2.5rem, 5vw, 3.8rem)", color: "#f8fafc" }}>
-                Real numbers.{" "}
-                <span style={{ fontFamily: "var(--font-instrument-serif)", fontWeight: 400, fontStyle: "italic", color: "#c4b5fd" }}>Shipped products.</span>
-              </h2>
-              <p className="text-base mb-10" style={{ color: "#6d6a85" }}>Not projections. Not prototypes.</p>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-px" style={{ backgroundColor: "#2d1f4e" }}>
-                {stats.map(s => (
-                  <div key={s.label} style={{ backgroundColor: "#0f0a1e" }}>
-                    <CountStat value={s.value} label={s.label} note={s.note} dark />
-                  </div>
-                ))}
-              </div>
-            </ScrollReveal>
-          </div>
-        </section>
-
+        
         {/* ── SELECTED WORK ─────────────────────────────────────────────────── */}
         <section id="work" className="max-w-4xl mx-auto px-8 pt-16 pb-16">
           <ScrollReveal>
