@@ -276,23 +276,26 @@ export default function Home() {
         
         {/* ── SELECTED WORK ─────────────────────────────────────────────────── */}
         <section id="work" className="max-w-4xl mx-auto px-8 pt-16 pb-16">
-          <ScrollReveal>
-            <p className="font-black mb-5" style={{ fontSize: "clamp(0.95rem, 1.5vw, 1.1rem)", color: "#5b21b6", letterSpacing: "0.06em", textTransform: "uppercase" }}>
-              Selected Work
-            </p>
-            <h2 className="font-black leading-tight mb-3" style={{ fontSize: "clamp(2.5rem, 5vw, 3.8rem)", color: "#0f172a" }}>
-              Work that ships.{" "}
-              <span style={{ fontFamily: "var(--font-instrument-serif)", fontWeight: 400, fontStyle: "italic", color: "#5b21b6" }}>Work that sticks.</span>
-            </h2>
-            <p className="text-base mb-10 max-w-xl" style={{ color: "#94a3b8" }}>
-        
-            </p>
-          </ScrollReveal>
+  <ScrollReveal>
+    <p
+      className="font-black mb-8"
+      style={{
+        fontSize: "clamp(0.95rem, 1.5vw, 1.1rem)",
+        color: "#5b21b6",
+        letterSpacing: "0.06em",
+        textTransform: "uppercase",
+      }}
+    >
+      Selected Work
+    </p>
+  </ScrollReveal>
 
-          <div className="space-y-2">
-            {cases.map((c, i) => <WorkCard key={c.slug} c={c} index={i} />)}
-          </div>
-        </section>
+  <div className="space-y-2">
+    {cases.map((c, i) => (
+      <WorkCard key={c.slug} c={c} index={i} />
+    ))}
+  </div>
+</section>
 
         {/* ── LEADERSHIP ────────────────────────────────────────────────────── */}
         <section className="py-16" style={{ backgroundColor: "#f8fafc", borderTop: "1px solid #e2e8f0", borderBottom: "1px solid #e2e8f0" }}>

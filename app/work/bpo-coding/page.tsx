@@ -99,16 +99,26 @@ export default function BPOCoding() {
           >
             BPO AI Medical Coding Assistant
           </h1>
-          <p className="text-lg text-slate-500 leading-relaxed mb-2">
-            Reducing cognitive load behind high-volume coding decisions.
-          </p>
-          <p className="text-base text-slate-500 leading-relaxed mb-10">
-            Medical coders turn clinical charts into insurance claims while
-            working against strict accuracy and turnaround targets. I designed a
-            rules-driven assistant that brought relevant coding guidance into
-            the chart, kept recommendations editable, and captured the rationale
-            behind changes for QA review.
-          </p>
+
+<p className="text-lg text-slate-500 leading-relaxed mb-2">
+  Reducing cognitive load behind high-volume coding decisions.
+</p>
+
+<p className="text-base text-slate-500 leading-relaxed mb-10">
+  Medical coders turn clinical charts into insurance claims while
+  working against strict accuracy and turnaround targets. I designed a
+  rules-driven assistant that brought relevant coding guidance into
+  the chart, kept recommendations editable, and captured the rationale
+  behind changes for QA review.
+</p>
+
+<div className="w-full overflow-hidden rounded-2xl mb-12">
+  <img
+    src="/images/bpo/Hero.png"
+    alt="BPO AI Medical Coding Assistant"
+    className="w-full h-auto object-cover"
+  />
+</div>
 
           {/* Project details */}
           <div

@@ -43,14 +43,38 @@ export default function PracticeFiles() {
         </div>
 
         {/* HERO */}
-        <div className="max-w-4xl mx-auto px-8 pt-10 pb-16">
-          <p className="text-xs font-bold tracking-[0.16em] uppercase mb-4" style={{ color: "#64748b" }}>Enterprise Operations · Document Systems · Workflow Design</p>
-          <h1 className="text-5xl md:text-6xl font-black leading-[1.0] tracking-tight mb-5" style={{ color: DARK }}>
-            Practice Files
-          </h1>
-          <p className="text-lg text-slate-500 leading-relaxed mb-10 max-w-2xl">
-            Turning a file table into a workflow built for high-volume operations.
-          </p>
+       <div className="max-w-4xl mx-auto px-8 pt-10 pb-16">
+  <p
+    className="text-xs font-bold tracking-[0.16em] uppercase mb-4"
+    style={{ color: "#64748b" }}
+  >
+    Enterprise Operations · Document Systems · Workflow Design
+  </p>
+
+  <h1
+    className="text-5xl md:text-6xl font-black leading-[1.0] tracking-tight mb-5"
+    style={{ color: DARK }}
+  >
+    Practice Files
+  </h1>
+
+  <p className="text-lg text-slate-500 leading-relaxed mb-2">
+    Turning a file table into a workflow built for high-volume operations.
+  </p>
+
+  <p className="text-base text-slate-500 leading-relaxed mb-10 max-w-2xl">
+    I redesigned file management for Customer Success and Operations teams,
+    making it easier to find, manage, and track documents across high-volume
+    workflows while reducing file-management time by 40%.
+  </p>
+
+  <div className="w-full overflow-hidden rounded-2xl mb-12">
+    <img
+      src="/images/practice/Hero.png"
+      alt="Practice Files"
+      className="w-full h-auto object-cover"
+    />
+  </div>
 
           {/* Meta row */}
 {/* Meta row */}

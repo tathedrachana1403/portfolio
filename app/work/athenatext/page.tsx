@@ -47,31 +47,49 @@ export default function AthenaText() {
         </div>
 
         {/* HERO */}
-        <div className="max-w-4xl mx-auto px-8 pt-10 pb-16">
-          <p className="text-xs font-bold tracking-[0.16em] uppercase mb-4" style={{ color: "#64748b" }}>Enterprise Communication · Workflow Design · Product Strategy</p>
-          <h1 className="text-5xl md:text-6xl font-black leading-[1.0] tracking-tight mb-5" style={{ color: DARK }}>
-            athenaText
-          </h1>
-          <p className="text-lg text-slate-500 leading-relaxed mb-10 max-w-2xl">
-            Turning 300+ customer requests into a clearer communication experience.
-          </p>
+<div className="max-w-4xl mx-auto px-8 pt-10 pb-16">
+  <p
+    className="text-xs font-bold tracking-[0.16em] uppercase mb-4"
+    style={{ color: "#64748b" }}
+  >
+    Enterprise Communication · Workflow Design · Product Strategy
+  </p>
 
-          {/* Project details */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 pt-4 mb-12" style={{ borderTop: `1px solid ${BORDER}` }}>
+  <h1
+    className="text-5xl md:text-6xl font-black leading-[1.0] tracking-tight mb-5"
+    style={{ color: DARK }}
+  >
+    athenaText
+  </h1>
+
+  <p className="text-lg text-slate-500 leading-relaxed mb-2">
+    Turning 300+ customer requests into a clearer communication experience.
+  </p>
+
+  <p className="text-base text-slate-500 leading-relaxed mb-10 max-w-2xl">
+    I synthesized customer requests and research insights to identify the
+    highest-impact opportunities, shaping a clearer communication experience
+    and prioritizing capabilities that addressed real workflow needs.
+  </p>
+
+  <div className="w-full overflow-hidden rounded-2xl mb-12">
+    <img
+      src="/images/atext/Hero.png"
+      alt="athenaText"
+      className="w-full h-auto object-cover"
+    />
+  </div>
+          {/* Meta row */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12" style={{ borderTop: `1px solid ${BORDER}`, paddingTop: "2rem" }}>
             {[
-              { label: "My role", value: "Product Designer - owned research synthesis, UX strategy, information architecture, experience design, and product direction" },
-              { label: "Team", value: "Product Management, Engineering, Research, Customer/Business Stakeholders, Design" },
-              { label: "Timeline", value: "6 Months" },
-              { label: "Scope", value: "Synthesizing 300+ customer signals, identifying opportunities, communication workflows, search, and roadmap direction" },
-              { label: "Constraints", value: "Fragmented customer needs, competing priorities, legacy workflows, technical constraints, and limited resources" },
-            ].map((m, i) => (
-              <div
-                key={m.label}
-                className="p-4"
-                style={{ borderLeft: i > 0 ? `1px solid ${BORDER}` : "none" }}
-              >
-                <p className="text-xs font-black tracking-[0.14em] uppercase mb-1.5" style={{ color: DARK }}>{m.label}</p>
-                <p className="text-sm font-medium leading-relaxed text-slate-500">{m.value}</p>
+              { label: "Role",     value: "Lead Product Designer" },
+              { label: "Scale",    value: "209,604 MAU · 20.21M msg/month" },
+              { label: "Research", value: "300+ VOC · 102 survey · 14 interviews · Amplitude" },
+              { label: "Platform", value: "Desktop web · Mobile · Practice management SaaS" },
+            ].map(m => (
+              <div key={m.label}>
+                <p className="text-xs font-bold tracking-[0.14em] uppercase mb-2 text-slate-400">{m.label}</p>
+                <p className="text-sm font-medium leading-snug" style={{ color: DARK }}>{m.value}</p>
               </div>
             ))}
           </div>
