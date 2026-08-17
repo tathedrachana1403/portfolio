@@ -4,6 +4,7 @@ import Link from "next/link";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import ambientHero from "../images/ambient/Hero.png";
+
 import {
   FadeUp,
   WordReveal,

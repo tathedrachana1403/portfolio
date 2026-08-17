@@ -20,7 +20,7 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "Rachana Tathed, Senior UX/UI Designer",
+  title: "Rachna Tathed, Senior UX/UI Designer",
   description:
     "Senior UX/UI Designer specialising in complex enterprise workflows, human-AI systems, and operational platforms.",
 };
