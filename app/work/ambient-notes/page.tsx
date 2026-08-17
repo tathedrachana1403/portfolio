@@ -191,14 +191,12 @@ export default function AmbientNotes() {
 
           {/* Impact stats */}
           <div className="rounded-2xl px-8 py-7 mt-12" style={{ backgroundColor: DARK, boxShadow: DARK_SHADOW }}>
-            <div className="grid grid-cols-3 md:grid-cols-6 divide-x" style={{ borderColor: "rgba(255,255,255,0.08)" }}>
+            <div className="grid grid-cols-2 md:grid-cols-4 divide-x" style={{ borderColor: "rgba(255,255,255,0.08)" }}>
               {[
-                { v: "90%+",     l: "Same-day completion" },
-                { v: "3.6 min",  l: "Saved per encounter" },
-                { v: "36%",      l: "Less after-hours work" },
-                { v: "84 to 90%",   l: "AI sections accepted" },
-                { v: "~60K hrs", l: "Clinician time returned" },
-                { v: "1M+",      l: "Patient encounters" },
+                { v: "90%+",     l: "Clinical documentation completed same day" },
+                { v: "36%",      l: "Less after-hours documentation" },
+                { v: "84 → 90%", l: "AI-generated sections accepted" },
+                { v: "~60K hrs", l: "Clinician time saved" },
               ].map((s) => (
                 <div key={s.l} className="text-center py-4 px-3">
                   <p className="text-3xl font-black text-white mb-1.5 tabular-nums">{s.v}</p>
