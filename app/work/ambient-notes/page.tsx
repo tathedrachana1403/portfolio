@@ -101,42 +101,56 @@ export default function AmbientNotes() {
       <main className="pt-16 min-h-screen" style={{ backgroundColor: "#faf8ff" }}>
 
         {/* BREADCRUMB */}
-        <div className="max-w-7xl mx-auto px-16 pt-10 pb-0">
-          <div className="flex items-center gap-2 text-2xl font-medium" style={{ color: "#94a3b8" }}>
-            <Link href="/" className="hover:opacity-60 transition-opacity" style={{ color: DARK }}>Home</Link>
-            <span>/</span>
-            <span>Ambient Notes</span>
-          </div>
-        </div>
+        <div className="w-full px-4 sm:px-6 lg:px-8 pt-6">
+  <div className="flex items-center gap-2 text-sm">
+    <Link
+      href="/"
+      className="text-slate-500 hover:text-slate-900 transition-colors"
+    >
+      Home
+    </Link>
 
-        {/* ── HERO ─────────────────────────────────── */}
-        <div className="max-w-7xl mx-auto px-16 pt-10 pb-14">
-          <Chip>Case Study 01 / 04 · Human-AI Interaction · Lead Designer</Chip>
+    <span className="text-slate-300">/</span>
 
-          <div className="mt-8">
-           <h1
-  className="text-6xl md:text-8xl font-black leading-[0.95] tracking-tight mb-6"
-  style={{ color: DARK, textWrap: "balance" } as React.CSSProperties}
->
-  Ambient Notes
-</h1>
-
-<p className="text-xl text-slate-600 leading-relaxed mb-2">
-  Reducing documentation friction so clinicians can focus on patient care.
-</p>
-
-<p className="text-base text-slate-500 leading-relaxed mb-7">
-  Ambient Notes uses AI to capture patient visits and generate a first draft of clinical documentation, reducing manual charting while keeping clinicians in control of what enters the medical record.
-</p>
-
-{/* Project hero image */}
-<div className="w-full overflow-hidden rounded-2xl mb-12">
-  <img
-    src="/images/ambient/Hero.png"
-    alt="Ambient Notes"
-    className="w-full h-auto object-cover"
-  />
+    <span className="text-slate-400">
+      Ambient Notes
+    </span>
+  </div>
 </div>
+
+       {/* ── HERO ─────────────────────────────────── */}
+<div className="w-full px-4 sm:px-6 lg:px-8 pt-3 pb-14">
+  <Chip>Case Study 01 / 04 · Lead Product Designer</Chip>
+
+  <div className="mt-8">
+    <h1
+      className="font-black leading-[1.05] tracking-tight mb-5"
+      style={{
+        fontSize: "clamp(2rem, 3.5vw, 3.5rem)",
+        color: DARK,
+        textWrap: "balance",
+      } as React.CSSProperties}
+    >
+      Reducing the burden of clinical documentation.
+    </h1>
+
+    <p
+      className="text-xl md:text-2xl leading-relaxed mb-8"
+      style={{ color: "#64748b" }}
+    >
+      Ambient Notes uses AI to capture patient visits and draft clinical notes,
+      helping clinicians spend less time documenting and more time with
+      patients.
+    </p>
+
+    {/* Project hero image */}
+    <div className="w-full overflow-hidden rounded-2xl mb-12">
+      <img
+        src="/images/ambient/Hero.png"
+        alt="Ambient Notes"
+        className="w-full h-auto object-cover"
+      />
+    </div>
             {/* Project details */}
             <div
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 pt-4"
