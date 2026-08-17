@@ -356,109 +356,133 @@ export default function Home() {
 )}
 
         {/* ── ABOUT ─────────────────────────────────────────────────────────── */}
-        <section id="about" className="max-w-4xl mx-auto px-8 py-16">
+<section id="about" className="max-w-4xl mx-auto px-8 py-16">
 
-          {/* Header */}
-          <ScrollReveal>
-            <p className="font-black mb-5" style={{ fontSize: "clamp(0.95rem, 1.5vw, 1.1rem)", color: "#5b21b6", letterSpacing: "0.06em", textTransform: "uppercase" }}>
-              About
+  {/* Section heading */}
+  <ScrollReveal>
+    <p
+      className="font-black mb-8"
+      style={{
+        fontSize: "clamp(0.95rem, 1.5vw, 1.1rem)",
+        color: "#5b21b6",
+        letterSpacing: "0.06em",
+        textTransform: "uppercase",
+      }}
+    >
+      About
+    </p>
+  </ScrollReveal>
+
+  {/* About + Experience */}
+  <ScrollReveal delay={0.08}>
+    <div
+      className="rounded-2xl overflow-hidden"
+      style={{
+        border: "1px solid #e2e8f0",
+      }}
+    >
+      <div className="grid grid-cols-1 lg:grid-cols-[1.7fr_1fr]">
+
+        {/* Left: About */}
+        <div className="p-7 md:p-8">
+
+          <p className="text-base md:text-[1.05rem] text-slate-600 leading-relaxed mb-5">
+            Nearly 5 years designing enterprise SaaS at athenahealth.
+          </p>
+
+          <p className="text-base text-slate-500 leading-relaxed mb-5">
+            I’m drawn to problems that aren’t well defined yet. My strength is
+            making sense of complex workflows, understanding the real problem,
+            and shaping it into a clear design direction.
+          </p>
+
+          <p className="text-base text-slate-500 leading-relaxed mb-5">
+            I use research, data, and business needs to understand the problem
+            from different angles. That work often challenges assumptions,
+            uncovers opportunities the roadmap missed, and changes what we
+            decide to build — with outcomes that matter to both users and the
+            business.
+          </p>
+
+          <p className="text-base text-slate-500 leading-relaxed">
+            I work closely with product, engineering, and domain experts to
+            challenge assumptions, make complex problems clearer, and turn them
+            into thoughtful, useful experiences.
+          </p>
+
+        </div>
+
+        {/* Right: Experience */}
+        <div
+          className="p-7 md:p-8"
+          style={{
+            backgroundColor: "#faf5ff",
+            borderLeft: "1px solid #e2e8f0",
+          }}
+        >
+
+          <p
+            className="text-sm font-bold tracking-[0.12em] uppercase mb-6"
+            style={{
+              color: "#5b21b6",
+            }}
+          >
+            Experience
+          </p>
+
+          <p
+            className="text-sm font-semibold mb-5"
+            style={{
+              color: "#5b21b6",
+            }}
+          >
+            athenahealth
+          </p>
+
+          {/* Senior */}
+          <div className="mb-6">
+            <p
+              className="text-base font-black"
+              style={{
+                color: "#0f172a",
+              }}
+            >
+              Senior Product Designer
             </p>
-            <h2 className="font-black leading-tight mb-0" style={{ fontSize: "clamp(2.5rem, 5vw, 3.8rem)", color: "#0f172a" }}>
-              Rachana{" "}
-              <span style={{ fontFamily: "var(--font-instrument-serif)", fontWeight: 400, fontStyle: "italic", color: "#3b0764" }}>Tathed.</span>
-            </h2>
-          </ScrollReveal>
 
-          {/* Pull quote */}
-          <ScrollReveal delay={0.05}>
-            <div className="mt-8 mb-10 pl-5" style={{ borderLeft: "3px solid #d8b4fe" }}>
-              <p
-                style={{
-                  fontFamily: "var(--font-instrument-serif)",
-                  fontWeight: 400,
-                  fontStyle: "italic",
-                  fontSize: "clamp(1.2rem, 2.5vw, 1.6rem)",
-                  color: "#3b0764",
-                  lineHeight: 1.4,
-                }}
-              >
-                "My strongest work is not just designing interfaces it's improving the quality of decisions teams make around them."
-              </p>
-            </div>
-          </ScrollReveal>
+            <p className="text-sm text-slate-500 mt-1">
+              Jul 2024 – Jun 2026
+            </p>
+          </div>
 
-          {/* Two-col body */}
-          <ScrollReveal delay={0.08}>
-            <div className="rounded-2xl overflow-hidden mt-8" style={{ border: "1px solid #e2e8f0" }}>
-              <div className="grid md:grid-cols-2">
+          {/* Associate */}
+          <div
+            className="pt-5"
+            style={{
+              borderTop: "1px solid #ede9fe",
+            }}
+          >
+            <p
+              className="text-base font-black"
+              style={{
+                color: "#0f172a",
+              }}
+            >
+              Associate Product Designer
+            </p>
 
-                {/* Left: bio */}
-                <div className="p-7" style={{ borderRight: "1px solid #e2e8f0" }}>
-                  <p className="text-sm font-bold tracking-[0.12em] uppercase mb-4" style={{ color: "#c4b5fd" }}>About</p>
-                  <p className="text-base text-slate-600 leading-relaxed mb-3">
-                    5 years of designing <strong className="text-slate-800">enterprise products</strong> at athenahealth across AI-assisted workflows, clinical decision support, communication, and operational systems.
-                  </p>
-                  <p className="text-base text-slate-500 leading-relaxed mb-6">
-                    I work across AI, operations, and complex systems: turning ambiguous problems into clear workflows, scalable patterns, and products that hold up under pressure.
-                  </p>
-                  <div className="flex flex-wrap gap-1.5">
-                    {["Human-AI workflows", "Decision support", "Enterprise UX", "Operational design", "Product strategy", "Trust & accountability"].map((f, i) => (
-                      <motion.span
-                        key={f}
-                        initial={{ opacity: 0, y: 4 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: false }}
-                        transition={{ delay: i * 0.04, duration: 0.24 }}
-                        className="text-xs px-2.5 py-1 rounded-full font-medium"
-                        style={{ backgroundColor: "#faf5ff", color: "#5b21b6", border: "1px solid #ede9fe" }}
-                      >
-                        {f}
-                      </motion.span>
-                    ))}
-                  </div>
-                </div>
+            <p className="text-sm text-slate-500 mt-1">
+              Jan 2022 – Jun 2024
+            </p>
+          </div>
 
-                {/* Right: experience */}
-                <div className="p-7" style={{ backgroundColor: "#faf5ff" }}>
-                  <p className="text-sm font-bold tracking-[0.12em] uppercase mb-4" style={{ color: "#c4b5fd" }}>Experience</p>
+        </div>
 
-                  <div className="mb-6">
-                    <div className="flex items-center justify-between mb-1.5">
-                      <p className="text-base font-black" style={{ color: "#3b0764" }}>Senior UX/UI Designer</p>
-                      <span className="text-xs font-bold px-2.5 py-0.5 rounded-full" style={{ backgroundColor: "#ede9fe", color: "#5b21b6" }}>Now</span>
-                    </div>
-                    <p className="text-sm text-slate-500 mb-1">Enterprise Workflows &amp; Human-AI Systems</p>
-                    <p className="text-sm font-semibold mb-1" style={{ color: "#5b21b6" }}>athenahealth</p>
-                    <p className="text-sm text-slate-400">Jan 2022 – Present</p>
-                  </div>
+      </div>
+    </div>
+  </ScrollReveal>
 
-                  <div className="pt-5" style={{ borderTop: "1px solid #ede9fe" }}>
-                    <p className="text-sm font-bold tracking-[0.12em] uppercase mb-3" style={{ color: "#c4b5fd" }}>Specialisation</p>
-                    <div className="space-y-2">
-                      {["Human-AI interaction design", "Complex enterprise workflows", "Decision support systems"].map(s => (
-                        <div key={s} className="flex items-center gap-2">
-                          <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: "#d8b4fe" }} />
-                          <p className="text-sm text-slate-500">{s}</p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-2 mt-5 pt-4" style={{ borderTop: "1px solid #ede9fe" }}>
-                    <motion.span
-                      className="w-2 h-2 rounded-full shrink-0"
-                      style={{ backgroundColor: "#a78bfa" }}
-                      animate={{ scale: [1, 1.8, 1], opacity: [1, 0.3, 1] }}
-                      transition={{ repeat: Infinity, duration: 2.2, ease: "easeInOut" }}
-                    />
-                    <p className="text-sm font-semibold" style={{ color: "#5b21b6" }}>Open to new roles</p>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </ScrollReveal>
-        </section>
+</section>
 
         {/* ── CONTACT ───────────────────────────────────────────────────────── */}
         <section className="py-20 px-6 overflow-hidden relative" style={{ backgroundColor: "#0f0a1e" }}>
