@@ -209,8 +209,9 @@ export default function AmbientNotes() {
                 Use AI to reduce this burden while keeping clinicians focused on patient care?
               </p>
             </div>
-          </div>
-        </Section>
+                   </div>
+        </section>
+ )}
 
         {/* ── 02 DISCOVER ── lavender */}
         <Section alt className="pt-14 pb-12">

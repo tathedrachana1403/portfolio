@@ -510,15 +510,22 @@ export default function Home() {
                 />
                 <span className="font-black" style={{ fontSize: "clamp(0.95rem, 1.5vw, 1.1rem)", color: "#a78bfa", letterSpacing: "0.06em", textTransform: "uppercase" }}>Contact</span>
               </div>
-              <h2 className="font-black leading-tight mb-6" style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)", color: "#f8fafc" }}>
-                Let's build products{" "}
-                <span style={{ fontFamily: "var(--font-instrument-serif)", fontWeight: 400, fontStyle: "italic", color: "#c4b5fd" }}>where</span>
-                <br />
-                complexity has to work.
-              </h2>
-              <p className="mb-10 leading-relaxed text-base" style={{ color: "#9490a8" }}>
-                Senior UX/UI Designer · Senior Product Designer · Lead Designer
-              </p>
+              <h2
+  className="font-black leading-tight mb-6"
+  style={{
+    fontSize: "clamp(2.5rem, 5vw, 4rem)",
+    color: "#f8fafc",
+  }}
+>
+  Have a product problem
+  <br />
+  worth solving?
+  <br />
+  <span style={{ color: "#c4b5fd" }}>
+    Let’s talk.
+  </span>
+</h2>
+              <div className="mb-10" />
               <div className="flex flex-wrap items-center gap-8 text-sm">
                 <DrawUnderlineLink
                   href="mailto:tathedrachana14@gmail.com"
