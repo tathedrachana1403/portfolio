@@ -152,17 +152,27 @@ export default function AmbientNotes() {
       />
     </div>
             {/* Project details */}
-            <div
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 pt-4"
-              style={{ borderTop: `1px solid ${BORDER}` }}
-            >
-              {[
-                { label: "My role", value: "Lead Product Designer - owned UX strategy, interaction design, AI verification patterns, workflows, and end-to-end experience" },
-                { label: "Team", value: "Product Manager, Engineering, Clinical/Domain Experts, Design" },
-                { label: "Timeline", value: "2 months" },
-                { label: "Scope", value: "AI-assisted clinical documentation, verification, approval, editing, attribution, transfer states, and failure recovery" },
-                { label: "Constraints", value: "Clinical accuracy, AI reliability, clinician time pressure, trust, safety, and integration with existing workflows" },
-              ].map((m, i) => (
+            {/* Project details */}
+<div
+  className="grid grid-cols-1 md:grid-cols-3 pt-4"
+  style={{ borderTop: `1px solid ${BORDER}` }}
+>
+  {[
+    {
+      label: "My Role",
+      value:
+        "Lead Product Designer - led the UX strategy and end-to-end design of the AI-assisted documentation experience.",
+    },
+    {
+      label: "Team",
+      value:
+        "Product Manager, Engineering, Clinical/Domain Experts, Design, and Patient Safety.",
+    },
+    {
+      label: "Timeline",
+      value: "2 months",
+    },
+  ].map((m, i) => (
                 <div
                   key={m.label}
                   className="p-4"
