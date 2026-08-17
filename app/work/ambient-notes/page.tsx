@@ -131,7 +131,7 @@ export default function AmbientNotes() {
         textWrap: "balance",
       } as React.CSSProperties}
     >
-      Reducing the burden of clinical documentation....
+      Reducing the burden of clinical documentation
     </h1>
 
     <p
