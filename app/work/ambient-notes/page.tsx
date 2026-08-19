@@ -207,149 +207,308 @@ export default function AmbientNotes() {
           </div>
         </div>
 
-        {/* ── 01 THE PROBLEM ── */}
+        {/* ── 01 CHALLENGE ── white */}
+        <Section className="pt-14 pb-12">
+          <ChapterHeader
+            number="01" label="Challenge"
+            heading="Reducing the time and cognitive burden of clinical documentation."
+            sub="Clinicians spent hours capturing, remembering, and reconstructing patient encounters, often completing documentation long after the visit ended. This affected clinician efficiency, increased after-hours workload, and reduced attention during patient visits."
+          />
+          <div className="grid md:grid-cols-2 gap-6 mt-2">
+            <p className="text-base text-slate-500 leading-relaxed">
+              Documentation wasn't just slow — it pulled attention away from patients during
+              the visit and extended the workday well into the evening. A structural problem,
+              not a speed problem.
+            </p>
+            <div
+              className="rounded-2xl p-6"
+              style={{ backgroundColor: SOFT, border: `1px solid ${BORDER}`, borderLeft: `4px solid ${DARK}`, boxShadow: CARD_SHADOW }}
+            >
+              <p className="text-sm font-bold tracking-[0.14em] uppercase mb-3" style={{ color: DARK }}>
+                How might we
+              </p>
+              <p className="text-lg font-semibold leading-relaxed" style={{ color: DARK }}>
+  Use AI to reduce this burden while keeping clinicians focused on patient care?
+</p>
+</div>
+          </div>
+        </Section>
+
+
+        {/* ── 02 DISCOVERY ── white */}
 <Section className="pt-14 pb-12">
-  {/* Section label */}
-  <div className="flex items-center gap-3 mb-2">
-    <span
-      className="text-xs font-bold tracking-[0.16em] uppercase"
+
+  {/* Chapter heading */}
+  <div className="mb-6">
+    <p
+      className="text-xs font-bold tracking-[0.16em] uppercase mb-2"
       style={{ color: MUTED }}
     >
-      01
-    </span>
+      02 Discovery
+    </p>
 
-    <span
-      className="text-xs font-bold tracking-[0.16em] uppercase"
-      style={{ color: MUTED }}
-    >
-      The Problem
-    </span>
-  </div>
-
-  {/* Problem statement */}
-  <div className="mb-7">
     <h2
-      className="text-2xl md:text-3xl font-bold leading-[1.2] tracking-tight mb-4"
+      className="text-3xl md:text-4xl font-bold tracking-tight leading-tight max-w-3xl"
       style={{ color: DARK }}
     >
-      Documentation divided attention during patient visits and kept
-      clinicians working after hours.
+      Making documentation faster wouldn't solve the whole problem.
     </h2>
 
-    <p
-      className="text-base md:text-lg leading-relaxed max-w-5xl"
-      style={{ color: "#64748b" }}
-    >
-      <strong style={{ color: DARK }}>
-        This created a persistent trade-off:
-      </strong>{" "}
-      documenting in the moment competed with attention to the patient,
-      while unfinished documentation carried into the hours after the visit.
+    <p className="text-base text-slate-500 leading-relaxed max-w-3xl mt-3">
+      20 clinician interviews + workflow mapping revealed that documentation
+      was woven throughout the clinical workflow—not a task clinicians
+      completed in isolation.
     </p>
   </div>
 
-  {/* Initial hypothesis */}
+  {/* Current-state workflow */}
+  <div className="mt-7">
+
+    <div className="flex items-baseline justify-between mb-4">
+      <p
+        className="text-xs font-bold tracking-[0.16em] uppercase"
+        style={{ color: MUTED }}
+      >
+        Current-state workflow
+      </p>
+
+      <p className="hidden md:block text-xs text-slate-400">
+        Where the burden accumulates
+      </p>
+    </div>
+
+    <div
+      className="rounded-2xl px-5 py-6 md:px-6"
+      style={{
+        backgroundColor: "#FAFAFA",
+        border: `1px solid ${BORDER}`,
+        boxShadow: CARD_SHADOW,
+      }}
+    >
+
+      {/* Workflow */}
+      <div className="grid grid-cols-1 md:grid-cols-5 gap-0">
+
+        {[
+          {
+            n: "01",
+            icon: "calendar",
+            title: "Prepare",
+            body: "Review patient context.",
+            pain: null,
+          },
+          {
+            n: "02",
+            icon: "patient",
+            title: "See patient",
+            body: "Provide care + capture information.",
+            pain: "Attention split between patient and chart.",
+          },
+          {
+            n: "03",
+            icon: "document",
+            title: "Document",
+            body: "Enter and update the record.",
+            pain: "Notes remain incomplete during the visit.",
+          },
+          {
+            n: "04",
+            icon: "arrow",
+            title: "Next patient",
+            body: "Continue the clinical schedule.",
+            pain: "Unfinished work carries forward.",
+          },
+          {
+            n: "05",
+            icon: "clock",
+            title: "Complete notes",
+            body: "Finish documentation later.",
+            pain: "Work extends into after hours.",
+          },
+        ].map((step, index) => (
+
+          <div
+            key={step.n}
+            className={`relative px-4 ${
+              index !== 0 ? "md:border-l" : ""
+            }`}
+            style={{
+              borderColor: BORDER,
+            }}
+          >
+
+            {/* Step header */}
+            <div className="flex items-center gap-2.5 mb-3">
+
+              {/* Icon */}
+              <div
+                className="w-9 h-9 shrink-0 rounded-lg flex items-center justify-center"
+                style={{
+                  backgroundColor: "white",
+                  border: `1px solid ${BORDER}`,
+                }}
+              >
+
+                {step.icon === "calendar" && (
+                  <svg
+                    width="17"
+                    height="17"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    className="text-slate-500"
+                  >
+                    <rect x="3" y="4" width="18" height="17" rx="2" />
+                    <path d="M16 2v4M8 2v4M3 10h18" />
+                  </svg>
+                )}
+
+                {step.icon === "patient" && (
+                  <svg
+                    width="17"
+                    height="17"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    className="text-slate-500"
+                  >
+                    <circle cx="12" cy="8" r="3.5" />
+                    <path d="M5 21c.8-4 3.1-6 7-6s6.2 2 7 6" />
+                  </svg>
+                )}
+
+                {step.icon === "document" && (
+                  <svg
+                    width="17"
+                    height="17"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    className="text-slate-500"
+                  >
+                    <path d="M6 3h9l4 4v14H6z" />
+                    <path d="M14 3v5h5M9 13h6M9 17h6" />
+                  </svg>
+                )}
+
+                {step.icon === "arrow" && (
+                  <svg
+                    width="17"
+                    height="17"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    className="text-slate-500"
+                  >
+                    <path d="M5 12h13M13 6l6 6-6 6" />
+                  </svg>
+                )}
+
+                {step.icon === "clock" && (
+                  <svg
+                    width="17"
+                    height="17"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    className="text-slate-500"
+                  >
+                    <circle cx="12" cy="12" r="8.5" />
+                    <path d="M12 7v5l3 2" />
+                  </svg>
+                )}
+
+              </div>
+
+              <div>
+                <p
+                  className="text-[9px] font-bold tracking-[0.12em] uppercase"
+                  style={{ color: MUTED }}
+                >
+                  {step.n}
+                </p>
+
+                <p
+                  className="text-sm font-bold leading-tight"
+                  style={{ color: DARK }}
+                >
+                  {step.title}
+                </p>
+              </div>
+
+            </div>
+
+            {/* Step description */}
+            <p className="text-xs leading-relaxed text-slate-500 min-h-[42px]">
+              {step.body}
+            </p>
+
+            {/* Pain point */}
+            <div
+              className={`mt-3 rounded-lg px-3 py-2.5 ${
+                step.pain ? "" : "opacity-0"
+              }`}
+              style={{
+                backgroundColor: step.pain ? "#F3F0FF" : "transparent",
+                border: step.pain
+                  ? "1px solid #E5DDFB"
+                  : "1px solid transparent",
+              }}
+            >
+              <p
+                className="text-[10px] font-bold tracking-[0.12em] uppercase mb-1"
+                style={{ color: "#7C3AED" }}
+              >
+                Pain point
+              </p>
+
+              <p
+                className="text-xs leading-snug font-semibold"
+                style={{ color: "#4C1D95" }}
+              >
+                {step.pain || "No major breakdown identified."}
+              </p>
+            </div>
+
+          </div>
+
+        ))}
+
+      </div>
+    </div>
+  </div>
+
+  {/* Synthesis */}
   <div
-    className="grid md:grid-cols-[180px_1fr] gap-6 pt-5"
-    style={{ borderTop: `1px solid ${BORDER}` }}
+    className="mt-6 rounded-2xl px-6 py-5"
+    style={{
+      backgroundColor: SOFT,
+      border: `1px solid ${BORDER}`,
+    }}
   >
     <p
-      className="text-xs font-bold tracking-[0.14em] uppercase"
+      className="text-xs font-bold tracking-[0.16em] uppercase mb-2"
       style={{ color: MUTED }}
     >
-      Initial hypothesis
+      Synthesis
     </p>
 
     <p
-      className="text-base md:text-lg font-medium leading-relaxed max-w-4xl"
-      style={{ color: "#475569" }}
+      className="text-lg md:text-xl font-semibold leading-relaxed max-w-5xl"
+      style={{ color: DARK }}
     >
-      If we reduced the{" "}
-      <strong style={{ color: DARK }}>
-        time and effort required to document
-      </strong>
-      , clinicians could stay{" "}
-      <strong style={{ color: DARK }}>
-        focused on patient care
-      </strong>{" "}
-      and spend{" "}
-      <strong style={{ color: DARK }}>
-        less time finishing notes after hours.
-      </strong>
+      The burden wasn't the act of writing itself. It was the cognitive load
+      of moving between patient care, documentation, and recall throughout
+      the day.
     </p>
   </div>
+
 </Section>
-
-
-        {/* ── 02 DISCOVER ── lavender */}
-        <Section alt className="pt-14 pb-12">
-          <ChapterHeader
-            number="02" label="Discover"
-            heading="We investigated where documentation breaks across the clinical day."
-            sub="I led interviews with clinicians across primary care and specialty practices, mapping how documentation happened before, during, between, and after patient visits."
-          />
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-            {[
-              { v: "20",    l: "Clinician interviews" },
-              { v: "45–60", l: "Min per session" },
-              { v: "5",     l: "Workflow moments" },
-              { v: "6",     l: "Hypotheses tested" },
-            ].map(s => (
-              <div
-                key={s.l}
-                className="rounded-2xl p-6 text-center"
-                style={{ backgroundColor: "white", border: `1px solid ${BORDER}`, boxShadow: CARD_SHADOW }}
-              >
-                <p className="text-4xl font-black mb-1.5 tabular-nums" style={{ color: DARK }}>{s.v}</p>
-                <p className="text-sm text-slate-500">{s.l}</p>
-              </div>
-            ))}
-          </div>
-
-          <Label>Interview synthesis</Label>
-          <div className="mb-8">
-            <AmbientAffinityMap />
-          </div>
-
-          <Label>These insights directly shaped the product principles and workflow decisions that followed.</Label>
-          <div className="grid md:grid-cols-2 gap-4 mb-8">
-            {[
-              { title: "Context Loss",        body: "Interruptions made it harder to retain the thread of the encounter.", n: "01" },
-              { title: "Memory & Recall",      body: "Delayed documentation required clinicians to reconstruct encounters later.", n: "02" },
-              { title: "Trust & Verification", body: "Clinicians wanted visibility into what AI generated and control over what entered the note.", n: "03" },
-              { title: "Transfer Anxiety",     body: "Clinicians needed to know what reached the chart and how to recover when transfers failed.", n: "04" },
-            ].map(t => (
-              <div
-                key={t.title}
-                className="bg-white rounded-2xl p-6 flex gap-4 items-start"
-                style={{ border: `1px solid ${BORDER}`, boxShadow: CARD_SHADOW }}
-              >
-                <div
-                  className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0 text-xs font-black tabular-nums"
-                  style={{ backgroundColor: SOFT, color: DARK }}
-                >
-                  {t.n}
-                </div>
-                <div>
-                  <p className="font-bold text-base mb-1.5" style={{ color: DARK }}>{t.title}</p>
-                  <p className="text-sm text-slate-500 leading-relaxed">{t.body}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <Label>Workflow map</Label>
-          <div className="mb-8">
-            <ClinicalWorkflowMap />
-          </div>
-
-          <Callout label="Core insight">
-            <p className="text-white text-xl font-semibold leading-relaxed">
-              We expected a writing problem. We found a fragmented attention, memory, and trust problem.
-            </p>
-          </Callout>
-        </Section>
 
         {/* ── 03 REFRAME ── white */}
         <Section className="pt-14 pb-12">
