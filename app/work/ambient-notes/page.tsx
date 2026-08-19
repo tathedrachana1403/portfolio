@@ -302,7 +302,7 @@ export default function AmbientNotes() {
 
     <p className="text-base text-slate-500 leading-relaxed max-w-3xl mt-3">
       20 clinician interviews + workflow mapping revealed that documentation
-      was woven throughout the clinical workflow—not a task clinicians
+      was woven throughout the clinical workflow not a task clinicians
       completed in isolation.
     </p>
   </div>
@@ -319,7 +319,7 @@ export default function AmbientNotes() {
       </p>
 
       <p className="hidden md:block text-xs text-slate-400">
-        Where the burden accumulates
+      
       </p>
     </div>
 
