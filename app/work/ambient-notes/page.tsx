@@ -131,7 +131,7 @@ export default function AmbientNotes() {
         textWrap: "balance",
       } as React.CSSProperties}
     >
-      Reducing the burden of clinical documentation
+      Reducing the burden of clinical documentation.
     </h1>
 
     <p
@@ -207,32 +207,78 @@ export default function AmbientNotes() {
           </div>
         </div>
 
-        {/* ── 01 CHALLENGE ── white */}
-        <Section className="pt-14 pb-12">
-          <ChapterHeader
-            number="01" label="Challenge"
-            heading="Reducing the time and cognitive burden of clinical documentation."
-            sub="Clinicians spent hours capturing, remembering, and reconstructing patient encounters, often completing documentation long after the visit ended. This affected clinician efficiency, increased after-hours workload, and reduced attention during patient visits."
-          />
-          <div className="grid md:grid-cols-2 gap-6 mt-2">
-            <p className="text-base text-slate-500 leading-relaxed">
-              Documentation wasn't just slow — it pulled attention away from patients during
-              the visit and extended the workday well into the evening. A structural problem,
-              not a speed problem.
-            </p>
-            <div
-              className="rounded-2xl p-6"
-              style={{ backgroundColor: SOFT, border: `1px solid ${BORDER}`, borderLeft: `4px solid ${DARK}`, boxShadow: CARD_SHADOW }}
-            >
-              <p className="text-sm font-bold tracking-[0.14em] uppercase mb-3" style={{ color: DARK }}>
-                How might we
-              </p>
-              <p className="text-lg font-semibold leading-relaxed" style={{ color: DARK }}>
-  Use AI to reduce this burden while keeping clinicians focused on patient care?
-</p>
-</div>
-          </div>
-        </Section>
+        {/* ── 01 THE PROBLEM ── */}
+<Section className="pt-14 pb-12">
+  {/* Section label */}
+  <div className="flex items-center gap-3 mb-2">
+    <span
+      className="text-xs font-bold tracking-[0.16em] uppercase"
+      style={{ color: MUTED }}
+    >
+      01
+    </span>
+
+    <span
+      className="text-xs font-bold tracking-[0.16em] uppercase"
+      style={{ color: MUTED }}
+    >
+      The Problem
+    </span>
+  </div>
+
+  {/* Problem statement */}
+  <div className="mb-7">
+    <h2
+      className="text-2xl md:text-3xl font-bold leading-[1.2] tracking-tight mb-4"
+      style={{ color: DARK }}
+    >
+      Documentation divided attention during patient visits and kept
+      clinicians working after hours.
+    </h2>
+
+    <p
+      className="text-base md:text-lg leading-relaxed max-w-5xl"
+      style={{ color: "#64748b" }}
+    >
+      <strong style={{ color: DARK }}>
+        This created a persistent trade-off:
+      </strong>{" "}
+      documenting in the moment competed with attention to the patient,
+      while unfinished documentation carried into the hours after the visit.
+    </p>
+  </div>
+
+  {/* Initial hypothesis */}
+  <div
+    className="grid md:grid-cols-[180px_1fr] gap-6 pt-5"
+    style={{ borderTop: `1px solid ${BORDER}` }}
+  >
+    <p
+      className="text-xs font-bold tracking-[0.14em] uppercase"
+      style={{ color: MUTED }}
+    >
+      Initial hypothesis
+    </p>
+
+    <p
+      className="text-base md:text-lg font-medium leading-relaxed max-w-4xl"
+      style={{ color: "#475569" }}
+    >
+      If we reduced the{" "}
+      <strong style={{ color: DARK }}>
+        time and effort required to document
+      </strong>
+      , clinicians could stay{" "}
+      <strong style={{ color: DARK }}>
+        focused on patient care
+      </strong>{" "}
+      and spend{" "}
+      <strong style={{ color: DARK }}>
+        less time finishing notes after hours.
+      </strong>
+    </p>
+  </div>
+</Section>
 
 
         {/* ── 02 DISCOVER ── lavender */}
