@@ -1244,82 +1244,908 @@ export default function AmbientNotes() {
 </section>
 
 
-        {/* ── 06 DESIGN ── lavender */}
-        <Section alt className="pt-14 pb-12">
-          <ChapterHeader
-            number="06" label="Design"
-            heading="The workflow shifted clinicians from reconstructing encounters later to verifying AI-generated documentation while the context was still fresh."
-          />
+        {/* ── 06 WIREFRAME ── */}
+<section
+  className="w-full"
+  style={{
+    backgroundColor: "#FFFFFF",
+    borderBottom: `1px solid ${BORDER}`,
+  }}
+>
+  <Section className="pt-14 pb-16">
 
-          <Label>The four-step workflow</Label>
-          <div className="flex items-stretch mb-8">
-            {[
-              { n: "01", label: "Capture",  body: "Explicit consent and visible recording states." },
-              { n: "02", label: "Draft",    body: "AI structures the encounter into clinical sections." },
-              { n: "03", label: "Review",   body: "Clinicians review and approve each section." },
-              { n: "04", label: "Transfer", body: "Section-level status shows what was sent, failed, or needs action." },
-            ].map((s, i, arr) => (
-              <div key={s.label} className="flex items-stretch flex-1">
-                <div
-                  className="flex flex-col px-5 pt-5 pb-5 w-full"
-                  style={{
-                    backgroundColor: i === 0 ? SOFT : i === arr.length - 1 ? DARK : "white",
-                    border: `1.5px solid ${i === arr.length - 1 ? DARK : BORDER}`,
-                    borderLeft: i > 0 ? "none" : undefined,
-                    borderRadius: i === 0 ? "12px 0 0 12px" : i === arr.length - 1 ? "0 12px 12px 0" : "0",
-                  }}
-                >
-                  <div
-                    className="w-8 h-8 rounded-lg flex items-center justify-center text-xs font-black mb-3 shrink-0"
-                    style={{
-                      backgroundColor: i === arr.length - 1 ? "rgba(255,255,255,0.12)" : SOFT,
-                      color: i === arr.length - 1 ? "white" : DARK,
-                      border: `1px solid ${i === arr.length - 1 ? "rgba(255,255,255,0.15)" : BORDER}`,
-                    }}
-                  >{s.n}</div>
-                  <p className="font-bold text-sm mb-1.5" style={{ color: i === arr.length - 1 ? "white" : DARK }}>{s.label}</p>
-                  <p className="text-xs leading-relaxed" style={{ color: i === arr.length - 1 ? "rgba(255,255,255,0.6)" : "#94a3b8" }}>{s.body}</p>
-                </div>
-                {i < arr.length - 1 && (
-                  <div className="shrink-0 self-stretch w-6 z-10 -mx-3"
-                    style={{
-                      backgroundColor: i === arr.length - 2 ? DARK : BORDER,
-                      clipPath: "polygon(0 0, 60% 0, 100% 50%, 60% 100%, 0 100%, 40% 50%)",
-                    }}
-                  />
-                )}
-              </div>
-            ))}
-          </div>
+    {/* Chapter Header */}
+    <div className="mb-8">
 
-          <Label>End-to-end flow</Label>
-          <div className="mb-8">
-            <AmbientProductOverview />
-          </div>
+      <div className="flex items-center gap-3 mb-3">
 
-          <Label>Wireframe exploration</Label>
-          <div className="mb-5">
-            <AmbientWireframes />
-          </div>
-          <p className="text-sm text-slate-400 italic">AI assists. The clinician owns.</p>
-        </Section>
+        <span
+          className="text-xs font-bold tracking-[0.16em] uppercase"
+          style={{ color: MUTED }}
+        >
+          06
+        </span>
 
-        {/* ── FINAL DESIGN ── white */}
-        <Section className="pt-14 pb-12">
-          <div className="mb-10">
-            <Chip>Final Design</Chip>
-            <h2
-              className="text-4xl md:text-[2.75rem] font-black leading-[1.15] tracking-tight mt-5 mb-3"
+        <span
+          className="h-px w-8"
+          style={{ backgroundColor: BORDER }}
+        />
+
+        <span
+          className="text-xs font-bold tracking-[0.16em] uppercase"
+          style={{ color: MUTED }}
+        >
+          Wireframe
+        </span>
+
+      </div>
+
+      <h2
+        className="text-2xl md:text-3xl font-bold tracking-tight leading-tight whitespace-nowrap"
+        style={{ color: DARK }}
+      >
+        Exploring the core interaction states across the documentation workflow.
+      </h2>
+
+    </div>
+
+
+    {/* Wireframe Exploration */}
+    <div
+      className="rounded-2xl p-5 md:p-8"
+      style={{
+        backgroundColor: "#F8FAFC",
+        border: `1px solid ${BORDER}`,
+      }}
+    >
+
+      {/* Flow label */}
+      <div className="flex items-center gap-3 mb-8">
+
+        <span
+          className="text-[10px] font-bold tracking-[0.15em] uppercase"
+          style={{ color: MUTED }}
+        >
+          Workflow exploration
+        </span>
+
+        <div
+          className="h-px flex-1"
+          style={{ backgroundColor: BORDER }}
+        />
+
+        <span
+          className="hidden md:block text-[10px] font-medium"
+          style={{ color: "#94A3B8" }}
+        >
+          Capture → Draft → Review → Transfer
+        </span>
+
+      </div>
+
+
+      {/* Four Mobile Wireframes */}
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+
+
+        {/* 01 — CAPTURE */}
+        <div>
+
+          <div className="flex items-center gap-2 mb-3">
+            <span
+              className="text-[10px] font-bold"
+              style={{ color: "#7C3AED" }}
+            >
+              01
+            </span>
+
+            <span
+              className="text-sm font-bold"
               style={{ color: DARK }}
             >
-              Key screens from the shipped product.
-            </h2>
-            <p className="text-lg text-slate-500 leading-relaxed">
-              Consent, control, status, review, transfer, and recovery - all visible in the product itself.
-            </p>
+              Capture
+            </span>
           </div>
-          <ImageCarousel />
-        </Section>
+
+
+          <div
+            className="mx-auto w-full max-w-[210px] rounded-[28px] p-[7px]"
+            style={{
+              backgroundColor: "#E2E8F0",
+              border: "1px solid #CBD5E1",
+              boxShadow: "0 12px 30px rgba(15,23,42,0.08)",
+            }}
+          >
+            <div
+              className="relative overflow-hidden rounded-[22px]"
+              style={{
+                backgroundColor: "#FFFFFF",
+                aspectRatio: "9 / 19.5",
+              }}
+            >
+
+              <div className="flex items-center justify-between px-4 pt-3">
+                <span
+                  className="text-[7px] font-bold"
+                  style={{ color: DARK }}
+                >
+                  9:41
+                </span>
+
+                <div className="flex gap-1">
+                  <span
+                    className="w-2 h-1 rounded"
+                    style={{ backgroundColor: "#CBD5E1" }}
+                  />
+                  <span
+                    className="w-2 h-1 rounded"
+                    style={{ backgroundColor: "#CBD5E1" }}
+                  />
+                  <span
+                    className="w-3 h-1 rounded"
+                    style={{ backgroundColor: "#94A3B8" }}
+                  />
+                </div>
+              </div>
+
+
+              <div className="px-4 pt-5 pb-4">
+                <div className="flex items-center justify-between">
+
+                  <div>
+                    <div
+                      className="h-2.5 w-20 rounded mb-2"
+                      style={{ backgroundColor: "#64748B" }}
+                    />
+
+                    <div
+                      className="h-1.5 w-14 rounded"
+                      style={{ backgroundColor: "#E2E8F0" }}
+                    />
+                  </div>
+
+                  <div
+                    className="w-7 h-7 rounded-full"
+                    style={{ backgroundColor: "#F1F5F9" }}
+                  />
+
+                </div>
+              </div>
+
+
+              <div
+                className="mx-3 rounded-xl p-3"
+                style={{
+                  backgroundColor: "#F8FAFC",
+                  border: `1px solid ${BORDER}`,
+                }}
+              >
+
+                <div className="flex items-center gap-2">
+
+                  <div
+                    className="w-7 h-7 rounded-full"
+                    style={{ backgroundColor: "#E2E8F0" }}
+                  />
+
+                  <div>
+                    <div
+                      className="h-2 w-20 rounded mb-1.5"
+                      style={{ backgroundColor: "#94A3B8" }}
+                    />
+
+                    <div
+                      className="h-1.5 w-12 rounded"
+                      style={{ backgroundColor: "#CBD5E1" }}
+                    />
+                  </div>
+
+                </div>
+
+              </div>
+
+
+              <div className="px-3 pt-4">
+
+                <div
+                  className="rounded-xl p-4"
+                  style={{
+                    backgroundColor: "#F5F3FF",
+                    border: "1px solid #DDD6FE",
+                  }}
+                >
+
+                  <div className="flex items-center justify-between mb-5">
+
+                    <span
+                      className="text-[8px] font-bold uppercase tracking-wide"
+                      style={{ color: "#6D28D9" }}
+                    >
+                      Recording
+                    </span>
+
+                    <span
+                      className="w-2 h-2 rounded-full"
+                      style={{ backgroundColor: "#7C3AED" }}
+                    />
+
+                  </div>
+
+
+                  <div className="h-10 flex items-center justify-center gap-[3px]">
+
+                    {[10,18,25,14,30,20,34,17,27,12,22,30,15].map(
+                      (height, index) => (
+                        <span
+                          key={index}
+                          className="w-[2px] rounded-full"
+                          style={{
+                            height: `${height}px`,
+                            backgroundColor: "#A78BFA",
+                          }}
+                        />
+                      )
+                    )}
+
+                  </div>
+
+                  <div
+                    className="h-1.5 w-16 rounded mx-auto mt-4"
+                    style={{ backgroundColor: "#C4B5FD" }}
+                  />
+
+                </div>
+
+              </div>
+
+
+              <div className="absolute bottom-4 left-3 right-3">
+                <div
+                  className="h-9 rounded-xl"
+                  style={{ backgroundColor: "#7C3AED" }}
+                />
+              </div>
+
+            </div>
+          </div>
+
+
+          <p
+            className="text-xs leading-relaxed mt-3 max-w-[210px] mx-auto"
+            style={{ color: "#64748B" }}
+          >
+            Recording stays visible while the clinician remains focused on
+            the encounter.
+          </p>
+
+        </div>
+
+
+        {/* 02 — DRAFT */}
+        <div>
+
+          <div className="flex items-center gap-2 mb-3">
+            <span
+              className="text-[10px] font-bold"
+              style={{ color: "#7C3AED" }}
+            >
+              02
+            </span>
+
+            <span
+              className="text-sm font-bold"
+              style={{ color: DARK }}
+            >
+              Draft
+            </span>
+          </div>
+
+
+          <div
+            className="mx-auto w-full max-w-[210px] rounded-[28px] p-[7px]"
+            style={{
+              backgroundColor: "#E2E8F0",
+              border: "1px solid #CBD5E1",
+              boxShadow: "0 12px 30px rgba(15,23,42,0.08)",
+            }}
+          >
+            <div
+              className="relative overflow-hidden rounded-[22px]"
+              style={{
+                backgroundColor: "#FFFFFF",
+                aspectRatio: "9 / 19.5",
+              }}
+            >
+
+              <div className="flex items-center justify-between px-4 pt-3">
+
+                <span
+                  className="text-[7px] font-bold"
+                  style={{ color: DARK }}
+                >
+                  9:47
+                </span>
+
+                <div
+                  className="h-1.5 w-10 rounded"
+                  style={{ backgroundColor: "#E2E8F0" }}
+                />
+
+              </div>
+
+
+              <div className="px-4 pt-5">
+
+                <div
+                  className="h-2.5 w-24 rounded mb-2"
+                  style={{ backgroundColor: "#64748B" }}
+                />
+
+                <div
+                  className="h-1.5 w-16 rounded"
+                  style={{ backgroundColor: "#E2E8F0" }}
+                />
+
+              </div>
+
+
+              <div className="px-3 pt-4">
+
+                <div
+                  className="rounded-xl p-3"
+                  style={{
+                    backgroundColor: "#F8FAFC",
+                    border: `1px solid ${BORDER}`,
+                  }}
+                >
+
+                  <div className="flex items-center justify-between mb-3">
+
+                    <span
+                      className="text-[8px] font-bold"
+                      style={{ color: DARK }}
+                    >
+                      Drafting note
+                    </span>
+
+                    <span
+                      className="text-[7px] font-bold"
+                      style={{ color: "#7C3AED" }}
+                    >
+                      AI
+                    </span>
+
+                  </div>
+
+                  <div className="space-y-2">
+
+                    <div
+                      className="h-1.5 w-full rounded"
+                      style={{ backgroundColor: "#CBD5E1" }}
+                    />
+
+                    <div
+                      className="h-1.5 w-4/5 rounded"
+                      style={{ backgroundColor: "#E2E8F0" }}
+                    />
+
+                    <div
+                      className="h-1.5 w-3/5 rounded"
+                      style={{ backgroundColor: "#E2E8F0" }}
+                    />
+
+                  </div>
+
+                </div>
+
+              </div>
+
+
+              <div className="px-3 pt-3 space-y-2">
+
+                {["History", "Assessment", "Plan"].map(
+                  (sectionName, index) => (
+
+                    <div
+                      key={sectionName}
+                      className="rounded-lg p-3"
+                      style={{
+                        backgroundColor: "#FFFFFF",
+                        border: `1px solid ${BORDER}`,
+                      }}
+                    >
+
+                      <div className="flex items-center justify-between mb-2">
+
+                        <span
+                          className="text-[8px] font-bold"
+                          style={{ color: DARK }}
+                        >
+                          {sectionName}
+                        </span>
+
+                        <span
+                          className="w-1.5 h-1.5 rounded-full"
+                          style={{
+                            backgroundColor:
+                              index === 0 ? "#A78BFA" : "#CBD5E1",
+                          }}
+                        />
+
+                      </div>
+
+                      <div
+                        className="h-1.5 w-full rounded mb-1.5"
+                        style={{ backgroundColor: "#E2E8F0" }}
+                      />
+
+                      <div
+                        className="h-1.5 rounded"
+                        style={{
+                          width:
+                            index === 0
+                              ? "88%"
+                              : index === 1
+                              ? "72%"
+                              : "80%",
+                          backgroundColor: "#E2E8F0",
+                        }}
+                      />
+
+                    </div>
+
+                  )
+                )}
+
+              </div>
+
+            </div>
+          </div>
+
+
+          <p
+            className="text-xs leading-relaxed mt-3 max-w-[210px] mx-auto"
+            style={{ color: "#64748B" }}
+          >
+            AI converts the encounter into recognizable clinical sections
+            instead of a raw transcript.
+          </p>
+
+        </div>
+
+
+        {/* 03 — REVIEW */}
+        <div>
+
+          <div className="flex items-center gap-2 mb-3">
+            <span
+              className="text-[10px] font-bold"
+              style={{ color: "#7C3AED" }}
+            >
+              03
+            </span>
+
+            <span
+              className="text-sm font-bold"
+              style={{ color: DARK }}
+            >
+              Review
+            </span>
+          </div>
+
+
+          <div
+            className="mx-auto w-full max-w-[210px] rounded-[28px] p-[7px]"
+            style={{
+              backgroundColor: "#E2E8F0",
+              border: "1px solid #CBD5E1",
+              boxShadow: "0 12px 30px rgba(15,23,42,0.08)",
+            }}
+          >
+            <div
+              className="relative overflow-hidden rounded-[22px]"
+              style={{
+                backgroundColor: "#FFFFFF",
+                aspectRatio: "9 / 19.5",
+              }}
+            >
+
+              <div className="flex items-center justify-between px-4 pt-3">
+
+                <span
+                  className="text-[7px] font-bold"
+                  style={{ color: DARK }}
+                >
+                  9:52
+                </span>
+
+                <span
+                  className="text-[7px] font-semibold"
+                  style={{ color: "#64748B" }}
+                >
+                  Review
+                </span>
+
+              </div>
+
+
+              <div className="px-4 pt-5">
+
+                <div className="flex items-center justify-between">
+
+                  <div>
+
+                    <div
+                      className="h-2.5 w-20 rounded mb-2"
+                      style={{ backgroundColor: "#64748B" }}
+                    />
+
+                    <div
+                      className="h-1.5 w-14 rounded"
+                      style={{ backgroundColor: "#E2E8F0" }}
+                    />
+
+                  </div>
+
+                  <div
+                    className="px-2 py-1 rounded-full"
+                    style={{ backgroundColor: "#F3F0FF" }}
+                  >
+                    <span
+                      className="text-[7px] font-bold"
+                      style={{ color: "#7C3AED" }}
+                    >
+                      AI
+                    </span>
+                  </div>
+
+                </div>
+
+              </div>
+
+
+              <div className="px-3 pt-4">
+
+                <div
+                  className="rounded-xl p-3"
+                  style={{
+                    backgroundColor: "#FFFFFF",
+                    border: `1px solid ${BORDER}`,
+                  }}
+                >
+
+                  <div className="flex items-center justify-between mb-3">
+
+                    <span
+                      className="text-[8px] font-bold"
+                      style={{ color: DARK }}
+                    >
+                      Assessment
+                    </span>
+
+                    <span
+                      className="text-[7px] font-semibold"
+                      style={{ color: "#64748B" }}
+                    >
+                      Generated
+                    </span>
+
+                  </div>
+
+
+                  <div
+                    className="rounded-lg p-3"
+                    style={{
+                      backgroundColor: "#F8FAFC",
+                      border: `1px solid ${BORDER}`,
+                    }}
+                  >
+
+                    <div
+                      className="h-1.5 w-full rounded mb-2"
+                      style={{ backgroundColor: "#94A3B8" }}
+                    />
+
+                    <div
+                      className="h-1.5 w-11/12 rounded mb-2"
+                      style={{ backgroundColor: "#CBD5E1" }}
+                    />
+
+                    <div
+                      className="h-1.5 w-4/5 rounded mb-2"
+                      style={{ backgroundColor: "#CBD5E1" }}
+                    />
+
+                    <div
+                      className="h-1.5 w-2/3 rounded"
+                      style={{ backgroundColor: "#E2E8F0" }}
+                    />
+
+                  </div>
+
+
+                  <div className="flex justify-between items-center mt-3">
+
+                    <span
+                      className="text-[7px] font-semibold"
+                      style={{ color: "#64748B" }}
+                    >
+                      Edit section
+                    </span>
+
+                    <div
+                      className="w-6 h-6 rounded-md"
+                      style={{
+                        backgroundColor: "#F1F5F9",
+                        border: `1px solid ${BORDER}`,
+                      }}
+                    />
+
+                  </div>
+
+                </div>
+
+              </div>
+
+
+              <div className="absolute bottom-4 left-3 right-3">
+
+                <div
+                  className="h-9 rounded-xl flex items-center justify-center"
+                  style={{ backgroundColor: "#7C3AED" }}
+                >
+
+                  <span
+                    className="text-[8px] font-bold"
+                    style={{ color: "#FFFFFF" }}
+                  >
+                    Approve
+                  </span>
+
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+
+          <p
+            className="text-xs leading-relaxed mt-3 max-w-[210px] mx-auto"
+            style={{ color: "#64748B" }}
+          >
+            Generated content remains identifiable and editable before
+            becoming part of the final record.
+          </p>
+
+        </div>
+
+
+        {/* 04 — TRANSFER */}
+        <div>
+
+          <div className="flex items-center gap-2 mb-3">
+            <span
+              className="text-[10px] font-bold"
+              style={{ color: "#7C3AED" }}
+            >
+              04
+            </span>
+
+            <span
+              className="text-sm font-bold"
+              style={{ color: DARK }}
+            >
+              Transfer
+            </span>
+          </div>
+
+
+          <div
+            className="mx-auto w-full max-w-[210px] rounded-[28px] p-[7px]"
+            style={{
+              backgroundColor: "#E2E8F0",
+              border: "1px solid #CBD5E1",
+              boxShadow: "0 12px 30px rgba(15,23,42,0.08)",
+            }}
+          >
+            <div
+              className="relative overflow-hidden rounded-[22px]"
+              style={{
+                backgroundColor: "#FFFFFF",
+                aspectRatio: "9 / 19.5",
+              }}
+            >
+
+              <div className="flex items-center justify-between px-4 pt-3">
+
+                <span
+                  className="text-[7px] font-bold"
+                  style={{ color: DARK }}
+                >
+                  9:55
+                </span>
+
+                <span
+                  className="text-[7px] font-semibold"
+                  style={{ color: "#64748B" }}
+                >
+                  Transfer
+                </span>
+
+              </div>
+
+
+              <div className="px-4 pt-5">
+
+                <div
+                  className="h-2.5 w-24 rounded mb-2"
+                  style={{ backgroundColor: "#64748B" }}
+                />
+
+                <div
+                  className="h-1.5 w-16 rounded"
+                  style={{ backgroundColor: "#E2E8F0" }}
+                />
+
+              </div>
+
+
+              <div className="px-3 pt-4">
+
+                <div
+                  className="rounded-xl overflow-hidden"
+                  style={{ border: `1px solid ${BORDER}` }}
+                >
+
+                  {[
+                    {
+                      name: "History",
+                      status: "Sent",
+                      type: "success",
+                    },
+                    {
+                      name: "Assessment",
+                      status: "Sent",
+                      type: "success",
+                    },
+                    {
+                      name: "Plan",
+                      status: "Action",
+                      type: "warning",
+                    },
+                    {
+                      name: "Follow-up",
+                      status: "Sent",
+                      type: "success",
+                    },
+                  ].map((item, index) => (
+
+                    <div
+                      key={item.name}
+                      className="flex items-center justify-between px-3 py-3"
+                      style={{
+                        backgroundColor:
+                          item.type === "warning"
+                            ? "#FFFBEB"
+                            : "#FFFFFF",
+                        borderBottom:
+                          index !== 3
+                            ? `1px solid ${BORDER}`
+                            : "none",
+                      }}
+                    >
+
+                      <div>
+
+                        <div
+                          className="h-1.5 w-16 rounded mb-1.5"
+                          style={{
+                            backgroundColor:
+                              item.type === "warning"
+                                ? "#D97706"
+                                : "#94A3B8",
+                          }}
+                        />
+
+                        <span
+                          className="text-[7px] font-medium"
+                          style={{ color: "#94A3B8" }}
+                        >
+                          {item.name}
+                        </span>
+
+                      </div>
+
+
+                      <div className="flex items-center gap-1.5">
+
+                        <span
+                          className="text-[8px] font-bold"
+                          style={{
+                            color:
+                              item.type === "warning"
+                                ? "#B45309"
+                                : "#16A34A",
+                          }}
+                        >
+                          {item.type === "warning" ? "!" : "✓"}
+                        </span>
+
+                        <span
+                          className="text-[7px] font-bold"
+                          style={{
+                            color:
+                              item.type === "warning"
+                                ? "#B45309"
+                                : "#16A34A",
+                          }}
+                        >
+                          {item.status}
+                        </span>
+
+                      </div>
+
+                    </div>
+
+                  ))}
+
+                </div>
+
+              </div>
+
+
+              <div className="absolute bottom-4 left-3 right-3">
+
+                <div
+                  className="rounded-xl px-3 py-3"
+                  style={{
+                    backgroundColor: "#FFFBEB",
+                    border: "1px solid #FDE68A",
+                  }}
+                >
+
+                  <div className="flex items-center justify-between">
+
+                    <span
+                      className="text-[7px] font-semibold"
+                      style={{ color: "#92400E" }}
+                    >
+                      Action needed
+                    </span>
+
+                    <span
+                      className="text-[7px] font-bold"
+                      style={{ color: "#B45309" }}
+                    >
+                      Check status
+                    </span>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+
+          <p
+            className="text-xs leading-relaxed mt-3 max-w-[210px] mx-auto"
+            style={{ color: "#64748B" }}
+          >
+            Section-level status makes the hand-off visible and recoverable.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </Section>
+</section>
 
         {/* ── 07 VALIDATE ── lavender */}
         <Section alt className="pt-14 pb-12">
