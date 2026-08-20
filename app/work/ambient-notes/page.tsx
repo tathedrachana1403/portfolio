@@ -207,318 +207,570 @@ export default function AmbientNotes() {
           </div>
         </div>
 
-        {/* ── 01 THE PROBLEM ── */}
-<Section className="pt-14 pb-12">
-  {/* Section label */}
-  <div className="flex items-center gap-3 mb-2">
-    <span
-      className="text-xs font-bold tracking-[0.16em] uppercase"
-      style={{ color: MUTED }}
-    >
-      01
-    </span>
+       {/* ============================================================
+    01 — THE PROBLEM
+============================================================ */}
+<section
+  className="w-full"
+  style={{
+    backgroundColor: "#FFFFFF",
+    borderBottom: `1px solid ${BORDER}`,
+  }}
+>
+  <Section className="pt-10 pb-10">
 
-    <span
-      className="text-xs font-bold tracking-[0.16em] uppercase"
-      style={{ color: MUTED }}
-    >
-      The Problem
-    </span>
-  </div>
+    {/* Chapter Header */}
+    <div className="mb-7">
 
-  {/* Problem statement */}
-  <div className="mb-7">
-    <h2
-      className="text-2xl md:text-3xl font-bold leading-[1.2] tracking-tight mb-4"
-      style={{ color: DARK }}
-    >
-      Documentation divided attention during patient visits and kept
-      clinicians working after hours.
-    </h2>
+      <div className="flex items-center gap-3 mb-3">
+        <span
+          className="text-xs font-bold tracking-[0.16em] uppercase"
+          style={{ color: MUTED }}
+        >
+          01
+        </span>
 
+        <span
+          className="h-px w-8"
+          style={{ backgroundColor: BORDER }}
+        />
+
+        <span
+          className="text-xs font-bold tracking-[0.16em] uppercase"
+          style={{ color: MUTED }}
+        >
+          The Problem
+        </span>
+      </div>
+
+      <h2
+        className="text-3xl md:text-3xl font-bold tracking-tight leading-[1.08]"
+        style={{ color: DARK }}
+      >
+        Documentation divided attention during patient visits and kept
+        clinicians working after hours.
+      </h2>
+
+    </div>
+
+
+    {/* Problem statement */}
     <p
       className="text-base md:text-lg leading-relaxed max-w-5xl"
-      style={{ color: "#64748b" }}
+      style={{ color: "#64748B" }}
     >
-      <strong style={{ color: DARK }}>
+      <span
+        className="font-semibold"
+        style={{ color: DARK }}
+      >
         This created a persistent trade-off:
-      </strong>{" "}
+      </span>{" "}
       documenting in the moment competed with attention to the patient,
       while unfinished documentation carried into the hours after the visit.
     </p>
-  </div>
-
-  {/* Initial hypothesis */}
-  <div
-    className="grid md:grid-cols-[180px_1fr] gap-6 pt-5"
-    style={{ borderTop: `1px solid ${BORDER}` }}
-  >
-    <p
-      className="text-xs font-bold tracking-[0.14em] uppercase"
-      style={{ color: MUTED }}
-    >
-      Initial hypothesis
-    </p>
-
-    <p
-      className="text-base md:text-lg font-medium leading-relaxed max-w-4xl"
-      style={{ color: "#475569" }}
-    >
-      If we reduced the{" "}
-      <strong style={{ color: DARK }}>
-        time and effort required to document
-      </strong>
-      , clinicians could stay{" "}
-      <strong style={{ color: DARK }}>
-        focused on patient care
-      </strong>{" "}
-      and spend{" "}
-      <strong style={{ color: DARK }}>
-        less time finishing notes after hours.
-      </strong>
-    </p>
-  </div>
-</Section>
 
 
-        {/* ── 02 DISCOVERY ── white */}
-<Section className="pt-14 pb-12">
+    {/* Initial hypothesis */}
+    <div className="mt-7">
 
-  {/* Chapter heading */}
-  <div className="mb-7">
-    <p
-      className="text-xs font-bold tracking-[0.16em] uppercase mb-2"
-      style={{ color: MUTED }}
-    >
-      02 Discovery
-    </p>
+      <p
+        className="text-xs font-bold tracking-[0.16em] uppercase mb-2"
+        style={{ color: MUTED }}
+      >
+        Initial hypothesis
+      </p>
 
-    <h2
-      className="text-3xl md:text-4xl font-bold tracking-tight leading-tight max-w-4xl"
-      style={{ color: DARK }}
-    >
-      Making documentation faster wouldn't solve the whole problem.
-    </h2>
+      <p
+        className="text-lg md:text-xl font-semibold leading-relaxed"
+        style={{ color: DARK }}
+      >
+        If we reduced the{" "}
+        <span style={{ color: "#475569" }}>
+          time and effort required to document
+        </span>
+        , clinicians could stay{" "}
+        <span style={{ color: "#475569" }}>
+          focused on patient care
+        </span>{" "}
+        and spend less time finishing notes after hours.
+      </p>
 
-    <p
-      className="text-lg md:text-xl text-slate-500 leading-relaxed max-w-4xl mt-3"
-    >
-      We spoke with 20 clinicians and mapped their end-to-end documentation
-      workflow to understand where the burden occurred.
-    </p>
-  </div>
+    </div>
 
-  {/* ── CURRENT-STATE WORKFLOW ── */}
-  <div className="mt-8">
+  </Section>
+</section>
 
-    <p
-      className="text-xs font-bold tracking-[0.16em] uppercase mb-3"
-      style={{ color: MUTED }}
-    >
-      Current-state workflow
-    </p>
 
-    <div
-      className="rounded-2xl overflow-hidden"
-      style={{
-        backgroundColor: "#FAFAFA",
-        border: `1px solid ${BORDER}`,
-        boxShadow: CARD_SHADOW,
-      }}
-    >
+{/* ============================================================
+    DIVIDER
+============================================================ */}
+<div
+  className="w-full"
+  style={{
+    height: "1px",
+    backgroundColor: BORDER,
+  }}
+/>
 
-      {/* Workflow */}
-      <div className="grid grid-cols-1 md:grid-cols-5">
 
-        {[
-          {
-            n: "01",
-            icon: "calendar",
-            title: "Prepare",
-            body: "Review patient context and prepare for the visit.",
-            pain: null,
-          },
-          {
-            n: "02",
-            icon: "patient",
-            title: "See the patient",
-            body: "Provide care while capturing information.",
-            pain: "Attention shifted between the patient and the chart.",
-          },
-          {
-            n: "03",
-            icon: "document",
-            title: "Document",
-            body: "Enter and update the clinical record.",
-            pain: "Documentation often remained incomplete during the visit.",
-          },
-          {
-            n: "04",
-            icon: "arrow",
-            title: "Next patient",
-            body: "Continue the clinical schedule.",
-            pain: "Unfinished documentation carried forward.",
-          },
-          {
-            n: "05",
-            icon: "clock",
-            title: "Complete notes",
-            body: "Finish remaining documentation later.",
-            pain: "Work extended into after hours.",
-          },
-        ].map((step, index) => (
+{/* ============================================================
+    02 — DISCOVERY
+============================================================ */}
+<section
+  className="w-full"
+  style={{
+    backgroundColor: "#FFFFFF",
+    borderBottom: `1px solid ${BORDER}`,
+  }}
+>
+  <Section className="pt-10 pb-10">
 
-          <div
-            key={step.n}
-            className={`relative px-5 py-5 ${
-              index !== 0 ? "md:border-l" : ""
-            }`}
-            style={{
-              borderColor: BORDER,
-            }}
-          >
+    {/* Chapter Header */}
+    <div className="mb-8">
 
-            {/* Step header */}
-            <div className="flex items-center gap-3 mb-4">
+      <div className="flex items-center gap-3 mb-3">
+        <span
+          className="text-xs font-bold tracking-[0.16em] uppercase"
+          style={{ color: MUTED }}
+        >
+          02
+        </span>
 
-              {/* Icon */}
-              <div
-                className="w-9 h-9 shrink-0 rounded-lg flex items-center justify-center"
-                style={{
-                  backgroundColor: "white",
-                  border: `1px solid ${BORDER}`,
-                }}
-              >
+        <span
+          className="h-px w-8"
+          style={{ backgroundColor: BORDER }}
+        />
 
-                {step.icon === "calendar" && (
-                  <svg
-                    width="17"
-                    height="17"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.8"
-                    className="text-slate-500"
-                  >
-                    <rect x="3" y="4" width="18" height="17" rx="2" />
-                    <path d="M16 2v4M8 2v4M3 10h18" />
-                  </svg>
-                )}
+        <span
+          className="text-xs font-bold tracking-[0.16em] uppercase"
+          style={{ color: MUTED }}
+        >
+          Discovery
+        </span>
+      </div>
 
-                {step.icon === "patient" && (
-                  <svg
-                    width="17"
-                    height="17"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.8"
-                    className="text-slate-500"
-                  >
-                    <circle cx="12" cy="8" r="3.5" />
-                    <path d="M5 21c.8-4 3.1-6 7-6s6.2 2 7 6" />
-                  </svg>
-                )}
+      <h2
+        className="text-3xl md:text-3xl font-bold tracking-tight leading-[1.08]"
+        style={{ color: DARK }}
+      >
+        Making documentation faster wouldn't solve the whole problem.
+      </h2>
 
-                {step.icon === "document" && (
-                  <svg
-                    width="17"
-                    height="17"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.8"
-                    className="text-slate-500"
-                  >
-                    <path d="M6 3h9l4 4v14H6z" />
-                    <path d="M14 3v5h5M9 13h6M9 17h6" />
-                  </svg>
-                )}
+      <p
+        className="text-lg md:text-xl leading-relaxed mt-3"
+        style={{ color: "#64748B" }}
+      >
+        We spoke with 20 clinicians and mapped their end-to-end documentation
+        workflow to understand where the burden occurred.
+      </p>
 
-                {step.icon === "arrow" && (
-                  <svg
-                    width="17"
-                    height="17"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.8"
-                    className="text-slate-500"
-                  >
-                    <path d="M5 12h13M13 6l6 6-6 6" />
-                  </svg>
-                )}
+    </div>
 
-                {step.icon === "clock" && (
-                  <svg
-                    width="17"
-                    height="17"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.8"
-                    className="text-slate-500"
-                  >
-                    <circle cx="12" cy="12" r="8.5" />
-                    <path d="M12 7v5l3 2" />
-                  </svg>
-                )}
 
-              </div>
+    {/* Current-state workflow */}
+    <div className="mt-8">
 
-              {/* Number + title */}
-              <div>
-                <p
-                  className="text-[9px] font-bold tracking-[0.12em] uppercase mb-0.5"
-                  style={{ color: MUTED }}
-                >
-                  {step.n}
-                </p>
+      <p
+        className="text-xs font-bold tracking-[0.16em] uppercase mb-4"
+        style={{ color: MUTED }}
+      >
+        Current-state workflow
+      </p>
 
-                <p
-                  className="text-sm font-bold leading-tight"
-                  style={{ color: DARK }}
-                >
-                  {step.title}
-                </p>
-              </div>
 
-            </div>
+      <div
+        className="w-full rounded-2xl overflow-hidden"
+        style={{
+          backgroundColor: "#FAFAFA",
+          border: `1px solid ${BORDER}`,
+          boxShadow: CARD_SHADOW,
+        }}
+      >
 
-            {/* Description */}
-            <p
-              className="text-sm leading-relaxed text-slate-500"
-              style={{ minHeight: "64px" }}
-            >
-              {step.body}
-            </p>
+        <div className="grid grid-cols-1 md:grid-cols-5">
 
-            {/* Workflow friction */}
+          {[
+            {
+              n: "01",
+              icon: "calendar",
+              title: "Prepare",
+              body: "Review patient context and prepare for the visit.",
+              pain: null,
+            },
+            {
+              n: "02",
+              icon: "patient",
+              title: "See the patient",
+              body: "Provide care while capturing information.",
+              pain: "Attention shifted between the patient and the chart.",
+            },
+            {
+              n: "03",
+              icon: "document",
+              title: "Document",
+              body: "Enter and update the clinical record.",
+              pain: "Documentation often remained incomplete during the visit.",
+            },
+            {
+              n: "04",
+              icon: "arrow",
+              title: "Next patient",
+              body: "Continue the clinical schedule.",
+              pain: "Unfinished documentation carried forward.",
+            },
+            {
+              n: "05",
+              icon: "clock",
+              title: "Complete notes",
+              body: "Finish remaining documentation later.",
+              pain: "Work extended into after hours.",
+            },
+          ].map((step, index) => (
+
             <div
-              className="mt-4 pt-3"
+              key={step.n}
+              className={`px-5 py-6 ${
+                index !== 0 ? "md:border-l" : ""
+              }`}
               style={{
-                borderTop: `1px solid ${BORDER}`,
-                minHeight: "72px",
+                borderColor: BORDER,
               }}
             >
-              {step.pain && (
-                <div className="flex items-start gap-2.5">
 
-                  <span
-                    className="mt-1.5 w-2 h-2 shrink-0 rounded-full"
-                    style={{ backgroundColor: "#7C3AED" }}
-                  />
+              {/* Step header */}
+              <div className="flex items-center gap-2.5 mb-4">
+
+                {/* Icon */}
+                <div
+                  className="w-9 h-9 shrink-0 rounded-lg flex items-center justify-center"
+                  style={{
+                    backgroundColor: "#FFFFFF",
+                    border: `1px solid ${BORDER}`,
+                  }}
+                >
+
+                  {step.icon === "calendar" && (
+                    <svg
+                      width="17"
+                      height="17"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                      className="text-slate-500"
+                    >
+                      <rect x="3" y="4" width="18" height="17" rx="2" />
+                      <path d="M16 2v4M8 2v4M3 10h18" />
+                    </svg>
+                  )}
+
+                  {step.icon === "patient" && (
+                    <svg
+                      width="17"
+                      height="17"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                      className="text-slate-500"
+                    >
+                      <circle cx="12" cy="8" r="3.5" />
+                      <path d="M5 21c.8-4 3.1-6 7-6s6.2 2 7 6" />
+                    </svg>
+                  )}
+
+                  {step.icon === "document" && (
+                    <svg
+                      width="17"
+                      height="17"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                      className="text-slate-500"
+                    >
+                      <path d="M6 3h9l4 4v14H6z" />
+                      <path d="M14 3v5h5M9 13h6M9 17h6" />
+                    </svg>
+                  )}
+
+                  {step.icon === "arrow" && (
+                    <svg
+                      width="17"
+                      height="17"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                      className="text-slate-500"
+                    >
+                      <path d="M5 12h13M13 6l6 6-6 6" />
+                    </svg>
+                  )}
+
+                  {step.icon === "clock" && (
+                    <svg
+                      width="17"
+                      height="17"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                      className="text-slate-500"
+                    >
+                      <circle cx="12" cy="12" r="8.5" />
+                      <path d="M12 7v5l3 2" />
+                    </svg>
+                  )}
+
+                </div>
+
+
+                {/* Number + title */}
+                <div>
+                  <p
+                    className="text-[9px] font-bold tracking-[0.12em] uppercase"
+                    style={{ color: MUTED }}
+                  >
+                    {step.n}
+                  </p>
 
                   <p
-                    className="text-sm leading-snug font-semibold"
-                    style={{ color: "#4C1D95" }}
+                    className="text-sm font-bold leading-tight"
+                    style={{ color: DARK }}
+                  >
+                    {step.title}
+                  </p>
+                </div>
+
+              </div>
+
+
+              {/* Description */}
+              <p
+                className="text-sm leading-relaxed min-h-[48px]"
+                style={{ color: "#64748B" }}
+              >
+                {step.body}
+              </p>
+
+
+              {/* Pain point */}
+              {step.pain && (
+                <div
+                  className="mt-4 pt-3"
+                  style={{
+                    borderTop: "2px solid #DDD6FE",
+                  }}
+                >
+
+                  <p
+                    className="text-sm md:text-[15px] font-semibold leading-relaxed"
+                    style={{ color: "#5B21B6" }}
                   >
                     {step.pain}
                   </p>
 
                 </div>
               )}
+
             </div>
+
+          ))}
+
+        </div>
+
+      </div>
+
+
+      {/* Workflow takeaway */}
+      <p
+        className="text-sm font-semibold mt-4"
+        style={{ color: "#64748B" }}
+      >
+
+      </p>
+
+    </div>
+
+
+    {/* What this meant */}
+    <div className="mt-9">
+
+      <div className="flex items-center gap-3 mb-3">
+
+        <span
+          className="h-px w-7"
+          style={{ backgroundColor: "#7C3AED" }}
+        />
+
+        <p
+          className="text-xs font-bold tracking-[0.16em] uppercase"
+          style={{ color: "#7C3AED" }}
+        >
+          What this meant
+        </p>
+
+      </div>
+
+      <p
+        className="text-lg md:text-xl font-bold tracking-tight leading-relaxed"
+        style={{ color: DARK }}
+      >
+        The opportunity was to make documentation fit into the care workflow
+        without disrupting patient care or extending beyond the workday.
+      </p>
+
+    </div>
+
+  </Section>
+</section>
+
+        {/* ── 03 THE DECISION ── */}
+<section
+  className="w-full"
+  style={{
+    backgroundColor: "#F8FAFC",
+    borderTop: `1px solid ${BORDER}`,
+    borderBottom: `1px solid ${BORDER}`,
+  }}
+>
+  <Section className="pt-14 pb-12">
+
+    {/* ── CHAPTER HEADER ── */}
+    <div className="mb-8">
+
+      <div className="flex items-center gap-3 mb-3">
+        <span
+          className="text-xs font-bold tracking-[0.16em] uppercase"
+          style={{ color: MUTED }}
+        >
+          03
+        </span>
+
+        <span
+          className="h-px w-8"
+          style={{ backgroundColor: BORDER }}
+        />
+
+        <span
+          className="text-xs font-bold tracking-[0.16em] uppercase"
+          style={{ color: MUTED }}
+        >
+          The Decision
+        </span>
+      </div>
+
+      <h2
+        className="text-3xl md:text-3xl font-bold tracking-tight leading-[1.08]"
+        style={{ color: DARK }}
+      >
+        Shift documentation work from the clinician to the system.
+      </h2>
+
+      <p
+        className="text-lg md:text-xl leading-relaxed mt-3"
+        style={{ color: "#64748B" }}
+      >
+        We explored three approaches to reduce the amount of documentation
+        clinicians had to complete themselves.
+      </p>
+
+    </div>
+
+
+    {/* ── THREE APPROACHES ── */}
+    <div
+      className="w-full rounded-2xl overflow-hidden"
+      style={{
+        backgroundColor: "#FFFFFF",
+        border: `1px solid ${BORDER}`,
+        boxShadow: CARD_SHADOW,
+      }}
+    >
+
+      <div className="grid grid-cols-1 md:grid-cols-3">
+
+        {[
+          {
+            n: "01",
+            title: "Templates & prompts",
+            body:
+              "Reduced repetitive entry, but clinicians still had to capture and structure information.",
+            chosen: false,
+          },
+          {
+            n: "02",
+            title: "Assisted documentation",
+            body:
+              "Helped organize and suggest content, but clinicians still had to actively document during or after the encounter.",
+            chosen: false,
+          },
+          {
+            n: "03",
+            title: "Ambient documentation",
+            body:
+              "Captured the encounter in the background and used AI to organize it into a draft for clinician review.",
+            chosen: true,
+          },
+        ].map((option, index) => (
+
+          <div
+            key={option.n}
+            className={`relative px-6 py-6 md:px-7 md:py-7 ${
+              index !== 0 ? "md:border-l" : ""
+            }`}
+            style={{
+              borderColor: BORDER,
+              backgroundColor: option.chosen ? "#F3EFFF" : "#FFFFFF",
+            }}
+          >
+
+            {/* Number + chosen */}
+            <div className="flex items-center justify-between mb-4">
+
+              <p
+                className="text-xs font-bold tracking-[0.14em] uppercase"
+                style={{
+                  color: option.chosen ? "#7C3AED" : MUTED,
+                }}
+              >
+                {option.n}
+              </p>
+
+              {option.chosen && (
+                <span
+                  className="text-[10px] font-bold tracking-[0.12em] uppercase px-2.5 py-1 rounded-full"
+                  style={{
+                    color: "#6D28D9",
+                    backgroundColor: "#EDE9FE",
+                  }}
+                >
+                  Chosen
+                </span>
+              )}
+
+            </div>
+
+
+            {/* Title */}
+            <h3
+              className="text-lg md:text-xl font-bold tracking-tight leading-tight mb-2.5"
+              style={{ color: DARK }}
+            >
+              {option.title}
+            </h3>
+
+
+            {/* Description */}
+            <p
+              className="text-sm md:text-[15px] leading-relaxed"
+              style={{
+                color: option.chosen ? "#5B21B6" : "#64748B",
+              }}
+            >
+              {option.body}
+            </p>
 
           </div>
 
@@ -526,112 +778,40 @@ export default function AmbientNotes() {
 
       </div>
 
-      {/* Legend */}
-      <div
-        className="px-5 py-3 flex items-center gap-2"
-        style={{
-          backgroundColor: "#F7F5FF",
-          borderTop: `1px solid ${BORDER}`,
-        }}
-      >
+    </div>
+
+
+    {/* ── WHY THIS DIRECTION ── */}
+    <div className="mt-8">
+
+      <div className="flex items-center gap-3 mb-3">
+
         <span
-          className="w-2 h-2 rounded-full shrink-0"
+          className="h-px w-7"
           style={{ backgroundColor: "#7C3AED" }}
         />
 
         <p
-          className="text-xs font-semibold"
-          style={{ color: "#5B21B6" }}
+          className="text-xs font-bold tracking-[0.16em] uppercase"
+          style={{ color: "#7C3AED" }}
         >
-          Documentation friction surfaced at these points in the workflow.
+        Why we chose it
         </p>
+
       </div>
 
+      <p
+        className="text-lg md:text-xl font-bold tracking-tight leading-relaxed"
+        style={{ color: DARK }}
+      >
+        Ambient documentation addressed the root problem by reducing the need
+        to actively document during care not simply making documentation faster.
+      </p>
+
     </div>
-  </div>
 
-  {/* ── SYNTHESIS ── */}
-  <div className="mt-7">
-
-    <p
-      className="text-xs font-bold tracking-[0.16em] uppercase mb-2"
-      style={{ color: MUTED }}
-    >
-      What this meant
-    </p>
-
-    <p
-      className="text-xl md:text-2xl font-bold tracking-tight leading-snug max-w-5xl"
-      style={{ color: DARK }}
-    >
-      The opportunity was to make documentation fit into the care workflow
-      without disrupting patient care or extending beyond the workday.
-    </p>
-
-  </div>
-
-</Section>
-
-        {/* ── 03 REFRAME ── white */}
-        <Section className="pt-14 pb-12">
-          <ChapterHeader
-            number="03" label="Reframe"
-            heading="The problem wasn't just writing. It was the work behind it."
-            sub="Documentation more than typing required remembering, reconstructing, organizing, and completing the encounter."
-          />
-          <div className="grid md:grid-cols-2 gap-5 mb-7">
-            <div
-              className="bg-white rounded-2xl p-7"
-              style={{ border: `1px solid ${BORDER}`, boxShadow: CARD_SHADOW }}
-            >
-              <p className="text-sm font-bold tracking-[0.14em] uppercase mb-4 text-slate-400">Before</p>
-              <p className="text-xl text-slate-400 leading-relaxed font-medium">Help clinicians document faster.</p>
-            </div>
-            <div className="rounded-2xl p-7" style={{ backgroundColor: DARK, boxShadow: DARK_SHADOW }}>
-              <p className="text-sm font-bold tracking-[0.14em] uppercase mb-4" style={{ color: MUTED }}>After</p>
-              <p className="text-xl font-semibold leading-relaxed text-white">
-                Use AI to reduce the cognitive and manual work — without removing clinical judgment from the clinician.
-              </p>
-            </div>
-          </div>
-          <p className="text-base text-slate-500 leading-relaxed">
-            This reframed Ambient Notes from an{" "}
-            <strong style={{ color: DARK }}>AI note generator</strong> into an{" "}
-            <strong style={{ color: DARK }}>AI-assisted documentation workflow</strong> a
-            meaningful difference for how we designed accountability and control into every state.
-          </p>
-        </Section>
-
-        {/* ── 04 Define - Design Principles ── lavender */}
-        <Section alt className="pt-14 pb-12">
-          <ChapterHeader
-            number="04" label="Define"
-            heading="AI could reduce the work. Clinicians still had to own the outcome."
-            sub="AI could generate clinical content, but clinicians remained responsible for what entered the medical record. This distinction became the foundation for three design principles."
-          />
-          <div className="grid md:grid-cols-3 gap-4">
-            {[
-              { n: "1", label: "AI accelerates", body: "Capture the encounter and create a structured draft." },
-              { n: "2", label: "Clinician owns",  body: "Review, correct, and approve the content." },
-              { n: "3", label: "System proves",   body: "Make attribution, transfer status, failure, and recovery visible." },
-            ].map((c) => (
-              <div
-                key={c.label}
-                className="bg-white rounded-2xl p-7 flex flex-col"
-                style={{ border: `1px solid ${BORDER}`, boxShadow: CARD_SHADOW }}
-              >
-                <div
-                  className="w-9 h-9 rounded-xl flex items-center justify-center mb-5 text-sm font-black"
-                  style={{ backgroundColor: SOFT, color: DARK }}
-                >
-                  {c.n}
-                </div>
-                <p className="font-bold text-lg mb-2" style={{ color: DARK }}>{c.label}</p>
-                <p className="text-sm text-slate-500 leading-relaxed flex-1">{c.body}</p>
-              </div>
-            ))}
-          </div>
-        </Section>
+  </Section>
+</section>
 
         {/* ── 05 DECIDE ── white */}
         <Section className="pt-14 pb-12">

@@ -326,7 +326,7 @@ export default function Home() {
   </h2>
 </ScrollReveal>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 items-stretch" style={{ borderTop: "2px solid #5b21b6", borderLeft: "1px solid #d8b4fe" }}>
+            <div className="grid grid-cols-1 md:grid-cols-5 items-stretch" style={{ borderTop: "2px solid #5b21b6", borderLeft: "1px solid #d8b4fe" }}>
               {leadership.map((item, i) => (
                 <ScrollReveal key={item.title} delay={i * 0.08} className="flex">
                   <div className="flex flex-col p-7 w-full" style={{ borderRight: "1px solid #d8b4fe", borderBottom: "1px solid #d8b4fe" }}>
