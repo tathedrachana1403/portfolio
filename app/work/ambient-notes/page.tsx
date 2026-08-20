@@ -813,65 +813,436 @@ export default function AmbientNotes() {
   </Section>
 </section>
 
-        {/* ── 05 DECIDE ── white */}
-        <Section className="pt-14 pb-12">
-          <ChapterHeader
-            number="05" label="Decide"
-            heading="The critical question: how much control should AI have?"
-            sub="We explored three directions before landing on the one that shipped."
-          />
-          <div className="grid md:grid-cols-3 gap-4 mb-7">
-            {[
-              { title: "Full AI authoring",  note: "Fastest on paper, but review could be skipped under time pressure.", verdict: "Rejected", shipped: false },
-              { title: "Confidence scores",  note: "Risked either over-trust or hesitation depending on the clinician.", verdict: "Rejected", shipped: false },
-              { title: "Verification-first", note: "Clinicians reviewed and approved the draft before transfer, with visibility into what reached the chart.", verdict: "Shipped", shipped: true },
-            ].map(t => (
+        {/* ── 04 WORKFLOW ── */}
+<section
+  className="w-full"
+  style={{
+    backgroundColor: "#FFFFFF",
+    borderBottom: `1px solid ${BORDER}`,
+  }}
+>
+  <Section className="pt-10 pb-10">
+
+    {/* Header */}
+    <div className="mb-8">
+
+      <div className="flex items-center gap-3 mb-3">
+        <span
+          className="text-xs font-bold tracking-[0.16em] uppercase"
+          style={{ color: MUTED }}
+        >
+          04
+        </span>
+
+        <span
+          className="h-px w-8"
+          style={{ backgroundColor: BORDER }}
+        />
+
+        <span
+          className="text-xs font-bold tracking-[0.16em] uppercase"
+          style={{ color: MUTED }}
+        >
+          Workflow
+        </span>
+      </div>
+
+      <h2
+        className="text-3xl md:text-3xl font-bold tracking-tight leading-[1.08]"
+        style={{ color: DARK }}
+      >
+        Designing an AI-assisted documentation workflow around patient care.
+      </h2>
+
+      <p
+        className="text-lg md:text-xl leading-relaxed mt-3 max-w-5xl"
+        style={{ color: "#64748B" }}
+      >
+        The system captures the encounter and turns it into a draft, while
+        clinicians control the final record.
+      </p>
+
+    </div>
+
+
+    {/* Workflow container */}
+    <div
+      className="rounded-2xl px-5 py-6 md:px-7 md:py-7"
+      style={{
+        backgroundColor: "#F8FAFC",
+        border: `1px solid ${BORDER}`,
+      }}
+    >
+
+      {/* System / Clinician labels */}
+      <div className="grid grid-cols-1 md:grid-cols-7 mb-5">
+
+        <div className="md:col-span-3">
+          <div className="flex items-center gap-2">
+
+            <span
+              className="w-2 h-2 rounded-full"
+              style={{ backgroundColor: "#94A3B8" }}
+            />
+
+            <span
+              className="text-[10px] font-bold tracking-[0.14em] uppercase"
+              style={{ color: "#64748B" }}
+            >
+              System
+            </span>
+
+          </div>
+        </div>
+
+        <div className="hidden md:flex md:col-span-3 items-center justify-center">
+
+          <div className="flex items-center gap-2">
+
+            <span
+              className="w-2 h-2 rounded-full"
+              style={{ backgroundColor: "#8B5CF6" }}
+            />
+
+            <span
+              className="text-[10px] font-bold tracking-[0.14em] uppercase"
+              style={{ color: "#7C3AED" }}
+            >
+              Clinician
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      {/* Continuous workflow */}
+      <div className="relative">
+
+        {/* Main connector */}
+        <div
+          className="hidden md:block absolute left-[3.5%] right-[3.5%] top-[24px] h-px"
+          style={{ backgroundColor: "#CBD5E1" }}
+        />
+
+        {/* Clinician control rail */}
+        <div
+          className="hidden md:block absolute left-[43.5%] right-[15.5%] top-[22px] h-[5px] rounded-full"
+          style={{ backgroundColor: "#DDD6FE" }}
+        />
+
+
+        <div className="grid grid-cols-2 md:grid-cols-7 gap-x-4 gap-y-7">
+
+          {[
+            {
+              n: "01",
+              title: "Capture",
+              text: "Captures the conversation in the background.",
+              type: "system",
+              icon: "mic",
+            },
+            {
+              n: "02",
+              title: "Structure",
+              text: "Organizes information into clinical sections.",
+              type: "system",
+              icon: "structure",
+            },
+            {
+              n: "03",
+              title: "Generate",
+              text: "Creates a structured draft.",
+              type: "system",
+              icon: "generate",
+            },
+            {
+              n: "04",
+              title: "Verify",
+              text: "Reviews generated content.",
+              type: "clinician",
+              icon: "verify",
+            },
+            {
+              n: "05",
+              title: "Edit",
+              text: "Corrects or refines the draft.",
+              type: "clinician",
+              icon: "edit",
+            },
+            {
+              n: "06",
+              title: "Approve",
+              text: "Approves the final record.",
+              type: "clinician",
+              icon: "approve",
+            },
+            {
+              n: "07",
+              title: "Recover",
+              text: "Recovers from workflow failures.",
+              type: "system",
+              icon: "recover",
+            },
+          ].map((step) => (
+
+            <div
+              key={step.n}
+              className="relative text-center"
+            >
+
+              {/* Step icon */}
               <div
-                key={t.title}
-                className="rounded-2xl p-7 flex flex-col"
+                className="relative z-10 w-12 h-12 mx-auto rounded-xl flex items-center justify-center"
                 style={{
-                  backgroundColor: t.shipped ? DARK : "white",
-                  border: `1px solid ${t.shipped ? DARK : BORDER}`,
-                  boxShadow: t.shipped ? DARK_SHADOW : CARD_SHADOW,
-                  opacity: t.shipped ? 1 : 0.65,
+                  backgroundColor:
+                    step.type === "clinician"
+                      ? "#F3E8FF"
+                      : "#FFFFFF",
+
+                  border:
+                    step.type === "clinician"
+                      ? "1px solid #C4B5FD"
+                      : `1px solid ${BORDER}`,
                 }}
               >
-                <span
-                  className="self-start text-xs font-bold px-3 py-1.5 rounded-full mb-6 tracking-[0.1em] uppercase"
-                  style={{
-                    backgroundColor: t.shipped ? "rgba(255,255,255,0.12)" : SOFT,
-                    color: t.shipped ? "#e9d5ff" : DARK,
-                    border: t.shipped ? "1px solid rgba(255,255,255,0.15)" : `1px solid ${BORDER}`,
-                  }}
-                >
-                  {t.verdict}
-                </span>
-                <p
-                  className="font-bold text-base mb-3"
-                  style={{
-                    color: t.shipped ? "white" : DARK,
-                    textDecoration: t.shipped ? "none" : "line-through",
-                    textDecorationColor: BORDER,
-                  }}
-                >
-                  {t.title}
-                </p>
-                <p className="text-sm leading-relaxed flex-1" style={{ color: t.shipped ? "rgba(255,255,255,0.65)" : "#94a3b8" }}>
-                  {t.note}
-                </p>
+
+                {step.icon === "mic" && (
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.7"
+                    className="text-slate-500"
+                  >
+                    <rect
+                      x="9"
+                      y="3"
+                      width="6"
+                      height="12"
+                      rx="3"
+                    />
+                    <path d="M5 11a7 7 0 0 0 14 0M12 18v3M8 21h8" />
+                  </svg>
+                )}
+
+                {step.icon === "structure" && (
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.7"
+                    className="text-slate-500"
+                  >
+                    <rect
+                      x="4"
+                      y="4"
+                      width="16"
+                      height="16"
+                      rx="2"
+                    />
+                    <path d="M8 8h8M8 12h5M8 16h8" />
+                  </svg>
+                )}
+
+                {step.icon === "generate" && (
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.7"
+                    className="text-slate-500"
+                  >
+                    <path d="M12 3l1.5 5.5L19 10l-5.5 1.5L12 17l-1.5-5.5L5 10l5.5-1.5L12 3z" />
+                    <path d="M19 16l.6 2.4L22 19l-2.4.6L19 22l-.6-2.4L16 19l2.4-.6L19 16z" />
+                  </svg>
+                )}
+
+                {step.icon === "verify" && (
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#7C3AED"
+                    strokeWidth="1.8"
+                  >
+                    <circle cx="12" cy="12" r="8.5" />
+                    <path d="M8 12l2.7 2.7L16 9.5" />
+                  </svg>
+                )}
+
+                {step.icon === "edit" && (
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#7C3AED"
+                    strokeWidth="1.8"
+                  >
+                    <path d="M12 20h9" />
+                    <path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L8 18l-4 1 1-4L16.5 3.5z" />
+                  </svg>
+                )}
+
+                {step.icon === "approve" && (
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#7C3AED"
+                    strokeWidth="1.8"
+                  >
+                    <path d="M12 3l7 3v5c0 4.5-3 7.8-7 10-4-2.2-7-5.5-7-10V6l7-3z" />
+                    <path d="M8.5 12l2.2 2.2 4.8-5" />
+                  </svg>
+                )}
+
+                {step.icon === "recover" && (
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.7"
+                    className="text-slate-500"
+                  >
+                    <path d="M20 11a8 8 0 0 0-14.8-3.9L4 9" />
+                    <path d="M4 4v5h5" />
+                    <path d="M4 13a8 8 0 0 0 14.8 3.9L20 15" />
+                    <path d="M20 20v-5h-5" />
+                  </svg>
+                )}
+
               </div>
-            ))}
-          </div>
-          <Callout label="Trade-off: Efficiency vs. Accountability">
-            <p className="text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.75)" }}>
-              Product wanted fewer steps. I advocated for explicit verification because{" "}
-              <strong className="text-white font-bold">speed without visible accountability could undermine trust.</strong>{" "}
-              Post-launch,{" "}
-              <strong className="text-white font-bold">84 to 90% of AI-generated sections were accepted with minimal edits</strong>,
-             indicating strong adoption of the verification-first workflow.
-            </p>
-          </Callout>
-        </Section>
+
+
+              {/* Number */}
+              <p
+                className="text-[9px] font-bold tracking-[0.14em] mt-2"
+                style={{
+                  color:
+                    step.type === "clinician"
+                      ? "#8B5CF6"
+                      : MUTED,
+                }}
+              >
+                {step.n}
+              </p>
+
+
+              {/* Title */}
+              <h3
+                className="text-sm font-bold tracking-tight mt-0.5"
+                style={{ color: DARK }}
+              >
+                {step.title}
+              </h3>
+
+
+              {/* Description */}
+              <p
+                className="text-[11px] leading-[1.4] mt-1.5 mx-auto max-w-[145px]"
+                style={{
+                  color:
+                    step.type === "clinician"
+                      ? "#6D5A8D"
+                      : "#64748B",
+                }}
+              >
+                {step.text}
+              </p>
+
+            </div>
+
+          ))}
+
+        </div>
+
+      </div>
+
+
+      {/* Workflow summary */}
+      <div
+        className="mt-7 pt-4 flex flex-col md:flex-row md:items-center md:justify-between gap-2"
+        style={{
+          borderTop: `1px solid ${BORDER}`,
+        }}
+      >
+
+        <p
+          className="text-xs font-semibold"
+          style={{ color: "#475569" }}
+        >
+          System handles capture, structuring, and drafting
+        </p>
+
+        <p
+          className="text-xs font-semibold"
+          style={{ color: "#7C3AED" }}
+        >
+          Clinicians control what becomes the final record
+        </p>
+
+      </div>
+
+    </div>
+
+
+    {/* Key trade-off */}
+    <div
+      className="mt-7 rounded-2xl px-5 py-4 md:px-6"
+      style={{
+        backgroundColor: "#F8FAFC",
+        border: `1px solid ${BORDER}`,
+      }}
+    >
+
+      <div className="flex items-start gap-4">
+
+        <div
+          className="w-1 shrink-0 rounded-full self-stretch"
+          style={{ backgroundColor: "#7C3AED" }}
+        />
+
+        <div className="min-w-0">
+
+          <p
+            className="text-xs font-bold tracking-[0.16em] uppercase mb-1.5"
+            style={{ color: "#7C3AED" }}
+          >
+            Key trade-off
+          </p>
+
+          <p
+            className="text-base md:text-lg font-semibold leading-relaxed max-w-5xl"
+            style={{ color: DARK }}
+          >
+            We prioritized controlled efficiency over full automation moving
+            documentation work to the system while keeping clinicians
+            responsible for the final record.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </Section>
+</section>
+
 
         {/* ── 06 DESIGN ── lavender */}
         <Section alt className="pt-14 pb-12">
