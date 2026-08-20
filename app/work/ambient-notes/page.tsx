@@ -285,7 +285,7 @@ export default function AmbientNotes() {
 <Section className="pt-14 pb-12">
 
   {/* Chapter heading */}
-  <div className="mb-6">
+  <div className="mb-7">
     <p
       className="text-xs font-bold tracking-[0.16em] uppercase mb-2"
       style={{ color: MUTED }}
@@ -294,37 +294,32 @@ export default function AmbientNotes() {
     </p>
 
     <h2
-      className="text-3xl md:text-4xl font-bold tracking-tight leading-tight max-w-3xl"
+      className="text-3xl md:text-4xl font-bold tracking-tight leading-tight max-w-4xl"
       style={{ color: DARK }}
     >
       Making documentation faster wouldn't solve the whole problem.
     </h2>
 
-    <p className="text-base text-slate-500 leading-relaxed max-w-3xl mt-3">
-      20 clinician interviews + workflow mapping revealed that documentation
-      was woven throughout the clinical workflow not a task clinicians
-      completed in isolation.
+    <p
+      className="text-lg md:text-xl text-slate-500 leading-relaxed max-w-4xl mt-3"
+    >
+      We spoke with 20 clinicians and mapped their end-to-end documentation
+      workflow to understand where the burden occurred.
     </p>
   </div>
 
-  {/* Current-state workflow */}
-  <div className="mt-7">
+  {/* ── CURRENT-STATE WORKFLOW ── */}
+  <div className="mt-8">
 
-    <div className="flex items-baseline justify-between mb-4">
-      <p
-        className="text-xs font-bold tracking-[0.16em] uppercase"
-        style={{ color: MUTED }}
-      >
-        Current-state workflow
-      </p>
-
-      <p className="hidden md:block text-xs text-slate-400">
-      
-      </p>
-    </div>
+    <p
+      className="text-xs font-bold tracking-[0.16em] uppercase mb-3"
+      style={{ color: MUTED }}
+    >
+      Current-state workflow
+    </p>
 
     <div
-      className="rounded-2xl px-5 py-6 md:px-6"
+      className="rounded-2xl overflow-hidden"
       style={{
         backgroundColor: "#FAFAFA",
         border: `1px solid ${BORDER}`,
@@ -333,49 +328,49 @@ export default function AmbientNotes() {
     >
 
       {/* Workflow */}
-      <div className="grid grid-cols-1 md:grid-cols-5 gap-0">
+      <div className="grid grid-cols-1 md:grid-cols-5">
 
         {[
           {
             n: "01",
             icon: "calendar",
             title: "Prepare",
-            body: "Review patient context.",
+            body: "Review patient context and prepare for the visit.",
             pain: null,
           },
           {
             n: "02",
             icon: "patient",
-            title: "See patient",
-            body: "Provide care + capture information.",
-            pain: "Attention split between patient and chart.",
+            title: "See the patient",
+            body: "Provide care while capturing information.",
+            pain: "Attention shifted between the patient and the chart.",
           },
           {
             n: "03",
             icon: "document",
             title: "Document",
-            body: "Enter and update the record.",
-            pain: "Notes remain incomplete during the visit.",
+            body: "Enter and update the clinical record.",
+            pain: "Documentation often remained incomplete during the visit.",
           },
           {
             n: "04",
             icon: "arrow",
             title: "Next patient",
             body: "Continue the clinical schedule.",
-            pain: "Unfinished work carries forward.",
+            pain: "Unfinished documentation carried forward.",
           },
           {
             n: "05",
             icon: "clock",
             title: "Complete notes",
-            body: "Finish documentation later.",
-            pain: "Work extends into after hours.",
+            body: "Finish remaining documentation later.",
+            pain: "Work extended into after hours.",
           },
         ].map((step, index) => (
 
           <div
             key={step.n}
-            className={`relative px-4 ${
+            className={`relative px-5 py-5 ${
               index !== 0 ? "md:border-l" : ""
             }`}
             style={{
@@ -384,7 +379,7 @@ export default function AmbientNotes() {
           >
 
             {/* Step header */}
-            <div className="flex items-center gap-2.5 mb-3">
+            <div className="flex items-center gap-3 mb-4">
 
               {/* Icon */}
               <div
@@ -471,9 +466,10 @@ export default function AmbientNotes() {
 
               </div>
 
+              {/* Number + title */}
               <div>
                 <p
-                  className="text-[9px] font-bold tracking-[0.12em] uppercase"
+                  className="text-[9px] font-bold tracking-[0.12em] uppercase mb-0.5"
                   style={{ color: MUTED }}
                 >
                   {step.n}
@@ -489,36 +485,39 @@ export default function AmbientNotes() {
 
             </div>
 
-            {/* Step description */}
-            <p className="text-xs leading-relaxed text-slate-500 min-h-[42px]">
+            {/* Description */}
+            <p
+              className="text-sm leading-relaxed text-slate-500"
+              style={{ minHeight: "64px" }}
+            >
               {step.body}
             </p>
 
-            {/* Pain point */}
+            {/* Workflow friction */}
             <div
-              className={`mt-3 rounded-lg px-3 py-2.5 ${
-                step.pain ? "" : "opacity-0"
-              }`}
+              className="mt-4 pt-3"
               style={{
-                backgroundColor: step.pain ? "#F3F0FF" : "transparent",
-                border: step.pain
-                  ? "1px solid #E5DDFB"
-                  : "1px solid transparent",
+                borderTop: `1px solid ${BORDER}`,
+                minHeight: "72px",
               }}
             >
-              <p
-                className="text-[10px] font-bold tracking-[0.12em] uppercase mb-1"
-                style={{ color: "#7C3AED" }}
-              >
-                Pain point
-              </p>
+              {step.pain && (
+                <div className="flex items-start gap-2.5">
 
-              <p
-                className="text-xs leading-snug font-semibold"
-                style={{ color: "#4C1D95" }}
-              >
-                {step.pain || "No major breakdown identified."}
-              </p>
+                  <span
+                    className="mt-1.5 w-2 h-2 shrink-0 rounded-full"
+                    style={{ backgroundColor: "#7C3AED" }}
+                  />
+
+                  <p
+                    className="text-sm leading-snug font-semibold"
+                    style={{ color: "#4C1D95" }}
+                  >
+                    {step.pain}
+                  </p>
+
+                </div>
+              )}
             </div>
 
           </div>
@@ -526,32 +525,49 @@ export default function AmbientNotes() {
         ))}
 
       </div>
+
+      {/* Legend */}
+      <div
+        className="px-5 py-3 flex items-center gap-2"
+        style={{
+          backgroundColor: "#F7F5FF",
+          borderTop: `1px solid ${BORDER}`,
+        }}
+      >
+        <span
+          className="w-2 h-2 rounded-full shrink-0"
+          style={{ backgroundColor: "#7C3AED" }}
+        />
+
+        <p
+          className="text-xs font-semibold"
+          style={{ color: "#5B21B6" }}
+        >
+          Documentation friction surfaced at these points in the workflow.
+        </p>
+      </div>
+
     </div>
   </div>
 
-  {/* Synthesis */}
-  <div
-    className="mt-6 rounded-2xl px-6 py-5"
-    style={{
-      backgroundColor: SOFT,
-      border: `1px solid ${BORDER}`,
-    }}
-  >
+  {/* ── SYNTHESIS ── */}
+  <div className="mt-7">
+
     <p
       className="text-xs font-bold tracking-[0.16em] uppercase mb-2"
       style={{ color: MUTED }}
     >
-      Synthesis
+      What this meant
     </p>
 
     <p
-      className="text-lg md:text-xl font-semibold leading-relaxed max-w-5xl"
+      className="text-xl md:text-2xl font-bold tracking-tight leading-snug max-w-5xl"
       style={{ color: DARK }}
     >
-      The burden wasn't the act of writing itself. It was the cognitive load
-      of moving between patient care, documentation, and recall throughout
-      the day.
+      The opportunity was to make documentation fit into the care workflow
+      without disrupting patient care or extending beyond the workday.
     </p>
+
   </div>
 
 </Section>
