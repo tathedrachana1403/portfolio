@@ -2253,44 +2253,178 @@ export default function AmbientNotes() {
   </Section>
 </section>
 
-        {/* ── 09 LEARNINGS ── lavender */}
-        <Section alt className="pt-14 pb-12">
-          <ChapterHeader
-            number="09" label="Learnings After Launch"
-            heading="Launch gave us a second source of truth: what clinicians actually valued."
-            sub="Post-launch feedback showed strong adoption and demand to bring more clinical information into the same workflow — diagnoses, orders, and structured clinical data."
-          />
-          <Label>Clinician feedback</Label>
-          <div className="grid md:grid-cols-3 gap-4 mb-8">
-            {[
-              { quote: "Ambient gives me time back every encounter. I don't have to work nights and weekends this saves me 7 to 8 hours per week.", attr: "Clinician, VillageMD", context: "~315 encounters" },
-              { quote: "I've corrected a few, but I would say probably 85% of it is pertinent and correct.", attr: "Clinician, VIM Clinic", context: "~244 encounters" },
-              { quote: "The speed of Ambient made it possible to complete the encounter, correct the transcript, and close the chart on the spot.", attr: "Clinician, CHS", context: "~195 encounters" },
-            ].map(q => (
-              <div
-                key={q.attr}
-                className="bg-white rounded-2xl p-7 flex flex-col"
-                style={{ border: `1px solid ${BORDER}`, boxShadow: CARD_SHADOW }}
-              >
-                <span
-                  className="text-6xl font-black leading-none mb-3 select-none block"
-                  style={{ color: DARK, opacity: 0.1, lineHeight: "0.8" }}
-                >
-                  "
-                </span>
-                <p className="text-base text-slate-600 leading-relaxed flex-1 mb-6">{q.quote}</p>
-                <div className="pt-5" style={{ borderTop: `1px solid ${BORDER}` }}>
-                  <p className="text-sm font-bold" style={{ color: DARK }}>{q.attr}</p>
-                  <p className="text-xs text-slate-400 mt-0.5">{q.context}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-          <p className="text-base text-slate-500 leading-relaxed">
-            The value was not only saving documentation time. Clinicians wanted Ambient to
-            become a more complete part of their clinical workflow.
+        {/* ── 09 AFTER LAUNCH ── */}
+<section
+  className="w-full"
+  style={{
+    backgroundColor: "#F8FAFC",
+    borderTop: `1px solid ${BORDER}`,
+    borderBottom: `1px solid ${BORDER}`,
+  }}
+>
+  <Section className="pt-10 pb-10">
+
+    {/* Header */}
+    <div className="mb-7">
+
+      <div className="flex items-center gap-3 mb-2">
+
+        <span
+          className="text-xs font-bold tracking-[0.16em] uppercase"
+          style={{ color: MUTED }}
+        >
+          09
+        </span>
+
+        <span
+          className="h-px w-6"
+          style={{ backgroundColor: BORDER }}
+        />
+
+        <span
+          className="text-xs font-bold tracking-[0.16em] uppercase"
+          style={{ color: MUTED }}
+        >
+          After Launch
+        </span>
+
+      </div>
+
+      <h2
+        className="text-2xl md:text-3xl font-bold tracking-tight leading-tight max-w-4xl"
+        style={{ color: DARK }}
+      >
+        The biggest value was completing documentation within the visit.
+      </h2>
+
+      <p
+        className="text-base md:text-lg leading-relaxed max-w-4xl mt-3"
+        style={{ color: "#64748B" }}
+      >
+        Post-launch feedback showed that clinicians valued being able to finish
+        documentation while the encounter was still fresh, rather than
+        carrying unfinished work into the rest of the day.
+      </p>
+
+    </div>
+
+
+    {/* Clinician feedback */}
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+      {/* VillageMD */}
+      <div
+        className="rounded-xl px-5 py-5 flex flex-col"
+        style={{
+          backgroundColor: "#FFFFFF",
+          border: `1px solid ${BORDER}`,
+        }}
+      >
+
+        <div
+          className="text-2xl leading-none mb-3"
+          style={{ color: "#7C3AED" }}
+        >
+          “
+        </div>
+
+        <p
+          className="text-base md:text-lg font-semibold leading-relaxed"
+          style={{ color: DARK }}
+        >
+          Ambient gives me time back every encounter. I don't have to work
+          nights and weekends.
+        </p>
+
+        {/* Metadata pinned to bottom */}
+        <div
+          className="flex items-center justify-between gap-4 mt-auto pt-6"
+        >
+          <p
+            className="text-xs font-bold tracking-[0.08em] uppercase"
+            style={{ color: MUTED }}
+          >
+            Clinician · VillageMD
           </p>
-        </Section>
+
+          <p
+            className="text-xs whitespace-nowrap"
+            style={{ color: "#94A3B8" }}
+          >
+            ~315 encounters
+          </p>
+        </div>
+
+      </div>
+
+
+      {/* CHS */}
+      <div
+        className="rounded-xl px-5 py-5 flex flex-col"
+        style={{
+          backgroundColor: "#FFFFFF",
+          border: `1px solid ${BORDER}`,
+        }}
+      >
+
+        <div
+          className="text-2xl leading-none mb-3"
+          style={{ color: "#7C3AED" }}
+        >
+          “
+        </div>
+
+        <p
+          className="text-base md:text-lg font-semibold leading-relaxed"
+          style={{ color: DARK }}
+        >
+          The speed of Ambient made it possible to complete the encounter,
+          correct the transcript, and close the chart on the spot.
+        </p>
+
+        {/* Metadata pinned to bottom */}
+        <div
+          className="flex items-center justify-between gap-4 mt-auto pt-6"
+        >
+          <p
+            className="text-xs font-bold tracking-[0.08em] uppercase"
+            style={{ color: MUTED }}
+          >
+            Clinician · CHS
+          </p>
+
+          <p
+            className="text-xs whitespace-nowrap"
+            style={{ color: "#94A3B8" }}
+          >
+            ~195 encounters
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    {/* Closing insight */}
+    <div
+      className="mt-5 rounded-xl px-5 py-4"
+      style={{
+        backgroundColor: "#F3F0FF",
+        border: "1px solid #E5DDFB",
+      }}
+    >
+      <p
+        className="text-sm md:text-base font-semibold leading-relaxed"
+        style={{ color: DARK }}
+      >
+        The pattern was reused across other AI-assisted workflows.
+      </p>
+    </div>
+
+  </Section>
+</section>
+
 
         {/* ── 10 SCALE ── white */}
         <Section className="pt-14 pb-12">
