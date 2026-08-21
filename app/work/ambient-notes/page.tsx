@@ -2091,39 +2091,167 @@ export default function AmbientNotes() {
           </Callout>
         </Section>
 
-        {/* ── 08 IMPACT ── white */}
-        <Section className="pt-14 pb-12">
-          <ChapterHeader
-            number="08" label="Impact"
-            heading="The workflow shifted clinicians from reconstructing notes to verifying them."
-          />
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
-            {[
-              { v: "90%+",    l: "Same-day completion" },
-              { v: "3.6 min", l: "Saved per encounter" },
-              { v: "36%",     l: "Less after-hours documentation" },
-              { v: "84 to 90%",  l: "AI sections accepted with minimal edits" },
-              { v: "1M+",     l: "Patient encounters" },
-              { v: "3K+",     l: "Clinicians onboarded" },
-            ].map(s => (
-              <div
-                key={s.l}
-                className="rounded-2xl p-6"
-                style={{ backgroundColor: SOFT, border: `1px solid ${BORDER}` }}
-              >
-                <p className="text-4xl font-black mb-2 tabular-nums" style={{ color: DARK }}>{s.v}</p>
-                <p className="text-sm text-slate-500 leading-snug">{s.l}</p>
-              </div>
-            ))}
-          </div>
-          <div className="rounded-2xl px-8 py-8" style={{ backgroundColor: DARK, boxShadow: DARK_SHADOW }}>
-            <p className="text-5xl md:text-6xl font-black text-white mb-2 tabular-nums">~60,000 hours</p>
-            <p className="text-xl font-bold mb-2" style={{ color: "#d8b4fe" }}>of clinician time returned</p>
-            <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.55)" }}>
-              Based on 3.6 minutes saved across approximately 1M encounters.
-            </p>
-          </div>
-        </Section>
+        {/* ── 08 IMPACT ── */}
+<section
+  className="w-full"
+  style={{
+    backgroundColor: "#FFFFFF",
+    borderTop: `1px solid ${BORDER}`,
+    borderBottom: `1px solid ${BORDER}`,
+  }}
+>
+  <Section className="pt-8 pb-8">
+
+    {/* Header */}
+    <div className="mb-5">
+
+      <div className="flex items-center gap-3 mb-2">
+
+        <span
+          className="text-xs font-bold tracking-[0.16em] uppercase"
+          style={{ color: MUTED }}
+        >
+          08
+        </span>
+
+        <span
+          className="h-px w-6"
+          style={{ backgroundColor: BORDER }}
+        />
+
+        <span
+          className="text-xs font-bold tracking-[0.16em] uppercase"
+          style={{ color: MUTED }}
+        >
+          Impact
+        </span>
+
+      </div>
+
+      <h2
+        className="text-xl md:text-2xl font-bold tracking-tight leading-tight"
+        style={{ color: DARK }}
+      >
+        Less documentation work during and after the visit.
+      </h2>
+
+    </div>
+
+
+    {/* Compact impact metrics */}
+    <div
+      className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 rounded-xl overflow-hidden"
+      style={{
+        backgroundColor: "#F8FAFC",
+        border: `1px solid ${BORDER}`,
+      }}
+    >
+
+      {/* 90%+ */}
+      <div
+        className="px-4 py-4"
+        style={{
+          borderBottom: `1px solid ${BORDER}`,
+        }}
+      >
+
+        <p
+          className="text-2xl md:text-[26px] font-black tracking-tight"
+          style={{ color: DARK }}
+        >
+          90%+
+        </p>
+
+        <p
+          className="text-xs mt-1"
+          style={{ color: "#64748B" }}
+        >
+          Same-day completion
+        </p>
+
+      </div>
+
+
+      {/* 36% */}
+      <div
+        className="px-4 py-4 lg:border-l"
+        style={{
+          borderColor: BORDER,
+          borderBottom: `1px solid ${BORDER}`,
+        }}
+      >
+
+        <p
+          className="text-2xl md:text-[26px] font-black tracking-tight"
+          style={{ color: DARK }}
+        >
+          36%
+        </p>
+
+        <p
+          className="text-xs mt-1"
+          style={{ color: "#64748B" }}
+        >
+          Less after-hours documentation
+        </p>
+
+      </div>
+
+
+      {/* 84 → 90% */}
+      <div
+        className="px-4 py-4 lg:border-l"
+        style={{
+          borderColor: BORDER,
+          borderBottom: `1px solid ${BORDER}`,
+        }}
+      >
+
+        <p
+          className="text-2xl md:text-[26px] font-black tracking-tight"
+          style={{ color: DARK }}
+        >
+          84 → 90%
+        </p>
+
+        <p
+          className="text-xs mt-1"
+          style={{ color: "#64748B" }}
+        >
+          AI sections accepted with minimal edits
+        </p>
+
+      </div>
+
+
+      {/* ~60K */}
+      <div
+        className="px-4 py-4 lg:border-l"
+        style={{
+          borderColor: BORDER,
+        }}
+      >
+
+        <p
+          className="text-2xl md:text-[26px] font-black tracking-tight"
+          style={{ color: "#7C3AED" }}
+        >
+          ~60K
+        </p>
+
+        <p
+          className="text-xs mt-1"
+          style={{ color: "#64748B" }}
+        >
+          Hours of clinician time returned
+        </p>
+
+      </div>
+
+    </div>
+
+  </Section>
+</section>
 
         {/* ── 09 LEARNINGS ── lavender */}
         <Section alt className="pt-14 pb-12">
