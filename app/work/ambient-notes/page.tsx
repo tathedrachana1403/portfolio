@@ -2426,7 +2426,7 @@ export default function AmbientNotes() {
 </section>
 
 
-       {/* ── 10 NEXT STEPS ── */}
+       {/* ── 07 VALIDATION ── */}
 <section
   className="w-full"
   style={{
@@ -2437,14 +2437,14 @@ export default function AmbientNotes() {
 >
   <Section className="pt-10 pb-10">
 
-    {/* Header */}
+    {/* Section Header */}
     <div className="flex items-center gap-3 mb-3">
 
       <span
         className="text-xs font-bold tracking-[0.16em] uppercase"
         style={{ color: MUTED }}
       >
-        10
+        07
       </span>
 
       <span
@@ -2456,34 +2456,98 @@ export default function AmbientNotes() {
         className="text-xs font-bold tracking-[0.16em] uppercase"
         style={{ color: MUTED }}
       >
-        Next Steps
+        Validation
       </span>
 
     </div>
 
 
-    {/* Main content */}
-    <div className="max-w-4xl">
+    {/* Intro */}
+    <div className="w-full mb-7">
 
       <h2
         className="text-2xl md:text-3xl font-bold tracking-tight leading-tight"
         style={{ color: DARK }}
       >
-        Expand Ambient to support more of the clinical record.
+        Testing the workflow before engineering pickup.
       </h2>
 
       <p
         className="text-base md:text-lg leading-relaxed mt-3"
         style={{ color: "#64748B" }}
       >
-        Post-launch demand pointed toward bringing{" "}
-        <strong style={{ color: DARK }}>diagnoses</strong>,{" "}
-        <strong style={{ color: DARK }}>orders</strong>, and{" "}
+        We ran{" "}
         <strong style={{ color: DARK }}>
-          structured clinical information
+          5 clinician usability sessions
         </strong>{" "}
-        into the same documentation workflow.
+        on the wireframes.
       </p>
+
+    </div>
+
+
+    {/* Findings */}
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
+
+      {/* What we learned */}
+      <div
+        className="rounded-xl px-5 py-5"
+        style={{
+          backgroundColor: "#F8FAFC",
+          border: `1px solid ${BORDER}`,
+        }}
+      >
+
+        <p
+          className="text-xs font-bold tracking-[0.14em] uppercase mb-3"
+          style={{ color: "#7C3AED" }}
+        >
+          What we learned
+        </p>
+
+        <p
+          className="text-base leading-relaxed"
+          style={{ color: DARK }}
+        >
+          Clinicians were comfortable with AI handling capture and drafting,
+          but needed clear opportunities to{" "}
+          <strong>
+            review, correct, and approve
+          </strong>{" "}
+          the output.
+        </p>
+
+      </div>
+
+
+      {/* What changed */}
+      <div
+        className="rounded-xl px-5 py-5"
+        style={{
+          backgroundColor: "#F8FAFC",
+          border: `1px solid ${BORDER}`,
+        }}
+      >
+
+        <p
+          className="text-xs font-bold tracking-[0.14em] uppercase mb-3"
+          style={{ color: "#7C3AED" }}
+        >
+          What changed
+        </p>
+
+        <p
+          className="text-base leading-relaxed"
+          style={{ color: DARK }}
+        >
+          We made{" "}
+          <strong>
+            AI attribution, section-level editing, and final approval
+          </strong>{" "}
+          more explicit.
+        </p>
+
+      </div>
 
     </div>
 
