@@ -2426,93 +2426,69 @@ export default function AmbientNotes() {
 </section>
 
 
-        {/* ── 10 SCALE ── white */}
-        <Section className="pt-14 pb-12">
-          <ChapterHeader
-            number="10" label="Scale"
-            heading="The work became a reusable model for trustworthy AI."
-            sub="The verification-first approach extended beyond Ambient Notes. I documented and shared the pattern with two other product design teams building AI-assisted workflows."
-          />
-          <div className="grid md:grid-cols-2 gap-5">
-            <div
-              className="bg-white rounded-2xl p-7"
-              style={{ border: `1px solid ${BORDER}`, boxShadow: CARD_SHADOW }}
-            >
-              <p className="text-sm font-bold tracking-[0.14em] uppercase mb-4" style={{ color: DARK }}>Reusable pattern</p>
-              <div className="flex items-stretch">
-                {[
-                  { n: "01", label: "Attribution" },
-                  { n: "02", label: "Approval" },
-                  { n: "03", label: "Transfer visibility" },
-                  { n: "04", label: "Recovery" },
-                ].map((step, i, arr) => (
-                  <div key={step.label} className="flex items-stretch flex-1">
-                    <div
-                      className="flex flex-col items-center justify-center px-2 py-4 w-full text-center"
-                      style={{
-                        backgroundColor: i === arr.length - 1 ? DARK : SOFT,
-                        border: `1.5px solid ${i === arr.length - 1 ? DARK : BORDER}`,
-                        borderLeft: i > 0 ? "none" : undefined,
-                        borderRadius: i === 0 ? "10px 0 0 10px" : i === arr.length - 1 ? "0 10px 10px 0" : "0",
-                      }}
-                    >
-                      <span className="text-[10px] font-black tabular-nums mb-1" style={{ color: i === arr.length - 1 ? "rgba(255,255,255,0.45)" : MUTED }}>{step.n}</span>
-                      <span className="text-xs font-bold leading-snug" style={{ color: i === arr.length - 1 ? "white" : DARK }}>{step.label}</span>
-                    </div>
-                    {i < arr.length - 1 && (
-                      <div className="shrink-0 self-stretch w-5 z-10 -mx-2.5"
-                        style={{
-                          backgroundColor: i === arr.length - 2 ? DARK : BORDER,
-                          clipPath: "polygon(0 0, 60% 0, 100% 50%, 60% 100%, 0 100%, 40% 50%)",
-                        }}
-                      />
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="rounded-2xl p-7" style={{ backgroundColor: DARK, boxShadow: DARK_SHADOW }}>
-              <p className="text-sm font-bold tracking-[0.14em] uppercase mb-5" style={{ color: MUTED }}>Why it generalised</p>
-              <p className="text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.75)" }}>
-                Any AI workflow where humans remain accountable for the output needs the same four things: <strong className="text-white">visible attribution, explicit approval, transfer transparency, and a recovery path</strong> when things fail.
-              </p>
-            </div>
-          </div>
-        </Section>
+       {/* ── 10 NEXT STEPS ── */}
+<section
+  className="w-full"
+  style={{
+    backgroundColor: "#FFFFFF",
+    borderTop: `1px solid ${BORDER}`,
+    borderBottom: `1px solid ${BORDER}`,
+  }}
+>
+  <Section className="pt-10 pb-10">
 
-        {/* ── 11 REFLECT ── lavender */}
-        <Section alt className="pt-14 pb-14">
-          <ChapterHeader
-            number="11" label="Reflect"
-            heading="The next opportunity is to expand Ambient beyond documentation."
-            sub="We started with HPI and Assessment & Plan. Clinician feedback showed demand for diagnoses, orders, and structured clinical data to become part of the experience."
-          />
-          <div className="grid md:grid-cols-2 gap-5">
-            <p className="text-base text-slate-500 leading-relaxed">
-              The next evolution is to extend Ambient from{" "}
-              <strong style={{ color: DARK }}>documentation assistance to broader clinical workflow support</strong>{" "}
-             while preserving the principles that made the experience trustworthy: control, transparency, and recovery.
-            </p>
-            <div
-              className="rounded-2xl p-7"
-              style={{ backgroundColor: SOFT, border: `1px solid ${BORDER}`, borderLeft: `4px solid ${DARK}` }}
-            >
-              <p className="text-sm font-bold tracking-[0.14em] uppercase mb-4" style={{ color: DARK }}>What I'd do next</p>
-              <ul className="space-y-2.5">
-                {[
-                  "Extend capture to structured diagnoses and orders",
-                  "Build cross-encounter pattern detection",
-                  "Design for handoff across care teams, not just one clinician",
-                ].map(item => (
-                  <li key={item} className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full mt-2 shrink-0" style={{ backgroundColor: DARK }} />
-                    <p className="text-sm text-slate-600 leading-relaxed">{item}</p>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </Section>
+    {/* Header */}
+    <div className="flex items-center gap-3 mb-3">
+
+      <span
+        className="text-xs font-bold tracking-[0.16em] uppercase"
+        style={{ color: MUTED }}
+      >
+        10
+      </span>
+
+      <span
+        className="h-px w-6"
+        style={{ backgroundColor: BORDER }}
+      />
+
+      <span
+        className="text-xs font-bold tracking-[0.16em] uppercase"
+        style={{ color: MUTED }}
+      >
+        Next Steps
+      </span>
+
+    </div>
+
+
+    {/* Main content */}
+    <div className="max-w-4xl">
+
+      <h2
+        className="text-2xl md:text-3xl font-bold tracking-tight leading-tight"
+        style={{ color: DARK }}
+      >
+        Expand Ambient to support more of the clinical record.
+      </h2>
+
+      <p
+        className="text-base md:text-lg leading-relaxed mt-3"
+        style={{ color: "#64748B" }}
+      >
+        Post-launch demand pointed toward bringing{" "}
+        <strong style={{ color: DARK }}>diagnoses</strong>,{" "}
+        <strong style={{ color: DARK }}>orders</strong>, and{" "}
+        <strong style={{ color: DARK }}>
+          structured clinical information
+        </strong>{" "}
+        into the same documentation workflow.
+      </p>
+
+    </div>
+
+  </Section>
+</section>
 
         {/* ── FOOTER NAV ── */}
         <div className="py-10" style={{ borderTop: `1px solid ${BORDER}`, backgroundColor: "white" }}>
