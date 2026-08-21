@@ -1244,65 +1244,787 @@ export default function AmbientNotes() {
 </section>
 
 
-        {/* ── 06 DESIGN ── lavender */}
-        <Section alt className="pt-14 pb-12">
-          <ChapterHeader
-            number="06" label="Design"
-            heading="The workflow shifted clinicians from reconstructing encounters later to verifying AI-generated documentation while the context was still fresh."
-          />
+        {/* ── 06 WIREFRAME ── */}
+<section
+  className="w-full"
+  style={{
+    backgroundColor: "#FFFFFF",
+    borderBottom: `1px solid ${BORDER}`,
+  }}
+>
+  <Section className="pt-14 pb-16">
 
-          <Label>The four-step workflow</Label>
-          <div className="flex items-stretch mb-8">
-            {[
-              { n: "01", label: "Capture",  body: "Explicit consent and visible recording states." },
-              { n: "02", label: "Draft",    body: "AI structures the encounter into clinical sections." },
-              { n: "03", label: "Review",   body: "Clinicians review and approve each section." },
-              { n: "04", label: "Transfer", body: "Section-level status shows what was sent, failed, or needs action." },
-            ].map((s, i, arr) => (
-              <div key={s.label} className="flex items-stretch flex-1">
+    {/* Header */}
+    <div className="mb-8">
+
+      <div className="flex items-center gap-3 mb-3">
+        <span
+          className="text-xs font-bold tracking-[0.16em] uppercase"
+          style={{ color: MUTED }}
+        >
+          06
+        </span>
+
+        <span
+          className="h-px w-8"
+          style={{ backgroundColor: BORDER }}
+        />
+
+        <span
+          className="text-xs font-bold tracking-[0.16em] uppercase"
+          style={{ color: MUTED }}
+        >
+          Wireframe
+        </span>
+      </div>
+
+      <h2
+        className="text-2xl md:text-3xl font-bold tracking-tight leading-tight whitespace-nowrap"
+        style={{ color: DARK }}
+      >
+        Exploring the core interaction states across the documentation workflow.
+      </h2>
+
+    </div>
+
+
+    {/* Workflow exploration */}
+    <div
+      className="rounded-2xl p-5 md:p-7"
+      style={{
+        backgroundColor: "#F8FAFC",
+        border: `1px solid ${BORDER}`,
+      }}
+    >
+
+      {/* Exploration header */}
+      <div className="flex items-center gap-4 mb-8">
+
+        <p
+          className="text-xs font-bold tracking-[0.16em] uppercase shrink-0"
+          style={{ color: MUTED }}
+        >
+          Workflow exploration
+        </p>
+
+        <div
+          className="h-px flex-1"
+          style={{ backgroundColor: BORDER }}
+        />
+
+        <p
+          className="hidden md:block text-xs font-medium shrink-0"
+          style={{ color: "#94A3B8" }}
+        >
+          Capture → Draft → Review → Transfer
+        </p>
+
+      </div>
+
+
+      {/* Four wireframe screens */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+
+        {/* ── 01 CAPTURE ── */}
+        <div>
+
+          <div className="flex items-center gap-2 mb-3">
+
+            <span
+              className="text-xs font-bold"
+              style={{ color: "#7C3AED" }}
+            >
+              01
+            </span>
+
+            <span
+              className="text-sm font-bold"
+              style={{ color: DARK }}
+            >
+              Capture
+            </span>
+
+          </div>
+
+
+          {/* Mobile frame */}
+          <div
+            className="mx-auto w-full max-w-[210px] rounded-[28px] p-[6px]"
+            style={{
+              backgroundColor: "#E2E8F0",
+              border: "1px solid #CBD5E1",
+              boxShadow: "0 12px 30px rgba(15,23,42,0.08)",
+            }}
+          >
+
+            <div
+              className="relative overflow-hidden rounded-[23px]"
+              style={{
+                backgroundColor: "#FFFFFF",
+                aspectRatio: "9 / 19.5",
+              }}
+            >
+
+              {/* Status bar */}
+              <div className="flex items-center justify-between px-4 pt-3">
+
+                <span
+                  className="text-[8px] font-bold"
+                  style={{ color: DARK }}
+                >
+                  9:41
+                </span>
+
+                <div className="flex gap-1">
+                  <span
+                    className="w-2 h-1 rounded-full"
+                    style={{ backgroundColor: "#CBD5E1" }}
+                  />
+                  <span
+                    className="w-2 h-1 rounded-full"
+                    style={{ backgroundColor: "#CBD5E1" }}
+                  />
+                  <span
+                    className="w-3 h-1 rounded-full"
+                    style={{ backgroundColor: "#94A3B8" }}
+                  />
+                </div>
+
+              </div>
+
+
+              {/* Header */}
+              <div className="px-4 pt-6">
+
                 <div
-                  className="flex flex-col px-5 pt-5 pb-5 w-full"
+                  className="h-3 w-24 rounded mb-2"
+                  style={{ backgroundColor: "#64748B" }}
+                />
+
+                <div
+                  className="h-1.5 w-16 rounded"
+                  style={{ backgroundColor: "#E2E8F0" }}
+                />
+
+              </div>
+
+
+              {/* Recording card */}
+              <div className="px-3 pt-6">
+
+                <div
+                  className="rounded-xl p-4"
                   style={{
-                    backgroundColor: i === 0 ? SOFT : i === arr.length - 1 ? DARK : "white",
-                    border: `1.5px solid ${i === arr.length - 1 ? DARK : BORDER}`,
-                    borderLeft: i > 0 ? "none" : undefined,
-                    borderRadius: i === 0 ? "12px 0 0 12px" : i === arr.length - 1 ? "0 12px 12px 0" : "0",
+                    backgroundColor: "#F8FAFC",
+                    border: `1px solid ${BORDER}`,
                   }}
                 >
-                  <div
-                    className="w-8 h-8 rounded-lg flex items-center justify-center text-xs font-black mb-3 shrink-0"
-                    style={{
-                      backgroundColor: i === arr.length - 1 ? "rgba(255,255,255,0.12)" : SOFT,
-                      color: i === arr.length - 1 ? "white" : DARK,
-                      border: `1px solid ${i === arr.length - 1 ? "rgba(255,255,255,0.15)" : BORDER}`,
-                    }}
-                  >{s.n}</div>
-                  <p className="font-bold text-sm mb-1.5" style={{ color: i === arr.length - 1 ? "white" : DARK }}>{s.label}</p>
-                  <p className="text-xs leading-relaxed" style={{ color: i === arr.length - 1 ? "rgba(255,255,255,0.6)" : "#94a3b8" }}>{s.body}</p>
+
+                  <div className="flex items-center justify-between mb-6">
+
+                    <span
+                      className="text-[9px] font-bold"
+                      style={{ color: DARK }}
+                    >
+                      Recording
+                    </span>
+
+                    <span
+                      className="w-2 h-2 rounded-full"
+                      style={{ backgroundColor: "#7C3AED" }}
+                    />
+
+                  </div>
+
+
+                  {/* Waveform */}
+                  <div className="flex items-center justify-center gap-[3px] h-10">
+
+                    {[10, 17, 25, 15, 31, 20, 35, 18, 28, 13, 23].map(
+                      (height, index) => (
+                        <span
+                          key={index}
+                          className="w-[2px] rounded-full"
+                          style={{
+                            height: `${height}px`,
+                            backgroundColor: "#A78BFA",
+                          }}
+                        />
+                      )
+                    )}
+
+                  </div>
+
                 </div>
-                {i < arr.length - 1 && (
-                  <div className="shrink-0 self-stretch w-6 z-10 -mx-3"
-                    style={{
-                      backgroundColor: i === arr.length - 2 ? DARK : BORDER,
-                      clipPath: "polygon(0 0, 60% 0, 100% 50%, 60% 100%, 0 100%, 40% 50%)",
-                    }}
-                  />
-                )}
+
               </div>
-            ))}
+
+
+              {/* Bottom state */}
+              <div className="absolute bottom-5 left-3 right-3">
+
+                <div
+                  className="rounded-xl px-3 py-3"
+                  style={{
+                    backgroundColor: "#FFFFFF",
+                    border: `1px solid ${BORDER}`,
+                  }}
+                >
+
+                  <div className="flex items-center justify-between">
+
+                    <span
+                      className="text-[8px] font-semibold"
+                      style={{ color: "#64748B" }}
+                    >
+                      Recording
+                    </span>
+
+                    <span
+                      className="text-[8px] font-bold"
+                      style={{ color: "#7C3AED" }}
+                    >
+                      Active
+                    </span>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
           </div>
 
-          <Label>End-to-end flow</Label>
-          <div className="mb-8">
-            <AmbientProductOverview />
+
+          <p
+            className="text-xs leading-relaxed mt-3"
+            style={{ color: "#64748B" }}
+          >
+            Recording stays visible while the clinician remains focused on
+            the encounter.
+          </p>
+
+        </div>
+
+
+        {/* ── 02 DRAFT ── */}
+        <div>
+
+          <div className="flex items-center gap-2 mb-3">
+
+            <span
+              className="text-xs font-bold"
+              style={{ color: "#7C3AED" }}
+            >
+              02
+            </span>
+
+            <span
+              className="text-sm font-bold"
+              style={{ color: DARK }}
+            >
+              Draft
+            </span>
+
           </div>
 
-          <Label>Wireframe exploration</Label>
-          <div className="mb-5">
-            <AmbientWireframes />
+
+          {/* Mobile frame */}
+          <div
+            className="mx-auto w-full max-w-[210px] rounded-[28px] p-[6px]"
+            style={{
+              backgroundColor: "#E2E8F0",
+              border: "1px solid #CBD5E1",
+              boxShadow: "0 12px 30px rgba(15,23,42,0.08)",
+            }}
+          >
+
+            <div
+              className="overflow-hidden rounded-[23px]"
+              style={{
+                backgroundColor: "#FFFFFF",
+                aspectRatio: "9 / 19.5",
+              }}
+            >
+
+              <div className="flex items-center justify-between px-4 pt-3">
+
+                <span
+                  className="text-[8px] font-bold"
+                  style={{ color: DARK }}
+                >
+                  9:47
+                </span>
+
+                <span
+                  className="text-[8px] font-bold"
+                  style={{ color: "#7C3AED" }}
+                >
+                  AI
+                </span>
+
+              </div>
+
+
+              <div className="px-4 pt-6">
+
+                <div
+                  className="h-3 w-28 rounded mb-2"
+                  style={{ backgroundColor: "#64748B" }}
+                />
+
+                <div
+                  className="h-1.5 w-20 rounded"
+                  style={{ backgroundColor: "#E2E8F0" }}
+                />
+
+              </div>
+
+
+              {/* Clinical sections */}
+              <div className="px-3 pt-5 space-y-2">
+
+                {["History", "Assessment", "Plan"].map((section, index) => (
+
+                  <div
+                    key={section}
+                    className="rounded-xl p-3"
+                    style={{
+                      backgroundColor: "#FFFFFF",
+                      border: `1px solid ${BORDER}`,
+                    }}
+                  >
+
+                    <div className="flex items-center justify-between mb-3">
+
+                      <span
+                        className="text-[8px] font-bold"
+                        style={{ color: DARK }}
+                      >
+                        {section}
+                      </span>
+
+                      {index === 0 && (
+                        <span
+                          className="text-[7px] font-semibold"
+                          style={{ color: "#7C3AED" }}
+                        >
+                          AI
+                        </span>
+                      )}
+
+                    </div>
+
+                    <div
+                      className="h-1.5 w-full rounded mb-2"
+                      style={{ backgroundColor: "#CBD5E1" }}
+                    />
+
+                    <div
+                      className="h-1.5 rounded mb-2"
+                      style={{
+                        width: index === 0 ? "90%" : "75%",
+                        backgroundColor: "#E2E8F0",
+                      }}
+                    />
+
+                    <div
+                      className="h-1.5 rounded"
+                      style={{
+                        width: index === 2 ? "60%" : "82%",
+                        backgroundColor: "#E2E8F0",
+                      }}
+                    />
+
+                  </div>
+
+                ))}
+
+              </div>
+
+
+              <div className="absolute" />
+
+            </div>
+
           </div>
-          <p className="text-sm text-slate-400 italic">AI assists. The clinician owns.</p>
-        </Section>
+
+
+          <p
+            className="text-xs leading-relaxed mt-3"
+            style={{ color: "#64748B" }}
+          >
+            AI converts the encounter into recognizable clinical sections
+            instead of a raw transcript.
+          </p>
+
+        </div>
+
+
+        {/* ── 03 REVIEW ── */}
+        <div>
+
+          <div className="flex items-center gap-2 mb-3">
+
+            <span
+              className="text-xs font-bold"
+              style={{ color: "#7C3AED" }}
+            >
+              03
+            </span>
+
+            <span
+              className="text-sm font-bold"
+              style={{ color: DARK }}
+            >
+              Review
+            </span>
+
+          </div>
+
+
+          {/* Mobile frame */}
+          <div
+            className="mx-auto w-full max-w-[210px] rounded-[28px] p-[6px]"
+            style={{
+              backgroundColor: "#E2E8F0",
+              border: "1px solid #CBD5E1",
+              boxShadow: "0 12px 30px rgba(15,23,42,0.08)",
+            }}
+          >
+
+            <div
+              className="relative overflow-hidden rounded-[23px]"
+              style={{
+                backgroundColor: "#FFFFFF",
+                aspectRatio: "9 / 19.5",
+              }}
+            >
+
+              <div className="flex items-center justify-between px-4 pt-3">
+
+                <span
+                  className="text-[8px] font-bold"
+                  style={{ color: DARK }}
+                >
+                  9:52
+                </span>
+
+                <span
+                  className="text-[8px] font-bold"
+                  style={{ color: "#64748B" }}
+                >
+                  Review
+                </span>
+
+              </div>
+
+
+              <div className="px-4 pt-6">
+
+                <div className="flex items-center justify-between">
+
+                  <div>
+
+                    <div
+                      className="h-3 w-24 rounded mb-2"
+                      style={{ backgroundColor: "#64748B" }}
+                    />
+
+                    <div
+                      className="h-1.5 w-16 rounded"
+                      style={{ backgroundColor: "#E2E8F0" }}
+                    />
+
+                  </div>
+
+                  <span
+                    className="text-[8px] font-bold"
+                    style={{ color: "#7C3AED" }}
+                  >
+                    AI
+                  </span>
+
+                </div>
+
+              </div>
+
+
+              {/* Generated section */}
+              <div className="px-3 pt-5">
+
+                <div
+                  className="rounded-xl p-3"
+                  style={{
+                    backgroundColor: "#FFFFFF",
+                    border: `1px solid ${BORDER}`,
+                  }}
+                >
+
+                  <div className="flex items-center justify-between mb-3">
+
+                    <span
+                      className="text-[8px] font-bold"
+                      style={{ color: DARK }}
+                    >
+                      Assessment
+                    </span>
+
+                    <span
+                      className="text-[7px] font-semibold"
+                      style={{ color: "#7C3AED" }}
+                    >
+                      Generated
+                    </span>
+
+                  </div>
+
+
+                  <div
+                    className="rounded-lg p-3"
+                    style={{
+                      backgroundColor: "#F8FAFC",
+                      border: `1px solid ${BORDER}`,
+                    }}
+                  >
+
+                    <div
+                      className="h-1.5 w-full rounded mb-2"
+                      style={{ backgroundColor: "#94A3B8" }}
+                    />
+
+                    <div
+                      className="h-1.5 w-11/12 rounded mb-2"
+                      style={{ backgroundColor: "#CBD5E1" }}
+                    />
+
+                    <div
+                      className="h-1.5 w-4/5 rounded"
+                      style={{ backgroundColor: "#E2E8F0" }}
+                    />
+
+                  </div>
+
+
+                  <div className="flex items-center justify-between mt-3">
+
+                    <span
+                      className="text-[7px] font-semibold"
+                      style={{ color: "#64748B" }}
+                    >
+                      Edit section
+                    </span>
+
+                    <span
+                      className="text-[7px] font-bold"
+                      style={{ color: "#7C3AED" }}
+                    >
+                      AI
+                    </span>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+
+              {/* Approve */}
+              <div className="absolute bottom-5 left-3 right-3">
+
+                <div
+                  className="h-9 rounded-xl flex items-center justify-center"
+                  style={{
+                    backgroundColor: "#7C3AED",
+                  }}
+                >
+
+                  <span
+                    className="text-[8px] font-bold"
+                    style={{ color: "#FFFFFF" }}
+                  >
+                    Approve
+                  </span>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <p
+            className="text-xs leading-relaxed mt-3"
+            style={{ color: "#64748B" }}
+          >
+            Generated content remains identifiable and editable before
+            becoming part of the final record.
+          </p>
+
+        </div>
+
+
+        {/* ── 04 TRANSFER ── */}
+        <div>
+
+          <div className="flex items-center gap-2 mb-3">
+
+            <span
+              className="text-xs font-bold"
+              style={{ color: "#7C3AED" }}
+            >
+              04
+            </span>
+
+            <span
+              className="text-sm font-bold"
+              style={{ color: DARK }}
+            >
+              Transfer
+            </span>
+
+          </div>
+
+
+          {/* Mobile frame */}
+          <div
+            className="mx-auto w-full max-w-[210px] rounded-[28px] p-[6px]"
+            style={{
+              backgroundColor: "#E2E8F0",
+              border: "1px solid #CBD5E1",
+              boxShadow: "0 12px 30px rgba(15,23,42,0.08)",
+            }}
+          >
+
+            <div
+              className="relative overflow-hidden rounded-[23px]"
+              style={{
+                backgroundColor: "#FFFFFF",
+                aspectRatio: "9 / 19.5",
+              }}
+            >
+
+              <div className="flex items-center justify-between px-4 pt-3">
+
+                <span
+                  className="text-[8px] font-bold"
+                  style={{ color: DARK }}
+                >
+                  9:55
+                </span>
+
+                <span
+                  className="text-[8px] font-bold"
+                  style={{ color: "#64748B" }}
+                >
+                  Transfer
+                </span>
+
+              </div>
+
+
+              {/* Status list */}
+              <div className="px-3 pt-6 space-y-2">
+
+                {[
+                  ["History", "Sent", true],
+                  ["Assessment", "Sent", true],
+                  ["Plan", "Action", false],
+                  ["Follow-up", "Sent", true],
+                ].map(([name, status, success]) => (
+
+                  <div
+                    key={name as string}
+                    className="flex items-center justify-between px-3 py-3 rounded-xl"
+                    style={{
+                      backgroundColor: success ? "#FFFFFF" : "#FFFBEB",
+                      border: `1px solid ${
+                        success ? BORDER : "#FDE68A"
+                      }`,
+                    }}
+                  >
+
+                    <span
+                      className="text-[8px] font-semibold"
+                      style={{ color: DARK }}
+                    >
+                      {name}
+                    </span>
+
+                    <span
+                      className="text-[7px] font-bold"
+                      style={{
+                        color: success ? "#16A34A" : "#B45309",
+                      }}
+                    >
+                      {success ? "✓" : "!"} {status}
+                    </span>
+
+                  </div>
+
+                ))}
+
+              </div>
+
+
+              {/* Action needed */}
+              <div className="absolute bottom-5 left-3 right-3">
+
+                <div
+                  className="rounded-xl px-3 py-3"
+                  style={{
+                    backgroundColor: "#FFFBEB",
+                    border: "1px solid #FDE68A",
+                  }}
+                >
+
+                  <div className="flex items-center justify-between">
+
+                    <span
+                      className="text-[8px] font-semibold"
+                      style={{ color: "#92400E" }}
+                    >
+                      Action needed
+                    </span>
+
+                    <span
+                      className="text-[8px] font-bold"
+                      style={{ color: "#B45309" }}
+                    >
+                      Check status
+                    </span>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <p
+            className="text-xs leading-relaxed mt-3"
+            style={{ color: "#64748B" }}
+          >
+            Section-level status makes the hand-off visible and recoverable.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </Section>
+</section>
 
         {/* ── FINAL DESIGN ── white */}
         <Section className="pt-14 pb-12">
