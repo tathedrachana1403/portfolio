@@ -68,82 +68,110 @@ export default function BPOCoding() {
       <Nav />
       <main className="pt-16">
         {/* BREADCRUMB */}
-        <div className="max-w-4xl mx-auto px-8 pt-10 pb-0">
-          <div
-            className="flex items-center gap-2 text-lg font-medium"
-            style={{ color: "#94a3b8" }}
-          >
-            <Link
-              href="/"
-              className="hover:opacity-60 transition-opacity"
-              style={{ color: DARK }}
-            >
-              Home
-            </Link>
-            <span>/</span>
-            <span>BPO AI Medical Coding Assistant</span>
-          </div>
-        </div>
+<div className="max-w-4xl mx-auto px-8 pt-8 pb-0">
+  <div
+    className="flex items-center gap-1.5 text-sm font-medium"
+    style={{ color: "#94a3b8" }}
+  >
+    <Link
+      href="/"
+      className="hover:opacity-60 transition-opacity"
+      style={{ color: DARK }}
+    >
+      Home
+    </Link>
 
-        {/* HERO */}
-        <div className="max-w-4xl mx-auto px-8 pt-10 pb-16">
-          <p
-            className="text-xs font-bold tracking-[0.16em] uppercase mb-4"
-            style={{ color: "#64748b" }}
-          >
-            Decision Support · Rules-driven Automation · Enterprise Operations
-          </p>
-          <h1
-            className="text-5xl md:text-6xl font-black leading-[1.0] tracking-tight mb-5"
-            style={{ color: DARK }}
-          >
-            BPO AI Medical Coding Assistant
-          </h1>
+    <span>/</span>
 
-<p className="text-lg text-slate-500 leading-relaxed mb-2">
-  Reducing cognitive load behind high-volume coding decisions.
-</p>
-
-<p className="text-base text-slate-500 leading-relaxed mb-10">
-  Medical coders turn clinical charts into insurance claims while
-  working against strict accuracy and turnaround targets. I designed a
-  rules-driven assistant that brought relevant coding guidance into
-  the chart, kept recommendations editable, and captured the rationale
-  behind changes for QA review.
-</p>
-
-<div className="w-full overflow-hidden rounded-2xl mb-12">
-  <img
-    src="/images/bpo/Hero.png"
-    alt="BPO AI Medical Coding Assistant"
-    className="w-full h-auto object-cover"
-  />
+    <span>BPO AI Medical Coding Assistant</span>
+  </div>
 </div>
 
-          {/* Project details */}
-          <div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 pt-4 mb-12"
-            style={{ borderTop: `1px solid ${BORDER}` }}
-          >
-            {[
-              { label: "My role", value: "Lead Product Designer - owned UX strategy, decision-support workflow, interaction design, and AI/rules-driven experience" },
-              { label: "Team", value: "Product Manager, Engineering, Medical Coding/Domain Experts, Design" },
-              { label: "Timeline", value: "3 months" },
-              { label: "Scope", value: "In-context coding guidance, rules-driven recommendations, evidence visibility, review, and decision workflows" },
-              { label: "Constraints", value: "95% accuracy target, complex coding rules, high-volume workflows, human oversight, and system limitations" },
-            ].map((m, i) => (
-              <div
-                key={m.label}
-                className="p-4"
-                style={{ borderLeft: i > 0 ? `1px solid ${BORDER}` : "none" }}
-              >
-                <p className="text-xs font-black tracking-[0.14em] uppercase mb-1.5" style={{ color: DARK }}>
-                  {m.label}
-                </p>
-                <p className="text-sm font-medium leading-relaxed text-slate-500">{m.value}</p>
-              </div>
-            ))}
-          </div>
+{/* HERO */}
+<div className="max-w-4xl mx-auto px-8 pt-3 pb-16">
+
+  {/* Case Study Label */}
+  <div
+    className="inline-flex items-center rounded-full px-3.5 py-1 mb-4"
+    style={{
+      backgroundColor: SOFT,
+      border: `1px solid ${BORDER}`,
+    }}
+  >
+    <span
+      className="text-xs font-bold tracking-[0.12em] uppercase"
+      style={{ color: DARK }}
+    >
+      Case Study 02 / 04 · Lead Product Designer
+    </span>
+  </div>
+
+  {/* Hero Heading */}
+  <h1
+    className="text-5xl md:text-2.03xl font-black leading-[1.0] tracking-tight mb-4"
+    style={{ color: DARK }}
+  >
+    Helping medical coders make faster and more accurate decisions.
+  </h1>
+
+  {/* Hero Description */}
+  <p className="text-lg md:text-xl text-slate-500 leading-relaxed mb-8">
+    The BPO AI Medical Coding Assistant brings relevant coding guidance
+    directly into the chart, helping coders resolve complex cases while
+    keeping recommendations editable and traceable.
+  </p>
+
+  {/* Hero Image */}
+  <div className="w-full overflow-hidden rounded-2xl mb-12">
+    <img
+      src="/images/bpo/Hero.png"
+      alt="BPO AI Medical Coding Assistant"
+      className="w-full h-auto object-cover"
+    />
+  </div>
+
+  {/* PROJECT DETAILS */}
+<div
+  className="grid grid-cols-1 md:grid-cols-3 pt-4 mb-12"
+  style={{ borderTop: `1px solid ${BORDER}` }}
+>
+  {[
+    {
+      label: "My Role",
+      value:
+        "Lead Product Designer - led the UX strategy and end-to-end design of the AI-assisted coding experience.",
+    },
+    {
+      label: "Team",
+      value:
+        "Product Manager, Engineering, Medical Coding/Domain Experts, and Design.",
+    },
+    {
+      label: "Timeline",
+      value: "3 months",
+    },
+  ].map((m, i) => (
+    <div
+      key={m.label}
+      className="py-4 pr-6"
+      style={{
+        borderLeft: i > 0 ? `1px solid ${BORDER}` : "none",
+        paddingLeft: i > 0 ? "1.5rem" : 0,
+      }}
+    >
+      <p
+        className="text-xs font-black tracking-[0.14em] uppercase mb-2"
+        style={{ color: DARK }}
+      >
+        {m.label}
+      </p>
+
+      <p className="text-sm font-medium leading-relaxed text-slate-500">
+        {m.value}
+      </p>
+    </div>
+  ))}
+</div>
 
           {/* Impact strip */}
           <div
