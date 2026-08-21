@@ -173,32 +173,34 @@ export default function BPOCoding() {
   ))}
 </div>
 
-          {/* Impact strip */}
-          <div
-            className="rounded-2xl px-8 py-6"
-            style={{ backgroundColor: DARK, boxShadow: DARK_SHADOW }}
-          >
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {[
-                { v: "40%", l: "Fewer billing errors" },
-                { v: "33.4%", l: "Fewer claim rejections" },
-                { v: "95%", l: "SLA accuracy target met" },
-                { v: "QA-ready", l: "Changed decisions traceable" },
-              ].map((s) => (
-                <div key={s.l}>
-                  <p className="text-xl font-black text-white tabular-nums">
-                    {s.v}
-                  </p>
-                  <p
-                    className="text-xs mt-1 leading-snug"
-                    style={{ color: MUTED }}
-                  >
-                    {s.l}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
+         {/* Impact strip */}
+<div
+  className="rounded-2xl px-6 py-5"
+  style={{ backgroundColor: DARK }}
+>
+  <div className="grid grid-cols-3 gap-5">
+    <div>
+      <p className="text-lg font-black text-white">40%</p>
+      <p className="text-xs mt-1" style={{ color: MUTED }}>
+        Fewer billing errors
+      </p>
+    </div>
+
+    <div>
+      <p className="text-lg font-black text-white">33.4%</p>
+      <p className="text-xs mt-1" style={{ color: MUTED }}>
+        Fewer claim rejections
+      </p>
+    </div>
+
+    <div>
+      <p className="text-lg font-black text-white">95%</p>
+      <p className="text-xs mt-1" style={{ color: MUTED }}>
+        Accuracy target met
+      </p>
+    </div>
+  </div>
+</div>
         </div>
 
         {/* §01 USER CONTEXT */}
