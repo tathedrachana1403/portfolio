@@ -400,138 +400,86 @@ export default function BPOCoding() {
   </div>
 </section>
 
-        {/* §03 REFRAME */}
+      {/* ─────────────────────────────────────────────
+    03 — APPROACH
+───────────────────────────────────────────── */}
+<section className="max-w-4xl mx-auto px-8 py-10">
+  {/* Section label — consistent with Context / Research */}
+  <p
+    className="text-xs font-black tracking-[0.14em] uppercase mb-4"
+    style={{ color: DARK }}
+  >
+    03 — Approach
+  </p>
+
+  {/* Section heading */}
+  <h2
+    className="text-2xl md:text-3xl font-black leading-[1.2] tracking-tight mb-8"
+    style={{
+      color: DARK,
+      textWrap: "balance",
+    } as React.CSSProperties}
+  >
+    Bring the right guidance into the decision without disrupting the workflow.
+  </h2>
+
+  {/* Approach principles */}
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-6">
+    {[
+      {
+        number: "01",
+        title: "Surface relevant guidance",
+        body: "Bring applicable coding rules into the chart.",
+      },
+      {
+        number: "02",
+        title: "Lead to a coding outcome",
+        body: "Use rule-based questions to guide coders to the appropriate outcome.",
+      },
+      {
+        number: "03",
+        title: "Reduce manual decisions",
+        body: "Provide direct answers where the rules allow the system to determine them.",
+      },
+      {
+        number: "04",
+        title: "Enable informed changes",
+        body: "Allow coders to change an outcome and capture the rationale.",
+      },
+    ].map((item) => (
+      <div
+        key={item.number}
+        className="flex gap-4"
+      >
+        {/* Number */}
         <div
+          className="shrink-0 flex items-center justify-center w-8 h-8 rounded-full text-xs font-black"
           style={{
-            backgroundColor: "#f8fafc",
-            borderBottom: `1px solid ${BORDER}`,
+            backgroundColor: SOFT,
+            color: DARK,
+            border: `1px solid ${BORDER}`,
           }}
         >
-          <div className="max-w-4xl mx-auto px-8 py-16">
-            <ChapterHeader
-              number="03"
-              label="Reframe"
-              heading="Reduce the work around the decision - not the judgment within it."
-            />
-
-            <div className="grid md:grid-cols-2 gap-5 mb-8">
-              <div
-                className="rounded-2xl p-6"
-                style={{ border: `1px solid ${BORDER}` }}
-              >
-                <p className="text-xs font-bold tracking-[0.14em] uppercase mb-3 text-slate-400">
-                  Before
-                </p>
-                <p className="text-lg text-slate-400 leading-relaxed font-medium">
-                  Automate coding end-to-end.
-                </p>
-              </div>
-              <div
-                className="rounded-2xl p-6"
-                style={{ backgroundColor: DARK, boxShadow: DARK_SHADOW }}
-              >
-                <p
-                  className="text-xs font-bold tracking-[0.14em] uppercase mb-3"
-                  style={{ color: MUTED }}
-                >
-                  After
-                </p>
-                <p className="text-lg font-semibold leading-relaxed text-white">
-                  Bring relevant guidance into the coding workflow while keeping
-                  final judgment with the coder.
-                </p>
-              </div>
-            </div>
-
-            <p className="text-base text-slate-500 leading-relaxed mb-6">
-              This established four experience requirements:
-            </p>
-            <div className="responsive-process-row flex flex-col sm:flex-row items-stretch">
-              {[
-                {
-                  n: "01",
-                  label: "Guide",
-                  body: "Surface relevant rules in context.",
-                },
-                {
-                  n: "02",
-                  label: "Validate",
-                  body: "Keep recommendations editable.",
-                },
-                {
-                  n: "03",
-                  label: "Adjust",
-                  body: "Capture why decisions change.",
-                },
-                {
-                  n: "04",
-                  label: "Review",
-                  body: "Carry decision context into QA.",
-                },
-              ].map((r, i, arr) => (
-                <div key={r.label} className="flex items-stretch flex-1">
-                  <div
-                    className="flex flex-col px-5 py-5 w-full"
-                    style={{
-                      backgroundColor:
-                        i === arr.length - 1 ? DARK : i === 0 ? SOFT : "white",
-                      border: `1.5px solid ${i === arr.length - 1 ? DARK : BORDER}`,
-                      borderLeft: i > 0 ? "none" : undefined,
-                      borderRadius:
-                        i === 0
-                          ? "12px 0 0 12px"
-                          : i === arr.length - 1
-                            ? "0 12px 12px 0"
-                            : "0",
-                      boxShadow: i === arr.length - 1 ? DARK_SHADOW : "none",
-                    }}
-                  >
-                    <div
-                      className="w-8 h-8 rounded-lg flex items-center justify-center text-xs font-black mb-3 shrink-0"
-                      style={{
-                        backgroundColor:
-                          i === arr.length - 1
-                            ? "rgba(255,255,255,0.12)"
-                            : SOFT,
-                        color: i === arr.length - 1 ? "white" : DARK,
-                        border: `1px solid ${i === arr.length - 1 ? "rgba(255,255,255,0.15)" : BORDER}`,
-                      }}
-                    >
-                      {r.n}
-                    </div>
-                    <p
-                      className="font-bold text-base mb-1.5"
-                      style={{ color: i === arr.length - 1 ? "white" : DARK }}
-                    >
-                      {r.label}
-                    </p>
-                    <p
-                      className="text-base leading-relaxed"
-                      style={{
-                        color:
-                          i === arr.length - 1
-                            ? "rgba(255,255,255,0.6)"
-                            : "#94a3b8",
-                      }}
-                    >
-                      {r.body}
-                    </p>
-                  </div>
-                  {i < arr.length - 1 && (
-                    <div
-                      className="shrink-0 self-stretch w-6 z-10 -mx-3"
-                      style={{
-                        backgroundColor: i === arr.length - 2 ? DARK : BORDER,
-                        clipPath:
-                          "polygon(0 0, 60% 0, 100% 50%, 60% 100%, 0 100%, 40% 50%)",
-                      }}
-                    />
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
+          {item.number}
         </div>
+
+        {/* Text */}
+        <div className="pt-0.5">
+          <h3
+            className="text-base font-black leading-snug mb-1"
+            style={{ color: DARK }}
+          >
+            {item.title}
+          </h3>
+
+          <p className="text-sm leading-relaxed text-slate-500 max-w-md">
+            {item.body}
+          </p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
 
         {/* §04 DECISION ARCHITECTURE */}
         <div
