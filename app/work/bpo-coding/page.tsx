@@ -255,189 +255,145 @@ export default function BPOCoding() {
 
 
 {/* ─────────────────────────────────────────────
-    02 — RESEARCH
+    §02 RESEARCH
 ───────────────────────────────────────────── */}
 <section
   style={{
-    backgroundColor: "#f8fafc",
+    backgroundColor: "#ffffff",
     borderBottom: `1px solid ${BORDER}`,
   }}
 >
   <div className="max-w-4xl mx-auto px-8 py-16">
 
-    {/* Section label */}
-    <p
-      className="text-sm font-black tracking-[0.12em] uppercase mb-5"
-      style={{ color: DARK }}
-    >
-      02 — Research
-    </p>
+    {/* SECTION HEADER — SAME AS CONTEXT */}
+    <div className="mb-7">
+      <p
+        className="text-sm font-black tracking-[0.14em] uppercase mb-5"
+        style={{ color: DARK }}
+      >
+        02 — Research
+      </p>
 
-    {/* Heading */}
-    <h2
-      className="text-2xl md:text-3xl font-black leading-[1.2] tracking-tight mb-5"
-      style={{
-        color: DARK,
-        textWrap: "balance",
-      } as React.CSSProperties}
-    >
-      Research revealed where accuracy risk entered the workflow.
-    </h2>
+      <h2
+        className="text-2xl md:text-3xl font-black leading-[1.2] tracking-tight"
+        style={{
+          color: DARK,
+          textWrap: "balance",
+        } as React.CSSProperties}
+      >
+        Research revealed where accuracy risk entered the workflow.
+      </h2>
+    </div>
 
-    {/* Research context */}
-    <p className="text-base md:text-lg text-slate-500 leading-relaxed max-w-3xl">
-      We observed and interviewed{" "}
-      <strong className="font-semibold" style={{ color: DARK }}>
-        8 medical coders
-      </strong>{" "}
-      and{" "}
-      <strong className="font-semibold" style={{ color: DARK }}>
-        3 QA reviewers
-      </strong>{" "}
-      across the coding and QA workflow.
-    </p>
-
-
-    {/* ─────────────────────────────────────────
-        RESEARCH FINDINGS
-    ───────────────────────────────────────── */}
+    {/* RESEARCH PARTICIPANTS */}
     <div
-      className="mt-12 pt-8"
+      className="mb-5"
       style={{
-        borderTop: `1px solid ${BORDER}`,
+        borderLeft: `3px solid ${BORDER}`,
+        paddingLeft: "1.25rem",
       }}
     >
+      <p className="text-base text-slate-500 leading-relaxed">
+        We observed and interviewed{" "}
+        <strong style={{ color: DARK }}>8 medical coders</strong> and{" "}
+        <strong style={{ color: DARK }}>3 QA reviewers</strong> across the
+        coding and QA workflow.
+      </p>
+    </div>
+
+    {/* RESEARCH FINDINGS */}
+    <div>
       <p
-        className="text-xs font-black tracking-[0.14em] uppercase mb-6"
+        className="text-xs font-black tracking-[0.14em] uppercase mb-3"
         style={{ color: DARK }}
       >
         Research findings
       </p>
 
+      {/* HORIZONTAL FINDINGS */}
       <div
         className="grid grid-cols-1 md:grid-cols-3"
+        style={{
+          borderTop: `1px solid ${BORDER}`,
+          borderBottom: `1px solid ${BORDER}`,
+        }}
       >
-        {[
-          {
-            number: "01",
-            title: "Guidance was disconnected from the decision",
-            body:
-              "Coders had to leave the chart to find coding rules, then return and re-establish context.",
-          },
-          {
-            number: "02",
-            title: "Decision rationale was lost",
-            body:
-              "QA reviewers had to reconstruct why coding decisions changed after submission.",
-          },
-          {
-            number: "03",
-            title: "Clinical context still required coder judgment",
-            body:
-              "Coders needed to interpret coding rules alongside the clinical context before making a final decision.",
-          },
-        ].map((finding, i) => (
-          <div
-            key={finding.number}
-            className="py-2 pr-7"
-            style={{
-              borderLeft:
-                i > 0 ? `1px solid ${BORDER}` : "none",
-              paddingLeft:
-                i > 0 ? "1.75rem" : 0,
-            }}
+
+        {/* FINDING 01 */}
+        <div
+          className="py-6 pr-6"
+          style={{
+            borderRight: `1px solid ${BORDER}`,
+          }}
+        >
+          <p
+            className="text-xs font-black tracking-[0.12em] mb-3"
+            style={{ color: DARK }}
           >
-            {/* Number */}
-            <p
-              className="text-xs font-black tabular-nums mb-4"
-              style={{ color: DARK }}
-            >
-              {finding.number}
-            </p>
+            01
+          </p>
 
-            {/* Finding */}
-            <h3
-              className="text-base md:text-[1.05rem] font-black leading-snug mb-3"
-              style={{ color: DARK }}
-            >
-              {finding.title}
-            </h3>
-
-            {/* Explanation */}
-            <p className="text-sm text-slate-500 leading-relaxed">
-              {finding.body}
-            </p>
-          </div>
-        ))}
-      </div>
-    </div>
-
-
-    {/* ─────────────────────────────────────────
-        WHAT RESEARCH CHANGED
-    ───────────────────────────────────────── */}
-    <div
-      className="mt-12 pt-8"
-      style={{
-        borderTop: `1px solid ${BORDER}`,
-      }}
-    >
-      <p
-        className="text-xs font-black tracking-[0.14em] uppercase mb-5"
-        style={{ color: DARK }}
-      >
-        What research changed
-      </p>
-
-      <div>
-        {[
-          {
-            number: "01",
-            title: "In-context guidance",
-            body:
-              "Surface relevant coding rules at the point of decision.",
-          },
-          {
-            number: "02",
-            title: "Decision traceability",
-            body:
-              "Capture why coding decisions change for QA review.",
-          },
-          {
-            number: "03",
-            title: "Editable recommendations",
-            body:
-              "Keep the coder in control of the final decision.",
-          },
-        ].map((item) => (
-          <div
-            key={item.number}
-            className="flex items-start gap-5 py-4"
-            style={{
-              borderBottom: `1px solid ${BORDER}`,
-            }}
+          <h3
+            className="text-base md:text-lg font-black leading-snug mb-3"
+            style={{ color: "#0f172a" }}
           >
-            <span
-              className="text-xs font-black tabular-nums pt-1 w-7 shrink-0"
-              style={{ color: DARK }}
-            >
-              {item.number}
-            </span>
+            Guidance was outside the decision context
+          </h3>
 
-            <div className="flex-1">
-              <p
-                className="text-sm font-black mb-1"
-                style={{ color: DARK }}
-              >
-                {item.title}
-              </p>
+          <p className="text-sm text-slate-500 leading-relaxed">
+            Coders left the chart to look up rules, then had to remember and
+            apply them while reviewing the chart.
+          </p>
+        </div>
 
-              <p className="text-sm text-slate-500 leading-relaxed">
-                {item.body}
-              </p>
-            </div>
-          </div>
-        ))}
+        {/* FINDING 02 */}
+        <div
+          className="py-6 px-6"
+          style={{
+            borderRight: `1px solid ${BORDER}`,
+          }}
+        >
+          <p
+            className="text-xs font-black tracking-[0.12em] mb-3"
+            style={{ color: DARK }}
+          >
+            02
+          </p>
+
+          <h3
+            className="text-base md:text-lg font-black leading-snug mb-3"
+            style={{ color: "#0f172a" }}
+          >
+            Coding rules didn't replace clinical judgment
+          </h3>
+
+          <p className="text-sm text-slate-500 leading-relaxed">
+            Coders interpreted coding rules alongside the clinical context
+            before making a final decision.
+          </p>
+        </div>
+
+        {/* FINDING 03 */}
+        <div className="py-6 pl-6">
+          <p
+            className="text-xs font-black tracking-[0.12em] mb-3"
+            style={{ color: DARK }}
+          >
+            03
+          </p>
+
+          <h3
+            className="text-base md:text-lg font-black leading-snug mb-3"
+            style={{ color: "#0f172a" }}
+          >
+            Decision rationale was lost after submission
+          </h3>
+
+          <p className="text-sm text-slate-500 leading-relaxed">
+            QA reviewers had to reconstruct why coding decisions changed.
+          </p>
+        </div>
+
       </div>
     </div>
 
