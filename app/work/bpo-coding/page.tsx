@@ -108,15 +108,15 @@ export default function BPOCoding() {
 
   {/* Hero Heading */}
   <h1
-    className="text-5xl md:text-2.03xl font-black leading-[1.0] tracking-tight mb-4"
+    className="text-5xl md:text-3xl font-black leading-[1.0] tracking-tight mb-4"
     style={{ color: DARK }}
   >
-    Helping medical coders make faster and more accurate decisions.
+    Helping medical coders make faster and accurate decisions.
   </h1>
 
   {/* Hero Description */}
   <p className="text-lg md:text-xl text-slate-500 leading-relaxed mb-8">
-    The BPO AI Medical Coding Assistant brings relevant coding guidance
+    The BPO Medical Coding Assistant brings relevant coding guidance
     directly into the chart, helping coders resolve complex cases while
     keeping recommendations editable and traceable.
   </p>
@@ -173,187 +173,93 @@ export default function BPOCoding() {
   ))}
 </div>
 
-         {/* Impact strip */}
-<div
-  className="rounded-2xl px-6 py-5"
-  style={{ backgroundColor: DARK }}
->
-  <div className="grid grid-cols-3 gap-5">
-    <div>
-      <p className="text-lg font-black text-white">40%</p>
-      <p className="text-xs mt-1" style={{ color: MUTED }}>
-        Fewer billing errors
-      </p>
-    </div>
-
-    <div>
-      <p className="text-lg font-black text-white">33.4%</p>
-      <p className="text-xs mt-1" style={{ color: MUTED }}>
-        Fewer claim rejections
-      </p>
-    </div>
-
-    <div>
-      <p className="text-lg font-black text-white">95%</p>
-      <p className="text-xs mt-1" style={{ color: MUTED }}>
-        Accuracy target met
-      </p>
-    </div>
-  </div>
-</div>
-        </div>
-
-        {/* §01 USER CONTEXT */}
-        <div
-          style={{
-            backgroundColor: "#f8fafc",
-            borderTop: `1px solid ${BORDER}`,
-            borderBottom: `1px solid ${BORDER}`,
-          }}
-        >
-          <div className="max-w-4xl mx-auto px-8 py-16">
-            <ChapterHeader
-              number="01"
-              label="User Context"
-              heading="Two users. Different responsibilities. One connected workflow."
-              sub="Coders made decisions under pressure. QA reviewed those decisions after submission. The design had to serve both."
-            />
-
-            <div
-              className="grid md:grid-cols-2 gap-0 mb-12"
-              style={{ borderTop: `1px solid ${BORDER}` }}
-            >
+          {/* Impact strip */}
+          <div
+            className="rounded-2xl px-8 py-6"
+            style={{ backgroundColor: DARK, boxShadow: DARK_SHADOW }}
+          >
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {[
-                {
-                  role: "Medical Coder",
-                  task: "Review charts and make accurate coding decisions within strict turnaround targets.",
-                  challenges: [
-                    {
-                      title: "High cognitive load",
-                      body: "Codes, modifiers, chart details, client rules, and SLA requirements competed for attention.",
-                    },
-                    {
-                      title: "Context switching",
-                      body: "External lookups pulled coders away from the chart.",
-                    },
-                    {
-                      title: "Decision friction",
-                      body: "Recommendations still needed to be validated against clinical context.",
-                    },
-                  ],
-                },
-                {
-                  role: "QA Reviewer",
-                  task: "Validate coding decisions and identify recurring issues.",
-                  challenges: [
-                    {
-                      title: "Limited decision context",
-                      body: "The final coded value did not always explain why it changed.",
-                    },
-                    {
-                      title: "Manual reconstruction",
-                      body: "Reviewers had to retrace the coding process to understand exceptions.",
-                    },
-                  ],
-                },
-              ].map((u, i) => (
-                <div
-                  key={u.role}
-                  className="py-8 pr-8"
-                  style={{
-                    borderBottom: `1px solid ${BORDER}`,
-                    paddingLeft: i === 1 ? "2rem" : 0,
-                    borderLeft: i === 1 ? `1px solid ${BORDER}` : "none",
-                  }}
-                >
-                  <p
-                    className="text-xs font-black tracking-[0.14em] uppercase mb-3"
-                    style={{ color: DARK }}
-                  >
-                    {u.role}
+                { v: "40%", l: "Fewer billing errors" },
+                { v: "33.4%", l: "Fewer claim rejections" },
+                { v: "95%", l: "SLA accuracy target met" },
+                { v: "QA-ready", l: "Changed decisions traceable" },
+              ].map((s) => (
+                <div key={s.l}>
+                  <p className="text-xl font-black text-white tabular-nums">
+                    {s.v}
                   </p>
                   <p
-                    className="text-base font-semibold mb-6 leading-snug"
-                    style={{ color: DARK }}
+                    className="text-xs mt-1 leading-snug"
+                    style={{ color: MUTED }}
                   >
-                    {u.task}
+                    {s.l}
                   </p>
-                  <div className="space-y-4">
-                    {u.challenges.map((c) => (
-                      <div key={c.title}>
-                        <p
-                          className="text-base font-black mb-0.5"
-                          style={{ color: DARK }}
-                        >
-                          {c.title}
-                        </p>
-                        <p className="text-base text-slate-500 leading-relaxed">
-                          {c.body}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
                 </div>
               ))}
             </div>
-
-            <div
-              className="rounded-2xl overflow-hidden"
-              style={{ backgroundColor: DARK, boxShadow: DARK_SHADOW }}
-            >
-              <div
-                className="px-8 pt-7 pb-5"
-                style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}
-              >
-                <p
-                  className="text-xs font-black tracking-[0.2em] uppercase mb-2"
-                  style={{ color: MUTED }}
-                >
-                  UX Opportunity
-                </p>
-                <p className="text-2xl font-black text-white leading-snug">
-                  The same workflow. Two different needs.
-                </p>
-              </div>
-              <div
-                className="grid md:grid-cols-2"
-                style={{ borderColor: "rgba(255,255,255,0.1)" }}
-              >
-                <div className="px-8 py-7">
-                  <p
-                    className="text-xs font-bold tracking-[0.12em] uppercase mb-3"
-                    style={{ color: MUTED }}
-                  >
-                    Medical Coder - during the decision
-                  </p>
-                  <p className="text-lg font-bold text-white leading-snug">
-                    Relevant guidance at the moment of coding, inside the chart.
-                  </p>
-                </div>
-                <div
-                  className="px-8 py-7"
-                  style={{
-                    borderLeft: "1px solid rgba(255,255,255,0.1)",
-                    backgroundColor: "rgba(255,255,255,0.04)",
-                  }}
-                >
-                  <p
-                    className="text-xs font-bold tracking-[0.12em] uppercase mb-3"
-                    style={{ color: MUTED }}
-                  >
-                    QA Reviewer - after submission
-                  </p>
-                  <p
-                    className="text-lg font-bold leading-snug"
-                    style={{ color: "rgba(255,255,255,0.85)" }}
-                  >
-                    Decision context traceable after the claim was submitted.
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
+
+       {/* §01 CONTEXT */}
+<section
+  style={{
+    backgroundColor: "#f8fafc",
+    borderTop: `1px solid ${BORDER}`,
+    borderBottom: `1px solid ${BORDER}`,
+  }}
+>
+  <div className="max-w-4xl mx-auto px-8 py-12">
+
+    {/* Section Label */}
+    <div className="flex items-center gap-3 mb-5">
+      <span
+        className="text-sm font-black tabular-nums"
+        style={{ color: DARK }}
+      >
+        01
+      </span>
+
+      <span
+        className="w-5 h-px"
+        style={{ backgroundColor: BORDER }}
+      />
+
+      <span
+        className="text-sm font-black tracking-[0.14em] uppercase"
+        style={{ color: DARK }}
+      >
+        Context
+      </span>
+    </div>
+
+    {/* Heading */}
+    <h2
+      className="text-2xl md:text-3xl font-black leading-[1.15] tracking-tight mb-6"
+      style={{ color: DARK }}
+    >
+      Medical coding spans two stages: coding and QA.
+    </h2>
+
+    {/* Content */}
+    <div className="max-w-4xl">
+      <p className="text-base md:text-lg text-slate-600 leading-relaxed">
+        Coders reviewed clinical charts and applied complex coding rules under
+        strict accuracy requirements. They often left the chart to look up
+        guidance, then had to remember and apply it back in context—adding
+        cognitive effort and increasing the risk of incorrect codes and claim
+        rejections.
+      </p>
+
+      <p className="text-base md:text-lg text-slate-600 leading-relaxed mt-5">
+        After submission, QA reviewers validated those decisions but often
+        lacked the context behind them, making review more manual.
+      </p>
+    </div>
+
+  </div>
+</section>
+
 
         {/* §02 RESEARCH */}
         <div
