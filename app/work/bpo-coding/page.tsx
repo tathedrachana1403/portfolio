@@ -201,563 +201,248 @@ export default function BPOCoding() {
           </div>
         </div>
 
-       {/* §01 CONTEXT */}
+      {/* ─────────────────────────────────────────────
+    01 — CONTEXT
+───────────────────────────────────────────── */}
 <section
   style={{
-    backgroundColor: "#f8fafc",
-    borderTop: `1px solid ${BORDER}`,
+    backgroundColor: "#ffffff",
     borderBottom: `1px solid ${BORDER}`,
   }}
 >
-  <div className="max-w-4xl mx-auto px-8 py-12">
+  <div className="max-w-4xl mx-auto px-8 py-16">
 
-    {/* Section Label */}
-    <div className="flex items-center gap-3 mb-5">
-      <span
-        className="text-sm font-black tabular-nums"
-        style={{ color: DARK }}
-      >
-        01
-      </span>
-
-      <span
-        className="w-5 h-px"
-        style={{ backgroundColor: BORDER }}
-      />
-
-      <span
-        className="text-sm font-black tracking-[0.14em] uppercase"
-        style={{ color: DARK }}
-      >
-        Context
-      </span>
-    </div>
+    {/* Section label */}
+    <p
+      className="text-sm font-black tracking-[0.12em] uppercase mb-5"
+      style={{ color: DARK }}
+    >
+      01 — Context
+    </p>
 
     {/* Heading */}
     <h2
-      className="text-2xl md:text-3xl font-black leading-[1.15] tracking-tight mb-6"
-      style={{ color: DARK }}
+      className="text-2xl md:text-3xl font-black leading-[1.2] tracking-tight mb-5"
+      style={{
+        color: DARK,
+        textWrap: "balance",
+      } as React.CSSProperties}
     >
       Medical coding spans two stages: coding and QA.
     </h2>
 
-    {/* Content */}
-    <div className="max-w-4xl">
-      <p className="text-base md:text-lg text-slate-600 leading-relaxed">
-        Coders reviewed clinical charts and applied complex coding rules under
-        strict accuracy requirements. They often left the chart to look up
-        guidance, then had to remember and apply it back in context—adding
-        cognitive effort and increasing the risk of incorrect codes and claim
-        rejections.
-      </p>
+    {/* Description */}
+    <p className="text-base md:text-lg text-slate-500 leading-relaxed max-w-3xl">
+      Coders review clinical charts and apply coding rules to assign accurate
+      billing codes. Incorrect coding can lead to{" "}
+      <strong className="font-semibold" style={{ color: DARK }}>
+        claim rejections
+      </strong>
+      , making accuracy critical to the workflow. After submission, QA
+      reviewers validate those coding decisions.
+    </p>
 
-      <p className="text-base md:text-lg text-slate-600 leading-relaxed mt-5">
-        After submission, QA reviewers validated those decisions but often
-        lacked the context behind them, making review more manual.
-      </p>
-    </div>
+    <p className="text-base md:text-lg text-slate-500 leading-relaxed max-w-3xl mt-5">
+      The workflow therefore needs to support{" "}
+      <strong className="font-semibold" style={{ color: DARK }}>
+        accurate coding decisions and effective QA review
+      </strong>
+      .
+    </p>
 
   </div>
 </section>
 
 
-        {/* §02 RESEARCH */}
-        <div
-          className="max-w-4xl mx-auto px-8 py-16"
-          style={{ borderBottom: `1px solid ${BORDER}` }}
-        >
-          <ChapterHeader
-            number="02"
-            label="Research"
-            heading="Shadowing showed where accuracy risk entered the workflow."
-            sub="8 medical coders interviewed and shadowed · 3 QA reviewers interviewed and shadowed"
-          />
+{/* ─────────────────────────────────────────────
+    02 — RESEARCH
+───────────────────────────────────────────── */}
+<section
+  style={{
+    backgroundColor: "#f8fafc",
+    borderBottom: `1px solid ${BORDER}`,
+  }}
+>
+  <div className="max-w-4xl mx-auto px-8 py-16">
 
-          {/* Stats row — open, no boxes */}
+    {/* Section label */}
+    <p
+      className="text-sm font-black tracking-[0.12em] uppercase mb-5"
+      style={{ color: DARK }}
+    >
+      02 — Research
+    </p>
+
+    {/* Heading */}
+    <h2
+      className="text-2xl md:text-3xl font-black leading-[1.2] tracking-tight mb-5"
+      style={{
+        color: DARK,
+        textWrap: "balance",
+      } as React.CSSProperties}
+    >
+      Research revealed where accuracy risk entered the workflow.
+    </h2>
+
+    {/* Research context */}
+    <p className="text-base md:text-lg text-slate-500 leading-relaxed max-w-3xl">
+      We observed and interviewed{" "}
+      <strong className="font-semibold" style={{ color: DARK }}>
+        8 medical coders
+      </strong>{" "}
+      and{" "}
+      <strong className="font-semibold" style={{ color: DARK }}>
+        3 QA reviewers
+      </strong>{" "}
+      across the coding and QA workflow.
+    </p>
+
+
+    {/* ─────────────────────────────────────────
+        RESEARCH FINDINGS
+    ───────────────────────────────────────── */}
+    <div
+      className="mt-12 pt-8"
+      style={{
+        borderTop: `1px solid ${BORDER}`,
+      }}
+    >
+      <p
+        className="text-xs font-black tracking-[0.14em] uppercase mb-6"
+        style={{ color: DARK }}
+      >
+        Research findings
+      </p>
+
+      <div
+        className="grid grid-cols-1 md:grid-cols-3"
+      >
+        {[
+          {
+            number: "01",
+            title: "Guidance was disconnected from the decision",
+            body:
+              "Coders had to leave the chart to find coding rules, then return and re-establish context.",
+          },
+          {
+            number: "02",
+            title: "Decision rationale was lost",
+            body:
+              "QA reviewers had to reconstruct why coding decisions changed after submission.",
+          },
+          {
+            number: "03",
+            title: "Clinical context still required coder judgment",
+            body:
+              "Coders needed to interpret coding rules alongside the clinical context before making a final decision.",
+          },
+        ].map((finding, i) => (
           <div
-            className="grid grid-cols-4 gap-0 mb-14"
+            key={finding.number}
+            className="py-2 pr-7"
             style={{
-              borderTop: `1px solid ${BORDER}`,
+              borderLeft:
+                i > 0 ? `1px solid ${BORDER}` : "none",
+              paddingLeft:
+                i > 0 ? "1.75rem" : 0,
+            }}
+          >
+            {/* Number */}
+            <p
+              className="text-xs font-black tabular-nums mb-4"
+              style={{ color: DARK }}
+            >
+              {finding.number}
+            </p>
+
+            {/* Finding */}
+            <h3
+              className="text-base md:text-[1.05rem] font-black leading-snug mb-3"
+              style={{ color: DARK }}
+            >
+              {finding.title}
+            </h3>
+
+            {/* Explanation */}
+            <p className="text-sm text-slate-500 leading-relaxed">
+              {finding.body}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+
+    {/* ─────────────────────────────────────────
+        WHAT RESEARCH CHANGED
+    ───────────────────────────────────────── */}
+    <div
+      className="mt-12 pt-8"
+      style={{
+        borderTop: `1px solid ${BORDER}`,
+      }}
+    >
+      <p
+        className="text-xs font-black tracking-[0.14em] uppercase mb-5"
+        style={{ color: DARK }}
+      >
+        What research changed
+      </p>
+
+      <div>
+        {[
+          {
+            number: "01",
+            title: "In-context guidance",
+            body:
+              "Surface relevant coding rules at the point of decision.",
+          },
+          {
+            number: "02",
+            title: "Decision traceability",
+            body:
+              "Capture why coding decisions change for QA review.",
+          },
+          {
+            number: "03",
+            title: "Editable recommendations",
+            body:
+              "Keep the coder in control of the final decision.",
+          },
+        ].map((item) => (
+          <div
+            key={item.number}
+            className="flex items-start gap-5 py-4"
+            style={{
               borderBottom: `1px solid ${BORDER}`,
             }}
           >
-            {[
-              { v: "8", l: "Medical coders shadowed" },
-              { v: "3", l: "QA reviewers interviewed" },
-              { v: "3×", l: "Tab switches per single claim" },
-              { v: "95%", l: "Accuracy target coders worked toward" },
-            ].map((s, i) => (
-              <div
-                key={s.l}
-                className="py-6 pr-6"
-                style={{
-                  borderLeft: i > 0 ? `1px solid ${BORDER}` : "none",
-                  paddingLeft: i > 0 ? "1.5rem" : 0,
-                }}
-              >
-                <p
-                  className="text-3xl font-black tabular-nums leading-none mb-2"
-                  style={{ color: DARK }}
-                >
-                  {s.v}
-                </p>
-                <p className="text-base text-slate-500">{s.l}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="flex items-center gap-3 mb-6">
-            <div
-              className="w-[3px] h-5 rounded-full shrink-0"
-              style={{ backgroundColor: DARK }}
-            />
-            <h3
-              className="text-base font-bold tracking-tight"
+            <span
+              className="text-xs font-black tabular-nums pt-1 w-7 shrink-0"
               style={{ color: DARK }}
             >
-              What we observed
-            </h3>
-          </div>
-          <div
-            className="rounded-2xl overflow-hidden mb-12"
-            style={{ border: `1px solid ${BORDER}` }}
-          >
-            {/* Header */}
-            <div
-              className="px-7 py-4 flex items-center justify-between"
-              style={{ backgroundColor: DARK }}
-            >
-              <p className="text-sm font-black tracking-[0.1em] uppercase text-white">
-                Observed workflow · one claim
-              </p>
-              <span
-                className="text-xs font-semibold px-3 py-1 rounded-full"
-                style={{
-                  backgroundColor: "rgba(255,255,255,0.1)",
-                  color: "rgba(255,255,255,0.6)",
-                }}
-              >
-                8 coders · live sessions
-              </span>
-            </div>
+              {item.number}
+            </span>
 
-            {/* Steps 01 + 02 */}
-            {[
-              {
-                n: "01",
-                label: "Review chart",
-                sub: "Coder opens the chart and starts with confidence",
-              },
-              {
-                n: "02",
-                label: "Encounter ambiguity",
-                sub: "needs to lookup for the modifier lookup",
-              },
-            ].map((step) => (
-              <div
-                key={step.n}
-                className="flex items-stretch bg-white"
-                style={{ borderBottom: `1px solid ${BORDER}` }}
-              >
-                <div className="flex flex-col items-center w-16 shrink-0 py-5">
-                  <div
-                    className="w-9 h-9 rounded-full flex items-center justify-center text-sm font-black shrink-0 z-10"
-                    style={{
-                      backgroundColor: SOFT,
-                      color: DARK,
-                      border: `2px solid ${BORDER}`,
-                    }}
-                  >
-                    {step.n}
-                  </div>
-                  <div
-                    className="flex-1 w-0.5 mt-2"
-                    style={{ backgroundColor: BORDER }}
-                  />
-                </div>
-                <div className="flex-1 py-6 pr-7">
-                  <p
-                    className="text-base font-bold mb-1.5"
-                    style={{ color: DARK }}
-                  >
-                    {step.label}
-                  </p>
-                  <p className="text-base text-slate-400">{step.sub}</p>
-                </div>
-              </div>
-            ))}
-
-            {/* Friction zone */}
-            <div
-              style={{
-                backgroundColor: "#fef2f2",
-                borderTop: "1.5px solid #fca5a5",
-                borderBottom: "1.5px solid #fca5a5",
-                borderLeft: "5px solid #ef4444",
-              }}
-            >
-              <div className="flex items-center gap-2 px-5 pt-4 pb-2">
-                <span className="w-2 h-2 rounded-full bg-red-500 shrink-0" />
-                <span className="text-xs font-black text-red-500 tracking-[0.12em] uppercase">
-                  Friction zone — where accuracy risk enters
-                </span>
-              </div>
-              <div className="grid grid-cols-2 gap-0">
-                <div>
-                  {[
-                    {
-                      n: "03",
-                      label: "Leave chart",
-                      sub: "Searches reference tabs for the modifier or client rule — loses chart context",
-                    },
-                    {
-                      n: "04",
-                      label: "Return to chart",
-                      sub: "Re-reads the chart 3× to reorient before making a decision",
-                    },
-                  ].map((step, i, arr) => (
-                    <div key={step.n} className="flex items-stretch">
-                      <div className="flex flex-col items-center w-16 shrink-0 py-5">
-                        <div
-                          className="w-9 h-9 rounded-full flex items-center justify-center text-sm font-black shrink-0 z-10"
-                          style={{
-                            backgroundColor: "#fee2e2",
-                            color: "#ef4444",
-                            border: "2px solid #fca5a5",
-                          }}
-                        >
-                          {step.n}
-                        </div>
-                        {i < arr.length - 1 && (
-                          <div
-                            className="flex-1 w-0.5 mt-2"
-                            style={{ backgroundColor: "#fca5a5" }}
-                          />
-                        )}
-                      </div>
-                      <div className="flex-1 py-6 pr-6">
-                        <p
-                          className="text-base font-bold mb-1.5"
-                          style={{ color: "#b91c1c" }}
-                        >
-                          {step.label}
-                        </p>
-                        <p className="text-base" style={{ color: "#f87171" }}>
-                          {step.sub}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                <div
-                  className="flex items-center px-6 py-6"
-                  style={{ borderLeft: "1px solid #fca5a5" }}
-                >
-                  <div
-                    className="w-full rounded-xl overflow-hidden"
-                    style={{ border: "1.5px solid #fed7aa" }}
-                  >
-                    <div
-                      className="px-5 py-4"
-                      style={{ backgroundColor: "#fff7ed" }}
-                    >
-                      <p
-                        className="text-xs font-black tracking-[0.1em] uppercase mb-1.5"
-                        style={{ color: "#c2410c" }}
-                      >
-                        Pattern 01
-                      </p>
-                      <p
-                        className="text-base font-bold"
-                        style={{ color: "#9a3412" }}
-                      >
-                        Context switching
-                      </p>
-                      <p
-                        className="text-base mt-1.5"
-                        style={{ color: "#ea580c" }}
-                      >
-                        3× tab switches per claim · loses SLA score
-                      </p>
-                    </div>
-                    <div className="px-5 py-4 bg-white">
-                      {[
-                        "Tab → chart → tab",
-                        "Re-reads 3× per claim",
-                        "Loses SLA score",
-                      ].map((t) => (
-                        <div
-                          key={t}
-                          className="flex items-center gap-2.5 mb-2 last:mb-0"
-                        >
-                          <span
-                            className="w-2 h-2 rounded-full shrink-0"
-                            style={{ backgroundColor: "#f97316" }}
-                          />
-                          <span
-                            className="text-base font-medium"
-                            style={{ color: "#92400e" }}
-                          >
-                            {t}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Steps 05 + 06 */}
-            {[
-              {
-                n: "05",
-                label: "Make decision",
-                sub: "Applies code from memory - recall error risk is highest here",
-                pattern: {
-                  num: "02",
-                  title: "Memory overload",
-                  desc: "Codes + modifiers + rules + SLA in parallel",
-                  tags: ["High variation between coders", "SLA pressure"],
-                  headBg: "#fefce8",
-                  headText: "#92400e",
-                  border: "#fde68a",
-                  accent: "#d97706",
-                },
-              },
-              {
-                n: "06",
-                label: "QA review",
-                sub: "Claim submitted - but the reason behind the decision was never recorded",
-                pattern: {
-                  num: "03",
-                  title: "QA blind spot",
-                  desc: "Rationale lost - reviewers reconstruct after the fact",
-                  tags: ["No reason recorded", "Manual reconstruction"],
-                  headBg: SOFT,
-                  headText: DARK,
-                  border: BORDER,
-                  accent: "#94a3b8",
-                },
-              },
-            ].map((row, i, arr) => (
-              <div
-                key={row.n}
-                className="grid grid-cols-2 bg-white"
-                style={{ borderTop: `1px solid ${BORDER}` }}
-              >
-                <div className="flex items-stretch">
-                  <div className="flex flex-col items-center w-16 shrink-0 py-5">
-                    <div
-                      className="w-9 h-9 rounded-full flex items-center justify-center text-sm font-black shrink-0 z-10"
-                      style={{
-                        backgroundColor: SOFT,
-                        color: DARK,
-                        border: `2px solid ${BORDER}`,
-                      }}
-                    >
-                      {row.n}
-                    </div>
-                    {i < arr.length - 1 && (
-                      <div
-                        className="flex-1 w-0.5 mt-2"
-                        style={{ backgroundColor: BORDER }}
-                      />
-                    )}
-                  </div>
-                  <div className="flex-1 py-6 pr-6">
-                    <p
-                      className="text-base font-bold mb-1.5"
-                      style={{ color: DARK }}
-                    >
-                      {row.label}
-                    </p>
-                    <p className="text-base text-slate-400">{row.sub}</p>
-                  </div>
-                </div>
-                <div
-                  className="flex items-center px-6 py-6"
-                  style={{ borderLeft: `1px solid ${BORDER}` }}
-                >
-                  <div
-                    className="w-full rounded-xl overflow-hidden"
-                    style={{ border: `1.5px solid ${row.pattern.border}` }}
-                  >
-                    <div
-                      className="px-5 py-4"
-                      style={{ backgroundColor: row.pattern.headBg }}
-                    >
-                      <p
-                        className="text-xs font-black tracking-[0.1em] uppercase mb-1.5"
-                        style={{ color: row.pattern.accent }}
-                      >
-                        Pattern {row.pattern.num}
-                      </p>
-                      <p
-                        className="text-base font-bold"
-                        style={{ color: row.pattern.headText }}
-                      >
-                        {row.pattern.title}
-                      </p>
-                      <p
-                        className="text-base mt-1.5"
-                        style={{ color: row.pattern.accent }}
-                      >
-                        {row.pattern.desc}
-                      </p>
-                    </div>
-                    <div className="px-5 py-4 bg-white">
-                      {row.pattern.tags.map((t) => (
-                        <div
-                          key={t}
-                          className="flex items-center gap-2.5 mb-2 last:mb-0"
-                        >
-                          <span
-                            className="w-2 h-2 rounded-full shrink-0"
-                            style={{ backgroundColor: row.pattern.accent }}
-                          />
-                          <span
-                            className="text-base font-medium"
-                            style={{ color: row.pattern.headText }}
-                          >
-                            {t}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-
-            <div
-              className="px-7 py-5 flex items-center gap-4"
-              style={{ backgroundColor: DARK }}
-            >
-              <div
-                className="w-1 self-stretch rounded-full shrink-0"
-                style={{ backgroundColor: "rgba(255,255,255,0.25)" }}
-              />
+            <div className="flex-1">
               <p
-                className="text-base font-semibold leading-relaxed"
-                style={{ color: "rgba(255,255,255,0.8)" }}
+                className="text-sm font-black mb-1"
+                style={{ color: DARK }}
               >
-                One observed coder switched tabs{" "}
-                <strong className="text-white">
-                  three times in a single claim.
-                </strong>{" "}
-                The workflow forced coders to carry context the system could
-                carry for them.
+                {item.title}
+              </p>
+
+              <p className="text-sm text-slate-500 leading-relaxed">
+                {item.body}
               </p>
             </div>
           </div>
+        ))}
+      </div>
+    </div>
 
-          {/* What research changed table */}
-          <div className="flex items-center gap-3 mb-5">
-            <div
-              className="w-[3px] h-5 rounded-full shrink-0"
-              style={{ backgroundColor: DARK }}
-            />
-            <h3
-              className="text-base font-bold tracking-tight"
-              style={{ color: DARK }}
-            >
-              What research changed
-            </h3>
-          </div>
-          <div
-            className="overflow-hidden rounded-2xl mb-10"
-            style={{ border: `1px solid ${BORDER}` }}
-          >
-            <table className="w-full">
-              <thead>
-                <tr style={{ backgroundColor: SOFT }}>
-                  {[
-                    "What we observed",
-                    "What it revealed",
-                    "What it changed",
-                  ].map((h) => (
-                    <th
-                      key={h}
-                      className="text-left px-6 py-3 text-sm font-bold tracking-[0.12em] uppercase"
-                      style={{
-                        color: DARK,
-                        borderBottom: `1px solid ${BORDER}`,
-                      }}
-                    >
-                      {h}
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  {
-                    obs: "Coders left the chart for modifier lookups",
-                    revealed: "Context switching disrupted the decision",
-                    changed: "Bring guidance into the chart",
-                  },
-                  {
-                    obs: "Multiple rules had to be held in memory",
-                    revealed: "High cognitive load",
-                    changed: "Surface only relevant rules",
-                  },
-                  {
-                    obs: "Coders changed system recommendations",
-                    revealed: "Clinical context still required expert judgment",
-                    changed: "Keep recommendations editable",
-                  },
-                  {
-                    obs: "QA reconstructed changed decisions",
-                    revealed: "Rationale was lost after submission",
-                    changed: "Capture structured change reasons",
-                  },
-                ].map((r, i, arr) => (
-                  <tr
-                    key={r.obs}
-                    style={{ borderBottom: `1px solid ${BORDER}` }}
-                  >
-                    <td className="px-6 py-4 text-base text-slate-600 align-top">
-                      {r.obs}
-                    </td>
-                    <td className="px-6 py-4 text-base text-slate-500 align-top">
-                      {r.revealed}
-                    </td>
-                    <td className="px-6 py-4 align-top">
-                      <span
-                        className="text-sm font-semibold leading-snug text-white"
-                        style={{
-                          backgroundColor: DARK,
-                          display: "inline-block",
-                          padding: "4px 10px",
-                          borderRadius: "6px",
-                        }}
-                      >
-                        {r.changed}
-                      </span>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
-          <div
-            className="rounded-2xl px-8 py-6"
-            style={{ backgroundColor: DARK, boxShadow: DARK_SHADOW }}
-          >
-            <p
-              className="text-sm font-bold tracking-[0.16em] uppercase mb-3"
-              style={{ color: MUTED }}
-            >
-              Key insight
-            </p>
-            <p className="text-white text-xl font-semibold leading-relaxed">
-              The opportunity wasn't to automate the coder's decision. It was to
-              remove the unnecessary work surrounding it.
-            </p>
-          </div>
-        </div>
+  </div>
+</section>
 
         {/* §03 REFRAME */}
         <div
