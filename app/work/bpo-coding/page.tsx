@@ -438,7 +438,7 @@ export default function BPOCoding() {
       },
       {
         number: "03",
-        title: "Reduce manual decisions",
+        title: "Automate clear-cut answers",
         body: "Provide direct answers where the rules allow the system to determine them.",
       },
       {
@@ -481,244 +481,429 @@ export default function BPOCoding() {
   </div>
 </section>
 
-        {/* §04 DECISION ARCHITECTURE */}
+       {/* ═══════════════════════════════════════════════════════════════
+    04 — DECISION ARCHITECTURE
+═══════════════════════════════════════════════════════════════ */}
+<section
+  className="w-full"
+  style={{ color: DARK }}
+>
+
+  {/* FULL-WIDTH SECTION DIVIDER */}
+  <div
+    className="w-full"
+    style={{
+      height: "1px",
+      backgroundColor: BORDER,
+    }}
+  />
+
+  {/* CONTENT */}
+  <div className="max-w-4xl mx-auto px-8 pt-16 pb-20">
+
+    {/* SECTION LABEL */}
+    <p
+      className="text-xs font-black tracking-[0.14em] uppercase mb-5"
+      style={{ color: "#64748b" }}
+    >
+      04 — Decision Architecture
+    </p>
+
+    {/* CORE DECISION */}
+    <h2 className="text-3xl md:text-4xl font-black leading-[1.12] tracking-tight mb-10">
+      The system answers what it can determine;
+      <span style={{ color: "#64748b" }}>
+        {" "}the coder provides the missing context.
+      </span>
+    </h2>
+
+
+    {/* INITIAL → DESIGN DECISION */}
+    <div
+      className="w-full mb-12 rounded-xl overflow-hidden"
+      style={{
+        border: `1px solid ${BORDER}`,
+      }}
+    >
+
+      <div className="grid grid-cols-1 md:grid-cols-[1fr_52px_1fr]">
+
+        {/* INITIAL DIRECTION */}
+        <div className="px-7 py-6 bg-white">
+
+          <p
+            className="text-[10px] font-black tracking-[0.14em] uppercase mb-3"
+            style={{ color: "#94a3b8" }}
+          >
+            Initial direction
+          </p>
+
+          <h3 className="text-lg font-black tracking-tight mb-1">
+            Full automation
+          </h3>
+
+          <p className="text-sm text-slate-500 leading-relaxed">
+            Determine the coding outcome automatically.
+          </p>
+
+        </div>
+
+
+        {/* ARROW */}
         <div
-          className="max-w-4xl mx-auto px-8 py-16"
-          style={{ borderBottom: `1px solid ${BORDER}` }}
+          className="hidden md:flex items-center justify-center"
+          style={{
+            backgroundColor: "#f8fafc",
+            borderLeft: `1px solid ${BORDER}`,
+            borderRight: `1px solid ${BORDER}`,
+          }}
         >
-          <ChapterHeader
-            number="04"
-            label="Decision Architecture"
-            heading="What should the system own, and what should remain with the expert?"
-            sub="The workflow combined three sources of expertise. Defining the boundaries between them was the core design problem."
+          <span
+            className="text-lg"
+            style={{ color: "#94a3b8" }}
+          >
+            →
+          </span>
+        </div>
+
+
+        {/* DESIGN DECISION */}
+        <div
+          className="px-7 py-6"
+          style={{
+            backgroundColor: "#f8fafc",
+          }}
+        >
+
+          <p
+            className="text-[10px] font-black tracking-[0.14em] uppercase mb-3"
+            style={{ color: "#64748b" }}
+          >
+            Design decision
+          </p>
+
+          <h3 className="text-lg font-black tracking-tight mb-1">
+            Guided automation
+          </h3>
+
+          <p className="text-sm text-slate-500 leading-relaxed">
+            Automate only what the system can reliably determine.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      {/* TRADE-OFF */}
+      <div
+        className="px-7 py-3.5 flex items-center justify-center"
+        style={{
+          borderTop: `1px solid ${BORDER}`,
+          backgroundColor: "#fff",
+        }}
+      >
+        <p className="text-xs font-bold text-slate-500">
+          Maximum automation
+          <span
+            className="mx-2 font-normal"
+            style={{ color: "#94a3b8" }}
+          >
+            vs.
+          </span>
+          <span style={{ color: DARK }}>
+            decision reliability
+          </span>
+        </p>
+      </div>
+
+    </div>
+
+
+    {/* WORKFLOW */}
+    <div
+      className="w-full rounded-xl px-6 md:px-8 py-8"
+      style={{
+        backgroundColor: "#f8fafc",
+        border: `1px solid ${BORDER}`,
+      }}
+    >
+
+      {/* INITIATE */}
+      <div className="flex justify-center">
+
+        <div
+          className="px-5 py-2.5 rounded-lg text-[10px] font-black"
+          style={{
+            backgroundColor: DARK,
+            color: "#fff",
+          }}
+        >
+          INITIATE RELEVANT IAG
+        </div>
+
+      </div>
+
+
+      {/* CONNECTOR */}
+      <div
+        className="w-px h-5 mx-auto"
+        style={{ backgroundColor: BORDER }}
+      />
+
+
+      {/* QUESTION */}
+      <div className="flex justify-center">
+
+        <div
+          className="px-6 py-3.5 rounded-lg bg-white text-center"
+          style={{
+            border: `1px solid ${BORDER}`,
+          }}
+        >
+          <p className="text-sm font-black">
+            Can the system determine the answer?
+          </p>
+        </div>
+
+      </div>
+
+
+      {/* SPLIT */}
+      <div className="relative max-w-3xl mx-auto h-9">
+
+        <div
+          className="absolute left-1/2 -translate-x-1/2 top-0 w-px h-5"
+          style={{ backgroundColor: BORDER }}
+        />
+
+        <div
+          className="absolute left-[16.66%] right-[16.66%] top-5 h-px"
+          style={{ backgroundColor: BORDER }}
+        />
+
+      </div>
+
+
+      {/* BRANCHES */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
+
+        {/* KEEP */}
+        <div className="text-center">
+
+          <div
+            className="mx-auto w-px h-3"
+            style={{ backgroundColor: BORDER }}
           />
 
-          {/* Three roles — open grid */}
           <div
-            className="grid grid-cols-3 gap-0 mb-12"
-            style={{
-              borderTop: `1px solid ${BORDER}`,
-              borderBottom: `1px solid ${BORDER}`,
-            }}
-          >
-            {[
-              {
-                title: "Rules Engine",
-                body: "Provides applicable codes, modifiers, and client requirements.",
-                n: "01",
-              },
-              {
-                title: "Coder",
-                body: "Interprets the chart and makes the final decision.",
-                n: "02",
-              },
-              {
-                title: "QA",
-                body: "Reviews decisions and identifies recurring exceptions.",
-                n: "03",
-              },
-            ].map((r, i) => (
-              <div
-                key={r.title}
-                className="py-6 pr-6"
-                style={{
-                  borderLeft: i > 0 ? `1px solid ${BORDER}` : "none",
-                  paddingLeft: i > 0 ? "1.5rem" : 0,
-                }}
-              >
-                <p
-                  className="text-xs font-black tabular-nums mb-3"
-                  style={{ color: BORDER }}
-                >
-                  {r.n}
-                </p>
-                <p
-                  className="text-base font-black mb-1.5"
-                  style={{ color: DARK }}
-                >
-                  {r.title}
-                </p>
-                <p className="text-base text-slate-500 leading-relaxed">
-                  {r.body}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          <div className="flex items-center gap-3 mb-5">
-            <div
-              className="w-[3px] h-5 rounded-full shrink-0"
-              style={{ backgroundColor: DARK }}
-            />
-            <h3
-              className="text-base font-bold tracking-tight"
-              style={{ color: DARK }}
-            >
-              Who owns each step
-            </h3>
-          </div>
-          <div
-            className="rounded-2xl overflow-hidden mb-10"
+            className="px-5 py-3 rounded-lg bg-white"
             style={{ border: `1px solid ${BORDER}` }}
           >
-            <div
-              className="grid grid-cols-[160px_1fr_1fr_1fr_1fr]"
-              style={{
-                backgroundColor: SOFT,
-                borderBottom: `1px solid ${BORDER}`,
-              }}
+            <p
+              className="text-[10px] font-black tracking-[0.12em] uppercase mb-1"
+              style={{ color: "#94a3b8" }}
             >
-              <div className="px-5 py-3" />
-              {[
-                "01 · Guide",
-                "02 · Validate",
-                "03 · Adjust",
-                "04 · Review",
-              ].map((h) => (
-                <div
-                  key={h}
-                  className="px-4 py-3 text-xs font-black tracking-[0.1em] uppercase"
-                  style={{ color: DARK, borderLeft: `1px solid ${BORDER}` }}
-                >
-                  {h}
-                </div>
-              ))}
-            </div>
-            {[
-              {
-                actor: "Rules Engine",
-                role: "Provides context",
-                cells: [true, false, false, false],
-                desc: [
-                  "Surfaces applicable codes, modifiers, and client rules",
-                  null,
-                  null,
-                  null,
-                ],
-              },
-              {
-                actor: "Coder",
-                role: "Applies judgment",
-                cells: [true, true, true, false],
-                desc: [
-                  "Rules surface in context — no tab switching needed",
-                  "Reviews recommendation against chart",
-                  "Accepts, modifies, or overrides - logs reason",
-                  null,
-                ],
-              },
-              {
-                actor: "QA",
-                role: "Reviews decisions",
-                cells: [false, false, false, true],
-                desc: [
-                  null,
-                  null,
-                  null,
-                  "Receives decision + rationale together - no reconstruction",
-                ],
-              },
-            ].map((row, ri) => (
-              <div
-                key={row.actor}
-                className="grid grid-cols-[160px_1fr_1fr_1fr_1fr]"
-                style={{
-                  borderTop: ri > 0 ? `1px solid ${BORDER}` : undefined,
-                }}
-              >
-                <div
-                  className="px-5 py-5 flex flex-col justify-center"
-                  style={{
-                    backgroundColor:
-                      ri === 0 ? "#f0f9ff" : ri === 1 ? SOFT : "#f5f3ff",
-                  }}
-                >
-                  <p
-                    className="text-base font-bold mb-0.5"
-                    style={{ color: DARK }}
-                  >
-                    {row.actor}
-                  </p>
-                  <p className="text-sm text-slate-400">{row.role}</p>
-                </div>
-                {row.cells.map((active, ci) => (
-                  <div
-                    key={ci}
-                    className="px-4 py-5 flex flex-col justify-center"
-                    style={{
-                      borderLeft: `1px solid ${BORDER}`,
-                      backgroundColor: active
-                        ? ri === 0
-                          ? "#f0f9ff"
-                          : ri === 1
-                            ? SOFT
-                            : "#f5f3ff"
-                        : "white",
-                    }}
-                  >
-                    {active ? (
-                      <>
-                        <div
-                          className="w-5 h-5 rounded-full flex items-center justify-center mb-2 shrink-0"
-                          style={{ backgroundColor: DARK }}
-                        >
-                          <svg
-                            width="10"
-                            height="10"
-                            viewBox="0 0 10 10"
-                            fill="none"
-                          >
-                            <path
-                              d="M2 5l2.5 2.5L8 3"
-                              stroke="white"
-                              strokeWidth="1.5"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
-                        </div>
-                        <p className="text-sm text-slate-500 leading-snug">
-                          {row.desc[ci]}
-                        </p>
-                      </>
-                    ) : (
-                      <div
-                        className="w-4 h-0.5 rounded-full"
-                        style={{ backgroundColor: "#e2e8f0" }}
-                      />
-                    )}
-                  </div>
-                ))}
-              </div>
-            ))}
-            <div
-              className="px-5 py-3 text-sm text-slate-400 italic"
-              style={{
-                backgroundColor: SOFT,
-                borderTop: `1px solid ${BORDER}`,
-              }}
+              YES
+            </p>
+
+            <p className="text-sm font-black">
+              KEEP
+            </p>
+          </div>
+
+        </div>
+
+
+        {/* CHANGE */}
+        <div className="text-center">
+
+          <div
+            className="mx-auto w-px h-3"
+            style={{ backgroundColor: BORDER }}
+          />
+
+          <div
+            className="px-5 py-3 rounded-lg bg-white"
+            style={{ border: `1px solid ${BORDER}` }}
+          >
+            <p
+              className="text-[10px] font-black tracking-[0.12em] uppercase mb-1"
+              style={{ color: "#94a3b8" }}
             >
-              QA receives the recommendation, final decision, and rationale
-              together — no reconstruction needed.
-            </div>
+              YES
+            </p>
+
+            <p className="text-sm font-black">
+              CHANGE
+            </p>
           </div>
 
           <div
-            className="rounded-2xl px-8 py-6"
-            style={{ backgroundColor: DARK, boxShadow: DARK_SHADOW }}
+            className="mx-auto w-px h-3"
+            style={{ backgroundColor: BORDER }}
+          />
+
+          <div
+            className="inline-flex px-3.5 py-1.5 rounded-md bg-white"
+            style={{ border: `1px solid ${BORDER}` }}
+          >
+            <span className="text-[10px] font-bold text-slate-500">
+              Record rationale
+            </span>
+          </div>
+
+        </div>
+
+
+        {/* CODER */}
+        <div className="text-center">
+
+          <div
+            className="mx-auto w-px h-3"
+            style={{ backgroundColor: BORDER }}
+          />
+
+          <div
+            className="px-5 py-3 rounded-lg bg-white"
+            style={{ border: `1px solid ${BORDER}` }}
           >
             <p
-              className="text-sm font-bold tracking-[0.16em] uppercase mb-3"
-              style={{ color: MUTED }}
+              className="text-[10px] font-black tracking-[0.12em] uppercase mb-1"
+              style={{ color: "#94a3b8" }}
             >
-              Design principle
+              NO
             </p>
-            <p className="text-white text-xl font-semibold leading-relaxed">
-              Automate what is repetitive. Preserve what requires judgment.
-              Capture what requires accountability.
+
+            <p className="text-sm font-black">
+              Coder answers
             </p>
           </div>
+
         </div>
+
+      </div>
+
+
+      {/* MERGE */}
+      <div className="relative max-w-3xl mx-auto h-10">
+
+        <div
+          className="absolute left-[16.66%] top-0 w-px h-5"
+          style={{ backgroundColor: BORDER }}
+        />
+
+        <div
+          className="absolute left-1/2 -translate-x-1/2 top-0 w-px h-5"
+          style={{ backgroundColor: BORDER }}
+        />
+
+        <div
+          className="absolute right-[16.66%] top-0 w-px h-5"
+          style={{ backgroundColor: BORDER }}
+        />
+
+        <div
+          className="absolute left-[16.66%] right-[16.66%] top-5 h-px"
+          style={{ backgroundColor: BORDER }}
+        />
+
+        <div
+          className="absolute left-1/2 -translate-x-1/2 top-5 w-px h-5"
+          style={{ backgroundColor: BORDER }}
+        />
+
+      </div>
+
+
+      {/* IAG COMPLETE */}
+      <div className="flex justify-center">
+
+        <div
+          className="px-6 py-2.5 rounded-lg text-sm font-black"
+          style={{
+            backgroundColor: DARK,
+            color: "#fff",
+          }}
+        >
+          IAG COMPLETE
+        </div>
+
+      </div>
+
+
+      {/* QA */}
+      <div className="flex flex-col items-center">
+
+        <div
+          className="w-px h-4"
+          style={{ backgroundColor: BORDER }}
+        />
+
+        <p className="text-xs font-bold text-slate-500">
+          Review coding outcome
+        </p>
+
+        <div
+          className="w-px h-4"
+          style={{ backgroundColor: BORDER }}
+        />
+
+        <div
+          className="px-5 py-2 rounded-lg text-[10px] font-black"
+          style={{
+            backgroundColor: DARK,
+            color: "#fff",
+          }}
+        >
+          SUBMIT TO QA
+        </div>
+
+        <div
+          className="w-px h-4"
+          style={{ backgroundColor: BORDER }}
+        />
+
+        <p
+          className="text-[10px] font-black tracking-[0.12em] uppercase"
+          style={{ color: "#64748b" }}
+        >
+          QA REVIEW
+        </p>
+
+        <p className="text-sm font-black mt-1">
+          Reviews the final decision and rationale.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    {/* FUTURE DIRECTION */}
+    <div
+      className="mt-12 pt-7 w-full"
+      style={{
+        borderTop: `1px solid ${BORDER}`,
+      }}
+    >
+
+      <p
+        className="text-xs font-black tracking-[0.14em] uppercase mb-3"
+        style={{ color: "#64748b" }}
+      >
+        Future direction
+      </p>
+
+      <p className="text-base md:text-lg font-bold leading-relaxed max-w-3xl">
+        Coder decisions give the system structured feedback, allowing it to
+        determine more answers over time and gradually increase automation.
+      </p>
+
+    </div>
+
+  </div>
+</section>
 
         {/* §05 INTERACTION DESIGN */}
         <div
