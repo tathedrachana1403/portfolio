@@ -916,7 +916,7 @@ export default function BPOCoding() {
             <ChapterHeader
               number="05"
               label="Interaction Design"
-              heading="The decision architecture became the interaction model."
+              heading="We brought system guidance into the coding workflow, reducing context switching."
             />
 
             {/* Five steps — open grid */}
@@ -939,28 +939,28 @@ export default function BPOCoding() {
               {[
                 {
                   n: "01",
-                  label: "Contextual guidance",
-                  body: "Rules-driven recommendations appear beside the relevant coding field.",
+                  label: "Initiate IAG",
+                  body: "The system surfaces the applicable IAG and its coding questions.",
                 },
                 {
                   n: "02",
-                  label: "Expert validation",
-                  body: "The coder reviews the recommendation against the chart.",
+                  label: "Complete IAG",
+                  body: "The coder works through each question using IAG guidance and the chart.",
                 },
                 {
                   n: "03",
                   label: "Editable decisions",
-                  body: "Suggested fields remain editable so the coder controls the final value.",
+                  body: "The coder keeps an automated answer or changes it when needed.",
                 },
                 {
                   n: "04",
                   label: "Structured rationale",
-                  body: "Overrides capture why the recommendation changed.",
+                  body: "Changes capture why the answer was adjusted.",
                 },
                 {
                   n: "05",
-                  label: "QA traceability",
-                  body: "QA reviews: Recommendation → Final decision → Change rationale.",
+                  label: "Preserve trail",
+                  body: "QA reviews: Recommendation, Final decision and Changed rationale.",
                 },
               ].map((s, i) => (
                 <div
