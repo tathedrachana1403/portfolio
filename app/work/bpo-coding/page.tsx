@@ -949,130 +949,113 @@ export default function BPOCoding() {
             </div>
             <BPOImageCarousel />
             <p className="text-base text-slate-400 italic mt-4">
-              Less lookup for coders. Less reconstruction for QA.
+
             </p>
           </div>
         </div>
 
-        {/* §06 DESIGN CALIBRATION */}
-        <div
-          className="max-w-4xl mx-auto px-8 py-16"
-          style={{ borderBottom: `1px solid ${BORDER}` }}
-        >
-          <ChapterHeader
-            number="06"
-            label="Design Calibration"
-            heading="The challenge was not showing more information. It was showing the right information."
-          />
+        <div className="max-w-4xl mx-auto px-8 py-16">
+  <div className="mb-10">
+    <h2 className="text-sm font-bold tracking-wide text-gray-900">
+      06 — Design Calibration
+    </h2>
 
-          <div
-            className="overflow-hidden rounded-2xl mb-10"
-            style={{ border: `1px solid ${BORDER}` }}
-          >
-            <table className="w-full">
-              <thead>
-                <tr style={{ backgroundColor: SOFT }}>
-                  {["Direction", "Decision", "Why"].map((h) => (
-                    <th
-                      key={h}
-                      className="text-left px-6 py-3 text-sm font-bold tracking-[0.12em] uppercase"
-                      style={{
-                        color: DARK,
-                        borderBottom: `1px solid ${BORDER}`,
-                      }}
-                    >
-                      {h}
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  {
-                    dir: "Confidence signal",
-                    decision: "Rejected",
-                    why: "Didn't tell coders what to verify",
-                    shipped: false,
-                  },
-                  {
-                    dir: "Full rule trace",
-                    decision: "Rejected",
-                    why: "Added complexity during high-volume work",
-                    shipped: false,
-                  },
-                  {
-                    dir: "Contextual guidance",
-                    decision: "Selected",
-                    why: "Reduced lookup at the decision point",
-                    shipped: true,
-                  },
-                  {
-                    dir: "Editable recommendations",
-                    decision: "Selected",
-                    why: "Preserved expert judgment",
-                    shipped: true,
-                  },
-                  {
-                    dir: "Change rationale",
-                    decision: "Selected",
-                    why: "Made exceptions reviewable",
-                    shipped: true,
-                  },
-                ].map((r, i, arr) => (
-                  <tr
-                    key={r.dir}
-                    style={{
-                      borderBottom:
-                        i < arr.length - 1 ? `1px solid ${BORDER}` : "none",
-                    }}
-                  >
-                    <td
-                      className="px-6 py-4 text-base font-medium align-top"
-                      style={{
-                        color: DARK,
-                        textDecoration: !r.shipped ? "line-through" : "none",
-                        textDecorationColor: BORDER,
-                        opacity: r.shipped ? 1 : 0.5,
-                      }}
-                    >
-                      {r.dir}
-                    </td>
-                    <td className="px-6 py-4 align-top">
-                      <span
-                        className="text-sm font-bold px-3 py-1.5 rounded-full"
-                        style={{
-                          backgroundColor: r.shipped ? SOFT : "#fef2f2",
-                          color: r.shipped ? DARK : "#ef4444",
-                          border: `1px solid ${r.shipped ? BORDER : "#fecaca"}`,
-                        }}
-                      >
-                        {r.decision}
-                      </span>
-                    </td>
-                    <td className="px-6 py-4 text-base text-slate-500 align-top">
-                      {r.why}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+    <h3 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight text-gray-900 max-w-3xl mt-4">
+      The challenge was surfacing enough context to support accurate decisions
+      without adding cognitive load.
+    </h3>
+  </div>
 
-          <div
-            className="rounded-2xl px-8 py-6"
-            style={{ backgroundColor: DARK, boxShadow: DARK_SHADOW }}
-          >
-            <p
-              className="text-sm font-bold tracking-[0.16em] uppercase mb-3"
-              style={{ color: MUTED }}
-            >
-              Design principle
-            </p>
-            <p className="text-white text-xl font-semibold leading-relaxed">
-              Optimize for decision quality, not information volume.
-            </p>
-          </div>
-        </div>
+  <div className="overflow-hidden rounded-xl border border-gray-200">
+    <table className="w-full text-sm">
+      <thead>
+        <tr className="bg-gray-50 border-b border-gray-200">
+          <th className="text-left px-5 py-4 font-semibold text-gray-900">
+            Direction
+          </th>
+          <th className="text-left px-5 py-4 font-semibold text-gray-900">
+            Decision
+          </th>
+          <th className="text-left px-5 py-4 font-semibold text-gray-900">
+            Why
+          </th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr className="border-b border-gray-200">
+          <td className="px-5 py-4 font-medium text-gray-900">
+            Confidence signal
+          </td>
+          <td className="px-5 py-4 font-semibold text-gray-500">
+            Rejected
+          </td>
+          <td className="px-5 py-4 text-gray-600">
+            Didn't tell coders what to verify
+          </td>
+        </tr>
+
+        <tr className="border-b border-gray-200">
+          <td className="px-5 py-4 font-medium text-gray-900">
+            Full rule trace
+          </td>
+          <td className="px-5 py-4 font-semibold text-gray-500">
+            Rejected
+          </td>
+          <td className="px-5 py-4 text-gray-600">
+            Added complexity during high-volume work
+          </td>
+        </tr>
+
+        <tr className="border-b border-gray-200">
+          <td className="px-5 py-4 font-medium text-gray-900">
+            Contextual guidance
+          </td>
+          <td className="px-5 py-4 font-semibold text-blue-700">
+            Selected
+          </td>
+          <td className="px-5 py-4 text-gray-600">
+            Reduced lookup at the decision point
+          </td>
+        </tr>
+
+        <tr className="border-b border-gray-200">
+          <td className="px-5 py-4 font-medium text-gray-900">
+            Editable recommendations
+          </td>
+          <td className="px-5 py-4 font-semibold text-blue-700">
+            Selected
+          </td>
+          <td className="px-5 py-4 text-gray-600">
+            Preserved expert judgment
+          </td>
+        </tr>
+
+        <tr>
+          <td className="px-5 py-4 font-medium text-gray-900">
+            Change rationale
+          </td>
+          <td className="px-5 py-4 font-semibold text-blue-700">
+            Selected
+          </td>
+          <td className="px-5 py-4 text-gray-600">
+            Made exceptions reviewable
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div className="mt-8 border-l-4 border-blue-900 pl-5">
+    <p className="text-xs font-bold uppercase tracking-widest text-blue-900 mb-2">
+      Design principle
+    </p>
+
+    <p className="text-lg font-semibold text-gray-900">
+      Optimize for decision quality, not information volume.
+    </p>
+  </div>
+</div>
 
         {/* §07 SCALE */}
         <div
@@ -1120,84 +1103,100 @@ export default function BPOCoding() {
           </div> */}
         </div>
 
-        {/* §08 OUTCOMES */}
-        <div
-          className="max-w-4xl mx-auto px-8 py-16"
-          style={{ borderBottom: `1px solid ${BORDER}` }}
-        >
-          <ChapterHeader
-            number="07"
-            label="Outcomes"
-            heading="The workflow improved accuracy without removing expert judgment."
-          />
+        <div className="max-w-4xl mx-auto px-8 py-10">
+  {/* 07 — Outcomes */}
+  <div className="mb-12">
+    <h2 className="text-sm font-bold tracking-wide text-gray-900">
+      07 — Outcomes
+    </h2>
 
-          <div
-            className="grid grid-cols-2 md:grid-cols-4 gap-x-12 gap-y-10 mb-4"
-            style={{ borderTop: `1px solid ${BORDER}`, paddingTop: "2rem" }}
-          >
-            {[
-              { v: "40%", l: "Fewer billing errors" },
-              { v: "33.4%", l: "Fewer claim rejections" },
-              { v: "95%", l: "SLA accuracy target met" },
-              { v: "QA-ready", l: "Changed decisions carried rationale" },
-            ].map((s) => (
-              <div key={s.l}>
-                <p
-                  className="text-4xl font-black tabular-nums leading-none mb-2"
-                  style={{ color: DARK }}
-                >
-                  {s.v}
-                </p>
-                <div
-                  className="h-0.5 w-8 rounded mb-2"
-                  style={{ backgroundColor: BORDER }}
-                />
-                <p className="text-base text-slate-500 leading-snug">{s.l}</p>
-              </div>
-            ))}
-          </div>
+    <h3 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight text-gray-900 max-w-3xl mt-4">
+      The workflow improved accuracy without removing expert judgment.
+    </h3>
+  </div>
 
-          <p className="text-base text-slate-400 italic mb-10">
-            Billing error and claim rejection rates measured against a 3-month
-            pre-launch baseline from the same BPO cohort.
-          </p>
+  {/* Key Outcomes */}
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 mb-4">
+    {[
+      {
+        value: "40%",
+        label: "Fewer billing errors",
+      },
+      {
+        value: "33.4%",
+        label: "Fewer claim rejections",
+      },
+      {
+        value: "95%",
+        label: "SLA accuracy target met",
+      },
+      {
+        value: "QA-ready",
+        label: "Changed decisions carried rationale",
+      },
+    ].map((metric) => (
+      <div
+        key={metric.value}
+        className="rounded-xl border border-gray-200 bg-white p-5"
+      >
+        <p className="text-xl md:text-2xl font-black tracking-tight text-blue-900">
+          {metric.value}
+        </p>
 
-          <div
-            className="space-y-0"
-            style={{ borderTop: `1px solid ${BORDER}` }}
-          >
-            {[
-              {
-                who: "Coder",
-                body: "Less lookup and context switching. Guidance appears at the moment of decision, not after the chart closes.",
-              },
-              {
-                who: "QA",
-                body: "Less reconstruction and better decision visibility. The reason behind each change travels with the work.",
-              },
-              {
-                who: "Business",
-                body: "Fewer errors and rejected claims. Accuracy improved without removing expert judgment from the workflow.",
-              },
-            ].map((e) => (
-              <div
-                key={e.who}
-                className="py-6"
-                style={{ borderBottom: `1px solid ${BORDER}` }}
-              >
-                <p
-                  className="text-xs font-black tracking-[0.14em] uppercase mb-2"
-                  style={{ color: DARK }}
-                >
-                  {e.who}
-                </p>
-                <p className="text-base text-slate-500 leading-relaxed">
-                  {e.body}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
+        <p className="text-sm font-medium text-gray-600 leading-snug mt-2">
+          {metric.label}
+        </p>
+      </div>
+    ))}
+  </div>
+
+  {/* Measurement Note */}
+  <p className="text-xs text-gray-400 leading-relaxed mb-8">
+    Billing error and claim rejection rates measured against a 3-month
+    pre-launch baseline from the same BPO cohort.
+  </p>
+
+  {/* Stakeholder Outcomes */}
+  <div className="border-t border-gray-200 pt-8">
+    <div className="grid md:grid-cols-3 gap-8">
+      {/* Coder */}
+      <div>
+        <p className="text-xs font-bold uppercase tracking-widest text-blue-900 mb-3">
+          Coder
+        </p>
+
+        <p className="text-sm text-gray-600 leading-relaxed">
+          Less lookup and context switching. Guidance appears at the moment
+          of decision, not after the chart closes.
+        </p>
+      </div>
+
+      {/* QA */}
+      <div>
+        <p className="text-xs font-bold uppercase tracking-widest text-blue-900 mb-3">
+          QA
+        </p>
+
+        <p className="text-sm text-gray-600 leading-relaxed">
+          Less reconstruction and better decision visibility. The reason
+          behind each change travels with the work.
+        </p>
+      </div>
+
+      {/* Business */}
+      <div>
+        <p className="text-xs font-bold uppercase tracking-widest text-blue-900 mb-3">
+          Business
+        </p>
+
+        <p className="text-sm text-gray-600 leading-relaxed">
+          Fewer errors and rejected claims. Accuracy improved without
+          removing expert judgment from the workflow.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
 
         {/* §09 REFLECTION */}
         <div
