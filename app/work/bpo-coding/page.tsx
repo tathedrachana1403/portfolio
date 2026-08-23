@@ -1106,11 +1106,11 @@ export default function BPOCoding() {
         <div className="max-w-4xl mx-auto px-8 py-10">
   {/* 07 — Outcomes */}
   <div className="mb-12">
-    <h2 className="text-sm font-bold tracking-wide text-gray-900">
+    <h2 className="text-sm font-bold tracking-wide text-gray-600">
       07 — Outcomes
     </h2>
 
-    <h3 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight text-gray-900 max-w-3xl mt-4">
+    <h3 className="text-3xl md:text-3xl font-bold tracking-tight leading-tight text-gray-900 max-w-3xl mt-4">
       The workflow improved accuracy without removing expert judgment.
     </h3>
   </div>
@@ -1198,116 +1198,89 @@ export default function BPOCoding() {
   </div>
 </div>
 
-        {/* §09 REFLECTION */}
-        <div
-          style={{
-            backgroundColor: "#f8fafc",
-            borderBottom: `1px solid ${BORDER}`,
-          }}
+        <div className="max-w-4xl mx-auto px-8 py-16">
+
+  {/* Section heading */}
+  <div className="mb-12">
+    <p
+      className="text-sm font-semibold tracking-tight mb-4"
+      style={{ color: "#64748b" }}
+    >
+      08 — Reflect
+    </p>
+
+    <h2
+      className="text-3xl md:text-4xl font-bold tracking-tight leading-[1.15] max-w-3xl"
+      style={{ color: DARK }}
+    >
+      The biggest shift was moving decision support into the workflow itself.
+    </h2>
+  </div>
+
+
+  {/* Reflection */}
+  <div className="border-t border-slate-200 pt-8">
+
+    <p
+      className="text-[11px] font-bold uppercase tracking-[0.18em] mb-5"
+      style={{ color: "#64748b" }}
+    >
+      What changed
+    </p>
+
+    <div className="max-w-3xl">
+      <p
+        className="text-2xl md:text-3xl font-semibold tracking-tight leading-[1.25]"
+        style={{ color: DARK }}
+      >
+        The system didn't replace the coder's expertise.
+      </p>
+
+      <p
+        className="mt-3 text-lg md:text-xl leading-relaxed"
+        style={{ color: "#64748b" }}
+      >
+        It made expert judgment easier to apply, review, and scale.
+      </p>
+    </div>
+
+  </div>
+
+
+  {/* Next opportunity */}
+  <div className="mt-12 pt-8 border-t border-slate-200">
+
+    <div className="grid md:grid-cols-[180px_1fr] gap-6 md:gap-10 items-start">
+
+      <p
+        className="text-[11px] font-bold uppercase tracking-[0.18em]"
+        style={{ color: "#64748b" }}
+      >
+        Next opportunity
+      </p>
+
+      <div>
+        <p
+          className="text-xl md:text-2xl font-semibold tracking-tight leading-[1.3] max-w-2xl"
+          style={{ color: DARK }}
         >
-          <div className="max-w-4xl mx-auto px-8 py-16">
-            <ChapterHeader
-              number="08"
-              label="Reflect"
-              heading="The biggest shift was moving decision support into the workflow itself."
-            />
+          Move toward fully automated guidance and validation.
+        </p>
 
-            <div className="grid md:grid-cols-2 gap-5 mb-8">
-              <div
-                className="rounded-2xl p-6"
-                style={{ border: `1px solid ${BORDER}` }}
-              >
-                <p className="text-xs font-bold tracking-[0.14em] uppercase mb-3 text-slate-400">
-                  Before
-                </p>
-                <div className="flex flex-wrap items-center gap-2">
-                  {[
-                    "Memory",
-                    "Lookup",
-                    "Reorientation",
-                    "Decision",
-                    "Hidden rationale",
-                  ].map((s, i, arr) => (
-                    <div key={s} className="flex items-center gap-2">
-                      <span
-                        className="text-base text-slate-400"
-                        style={{
-                          textDecoration: "line-through",
-                          textDecorationColor: "#fca5a5",
-                        }}
-                      >
-                        {s}
-                      </span>
-                      {i < arr.length - 1 && (
-                        <span className="text-slate-300">→</span>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div
-                className="rounded-2xl p-6"
-                style={{ backgroundColor: DARK, boxShadow: DARK_SHADOW }}
-              >
-                <p
-                  className="text-xs font-bold tracking-[0.14em] uppercase mb-3"
-                  style={{ color: MUTED }}
-                >
-                  After
-                </p>
-                <div className="flex flex-wrap items-center gap-2">
-                  {["Guidance", "Review", "Judgment", "Rationale", "QA"].map(
-                    (s, i, arr) => (
-                      <div key={s} className="flex items-center gap-2">
-                        <span className="text-base text-white font-medium">
-                          {s}
-                        </span>
-                        {i < arr.length - 1 && (
-                          <span className="text-base" style={{ color: MUTED }}>
-                            →
-                          </span>
-                        )}
-                      </div>
-                    ),
-                  )}
-                </div>
-              </div>
-            </div>
+        <p
+          className="mt-3 text-base md:text-lg leading-relaxed max-w-2xl"
+          style={{ color: "#64748b" }}
+        >
+          The long-term opportunity is to automate more of the workflow until
+          guidance and validation require minimal manual intervention.
+        </p>
+      </div>
 
-            <p className="text-base text-slate-500 leading-relaxed mb-8">
-              The system didn't replace the coder's expertise.{" "}
-              <strong style={{ color: DARK }}>
-                It made expert judgment easier to exercise, easier to review,
-                and easier to scale.
-              </strong>
-            </p>
+    </div>
 
-            <div className="pl-6" style={{ borderLeft: `3px solid ${DARK}` }}>
-              <p className="text-base font-bold mb-3" style={{ color: DARK }}>
-                Next opportunity to make guidance adaptive:
-              </p>
-              <div className="space-y-1.5 mb-4">
-                {[
-                  "Lower-risk claims → Lightweight support",
-                  "Complex or high-risk claims → Stronger checks",
-                ].map((item) => (
-                  <p
-                    key={item}
-                    className="text-base text-slate-600 leading-relaxed"
-                  >
-                    {item}
-                  </p>
-                ))}
-              </div>
-              <p
-                className="text-base font-semibold italic"
-                style={{ color: DARK }}
-              >
-                More support where risk is high. Less friction where it isn't.
-              </p>
-            </div>
-          </div>
-        </div>
+  </div>
+
+</div>
 
         {/* FOOTER NAV */}
         <div className="py-10 px-6 border-t border-gray-100">
