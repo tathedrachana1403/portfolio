@@ -625,37 +625,37 @@ Research shifted the roadmap from stabilizing the existing messaging experience 
         </div>
 
         {/* §05 — DESIGNING THE EXPERIENCE */}
-        <div className="max-w-4xl mx-auto px-8 py-16" style={{ borderBottom: `1px solid ${BORDER}` }}>
+        <div className="max-w-5xl mx-auto px-8 py-16" style={{ borderBottom: `1px solid ${BORDER}` }}>
           <ChapterHeader number="06" label="Design" heading="Focused on the moments where communication was breaking down." />
 
           <div className="space-y-14 mb-16">
             {[
               {
-                n: "01", job: "Find", feature: "Search",
+                n: "01", job: "Search" ,
                 img: "/images/atext/1.png",
-                title: "Search across message content, people, and topics.",
-                body: "Results grouped by type, matching terms highlighted, direct thread navigation without leaving inbox context.",
-                metric: "48% adoption", metricSub: "Satisfaction 2.2 → 4.4",
+                title: "Make finding the right conversation faster and more precise.",
+                body: "Search supported keywords, topics, and participants, with matching terms highlighted to help providers quickly identify and open the right conversation.",
+  
               },
               {
-                n: "02", job: "Prioritise", feature: "Pin + Unread",
+                n: "02", job: "Mark as Unread", feature: "Pin + Unread",
                 img: "/images/atext/3.png",
-                title: "Keep important conversations visible after the reply.",
-                body: "Pinning and unread states gave lightweight ways to keep threads visible across shifts without additional workflows.",
-                metric: null, metricSub: "Shift handoffs no longer required reconstructing context from memory.",
+                title: "Keep important conversations visible when follow-up is needed",
+                body: "Unread states helped providers keep track of important threads and return to conversations requiring action, reducing the cognitive load of remembering what still needed attention.",
+        
               },
               {
-                n: "04", job: "Respond", feature: "Suggested Replies",
+                n: "04", job: "AI-Suggested Replies", feature: "Suggested Replies",
                 img: "/images/atext/2.png",
-                title: "AI suggests - user reviews - user sends.",
-                body: "Reduced repetitive typing without auto-sending. In a healthcare context, no message is ever sent without explicit user review.",
+                title: "Make responses faster to compose",
+                body: "Suggested replies reduced typing while allowing providers to review, edit, and send the response themselves.",
                 metric: null, metricSub: null,
               },
               {
-                n: "05", job: "Acknowledge", feature: "Reactions",
+                n: "05", job: "Quick Reactions", feature: "Reactions",
                 img: "/images/atext/4.png",
-                title: "Acknowledge without adding message noise.",
-                body: "Reactions let users signal receipt, agreement, or tone without creating another message.",
+                title: "Acknowledge without adding another message",
+                body: "Reactions let providers quickly acknowledge a message or signal agreement without needing to write a response.",
                 metric: null, metricSub: null,
               },
             ].map(row => (
@@ -664,7 +664,7 @@ Research shifted the roadmap from stabilizing the existing messaging experience 
                 <div className="flex items-center gap-3 mb-6">
                   <span className="text-xs font-black tabular-nums w-7 h-7 rounded-full flex items-center justify-center shrink-0" style={{ backgroundColor: DARK, color: "#fff" }}>{row.n}</span>
                   <p className="text-lg font-black" style={{ color: DARK }}>{row.job}</p>
-                  <span className="text-xs font-bold px-3 py-1 rounded-full" style={{ backgroundColor: SOFT, color: DARK, border: `1px solid ${BORDER}` }}>{row.feature}</span>
+                  
                 </div>
                 {/* Image full width */}
                 {row.img && (
