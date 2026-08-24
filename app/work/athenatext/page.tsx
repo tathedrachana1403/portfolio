@@ -219,71 +219,198 @@ export default function AthenaText() {
   </section>
 </div>
 
-        {/* §02 — WHAT WE FOUND */}
-        <div style={{ backgroundColor: "#f8fafc", borderTop: `1px solid ${BORDER}`, borderBottom: `1px solid ${BORDER}` }}>
-          <div className="max-w-4xl mx-auto px-8 py-16">
-            <ChapterHeader number="02" label="Research" heading="We compared what users said with what they actually did." />
+       {/* ============================================================
+    02 — RESEARCH
+============================================================ */}
+<section
+  className="w-full"
+  style={{
+    backgroundColor: "#FFFFFF",
+    borderTop: `1px solid ${BORDER}`,
+    borderBottom: `1px solid ${BORDER}`,
+  }}
+>
+  <div className="max-w-4xl mx-auto px-8 pt-8 pb-10">
 
-            {/* Research methods — inline pill row */}
-            <div className="flex flex-wrap gap-4 mb-14">
-              {[
-                { n: "102",  l: "survey responses" },
-                { n: "14",   l: "user interviews" },
-                { n: "300+", l: "VOC items" },
-                { n: "✓",    l: "Amplitude data" },
-              ].map(r => (
-                <div key={r.l} className="flex items-baseline gap-2 px-5 py-3 rounded-full" style={{ backgroundColor: SOFT }}>
-                  <span className="text-xl font-black tabular-nums leading-none" style={{ color: DARK }}>{r.n}</span>
-                  <span className="text-sm text-slate-500">{r.l}</span>
-                </div>
-              ))}
-            </div>
+    <p
+      className="text-xs font-bold tracking-[0.16em] uppercase mb-3"
+      style={{ color: "#64748b" }}
+    >
+      02 — Research
+    </p>
 
-            {/* Said vs Did — paired contrast rows */}
-            <div className="mb-14">
-              <div className="grid grid-cols-2 gap-0 mb-4">
-                <p className="text-xs font-bold tracking-[0.14em] uppercase text-slate-400">What they said</p>
-                <p className="text-xs font-bold tracking-[0.14em] uppercase text-slate-400 pl-8">What data showed</p>
-              </div>
-              <div className="space-y-0" style={{ borderTop: `1px solid ${BORDER}` }}>
-                {[
-                  {
-                    said: "Urgent conversations were getting buried in message volume.",
-                    stat: "3 to 5×", statLabel: "threads reopened during a single shift",
-                    team: "Clinical",
-                  },
-                  {
-                    said: "Follow-up work depended on message history that was hard to retrieve.",
-                    stat: "73%", statLabel: "reported difficulty finding older messages",
-                    team: "Billing",
-                  },
-                  {
-                    said: "Shared inboxes were difficult to manage at volume.",
-                    stat: "Scroll", statLabel: "most common retrieval method — not search",
-                    team: "Operations",
-                  },
-                ].map(r => (
-                  <div key={r.team} className="grid grid-cols-2 gap-0 py-6" style={{ borderBottom: `1px solid ${BORDER}` }}>
-                    <div className="pr-8" style={{ borderRight: `1px solid ${BORDER}` }}>
-                      <p className="text-xs font-black tracking-[0.14em] uppercase mb-2" style={{ color: DARK }}>{r.team}</p>
-                      <p className="text-base text-slate-600 leading-relaxed italic">"{r.said}"</p>
-                    </div>
-                    <div className="pl-8">
-                      <p className="text-4xl font-black tabular-nums leading-none mb-2" style={{ color: DARK }}>{r.stat}</p>
-                      <p className="text-sm text-slate-500 leading-snug">{r.statLabel}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+    <h2
+      className="text-2xl md:text-3xl font-black leading-[1.15] tracking-tight max-w-4xl"
+      style={{
+        color: DARK,
+        textWrap: "balance",
+      } as React.CSSProperties}
+    >
+      Research identified four recurring sources of friction in everyday
+      communication.
+    </h2>
 
-            <div className="rounded-2xl px-8 py-6" style={{ backgroundColor: DARK, boxShadow: DARK_SHADOW }}>
-              <p className="text-base font-semibold text-white leading-relaxed">
-                Users weren't struggling with sending messages. They were struggling with finding, managing, and acting on conversations once volume increased.
-              </p>
-            </div>
+    <p className="mt-4 text-base text-slate-500 leading-relaxed max-w-4xl">
+      I synthesized{" "}
+      <span className="font-semibold" style={{ color: DARK }}>
+        300+ Voice of Customer requests, 102 survey responses, 14 provider
+        interviews, and product usage data
+      </span>{" "}
+      to identify the workflow gaps with the greatest impact on providers.
+    </p>
+
+    {/* Research findings */}
+    <div
+      className="mt-7 overflow-hidden rounded-2xl"
+      style={{
+        border: `1px solid ${BORDER}`,
+      }}
+    >
+      {/* Header */}
+      <div
+        className="grid grid-cols-1 md:grid-cols-3"
+        style={{ backgroundColor: SOFT }}
+      >
+        <div
+          className="px-5 py-3 text-[11px] font-bold tracking-[0.12em] uppercase"
+          style={{ color: DARK }}
+        >
+          Research finding
+        </div>
+
+        <div
+          className="px-5 py-3 text-[11px] font-bold tracking-[0.12em] uppercase border-t md:border-t-0 md:border-l"
+          style={{
+            color: DARK,
+            borderColor: BORDER,
+          }}
+        >
+          Evidence
+        </div>
+
+        <div
+          className="px-5 py-3 text-[11px] font-bold tracking-[0.12em] uppercase border-t md:border-t-0 md:border-l"
+          style={{
+            color: DARK,
+            borderColor: BORDER,
+          }}
+        >
+          Design opportunity
+        </div>
+      </div>
+
+      {[
+        {
+          finding: "Conversations were difficult to retrieve.",
+          evidence: "73%",
+          evidenceText: "Reported difficulty finding older messages.",
+          opportunity: "Search",
+          opportunityText: "Find relevant messages faster.",
+        },
+        {
+          finding:
+            "Important conversations were easy to lose in a busy inbox.",
+          evidence: "3–5×",
+          evidenceText: "Threads reopened during a single shift.",
+          opportunity: "Unread",
+          opportunityText: "Keep messages needing attention visible.",
+        },
+        {
+          finding: "Common responses created repetitive work.",
+          evidence: "~2 min/response",
+          evidenceText: "Time spent composing routine replies.",
+          opportunity: "Suggested replies",
+          opportunityText: "Reduce effort for routine responses.",
+        },
+        {
+          finding:
+            "Acknowledging a message often required another reply.",
+          evidence: "Top 10",
+          evidenceText:
+            "Emoji/reactions ranked among the most requested features.",
+          opportunity: "Reactions",
+          opportunityText:
+            "Acknowledge without creating another message.",
+        },
+      ].map((item) => (
+        <div
+          key={item.opportunity}
+          className="grid grid-cols-1 md:grid-cols-3"
+          style={{
+            borderTop: `1px solid ${BORDER}`,
+            backgroundColor: "#FFFFFF",
+          }}
+        >
+          <div className="px-5 py-4">
+            <p
+              className="text-sm font-semibold leading-snug"
+              style={{ color: DARK }}
+            >
+              {item.finding}
+            </p>
+          </div>
+
+          <div
+            className="px-5 py-4 border-t md:border-t-0 md:border-l"
+            style={{ borderColor: BORDER }}
+          >
+            <p
+              className="text-lg font-black leading-none tabular-nums"
+              style={{ color: DARK }}
+            >
+              {item.evidence}
+            </p>
+
+            <p className="mt-1.5 text-xs text-slate-500 leading-snug">
+              {item.evidenceText}
+            </p>
+          </div>
+
+          <div
+            className="px-5 py-4 border-t md:border-t-0 md:border-l"
+            style={{ borderColor: BORDER }}
+          >
+            <p
+              className="text-sm font-bold leading-snug"
+              style={{ color: DARK }}
+            >
+              {item.opportunity}
+            </p>
+
+            <p className="mt-1.5 text-xs text-slate-500 leading-snug">
+              {item.opportunityText}
+            </p>
           </div>
         </div>
+      ))}
+    </div>
+
+    {/* Research synthesis */}
+    <div
+      className="mt-7 rounded-2xl px-6 py-5"
+      style={{
+        backgroundColor: SOFT,
+        border: `1px solid ${BORDER}`,
+      }}
+    >
+      <p
+        className="text-[11px] font-bold tracking-[0.14em] uppercase mb-2"
+        style={{ color: "#64748b" }}
+      >
+        Research synthesis
+      </p>
+
+      <p
+        className="text-base font-semibold leading-relaxed"
+        style={{ color: DARK }}
+      >
+        The opportunity was to make high-frequency communication tasks faster
+        and easier to manage.
+      </p>
+    </div>
+
+  </div>
+</section>
 
         {/* §03 — PROCESS */}
         <div className="max-w-4xl mx-auto px-8 py-16" style={{ borderBottom: `1px solid ${BORDER}` }}>
