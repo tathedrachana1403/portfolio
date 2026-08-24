@@ -37,82 +37,143 @@ export default function AthenaText() {
       <Nav />
       <main className="pt-16 bg-white">
 
-        {/* BREADCRUMB */}
-        <div className="max-w-4xl mx-auto px-8 pt-10 pb-0">
-          <div className="flex items-center gap-2 text-lg font-medium" style={{ color: "#94a3b8" }}>
-            <Link href="/" className="hover:opacity-60 transition-opacity" style={{ color: DARK }}>Home</Link>
-            <span>/</span>
-            <span>athenaText</span>
-          </div>
-        </div>
-
-        {/* HERO */}
-<div className="max-w-4xl mx-auto px-8 pt-10 pb-16">
-  <p
-    className="text-xs font-bold tracking-[0.16em] uppercase mb-4"
-    style={{ color: "#64748b" }}
+       {/* BREADCRUMB */}
+<div className="max-w-4xl mx-auto px-8 pt-8">
+  <div
+    className="flex items-center gap-1.5 text-sm font-medium"
+    style={{ color: "#94a3b8" }}
   >
-    Enterprise Communication · Workflow Design · Product Strategy
-  </p>
+    <Link
+      href="/"
+      className="hover:opacity-60 transition-opacity"
+      style={{ color: DARK }}
+    >
+      Home
+    </Link>
+
+    <span>/</span>
+
+    <span>athenaText</span>
+  </div>
+</div>
+
+{/* HERO */}
+<div className="max-w-4xl mx-auto px-8 pt-3 pb-16">
+
+  <div
+    className="inline-flex items-center rounded-full px-3.5 py-1 mb-4"
+    style={{
+      backgroundColor: SOFT,
+      border: `1px solid ${BORDER}`,
+    }}
+  >
+    <span
+      className="text-xs font-bold tracking-[0.12em] uppercase"
+      style={{ color: DARK }}
+    >
+      Case Study 03 / 04 · Lead Product Designer
+    </span>
+  </div>
 
   <h1
-    className="text-5xl md:text-6xl font-black leading-[1.0] tracking-tight mb-5"
+    className="text-3xl md:text-4xl font-black leading-[1.05] tracking-tight mb-4"
     style={{ color: DARK }}
   >
-    athenaText
+    Making everyday communication easier for providers.
   </h1>
 
-  <p className="text-lg text-slate-500 leading-relaxed mb-2">
-    Turning 300+ customer requests into a clearer communication experience.
+  <p className="text-lg md:text-1 text-slate-500 leading-relaxed mb-8 max-w-3.5xl">
+    athenaText was a daily communication platform for providers and care
+    teams, but basic workflow gaps made communication unnecessarily difficult.
+    Through Voice of Customer insights and provider research, I identified the
+    highest-impact gaps and helped shift the roadmap beyond stabilization
+    toward everyday communication needs.
   </p>
 
-  <p className="text-base text-slate-500 leading-relaxed mb-10 max-w-2xl">
-    I synthesized customer requests and research insights to identify the
-    highest-impact opportunities, shaping a clearer communication experience
-    and prioritizing capabilities that addressed real workflow needs.
-  </p>
-
-  <div className="w-full overflow-hidden rounded-2xl mb-12">
+  <div className="w-full overflow-hidden rounded-2xl mb-10">
     <img
       src="/images/atext/Hero.png"
       alt="athenaText"
       className="w-full h-auto object-cover"
     />
   </div>
-          {/* Meta row */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12" style={{ borderTop: `1px solid ${BORDER}`, paddingTop: "2rem" }}>
-            {[
-              { label: "Role",     value: "Lead Product Designer" },
-              { label: "Scale",    value: "209,604 MAU · 20.21M msg/month" },
-              { label: "Research", value: "300+ VOC · 102 survey · 14 interviews · Amplitude" },
-              { label: "Platform", value: "Desktop web · Mobile · Practice management SaaS" },
-            ].map(m => (
-              <div key={m.label}>
-                <p className="text-xs font-bold tracking-[0.14em] uppercase mb-2 text-slate-400">{m.label}</p>
-                <p className="text-sm font-medium leading-snug" style={{ color: DARK }}>{m.value}</p>
-              </div>
-            ))}
-          </div>
 
-          {/* Impact strip — only this gets a dark card */}
-          <div className="rounded-2xl px-8 py-6" style={{ backgroundColor: DARK, boxShadow: DARK_SHADOW }}>
-            <div className="grid grid-cols-3 md:grid-cols-6 gap-6">
-              {[
-                { v: "48%",     l: "Search adoption" },
-                { v: "2.2→4.4", l: "Satisfaction" },
-                { v: "60%",     l: "Bulk-delete usage" },
-                { v: "17M/day", l: "Fewer server calls" },
-                { v: "$100K+",  l: "Annual savings" },
-                { v: "7+",      l: "Capabilities added" },
-              ].map(s => (
-                <div key={s.l}>
-                  <p className="text-xl font-black text-white tabular-nums">{s.v}</p>
-                  <p className="text-xs mt-1 leading-snug" style={{ color: MUTED }}>{s.l}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+  {/* PROJECT DETAILS */}
+  <div
+    className="grid grid-cols-1 md:grid-cols-3 pt-4 mb-10"
+    style={{ borderTop: `1px solid ${BORDER}` }}
+  >
+    {[
+      {
+        label: "My Role",
+        value:
+          "Lead Product Designer - led UX strategy, research synthesis, and end-to-end design.",
+      },
+      {
+        label: "Team",
+        value:
+          "Product Manager, Engineering, Design, and cross-functional stakeholders.",
+      },
+      {
+        label: "Timeline",
+        value: "6 months",
+      },
+    ].map((m, i) => (
+      <div
+        key={m.label}
+        className="py-4 pr-6"
+        style={{
+          borderLeft:
+            i > 0 ? `1px solid ${BORDER}` : "none",
+          paddingLeft: i > 0 ? "1.5rem" : 0,
+        }}
+      >
+        <p
+          className="text-xs font-black tracking-[0.14em] uppercase mb-2"
+          style={{ color: DARK }}
+        >
+          {m.label}
+        </p>
+
+        <p className="text-sm font-medium leading-relaxed text-slate-500">
+          {m.value}
+        </p>
+      </div>
+    ))}
+  </div>
+
+  {/* IMPACT */}
+  <div
+    className="rounded-2xl px-8 py-6"
+    style={{
+      backgroundColor: DARK,
+      boxShadow: DARK_SHADOW,
+    }}
+  >
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+      {[
+        { v: "48%", l: "Search adoption" },
+        { v: "2.2 → 4.4", l: "Satisfaction" },
+        { v: "17M/day", l: "Fewer server calls" },
+        { v: "$100K+", l: "Annual savings" },
+      ].map((s) => (
+        <div key={s.l}>
+          <p className="text-xl font-black text-white tabular-nums">
+            {s.v}
+          </p>
+
+          <p
+            className="text-xs mt-1 leading-snug"
+            style={{ color: MUTED }}
+          >
+            {s.l}
+          </p>
         </div>
+      ))}
+    </div>
+  </div>
+
+</div>
 
         {/* §01 — WHAT USERS WERE STRUGGLING WITH */}
         <div className="max-w-4xl mx-auto px-8 py-16" style={{ borderTop: `1px solid ${BORDER}` }}>
