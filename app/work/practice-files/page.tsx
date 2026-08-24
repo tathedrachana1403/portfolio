@@ -34,40 +34,76 @@ export default function PracticeFiles() {
       <main className="pt-16">
 
         {/* BREADCRUMB */}
-        <div className="max-w-4xl mx-auto px-8 pt-10 pb-0">
-          <div className="flex items-center gap-2 text-lg font-medium" style={{ color: "#94a3b8" }}>
-            <Link href="/" className="hover:opacity-60 transition-opacity" style={{ color: DARK }}>Home</Link>
-            <span>/</span>
-            <span>Practice Files</span>
-          </div>
-        </div>
-
-        {/* HERO */}
-       <div className="max-w-4xl mx-auto px-8 pt-10 pb-16">
-  <p
-    className="text-xs font-bold tracking-[0.16em] uppercase mb-4"
-    style={{ color: "#64748b" }}
+<div className="max-w-4xl mx-auto px-8 pt-10 pb-0">
+  <div
+    className="flex items-center gap-2 text-lg font-medium"
+    style={{ color: "#94a3b8" }}
   >
-    Enterprise Operations · Document Systems · Workflow Design
-  </p>
+    <Link
+      href="/"
+      className="hover:opacity-60 transition-opacity"
+      style={{ color: DARK }}
+    >
+      Home
+    </Link>
 
+    <span>/</span>
+
+    <span>Practice Files</span>
+  </div>
+</div>
+
+{/* HERO */}
+<div className="max-w-4xl mx-auto px-8 pt-6 pb-16">
+
+  {/* CASE STUDY LABEL */}
+  <div
+    className="inline-flex items-center gap-3 rounded-full px-4 py-1.5 mb-6"
+    style={{
+      backgroundColor: SOFT,
+      border: `1.5px solid ${BORDER}`,
+    }}
+  >
+    <span
+      className="text-sm font-black tabular-nums"
+      style={{ color: DARK }}
+    >
+      04 / 04
+    </span>
+
+    <span
+      className="w-4 h-px"
+      style={{ backgroundColor: BORDER }}
+    />
+
+    <span
+      className="text-sm font-black tracking-[0.14em] uppercase"
+      style={{ color: DARK }}
+    >
+      Lead Product Designer
+    </span>
+  </div>
+
+  {/* HEADLINE */}
   <h1
-    className="text-5xl md:text-6xl font-black leading-[1.0] tracking-tight mb-5"
+    className="text-5xl md:text-3xl font-black leading-[1.05] tracking-tight mb-6"
     style={{ color: DARK }}
   >
-    Practice Files
+    Turning file management into a workflow built for high-volume operations.
   </h1>
 
-  <p className="text-lg text-slate-500 leading-relaxed mb-2">
-    Turning a file table into a workflow built for high-volume operations.
+  {/* DESCRIPTION */}
+  <p
+    className="text-base leading-relaxed mb-10 max-w-3xl"
+    style={{ color: "#64748b" }}
+  >
+    Practice Files is a workspace for Customer Success and Operations teams
+    to manage documents across their daily workflows. I redesigned the
+    experience to make it easier to find files, take bulk actions, and
+    understand the status of work.
   </p>
 
-  <p className="text-base text-slate-500 leading-relaxed mb-10 max-w-2xl">
-    I redesigned file management for Customer Success and Operations teams,
-    making it easier to find, manage, and track documents across high-volume
-    workflows while reducing file-management time by 40%.
-  </p>
-
+  {/* HERO IMAGE */}
   <div className="w-full overflow-hidden rounded-2xl mb-12">
     <img
       src="/images/practice/Hero.png"
@@ -76,73 +112,88 @@ export default function PracticeFiles() {
     />
   </div>
 
-          {/* Meta row */}
-{/* Meta row */}
-<div
-  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 pt-4 mb-12"
-  style={{ borderTop: `1px solid ${BORDER}` }}
->
-  {[
-    {
-      label: "My role",
-      value:
-        "Product Designer - owned workflow design, information architecture, interaction design, and end-to-end file-management experience",
-    },
-    {
-      label: "Team",
-      value:
-        "Product Manager, Engineering, Operations/Domain Stakeholders, Design",
-    },
-    {
-      label: "Timeline",
-      value: "1.5 Months",
-    },
-    {
-      label: "Scope",
-      value:
-        "File discovery, search, filtering, bulk actions, progress states, notes, activity history, and operational workflows",
-    },
-    {
-      label: "Constraints",
-      value:
-        "High-volume file management, complex workflows, scalability, legacy processes, and operational efficiency",
-    },
-  ].map((m, i) => (
+  {/* PROJECT DETAILS */}
+  <div
+    className="grid grid-cols-1 md:grid-cols-3 pt-4 mb-12"
+    style={{ borderTop: `1px solid ${BORDER}` }}
+  >
+    <div className="p-4">
+      <p
+        className="text-xs font-black tracking-[0.14em] uppercase mb-1.5"
+        style={{ color: DARK }}
+      >
+        My role
+      </p>
+
+      <p className="text-sm font-medium leading-relaxed text-slate-500">
+        Lead Product Designer
+      </p>
+    </div>
+
     <div
-      key={m.label}
       className="p-4"
-      style={{ borderLeft: i > 0 ? `1px solid ${BORDER}` : "none" }}
+      style={{ borderLeft: `1px solid ${BORDER}` }}
     >
       <p
         className="text-xs font-black tracking-[0.14em] uppercase mb-1.5"
         style={{ color: DARK }}
       >
-        {m.label}
+        Team
       </p>
+
       <p className="text-sm font-medium leading-relaxed text-slate-500">
-        {m.value}
+        Product Manager, Engineering, Operations/Domain Stakeholders, Design
       </p>
     </div>
-  ))}
-</div>
-          {/* Impact strip */}
-          <div className="rounded-2xl px-8 py-6" style={{ backgroundColor: DARK, boxShadow: DARK_SHADOW }}>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {[
-                { v: "40%",   l: "Less file-management time" },
-                { v: "30%",   l: "Faster document intake" },
-                { v: "4×",    l: "Productivity improvement" },
-                { v: "6",     l: "Capabilities shipped" },
-              ].map(s => (
-                <div key={s.l}>
-                  <p className="text-xl font-black text-white tabular-nums">{s.v}</p>
-                  <p className="text-xs mt-1 leading-snug" style={{ color: MUTED }}>{s.l}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
 
+    <div
+      className="p-4"
+      style={{ borderLeft: `1px solid ${BORDER}` }}
+    >
+      <p
+        className="text-xs font-black tracking-[0.14em] uppercase mb-1.5"
+        style={{ color: DARK }}
+      >
+        Timeline
+      </p>
+
+      <p className="text-sm font-medium leading-relaxed text-slate-500">
+        1.5 Months
+      </p>
+    </div>
+  </div>
+
+  {/* IMPACT */}
+  <div
+    className="rounded-2xl px-8 py-6"
+    style={{
+      backgroundColor: DARK,
+      boxShadow: DARK_SHADOW,
+    }}
+  >
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+      {[
+        { v: "40%", l: "Less file-management time" },
+        { v: "30%", l: "Faster document intake" },
+        { v: "4×", l: "Productivity improvement" },
+        { v: "6", l: "Capabilities shipped" },
+      ].map((s) => (
+        <div key={s.l}>
+          <p className="text-xl font-black text-white tabular-nums">
+            {s.v}
+          </p>
+
+          <p
+            className="text-xs mt-1 leading-snug"
+            style={{ color: MUTED }}
+          >
+            {s.l}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
         {/* §01 — UNDERSTANDING THE WORK */}
         <div style={{ backgroundColor: "#f8fafc", borderTop: `1px solid ${BORDER}`, borderBottom: `1px solid ${BORDER}` }}>
           <div className="max-w-4xl mx-auto px-8 py-16">
