@@ -153,7 +153,7 @@ export default function AthenaText() {
     <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
       {[
         { v: "48%", l: "Search adoption" },
-        { v: "2.2 → 4.4", l: "Satisfaction" },
+        { v: "2.2 to 4.4", l: "Satisfaction" },
         { v: "17M/day", l: "Fewer server calls" },
         { v: "$100K+", l: "Annual savings" },
       ].map((s) => (
@@ -175,52 +175,49 @@ export default function AthenaText() {
 
 </div>
 
-        {/* §01 — WHAT USERS WERE STRUGGLING WITH */}
-        <div className="max-w-4xl mx-auto px-8 py-16" style={{ borderTop: `1px solid ${BORDER}` }}>
-          <ChapterHeader number="01" label="User Struggles" heading="Customer requests pointed to different problems." />
+       {/* ─────────────────────────────────────────────
+    01 — THE PROBLEM
+───────────────────────────────────────────── */}
 
-          {/* 300+ stat emphasis */}
-          <div className="rounded-2xl px-8 py-7 mb-10 flex items-center gap-6" style={{ backgroundColor: SOFT }}>
-            <div className="shrink-0">
-              <p className="text-7xl font-black leading-none tabular-nums" style={{ color: DARK }}>300+</p>
-              <p className="text-xs font-bold tracking-[0.14em] uppercase mt-2" style={{ color: "#64748b" }}>Customer requests</p>
-            </div>
-            <div className="w-px self-stretch" style={{ backgroundColor: BORDER }} />
-            <p className="text-base text-slate-500 leading-relaxed">
-              Collected across VOC submissions, surveys, and user interviews.
-            </p>
-          </div>
+<div
+  className="w-full"
+  style={{ borderTop: `1px solid ${BORDER}` }}
+>
+  <section className="max-w-4xl mx-auto px-8 py-10">
 
-          <div className="grid grid-cols-1 gap-2 mb-10">
-            {[
-              "I can't find an old message.",
-              "Important conversations get buried.",
-              "My inbox is too cluttered.",
-              "I need to know who's available.",
-              "I keep typing the same responses.",
-            ].map((q, i) => (
-              <div key={q} className="flex items-center gap-4 py-3.5 px-5 rounded-xl" style={{ backgroundColor: SOFT }}>
-                <span
-                  className="text-xs font-black tabular-nums shrink-0 w-7 h-7 rounded-full flex items-center justify-center"
-                  style={{ backgroundColor: DARK, color: "#fff" }}
-                >
-                  {i + 1}
-                </span>
-                <p className="text-sm font-medium italic leading-snug text-slate-600">"{q}"</p>
-              </div>
-            ))}
-          </div>
+    <p
+      className="text-xs font-black tracking-[0.14em] uppercase mb-4"
+      style={{ color: DARK }}
+    >
+      01 The Problem
+    </p>
 
-          <p className="text-base text-slate-500 leading-relaxed mb-6">
-            Individually, these looked like separate feature requests. Across the full set, a common problem emerged.
-          </p>
+    <h2
+      className="text-2xl md:text-2xl font-black leading-[1.2] tracking-tight max-w-4xl"
+      style={{
+        color: DARK,
+        textWrap: "balance",
+      } as React.CSSProperties}
+    >
+      Important conversations were difficult to find, track, and act on.
+    </h2>
 
-          <div className="rounded-2xl px-8 py-6" style={{ backgroundColor: DARK, boxShadow: DARK_SHADOW }}>
-            <p className="text-base font-semibold text-white leading-relaxed">
-              Users could send messages. Managing what happened after was harder.
-            </p>
-          </div>
-        </div>
+    <p className="mt-5 text-base md:text-lg text-slate-500 leading-relaxed max-w-4xl">
+      As message volume grew, providers spent unnecessary time searching through
+      threads, keeping track of messages that needed attention, and composing
+      simple responses.
+    </p>
+
+    <p
+      className="mt-3 text-base md:text-lg font-semibold leading-relaxed max-w-4xl"
+      style={{ color: DARK }}
+    >
+      The opportunity was to remove friction from the everyday tasks providers used to
+      perform.
+    </p>
+
+  </section>
+</div>
 
         {/* §02 — WHAT WE FOUND */}
         <div style={{ backgroundColor: "#f8fafc", borderTop: `1px solid ${BORDER}`, borderBottom: `1px solid ${BORDER}` }}>
