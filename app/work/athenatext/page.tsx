@@ -404,8 +404,8 @@ export default function AthenaText() {
         className="text-base font-semibold leading-relaxed"
         style={{ color: DARK }}
       >
-        The opportunity was to make high-frequency communication tasks faster
-        and easier to manage.
+
+Research shifted the roadmap from stabilizing the existing messaging experience to addressing the everyday communication needs that continued to create friction for providers.
       </p>
     </div>
 
