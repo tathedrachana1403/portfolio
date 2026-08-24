@@ -412,29 +412,148 @@ Research shifted the roadmap from stabilizing the existing messaging experience 
   </div>
 </section>
 
-        {/* §03 — PROCESS */}
-        <div className="max-w-4xl mx-auto px-8 py-16" style={{ borderBottom: `1px solid ${BORDER}` }}>
-          <ChapterHeader number="03" label="Process" heading="How scattered feedback became focused design direction." />
+       {/* ============================================================
+    03 — DESIGN DECISIONS
+============================================================ */}
+<section
+  className="w-full"
+  style={{
+    backgroundColor: "#FFFFFF",
+    borderBottom: `1px solid ${BORDER}`,
+  }}
+>
+  <div className="max-w-5xl mx-auto px-8 pt-8 pb-10">
 
-          <div className="space-y-0">
-            {[
-              { n: "01", tag: "Input",     label: "300+ VOC items",          desc: "Scattered, unstructured customer signals arriving across channels" },
-              { n: "02", tag: "Analysis",  label: "Research + data",          desc: "Survey, interviews, and Amplitude mapped against recurring patterns" },
-              { n: "03", tag: "Synthesis", label: "5 user jobs identified",   desc: "Find · Prioritise · Manage · Respond · Acknowledge" },
-              { n: "04", tag: "Design",    label: "Experience opportunities",  desc: "Design briefs tied to jobs, not feature specs" },
-              { n: "05", tag: "Output",    label: "Shipped capabilities",      desc: "Search · Pin · Unread · Bulk delete · AI replies · Reactions" },
-            ].map((step, i, arr) => (
-              <div key={step.n} className="grid grid-cols-[64px_120px_1fr] gap-6 items-start py-5" style={{ borderBottom: `1px solid ${BORDER}` }}>
-                <p className="text-4xl font-black tabular-nums leading-none" style={{ color: i === arr.length - 1 ? DARK : BORDER }}>{step.n}</p>
-                <div>
-                  <p className="text-xs font-bold tracking-[0.14em] uppercase mb-1" style={{ color: i === arr.length - 1 ? DARK : "#94a3b8" }}>{step.tag}</p>
-                  <p className="text-base font-black leading-snug" style={{ color: DARK }}>{step.label}</p>
-                </div>
-                <p className="text-base text-slate-500 leading-relaxed pt-0.5">{step.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
+    <p
+      className="text-xs font-bold tracking-[0.16em] uppercase mb-3"
+      style={{ color: "#64748b" }}
+    >
+      03 — Design Decisions
+    </p>
+
+    <h2
+      className="text-2xl md:text-3xl font-black leading-[1.15] tracking-tight max-w-5xl mb-8"
+      style={{
+        color: DARK,
+        textWrap: "balance",
+      } as React.CSSProperties}
+    >
+     Turn communication friction into focused product improvements.
+    </h2>
+
+    <div
+      className="grid grid-cols-1 md:grid-cols-2"
+      style={{
+        borderTop: `1px solid ${BORDER}`,
+        borderLeft: `1px solid ${BORDER}`,
+        borderRight: `1px solid ${BORDER}`,
+      }}
+    >
+
+      {/* Search */}
+      <div
+        className="px-6 py-6 border-b md:border-r"
+        style={{ borderColor: BORDER }}
+      >
+        <p
+          className="text-xs font-bold tracking-[0.14em] uppercase mb-3"
+          style={{ color: "#64748b" }}
+        >
+          Search
+        </p>
+
+        <h3
+          className="text-lg md:text-xl font-bold leading-snug mb-2"
+          style={{ color: DARK }}
+        >
+          Optimize for retrieval, not exploration.
+        </h3>
+
+        <p className="text-sm text-slate-500 leading-relaxed">
+          Prioritized fast access to relevant conversations over advanced
+          filtering.
+        </p>
+      </div>
+
+      {/* Unread */}
+      <div
+        className="px-6 py-6 border-b"
+        style={{ borderColor: BORDER }}
+      >
+        <p
+          className="text-xs font-bold tracking-[0.14em] uppercase mb-3"
+          style={{ color: "#64748b" }}
+        >
+          Unread
+        </p>
+
+        <h3
+          className="text-lg md:text-xl font-bold leading-snug mb-2"
+          style={{ color: DARK }}
+        >
+          Extend familiar behavior, don't introduce task management.
+        </h3>
+
+        <p className="text-sm text-slate-500 leading-relaxed">
+          Used unread state to support follow-up without creating another
+          system to maintain.
+        </p>
+      </div>
+
+      {/* Suggested Replies */}
+      <div
+        className="px-6 py-6 md:border-r"
+        style={{ borderColor: BORDER }}
+      >
+        <p
+          className="text-xs font-bold tracking-[0.14em] uppercase mb-3"
+          style={{ color: "#64748b" }}
+        >
+          Suggested Replies
+        </p>
+
+        <h3
+          className="text-lg md:text-xl font-bold leading-snug mb-2"
+          style={{ color: DARK }}
+        >
+          Assist the response, not author it.
+        </h3>
+
+        <p className="text-sm text-slate-500 leading-relaxed">
+          Reduced repetitive typing while keeping the provider responsible
+          for the final message.
+        </p>
+      </div>
+
+      {/* Reactions */}
+      <div
+        className="px-6 py-6"
+        style={{ borderColor: BORDER }}
+      >
+        <p
+          className="text-xs font-bold tracking-[0.14em] uppercase mb-3"
+          style={{ color: "#64748b" }}
+        >
+          Reactions
+        </p>
+
+        <h3
+          className="text-lg md:text-xl font-bold leading-snug mb-2"
+          style={{ color: DARK }}
+        >
+          Separate acknowledgement from conversation.
+        </h3>
+
+        <p className="text-sm text-slate-500 leading-relaxed">
+          Enabled lightweight acknowledgement without adding another
+          message to the thread.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
 
         {/* §04 — WHAT THE PATTERNS MEANT */}
         <div className="max-w-4xl mx-auto px-8 py-16" style={{ borderBottom: `1px solid ${BORDER}` }}>
