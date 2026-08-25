@@ -1530,80 +1530,178 @@ export default function PracticeFiles() {
   </div>
 </div>
 
-        {/* §05 — SYSTEM STATE */}
-        <div className="max-w-4xl mx-auto px-8 py-16" style={{ borderBottom: `1px solid ${BORDER}` }}>
-          <ChapterHeader number="04" label="System State" heading="Users shouldn't have to guess whether the system is working." />
+        {/* §04 — VALIDATION */}
+<div
+  style={{
+    backgroundColor: "#ffffff",
+    borderBottom: `1px solid ${BORDER}`,
+  }}
+>
+  <div className="max-w-4xl mx-auto px-8 py-16">
 
-          <div className="grid grid-cols-4 gap-0 mb-12" style={{ borderTop: `1px solid ${BORDER}`, borderBottom: `1px solid ${BORDER}` }}>
-            {[
-              { state: "In progress", desc: "Action is still running" },
-              { state: "Completed",   desc: "Operation finished successfully" },
-              { state: "Failed",      desc: "User needs to take action" },
-              { state: "Cancelled",   desc: "Operation was stopped" },
-            ].map((s, i) => (
-              <div key={s.state} className="py-6 pr-6" style={{ borderLeft: i > 0 ? `1px solid ${BORDER}` : "none", paddingLeft: i > 0 ? "1.5rem" : 0 }}>
-                <p className="text-base font-black mb-1" style={{ color: DARK }}>{s.state}</p>
-                <p className="text-base text-slate-500">{s.desc}</p>
-              </div>
-            ))}
-          </div>
+    <ChapterHeader
+      number="04"
+      label="Validation"
+      heading="Testing the redesigned workflow before engineering pickup."
+    />
 
-          <p className="text-base text-slate-500 leading-relaxed">
-            Particularly important for larger file operations where users could otherwise be left wondering whether an action had completed.
+    <p className="text-base text-slate-500 leading-relaxed max-w-2xl mb-10">
+      We tested the wireframes across core file-management tasks to validate
+      whether the redesigned workflow was easier to understand and use.
+    </p>
+
+    {/* Validation score */}
+    <div
+      className="rounded-2xl p-7 mb-10"
+      style={{
+        backgroundColor: SOFT,
+        border: `1px solid ${BORDER}`,
+      }}
+    >
+      <div className="flex items-end gap-4">
+
+        <div>
+          <p
+            className="text-5xl font-black tracking-tight leading-none tabular-nums"
+            style={{ color: DARK }}
+          >
+            11/25
+          </p>
+
+          <div
+            className="h-px w-8 my-3"
+            style={{ backgroundColor: BORDER }}
+          />
+
+          <p
+            className="text-5xl font-black tracking-tight leading-none tabular-nums"
+            style={{ color: DARK }}
+          >
+            23/25
           </p>
         </div>
 
-        {/* §05 — TRACEABILITY */}
-        <div style={{ backgroundColor: "#f8fafc", borderBottom: `1px solid ${BORDER}` }}>
-          <div className="max-w-4xl mx-auto px-8 py-16">
-            <ChapterHeader number="05" label="Traceability" heading="File work often continues after the original action." />
+        <div className="pb-1">
+          <p
+            className="text-sm font-black"
+            style={{ color: DARK }}
+          >
+            Workflow usability score
+          </p>
 
-            <p className="text-base text-slate-500 leading-relaxed mb-10">
-              The next person working with a file could understand its context without relying on verbal handoff or memory.
-            </p>
-
-            {/* mock activity log */}
-            <div className="rounded-2xl overflow-hidden mb-10" style={{ border: `1px solid ${BORDER}` }}>
-              {/* titlebar */}
-              <div className="flex items-center gap-2 px-5 py-3" style={{ backgroundColor: DARK }}>
-                <div className="flex gap-1.5">
-                  <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: "#e4d4f4" }} />
-                  <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: "#f3eeff" }} />
-                  <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: "#cbb8e8" }} />
-                </div>
-                <p className="text-sm font-semibold ml-1" style={{ color: "#e4d4f4" }}>DEMOGRAPHICS_Q4.csv — Activity log</p>
-              </div>
-
-              {/* log rows */}
-              {[
-                { time: "Today, 2:14 pm",    actor: "srout1",          action: "Downloaded",         note: null },
-                { time: "Today, 11:05 am",   actor: "mmaratuechsemina",action: "Added note",          note: "Confirmed with client to use this version for compliance review." },
-                { time: "Yesterday, 4:51 pm",actor: "lrajamani",       action: "Uploaded new version",note: null },
-                { time: "Jul 30, 9:20 am",   actor: "ajain52",         action: "Deleted older copy",  note: null },
-              ].map((row, i, arr) => (
-                <div key={i} className="flex items-start gap-4 px-5 py-4" style={{ borderBottom: i < arr.length - 1 ? `1px solid ${BORDER}` : "none", backgroundColor: i % 2 === 0 ? "white" : SOFT }}>
-                  <div className="w-2 h-2 rounded-full mt-2 shrink-0" style={{ backgroundColor: BORDER }} />
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-2 flex-wrap">
-                      <span className="text-sm font-black" style={{ color: DARK }}>{row.actor}</span>
-                      <span className="text-sm text-slate-400">{row.action}</span>
-                    </div>
-                    {row.note && (
-                      <p className="text-sm text-slate-500 mt-1 italic">"{row.note}"</p>
-                    )}
-                  </div>
-                  <span className="text-xs text-slate-400 shrink-0 mt-0.5">{row.time}</span>
-                </div>
-              ))}
-            </div>
-
-            <div className="rounded-2xl px-8 py-6" style={{ backgroundColor: DARK, boxShadow: DARK_SHADOW }}>
-              <p className="text-base font-semibold text-white leading-relaxed">
-                Notes and history meant the next person didn't need to ask what happened — the file told them.
-              </p>
-            </div>
-          </div>
+          <p className="text-xs text-slate-500 mt-1">
+            Before → After
+          </p>
         </div>
+
+      </div>
+    </div>
+
+    {/* Key takeaway */}
+    <div
+      className="rounded-xl px-6 py-5"
+      style={{
+        backgroundColor: "#f8fafc",
+        border: `1px solid ${BORDER}`,
+      }}
+    >
+      <p
+        className="text-[10px] font-black tracking-[0.14em] uppercase mb-2"
+        style={{ color: "#94a3b8" }}
+      >
+        Key takeaway
+      </p>
+
+      <p
+        className="text-lg font-black leading-[1.35] tracking-tight max-w-2xl"
+        style={{ color: DARK }}
+      >
+        The redesigned workflow reduced ambiguity at the moments users needed
+        to act, confirm, or recover.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+       {/* §04 — VALIDATION */}
+<div
+  style={{
+    backgroundColor: "#ffffff",
+    borderBottom: `1px solid ${BORDER}`,
+  }}
+>
+  <div className="max-w-4xl mx-auto px-8 py-16">
+
+    <ChapterHeader
+      number="04"
+      label="Validation"
+      heading="Testing the experience before engineering pickup."
+    />
+
+    <p className="text-base text-slate-500 leading-relaxed max-w-2xl mb-10">
+      Wireframes were tested across core file-management tasks to assess
+      clarity, efficiency, and confidence.
+    </p>
+
+    {/* Score + takeaway */}
+    <div
+      className="grid md:grid-cols-[0.8fr_1.2fr] rounded-2xl overflow-hidden mb-10"
+      style={{
+        border: `1px solid ${BORDER}`,
+      }}
+    >
+
+      {/* Score */}
+      <div
+        className="px-7 py-8"
+        style={{
+          backgroundColor: SOFT,
+          borderRight: `1px solid ${BORDER}`,
+        }}
+      >
+        <p
+          className="text-6xl font-black tracking-[-0.04em] leading-none tabular-nums"
+          style={{ color: DARK }}
+        >
+          23/25
+        </p>
+
+        <p
+          className="text-xs font-bold mt-3"
+          style={{ color: "#64748b" }}
+        >
+          Post-test score
+        </p>
+      </div>
+
+      {/* Takeaway */}
+      <div
+        className="px-7 py-8 flex items-center"
+        style={{ backgroundColor: "#ffffff" }}
+      >
+        <div>
+          <p
+            className="text-[10px] font-black tracking-[0.14em] uppercase mb-3"
+            style={{ color: "#94a3b8" }}
+          >
+            What testing showed
+          </p>
+
+          <p
+            className="text-lg font-black leading-[1.35] tracking-tight max-w-lg"
+            style={{ color: DARK }}
+          >
+            Core file actions became easier to understand and complete,
+            with clearer feedback when actions succeeded or were cancelled.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
 
         {/* §07 — OUTCOMES */}
         <div className="max-w-4xl mx-auto px-8 py-16" style={{ borderBottom: `1px solid ${BORDER}` }}>
