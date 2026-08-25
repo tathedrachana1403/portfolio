@@ -265,6 +265,68 @@ export default function PracticeFiles() {
     style={{ borderTop: `1px solid ${BORDER}` }}
   />
 </section>
+{/* 02 — PROBLEM */}
+<section className="max-w-4xl mx-auto px-8 mb-20">
+  <div className="max-w-3xl mx-auto">
+
+    {/* Section label */}
+    <div className="flex items-center gap-3 mb-5">
+      <span
+        className="text-sm font-black tabular-nums"
+        style={{ color: DARK }}
+      >
+        02
+      </span>
+
+      <span
+        className="w-4 h-px"
+        style={{ backgroundColor: BORDER }}
+      />
+
+      <span
+        className="text-sm font-black tracking-[0.14em] uppercase"
+        style={{ color: DARK }}
+      >
+        Problem
+      </span>
+    </div>
+
+    {/* Heading */}
+    <h2
+      className="text-2xl md:text-3xl font-black leading-[1.2] tracking-tight mb-6"
+      style={{
+        color: DARK,
+        textWrap: "balance",
+      } as React.CSSProperties}
+    >
+      The existing file experience lacked the tools needed to support
+      high-volume document work.
+    </h2>
+
+    {/* Problem description */}
+    <p className="text-base md:text-lg leading-relaxed text-slate-600 mb-5">
+      As document volumes grew, users faced friction across the workflow from{" "}
+      <strong style={{ color: DARK }}>
+        finding the right files and managing large batches to understanding
+        file status, reviewing activity, and completing actions with confidence
+      </strong>
+      .
+    </p>
+
+    <p className="text-base md:text-lg leading-relaxed text-slate-600">
+      <strong style={{ color: DARK }}>
+        Together, these gaps made high-volume document work slower, harder to
+        navigate, and less predictable.
+      </strong>
+    </p>
+  </div>
+
+  {/* Divider */}
+  <div
+    className="w-full mt-16"
+    style={{ borderTop: `1px solid ${BORDER}` }}
+  />
+</section>
 
         {/* §02 — RESEARCH */}
         <div className="max-w-4xl mx-auto px-8 py-16" style={{ borderBottom: `1px solid ${BORDER}` }}>
