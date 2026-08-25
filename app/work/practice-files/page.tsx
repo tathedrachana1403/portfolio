@@ -328,57 +328,233 @@ export default function PracticeFiles() {
   />
 </section>
 
-        {/* §02 — RESEARCH */}
-        <div className="max-w-4xl mx-auto px-8 py-16" style={{ borderBottom: `1px solid ${BORDER}` }}>
-          <ChapterHeader number="02" label="Research" heading="I started with the existing workflow, not the new interface." />
+       {/* 03 — RESEARCH & INSIGHTS */}
+<section className="max-w-5xl mx-auto px-8 mb-16">
+  <div className="max-w-3xl mx-auto">
 
-          {/* Research methods */}
-          <div className="grid grid-cols-3 gap-0 mb-14" style={{ borderTop: `1px solid ${BORDER}`, borderBottom: `1px solid ${BORDER}` }}>
-            {[
-              { n: "6",    l: "CS + Operations users" },
-              { n: "4",    l: "Real task scenarios" },
-              { n: "Top 5", l: "Contact driver for CS" },
-            ].map((r, i) => (
-              <div key={r.l} className="py-6 pr-6" style={{ borderLeft: i > 0 ? `1px solid ${BORDER}` : "none", paddingLeft: i > 0 ? "1.5rem" : 0 }}>
-                <p className="text-3xl font-black tabular-nums leading-none mb-2" style={{ color: DARK }}>{r.n}</p>
-                <p className="text-base text-slate-500">{r.l}</p>
-              </div>
-            ))}
-          </div>
+    {/* Section label */}
+    <div className="flex items-center gap-3 mb-4">
+      <span
+        className="text-sm font-black tabular-nums"
+        style={{ color: DARK }}
+      >
+        03
+      </span>
 
-          {/* Friction scores */}
-          <div className="flex items-center gap-3 mb-5">
-            <div className="w-[3px] h-5 rounded-full shrink-0" style={{ backgroundColor: DARK }} />
-            <h3 className="text-base font-bold tracking-tight" style={{ color: DARK }}>Where friction was highest</h3>
-          </div>
-          <div className="space-y-0 mb-10" style={{ borderTop: `1px solid ${BORDER}` }}>
-            {[
-              { area: "Tracking file activity", score: 4.8, desc: "No trace of what happened after an actions like deletions, downloads, and handoffs left no record." },
-              { area: "Finding files",          score: 4.6, desc: "No search or filters. Users scanned full lists every time." },
-              { area: "Managing multiple files", score: 4.3, desc: "Every download and delete was one file at a time. Offboarding meant repeating the same action dozens of times." },
-            ].map(r => (
-              <div key={r.area} className="py-6" style={{ borderBottom: `1px solid ${BORDER}` }}>
-                <div className="flex items-center justify-between gap-8 mb-2">
-                  <p className="text-base font-black" style={{ color: DARK }}>{r.area}</p>
-                  <span className="text-xs font-bold px-2.5 py-1 rounded-full shrink-0" style={{ backgroundColor: "#fef3c7", color: "#92400e", border: "1px solid #fcd34d" }}>
-                    High friction
-                  </span>
-                </div>
-                {/* severity bar */}
-                <div className="w-full rounded-full mb-3" style={{ height: "6px", backgroundColor: "#fef3c7" }}>
-                  <div className="h-full rounded-full" style={{ width: `${(r.score / 5) * 100}%`, backgroundColor: "#f59e0b" }} />
-                </div>
-                <p className="text-base text-slate-500 leading-relaxed">{r.desc}</p>
-              </div>
-            ))}
-          </div>
+      <span
+        className="w-4 h-px"
+        style={{ backgroundColor: BORDER }}
+      />
 
-          <div className="rounded-2xl px-8 py-6" style={{ backgroundColor: DARK, boxShadow: DARK_SHADOW }}>
-            <p className="text-base font-semibold text-white leading-relaxed">
-              File management was a top-5 contact driver for Customer Success and focus group friction scores matched real support ticket volume.
-            </p>
-          </div>
+      <span
+        className="text-sm font-black tracking-[0.14em] uppercase"
+        style={{ color: DARK }}
+      >
+        Research &amp; Insights
+      </span>
+    </div>
+
+    {/* Heading */}
+    <h2
+      className="text-3xl md:text-4xl font-black leading-[1.12] tracking-tight max-w-2xl"
+      style={{
+        color: DARK,
+        textWrap: "balance",
+      } as React.CSSProperties}
+    >
+      We evaluated the workflows users relied on most.
+    </h2>
+
+    {/* Research summary + baseline */}
+    <div className="mt-6 mb-7">
+      <div
+        className="grid md:grid-cols-[1fr_180px] gap-7 items-stretch"
+      >
+        {/* Research method */}
+        <div
+          className="py-5 pr-6"
+          style={{
+            borderTop: `1px solid ${BORDER}`,
+            borderBottom: `1px solid ${BORDER}`,
+          }}
+        >
+          <p className="text-base leading-relaxed text-slate-600 max-w-xl">
+            We ran a{" "}
+            <strong style={{ color: DARK }}>
+              task-based usability study
+            </strong>{" "}
+            across finding, uploading, downloading, and deleting files.
+            Participants completed each task and rated the ease of the
+            experience.
+          </p>
         </div>
+
+        {/* Baseline score */}
+        <div
+          className="py-5 px-5 flex flex-col justify-center"
+          style={{
+            backgroundColor: SOFT,
+            borderTop: `1px solid ${BORDER}`,
+            borderBottom: `1px solid ${BORDER}`,
+          }}
+        >
+          <span
+            className="text-xs font-black tracking-[0.12em] uppercase mb-2"
+            style={{ color: DARK }}
+          >
+            Baseline
+          </span>
+
+          <span
+            className="text-3xl font-black tracking-tight"
+            style={{ color: DARK }}
+          >
+            11 / 25
+          </span>
+
+          <span className="text-sm text-slate-500 mt-1">
+            Task usability score
+          </span>
+        </div>
+      </div>
+    </div>
+
+    {/* Findings */}
+    <div>
+
+      {/* 01 */}
+      <div
+        className="grid grid-cols-[36px_1fr] gap-4 py-4"
+        style={{ borderBottom: `1px solid ${BORDER}` }}
+      >
+        <span
+          className="text-xs font-black tabular-nums pt-1"
+          style={{ color: DARK }}
+        >
+          01
+        </span>
+
+        <div>
+          <h3
+            className="text-base font-black tracking-tight mb-1"
+            style={{ color: DARK }}
+          >
+            Finding files
+          </h3>
+
+          <p className="text-sm md:text-base leading-relaxed text-slate-600">
+            Large file sets made retrieval inefficient without stronger search,
+            filtering, sorting, and recent activity.
+          </p>
+        </div>
+      </div>
+
+      {/* 02 */}
+      <div
+        className="grid grid-cols-[36px_1fr] gap-4 py-4"
+        style={{ borderBottom: `1px solid ${BORDER}` }}
+      >
+        <span
+          className="text-xs font-black tabular-nums pt-1"
+          style={{ color: DARK }}
+        >
+          02
+        </span>
+
+        <div>
+          <h3
+            className="text-base font-black tracking-tight mb-1"
+            style={{ color: DARK }}
+          >
+            Managing files
+          </h3>
+
+          <p className="text-sm md:text-base leading-relaxed text-slate-600">
+            File-by-file downloads and deletions created unnecessary effort at
+            scale.
+          </p>
+        </div>
+      </div>
+
+      {/* 03 */}
+      <div
+        className="grid grid-cols-[36px_1fr] gap-4 py-4"
+        style={{ borderBottom: `1px solid ${BORDER}` }}
+      >
+        <span
+          className="text-xs font-black tabular-nums pt-1"
+          style={{ color: DARK }}
+        >
+          03
+        </span>
+
+        <div>
+          <h3
+            className="text-base font-black tracking-tight mb-1"
+            style={{ color: DARK }}
+          >
+            Understanding system state
+          </h3>
+
+          <p className="text-sm md:text-base leading-relaxed text-slate-600">
+            Limited progress and status feedback made file operations difficult
+            to follow.
+          </p>
+        </div>
+      </div>
+
+      {/* 04 */}
+      <div
+        className="grid grid-cols-[36px_1fr] gap-4 py-4"
+        style={{ borderBottom: `1px solid ${BORDER}` }}
+      >
+        <span
+          className="text-xs font-black tabular-nums pt-1"
+          style={{ color: DARK }}
+        >
+          04
+        </span>
+
+        <div>
+          <h3
+            className="text-base font-black tracking-tight mb-1"
+            style={{ color: DARK }}
+          >
+            Tracking activity
+          </h3>
+
+          <p className="text-sm md:text-base leading-relaxed text-slate-600">
+            Limited history and notes made it harder to understand what
+            happened to a file.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    {/* Key insight */}
+    <div className="mt-7 pt-6">
+      <p
+        className="text-xs font-black tracking-[0.12em] uppercase mb-2"
+        style={{ color: DARK }}
+      >
+        Key insight
+      </p>
+
+      <p
+        className="text-lg md:text-xl font-black leading-[1.3] tracking-tight max-w-2xl"
+        style={{
+          color: DARK,
+          textWrap: "balance",
+        } as React.CSSProperties}
+      >
+        The opportunity was to reduce operational effort while giving users
+        greater speed, visibility, and control over file actions.
+      </p>
+    </div>
+
+  </div>
+</section>
 
         {/* §03 — DESIGN */}
         <div style={{ backgroundColor: "#f8fafc", borderBottom: `1px solid ${BORDER}` }}>
