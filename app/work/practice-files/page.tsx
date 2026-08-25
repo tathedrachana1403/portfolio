@@ -556,74 +556,979 @@ export default function PracticeFiles() {
   </div>
 </section>
 
-        {/* §03 — DESIGN */}
-        <div style={{ backgroundColor: "#f8fafc", borderBottom: `1px solid ${BORDER}` }}>
-          <div className="max-w-4xl mx-auto px-8 py-16">
-            <ChapterHeader number="03" label="Design" heading="From a file list to an operational workspace." />
+{/* §03 — WORKFLOW */}
+<div
+  style={{
+    backgroundColor: "#f8fafc",
+    borderBottom: `1px solid ${BORDER}`,
+  }}
+>
+  <div className="max-w-4xl mx-auto px-8 py-16">
 
-            <p className="text-base text-slate-500 leading-relaxed mb-10">
-              The existing table exposed files but not the workflow around them. Six capabilities addressed every gap users had named.
-            </p>
+    <ChapterHeader
+      number="03"
+      label="Workflow"
+      heading="Structuring the file workflow around real user actions."
+    />
 
-            {/* 6 capabilities — 2-col grid */}
-            <div className="grid grid-cols-2 gap-0 mb-14" style={{ borderTop: `1px solid ${BORDER}`, borderLeft: `1px solid ${BORDER}` }}>
-              {[
-                { n: "01", label: "Add",     desc: "Upload files with clear progress, status, and cancel support." },
-                { n: "02", label: "Find",    desc: "Search by file name and narrow results with advanced filters." },
-                { n: "03", label: "Discover",desc: "Surface recently uploaded and downloaded files at a glance." },
-                { n: "04", label: "Act",     desc: "Select multiple files and perform bulk downloads or deletions." },
-                { n: "05", label: "Control", desc: "Confirmation for destructive actions, visible progress, and cancellation." },
-                { n: "06", label: "Trace",   desc: "Notes and history so the next person understands what happened.", dark: true },
-              ].map((step) => (
-                <div key={step.n} className="p-7" style={{
-                  borderRight: `1px solid ${BORDER}`,
-                  borderBottom: `1px solid ${BORDER}`,
-                  backgroundColor: step.dark ? DARK : "transparent",
-                }}>
-                  <p className="text-5xl font-black tabular-nums leading-none mb-4" style={{ color: step.dark ? "rgba(255,255,255,0.2)" : BORDER }}>{step.n}</p>
-                  <p className="text-lg font-black mb-1.5" style={{ color: step.dark ? "white" : DARK }}>{step.label}</p>
-                  <p className="text-base leading-relaxed" style={{ color: step.dark ? "rgba(255,255,255,0.65)" : "#64748b" }}>{step.desc}</p>
+    <p className="text-base text-slate-500 leading-relaxed max-w-2xl mt-3 mb-10">
+      The redesigned workflow connects file discovery, actions, feedback, and
+      recovery into a clear end-to-end experience.
+    </p>
+
+    {/* WORKFLOW MAP */}
+    <div
+      className="rounded-2xl overflow-hidden"
+      style={{
+        backgroundColor: "#ffffff",
+        border: `1px solid ${BORDER}`,
+      }}
+    >
+      {/* Workflow header */}
+      <div
+        className="px-7 py-5"
+        style={{
+          backgroundColor: SOFT,
+          borderBottom: `1px solid ${BORDER}`,
+        }}
+      >
+        <p
+          className="text-xs font-black tracking-[0.14em] uppercase"
+          style={{ color: DARK }}
+        >
+          Redesigned workflow
+        </p>
+      </div>
+
+      <div className="p-7">
+
+        {/* ========================================================= */}
+        {/* PRIMARY WORKFLOW SPINE */}
+        {/* ========================================================= */}
+
+        <div className="relative">
+
+          {/* Main horizontal connection */}
+          <div
+            className="absolute hidden md:block"
+            style={{
+              top: "19px",
+              left: "7%",
+              right: "7%",
+              height: "1px",
+              backgroundColor: BORDER,
+            }}
+          />
+
+          <div className="grid md:grid-cols-4 gap-8 relative">
+
+            {/* ===================================================== */}
+            {/* 01 — SEARCH */}
+            {/* ===================================================== */}
+
+            <div>
+
+              {/* Primary node */}
+              <div className="flex items-center gap-3 relative z-10">
+
+                <div
+                  className="w-9 h-9 rounded-full flex items-center justify-center shrink-0"
+                  style={{
+                    backgroundColor: DARK,
+                    color: "#fff",
+                  }}
+                >
+                  <span className="text-xs font-black">01</span>
                 </div>
-              ))}
-            </div>
 
-            {/* Before / After — wireframes */}
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-[3px] h-5 rounded-full shrink-0" style={{ backgroundColor: DARK }} />
-              <h3 className="text-base font-bold tracking-tight" style={{ color: DARK }}>Wireframes</h3>
-            </div>
-            <div className="grid grid-cols-2 gap-6 mb-14">
-              <div>
-                <p className="text-xs font-bold tracking-[0.14em] uppercase mb-3" style={{ color: "#94a3b8" }}>Before</p>
-                <PracticeFilesCurrentState />
+                <p
+                  className="text-base font-black tracking-tight"
+                  style={{ color: DARK }}
+                >
+                  Search
+                </p>
               </div>
-              <div>
-                <p className="text-xs font-bold tracking-[0.14em] uppercase mb-3" style={{ color: DARK }}>After</p>
-                <PracticeFilesRedesigned />
-              </div>
-            </div>
 
-            {/* Before / After — actual screens */}
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-[3px] h-5 rounded-full shrink-0" style={{ backgroundColor: DARK }} />
-              <h3 className="text-base font-bold tracking-tight" style={{ color: DARK }}>Design screens</h3>
-            </div>
-            <div className="space-y-8">
-              <div>
-                <p className="text-xs font-bold tracking-[0.14em] uppercase mb-3" style={{ color: "#94a3b8" }}>Before</p>
-                <div className="relative w-full rounded-xl overflow-hidden" style={{ border: `1px solid ${BORDER}` }}>
-                  <img src="/images/practice/practice-current-state-audit.png" alt="Current state" className="w-full block" />
-                  {/* cover "Design Improvements" heading in image */}
-                  <div className="absolute bg-white" style={{ top: "0%", left: "0%", width: "48%", height: "13%" }} />
+              {/* Branching area */}
+              <div className="relative mt-7 ml-4">
+
+                {/* vertical trunk */}
+                <div
+                  className="absolute left-0 top-0 bottom-0"
+                  style={{
+                    width: "1px",
+                    backgroundColor: BORDER,
+                  }}
+                />
+
+                {/* Find */}
+                <div className="relative pl-6">
+
+                  <div
+                    className="absolute -left-[4px] top-[7px] w-[9px] h-[9px] rounded-full"
+                    style={{
+                      backgroundColor: "#fff",
+                      border: `2px solid ${DARK}`,
+                    }}
+                  />
+
+                  <p
+                    className="text-sm font-bold"
+                    style={{ color: DARK }}
+                  >
+                    Find
+                  </p>
+
+                  <div className="mt-2 space-y-1.5">
+                    {[
+                      "File / user name",
+                      "3+ characters",
+                    ].map((item) => (
+                      <div
+                        key={item}
+                        className="px-2.5 py-1.5 rounded-md text-[11px]"
+                        style={{
+                          backgroundColor: "#f8fafc",
+                          color: "#64748b",
+                          border: `1px solid ${BORDER}`,
+                        }}
+                      >
+                        {item}
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
-              <div>
-                <p className="text-xs font-bold tracking-[0.14em] uppercase mb-3" style={{ color: DARK }}>After</p>
-                <img src="/images/practice/practice-improved-ui-annotated.png" alt="Redesigned" className="w-full rounded-xl" style={{ border: `1px solid ${BORDER}` }} />
+
+                {/* Results */}
+                <div className="relative pl-6 mt-6">
+
+                  <div
+                    className="absolute -left-[4px] top-[7px] w-[9px] h-[9px] rounded-full"
+                    style={{
+                      backgroundColor: "#fff",
+                      border: `2px solid ${DARK}`,
+                    }}
+                  />
+
+                  <p
+                    className="text-sm font-bold"
+                    style={{ color: DARK }}
+                  >
+                    Results
+                  </p>
+
+                  {/* Branch from results */}
+                  <div className="mt-4 relative ml-4">
+
+                    <div
+                      className="absolute left-0 top-0 bottom-0"
+                      style={{
+                        width: "1px",
+                        backgroundColor: BORDER,
+                      }}
+                    />
+
+                    {/* Filter */}
+                    <div className="relative pl-5">
+
+                      <div
+                        className="absolute -left-[4px] top-[7px] w-[9px] h-[9px] rounded-full"
+                        style={{
+                          backgroundColor: SOFT,
+                          border: `2px solid ${DARK}`,
+                        }}
+                      />
+
+                      <p
+                        className="text-xs font-bold"
+                        style={{ color: DARK }}
+                      >
+                        Filter
+                      </p>
+
+                      <div className="flex flex-wrap gap-1.5 mt-2">
+                        {[
+                          "Category",
+                          "Type",
+                          "Modified by",
+                          "Date",
+                        ].map((item) => (
+                          <span
+                            key={item}
+                            className="px-2 py-1 rounded text-[10px]"
+                            style={{
+                              backgroundColor: "#fff",
+                              color: "#64748b",
+                              border: `1px solid ${BORDER}`,
+                            }}
+                          >
+                            {item}
+                          </span>
+                        ))}
+                      </div>
+
+                      <p className="text-[10px] text-slate-400 mt-2">
+                        Refines results
+                      </p>
+                    </div>
+
+                    {/* Select */}
+                    <div className="relative pl-5 mt-5">
+
+                      <div
+                        className="absolute -left-[4px] top-[7px] w-[9px] h-[9px] rounded-full"
+                        style={{
+                          backgroundColor: "#fff",
+                          border: `2px solid ${BORDER}`,
+                        }}
+                      />
+
+                      <p
+                        className="text-xs font-bold"
+                        style={{ color: DARK }}
+                      >
+                        Select
+                      </p>
+
+                      <p className="text-[10px] text-slate-400 mt-1">
+                        Continue to file actions
+                      </p>
+                    </div>
+
+                  </div>
+                </div>
+
               </div>
             </div>
+
+
+            {/* ===================================================== */}
+            {/* 02 — ADD */}
+            {/* ===================================================== */}
+
+            <div>
+
+              <div className="flex items-center gap-3 relative z-10">
+
+                <div
+                  className="w-9 h-9 rounded-full flex items-center justify-center shrink-0"
+                  style={{
+                    backgroundColor: DARK,
+                    color: "#fff",
+                  }}
+                >
+                  <span className="text-xs font-black">02</span>
+                </div>
+
+                <p
+                  className="text-base font-black tracking-tight"
+                  style={{ color: DARK }}
+                >
+                  Add
+                </p>
+              </div>
+
+              <div className="relative mt-7 ml-4">
+
+                <div
+                  className="absolute left-0 top-0 bottom-0"
+                  style={{
+                    width: "1px",
+                    backgroundColor: BORDER,
+                  }}
+                />
+
+                {/* Select */}
+                <div className="relative pl-6">
+
+                  <div
+                    className="absolute -left-[4px] top-[7px] w-[9px] h-[9px] rounded-full"
+                    style={{
+                      backgroundColor: "#fff",
+                      border: `2px solid ${DARK}`,
+                    }}
+                  />
+
+                  <p
+                    className="text-sm font-bold"
+                    style={{ color: DARK }}
+                  >
+                    Select files
+                  </p>
+
+                  <p className="text-[10px] text-slate-400 mt-1">
+                    Choose one or more files
+                  </p>
+                </div>
+
+                {/* Upload */}
+                <div className="relative pl-6 mt-5">
+
+                  <div
+                    className="absolute -left-[4px] top-[7px] w-[9px] h-[9px] rounded-full"
+                    style={{
+                      backgroundColor: "#fff",
+                      border: `2px solid ${DARK}`,
+                    }}
+                  />
+
+                  <p
+                    className="text-sm font-bold"
+                    style={{ color: DARK }}
+                  >
+                    Upload
+                  </p>
+
+                  <div className="flex flex-wrap gap-1.5 mt-2">
+                    {[
+                      "Progress",
+                      "Status",
+                    ].map((item) => (
+                      <span
+                        key={item}
+                        className="px-2 py-1 rounded text-[10px]"
+                        style={{
+                          backgroundColor: "#f8fafc",
+                          color: "#64748b",
+                          border: `1px solid ${BORDER}`,
+                        }}
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Upload branches */}
+                  <div
+                    className="relative ml-4 mt-4"
+                    style={{
+                      borderLeft: `1px solid ${BORDER}`,
+                    }}
+                  >
+
+                    {/* Success */}
+                    <div className="relative pl-5">
+
+                      <div
+                        className="absolute -left-[4px] top-[6px] w-[8px] h-[8px] rounded-full"
+                        style={{
+                          backgroundColor: SOFT,
+                          border: `2px solid ${DARK}`,
+                        }}
+                      />
+
+                      <p
+                        className="text-xs font-bold"
+                        style={{ color: DARK }}
+                      >
+                        Complete
+                      </p>
+
+                      <p className="text-[10px] text-slate-400 mt-1">
+                        Upload successful
+                      </p>
+                    </div>
+
+                    {/* Cancel */}
+                    <div className="relative pl-5 mt-4">
+
+                      <div
+                        className="absolute -left-[4px] top-[6px] w-[8px] h-[8px] rounded-full"
+                        style={{
+                          backgroundColor: "#fff",
+                          border: `2px solid ${BORDER}`,
+                        }}
+                      />
+
+                      <p
+                        className="text-xs font-bold"
+                        style={{ color: DARK }}
+                      >
+                        Cancel
+                      </p>
+
+                      <p className="text-[10px] text-slate-400 mt-1">
+                        Confirm → cancelled
+                      </p>
+                    </div>
+
+                    {/* Retry */}
+                    <div className="relative pl-5 mt-4">
+
+                      <div
+                        className="absolute -left-[4px] top-[6px] w-[8px] h-[8px] rounded-full"
+                        style={{
+                          backgroundColor: "#fff",
+                          border: `2px solid ${BORDER}`,
+                        }}
+                      />
+
+                      <p
+                        className="text-xs font-bold"
+                        style={{ color: DARK }}
+                      >
+                        Retry
+                      </p>
+
+                      <p className="text-[10px] text-slate-400 mt-1">
+                        Resume failed upload
+                      </p>
+                    </div>
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+
+            {/* ===================================================== */}
+            {/* 03 — MANAGE */}
+            {/* ===================================================== */}
+
+            <div>
+
+              <div className="flex items-center gap-3 relative z-10">
+
+                <div
+                  className="w-9 h-9 rounded-full flex items-center justify-center shrink-0"
+                  style={{
+                    backgroundColor: DARK,
+                    color: "#fff",
+                  }}
+                >
+                  <span className="text-xs font-black">03</span>
+                </div>
+
+                <p
+                  className="text-base font-black tracking-tight"
+                  style={{ color: DARK }}
+                >
+                  Manage
+                </p>
+              </div>
+
+              <div className="relative mt-7 ml-4">
+
+                <div
+                  className="absolute left-0 top-0 bottom-0"
+                  style={{
+                    width: "1px",
+                    backgroundColor: BORDER,
+                  }}
+                />
+
+                {/* Selection */}
+                <div className="relative pl-6">
+
+                  <div
+                    className="absolute -left-[4px] top-[7px] w-[9px] h-[9px] rounded-full"
+                    style={{
+                      backgroundColor: "#fff",
+                      border: `2px solid ${DARK}`,
+                    }}
+                  />
+
+                  <p
+                    className="text-sm font-bold"
+                    style={{ color: DARK }}
+                  >
+                    Select files
+                  </p>
+
+                  <p className="text-[10px] text-slate-400 mt-1">
+                    Single or bulk selection
+                  </p>
+                </div>
+
+                {/* Action branch */}
+                <div
+                  className="relative ml-4 mt-5"
+                  style={{
+                    borderLeft: `1px solid ${BORDER}`,
+                  }}
+                >
+
+                  {/* DOWNLOAD */}
+                  <div className="relative pl-5">
+
+                    <div
+                      className="absolute -left-[4px] top-[7px] w-[9px] h-[9px] rounded-full"
+                      style={{
+                        backgroundColor: SOFT,
+                        border: `2px solid ${DARK}`,
+                      }}
+                    />
+
+                    <p
+                      className="text-xs font-bold"
+                      style={{ color: DARK }}
+                    >
+                      Download
+                    </p>
+
+                    <div className="mt-2 space-y-1.5">
+                      {[
+                        "Progress",
+                        "Complete",
+                      ].map((item) => (
+                        <div
+                          key={item}
+                          className="px-2.5 py-1.5 rounded-md text-[10px]"
+                          style={{
+                            backgroundColor: "#f8fafc",
+                            color: "#64748b",
+                            border: `1px solid ${BORDER}`,
+                          }}
+                        >
+                          {item}
+                        </div>
+                      ))}
+                    </div>
+
+                  </div>
+
+                  {/* DELETE */}
+                  <div className="relative pl-5 mt-5">
+
+                    <div
+                      className="absolute -left-[4px] top-[7px] w-[9px] h-[9px] rounded-full"
+                      style={{
+                        backgroundColor: "#fff",
+                        border: `2px solid ${BORDER}`,
+                      }}
+                    />
+
+                    <p
+                      className="text-xs font-bold"
+                      style={{ color: DARK }}
+                    >
+                      Delete
+                    </p>
+
+                    {/* Delete branch */}
+                    <div
+                      className="relative ml-3 mt-3"
+                      style={{
+                        borderLeft: `1px solid ${BORDER}`,
+                      }}
+                    >
+
+                      {/* Confirmation */}
+                      <div className="relative pl-5">
+
+                        <div
+                          className="absolute -left-[4px] top-[6px] w-[8px] h-[8px] rounded-full"
+                          style={{
+                            backgroundColor: "#fff",
+                            border: `2px solid ${DARK}`,
+                          }}
+                        />
+
+                        <p
+                          className="text-[11px] font-bold"
+                          style={{ color: DARK }}
+                        >
+                          Confirm
+                        </p>
+
+                        <div className="flex gap-1.5 mt-2">
+                          <span
+                            className="px-2 py-1 rounded text-[10px]"
+                            style={{
+                              backgroundColor: SOFT,
+                              color: DARK,
+                              border: `1px solid ${BORDER}`,
+                            }}
+                          >
+                            Yes
+                          </span>
+
+                          <span
+                            className="px-2 py-1 rounded text-[10px]"
+                            style={{
+                              backgroundColor: "#fff",
+                              color: "#64748b",
+                              border: `1px solid ${BORDER}`,
+                            }}
+                          >
+                            No
+                          </span>
+                        </div>
+
+                      </div>
+
+                      {/* Outcome */}
+                      <div className="relative pl-5 mt-4">
+
+                        <div
+                          className="absolute -left-[4px] top-[6px] w-[8px] h-[8px] rounded-full"
+                          style={{
+                            backgroundColor: SOFT,
+                            border: `2px solid ${DARK}`,
+                          }}
+                        />
+
+                        <p
+                          className="text-[11px] font-bold"
+                          style={{ color: DARK }}
+                        >
+                          Deleted
+                        </p>
+
+                      </div>
+
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+
+
+            {/* ===================================================== */}
+            {/* 04 — UNDERSTAND */}
+            {/* ===================================================== */}
+
+            <div>
+
+              <div className="flex items-center gap-3 relative z-10">
+
+                <div
+                  className="w-9 h-9 rounded-full flex items-center justify-center shrink-0"
+                  style={{
+                    backgroundColor: DARK,
+                    color: "#fff",
+                  }}
+                >
+                  <span className="text-xs font-black">04</span>
+                </div>
+
+                <p
+                  className="text-base font-black tracking-tight"
+                  style={{ color: DARK }}
+                >
+                  Understand
+                </p>
+              </div>
+
+              <div className="relative mt-7 ml-4">
+
+                <div
+                  className="absolute left-0 top-0 bottom-0"
+                  style={{
+                    width: "1px",
+                    backgroundColor: BORDER,
+                  }}
+                />
+
+                {/* Context branch */}
+                <div className="relative pl-6">
+
+                  <div
+                    className="absolute -left-[4px] top-[7px] w-[9px] h-[9px] rounded-full"
+                    style={{
+                      backgroundColor: "#fff",
+                      border: `2px solid ${DARK}`,
+                    }}
+                  />
+
+                  <p
+                    className="text-sm font-bold"
+                    style={{ color: DARK }}
+                  >
+                    File context
+                  </p>
+
+                  <div
+                    className="relative ml-4 mt-4"
+                    style={{
+                      borderLeft: `1px solid ${BORDER}`,
+                    }}
+                  >
+
+                    {/* History */}
+                    <div className="relative pl-5">
+
+                      <div
+                        className="absolute -left-[4px] top-[6px] w-[8px] h-[8px] rounded-full"
+                        style={{
+                          backgroundColor: "#fff",
+                          border: `2px solid ${DARK}`,
+                        }}
+                      />
+
+                      <p
+                        className="text-xs font-bold"
+                        style={{ color: DARK }}
+                      >
+                        History
+                      </p>
+
+                      <p className="text-[10px] text-slate-400 mt-1">
+                        Previous actions
+                      </p>
+                    </div>
+
+                    {/* Notes */}
+                    <div className="relative pl-5 mt-5">
+
+                      <div
+                        className="absolute -left-[4px] top-[6px] w-[8px] h-[8px] rounded-full"
+                        style={{
+                          backgroundColor: "#fff",
+                          border: `2px solid ${BORDER}`,
+                        }}
+                      />
+
+                      <p
+                        className="text-xs font-bold"
+                        style={{ color: DARK }}
+                      >
+                        Notes
+                      </p>
+
+                      <p className="text-[10px] text-slate-400 mt-1">
+                        File-specific context
+                      </p>
+                    </div>
+
+                    {/* Metadata */}
+                    <div className="relative pl-5 mt-5">
+
+                      <div
+                        className="absolute -left-[4px] top-[6px] w-[8px] h-[8px] rounded-full"
+                        style={{
+                          backgroundColor: "#fff",
+                          border: `2px solid ${BORDER}`,
+                        }}
+                      />
+
+                      <p
+                        className="text-xs font-bold"
+                        style={{ color: DARK }}
+                      >
+                        Metadata
+                      </p>
+
+                      <div className="flex flex-wrap gap-1.5 mt-2">
+                        {[
+                          "Modified by",
+                          "Date",
+                        ].map((item) => (
+                          <span
+                            key={item}
+                            className="px-2 py-1 rounded text-[10px]"
+                            style={{
+                              backgroundColor: "#f8fafc",
+                              color: "#64748b",
+                              border: `1px solid ${BORDER}`,
+                            }}
+                          >
+                            {item}
+                          </span>
+                        ))}
+                      </div>
+
+                    </div>
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
           </div>
         </div>
+
+        {/* ========================================================= */}
+        {/* WORKFLOW KEY */}
+        {/* ========================================================= */}
+
+        <div
+          className="mt-9 pt-5 flex flex-wrap gap-x-6 gap-y-2"
+          style={{
+            borderTop: `1px solid ${BORDER}`,
+          }}
+        >
+          <div className="flex items-center gap-2">
+            <span
+              className="w-2 h-2 rounded-full"
+              style={{ backgroundColor: DARK }}
+            />
+            <span className="text-[11px] text-slate-500">
+              Primary stage
+            </span>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <span
+              className="w-2 h-2 rounded-full"
+              style={{
+                backgroundColor: "#fff",
+                border: `1px solid ${DARK}`,
+              }}
+            />
+            <span className="text-[11px] text-slate-500">
+              Action
+            </span>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <span
+              className="w-2 h-2 rounded-full"
+              style={{
+                backgroundColor: SOFT,
+                border: `1px solid ${DARK}`,
+              }}
+            />
+            <span className="text-[11px] text-slate-500">
+              Outcome
+            </span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+       {/* §03 — DESIGN */}
+<div style={{ backgroundColor: "#f8fafc", borderBottom: `1px solid ${BORDER}` }}>
+  <div className="max-w-4xl mx-auto px-8 py-16">
+
+    <ChapterHeader
+      number="03"
+      label="Design"
+      heading="Designing the workflow, not just the file list."
+    />
+
+    <p className="text-base text-slate-500 leading-relaxed max-w-2xl mb-10">
+      The redesign turned a fragmented set of file actions into a workflow
+      built for scale.
+    </p>
+
+    {/* Before / After — wireframes */}
+    <div className="flex items-center gap-3 mb-4">
+      <div
+        className="w-[3px] h-5 rounded-full shrink-0"
+        style={{ backgroundColor: DARK }}
+      />
+      <h3
+        className="text-base font-bold tracking-tight"
+        style={{ color: DARK }}
+      >
+        Wireframes
+      </h3>
+    </div>
+
+    <div className="grid grid-cols-2 gap-6 mb-12">
+      <div>
+        <p
+          className="text-xs font-bold tracking-[0.14em] uppercase mb-3"
+          style={{ color: "#94a3b8" }}
+        >
+          Before
+        </p>
+        <PracticeFilesCurrentState />
+      </div>
+
+      <div>
+        <p
+          className="text-xs font-bold tracking-[0.14em] uppercase mb-3"
+          style={{ color: DARK }}
+        >
+          After
+        </p>
+        <PracticeFilesRedesigned />
+      </div>
+    </div>
+
+    {/* Before / After — actual screens */}
+    <div className="flex items-center gap-3 mb-4">
+      <div
+        className="w-[3px] h-5 rounded-full shrink-0"
+        style={{ backgroundColor: DARK }}
+      />
+      <h3
+        className="text-base font-bold tracking-tight"
+        style={{ color: DARK }}
+      >
+        Design screens
+      </h3>
+    </div>
+
+    <div className="space-y-8">
+      <div>
+        <p
+          className="text-xs font-bold tracking-[0.14em] uppercase mb-3"
+          style={{ color: "#94a3b8" }}
+        >
+          Before
+        </p>
+
+        <div
+          className="relative w-full rounded-xl overflow-hidden"
+          style={{ border: `1px solid ${BORDER}` }}
+        >
+          <img
+            src="/images/practice/practice-current-state-audit.png"
+            alt="Current state"
+            className="w-full block"
+          />
+
+          {/* cover "Design Improvements" heading in image */}
+          <div
+            className="absolute bg-white"
+            style={{
+              top: "0%",
+              left: "0%",
+              width: "48%",
+              height: "13%",
+            }}
+          />
+        </div>
+      </div>
+
+      <div>
+        <p
+          className="text-xs font-bold tracking-[0.14em] uppercase mb-3"
+          style={{ color: DARK }}
+        >
+          After
+        </p>
+
+        <img
+          src="/images/practice/practice-improved-ui-annotated.png"
+          alt="Redesigned"
+          className="w-full rounded-xl"
+          style={{ border: `1px solid ${BORDER}` }}
+        />
+      </div>
+    </div>
+
+    {/* Design synthesis */}
+    <div className="mt-10 max-w-2xl">
+      <p
+        className="text-xs font-black tracking-[0.12em] uppercase mb-2"
+        style={{ color: DARK }}
+      >
+        Design response
+      </p>
+
+      <p
+        className="text-lg md:text-xl font-black leading-[1.3] tracking-tight"
+        style={{ color: DARK }}
+      >
+        The redesigned experience made high-volume file management faster,
+        more visible, and easier to control.
+      </p>
+    </div>
+
+  </div>
+</div>
 
         {/* §05 — SYSTEM STATE */}
         <div className="max-w-4xl mx-auto px-8 py-16" style={{ borderBottom: `1px solid ${BORDER}` }}>
