@@ -194,32 +194,77 @@ export default function PracticeFiles() {
     </div>
   </div>
 </div>
-        {/* §01 — UNDERSTANDING THE WORK */}
-        <div style={{ backgroundColor: "#f8fafc", borderTop: `1px solid ${BORDER}`, borderBottom: `1px solid ${BORDER}` }}>
-          <div className="max-w-4xl mx-auto px-8 py-16">
-            <ChapterHeader number="01" label="Understanding the Work" heading="The interface was built around files. The teams were working around them." />
+        {/* 01 — CONTEXT */}
+<section className="max-w-4xl mx-auto px-8 mb-20">
+  {/* Divider from previous section */}
+  <div
+    className="w-full mb-12"
+    style={{ borderTop: `1px solid ${BORDER}` }}
+  />
 
-            <p className="text-base text-slate-500 leading-relaxed mb-10 max-w-2xl">
-              A typical task involved more than finding a file. But the existing experience made most of these steps manual.
-            </p>
+  <div className="max-w-3xl mx-auto">
+    {/* Section label */}
+    <div className="flex items-center gap-3 mb-5">
+      <span
+        className="text-sm font-black tabular-nums"
+        style={{ color: DARK }}
+      >
+        01
+      </span>
 
-            {/* Workflow steps */}
-            <div className="grid grid-cols-6 mb-12" style={{ borderTop: `2px solid ${BORDER}` }}>
-              {["Find", "Upload", "Review", "Act", "Track", "Hand off"].map((step, i) => (
-                <div key={step} className="flex flex-col pt-4 px-4" style={{ borderRight: i < 5 ? `1px solid ${BORDER}` : "none", paddingLeft: i === 0 ? 0 : "1rem" }}>
-                  <span className="text-xs font-black tabular-nums mb-2" style={{ color: BORDER }}>0{i + 1}</span>
-                  <p className="text-base font-black" style={{ color: DARK }}>{step}</p>
-                </div>
-              ))}
-            </div>
+      <span
+        className="w-4 h-px"
+        style={{ backgroundColor: BORDER }}
+      />
 
-            <div className="rounded-2xl px-8 py-6" style={{ backgroundColor: DARK, boxShadow: DARK_SHADOW }}>
-              <p className="text-base font-semibold text-white leading-relaxed">
-                The opportunity was to design for the work around the document — not just the document itself.
-              </p>
-            </div>
-          </div>
-        </div>
+      <span
+        className="text-sm font-black tracking-[0.14em] uppercase"
+        style={{ color: DARK }}
+      >
+        Context
+      </span>
+    </div>
+
+    {/* Heading */}
+    <h2
+      className="text-2xl md:text-3xl font-black leading-[1.2] tracking-tight mb-6"
+      style={{
+        color: DARK,
+        textWrap: "balance",
+      } as React.CSSProperties}
+    >
+      A centralized system for managing practice documents across the client
+      lifecycle.
+    </h2>
+
+    {/* Body */}
+    <div className="text-base md:text-lg leading-relaxed text-slate-600">
+      <p className="mb-5">
+        <strong style={{ color: DARK }}>Practice Files</strong> is the
+        document system for Athena practices, supporting{" "}
+        <strong style={{ color: DARK }}>
+          Customer Success, Operations, and Termination teams
+        </strong>{" "}
+        across document intake, management, access, and practice exports.
+      </p>
+
+      <p>
+        It serves as the{" "}
+        <strong style={{ color: DARK }}>
+          system of record for practice-level documents
+        </strong>
+        , ensuring teams can manage files securely and maintain data ownership
+        throughout the client lifecycle.
+      </p>
+    </div>
+  </div>
+
+  {/* Divider before next section */}
+  <div
+    className="w-full mt-16"
+    style={{ borderTop: `1px solid ${BORDER}` }}
+  />
+</section>
 
         {/* §02 — RESEARCH */}
         <div className="max-w-4xl mx-auto px-8 py-16" style={{ borderBottom: `1px solid ${BORDER}` }}>
